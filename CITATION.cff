@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Cite the repository revision used and the original sources listed for each project. This portfolio is research in progress."
+title: "Quantitative Finance: Theory, Computation and Model Validation"
+type: software
+authors:
+  - family-names: Singh
+    given-names: Amanjeet
+repository-code: "https://github.com/Amanjeet-S/Quantitative-Finance"
+url: "https://github.com/Amanjeet-S/Quantitative-Finance"
+keywords:
+  - quantitative finance
+  - numerical analysis
+  - monetary economics
+  - econometrics
