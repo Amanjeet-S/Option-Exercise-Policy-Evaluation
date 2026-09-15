@@ -1,0 +1,87 @@
+{
+  "purpose": "numerical_validation_only",
+  "input_origin": "Analytically specified test fixture; not observed market data",
+  "seed": 20260914,
+  "market": {
+    "spot": 100.0,
+    "rate": 0.05,
+    "volatility": 0.2,
+    "dividend": 0.0
+  },
+  "option": {
+    "strike": 100.0,
+    "maturity": 1.0,
+    "kind": "put"
+  },
+  "exercise_count": 12,
+  "tree_steps": [
+    240,
+    480,
+    960,
+    1920
+  ],
+  "tree_reference_steps": 7680,
+  "pde_grids": [
+    [
+      100,
+      240
+    ],
+    [
+      200,
+      480
+    ],
+    [
+      400,
+      960
+    ],
+    [
+      800,
+      1920
+    ]
+  ],
+  "pde_reference_grid": [
+    1600,
+    3840
+  ],
+  "s_max": 400.0,
+  "domain_checks": [
+    300.0,
+    500.0
+  ],
+  "mc_paths": [
+    2000,
+    8000,
+    32000
+  ],
+  "mc_repetitions": 40,
+  "training_paths": [
+    5000,
+    25000,
+    100000
+  ],
+  "degrees": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "evaluation_paths": 100000,
+  "policy_repetitions": 4,
+  "exercise_counts": [
+    1,
+    4,
+    12,
+    48
+  ],
+  "rates": [
+    0.0,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "volatilities": [
+    0.1,
+    0.2,
+    0.4
+  ]
+}

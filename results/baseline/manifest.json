@@ -1,0 +1,45 @@
+{
+  "purpose": "numerical_validation_only",
+  "input_origin": "Analytically specified test fixture; not observed market data",
+  "generated_utc": "2026-09-14T10:56:01.874439+00:00",
+  "python": "3.13.9",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "cpu": "Apple M2",
+  "logical_cpus": 8,
+  "dependencies": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.6",
+    "pytest": "8.4.2"
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "random_generator": "NumPy PCG64 via default_rng and SeedSequence.spawn",
+  "seed_group_roles": {
+    "0": "European MC",
+    "1": "LSM repetitions"
+  },
+  "config_sha256": "6aaaf827d9f52a622b9deff64275979cb43046af7c98634e42853e4a86f31e0a",
+  "source_sha256": {
+    "src/qf_research/__init__.py": "09fc3828391073426d6ed131ed6d63254c4441ce2949a021e99817bbd36dc196",
+    "src/qf_research/market_data/__init__.py": "89538179ed6799fca6b8162e63c4da0d230b38debff35b93b5d47cdc963ea500",
+    "src/qf_research/market_data/treasury.py": "e5a0f3200007e084ee7d4138a4428e5c56f0db9df9fd6ffc3f6dd2dc80183555",
+    "src/qf_research/optimal_stopping/__init__.py": "0701ce6a5bf0e0e2eaeb08404c0f37ceebefc263db0da745a092943fd3fc803b",
+    "src/qf_research/optimal_stopping/analytical.py": "22bc2b408e3c48744f446a13e13c1b7e81fa56f647e4e174f8bcecc123f70867",
+    "src/qf_research/optimal_stopping/contracts.py": "f00a256b820edc3371b0f315d676a00e1ef28fd9c144ccc88fd21cf21b22cf6a",
+    "src/qf_research/optimal_stopping/experiments.py": "748e8260b7409635b6c40b9cfef964b1a41cf3d85eeef5f619b2589d6d8a3630",
+    "src/qf_research/optimal_stopping/finite_difference.py": "ddcd4bc9637de3777315485f567100b0526aa601b08fe7cf42c7e8d7072be1d3",
+    "src/qf_research/optimal_stopping/least_squares.py": "1dbd9214b3ab547495dd8b32f69cdcffda8170cce72e0ed965b1a191f8231d5e",
+    "src/qf_research/optimal_stopping/simulation.py": "1161dfc31c51d79b26afb37a4d8e7b39c14153b7853d184c49c508616c7dc17a",
+    "src/qf_research/optimal_stopping/tree.py": "d066fd36e4df8ad0fb8ff694212c72ea4e9c451c92e1b2c546cf617744879d6f"
+  },
+  "total_seconds": 6.194936709000103,
+  "references": {
+    "european_analytical": 5.573526022256971,
+    "bermudan_tree": 6.042668757646784,
+    "bermudan_pde": 6.042652049742014
+  }
+}
