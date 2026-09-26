@@ -1,0 +1,27 @@
+# Literature position and interpretation
+
+## 1. Established foundations
+
+I use regression-based stopping policies and martingale dual evaluation to study exercise accuracy under a funded cash-event model. These methodological foundations are established. [Longstaff and Schwartz (2001)](https://doi.org/10.1093/rfs/14.1.113) provide the continuation-regression method, and [Haugh and Kogan (2004)](https://doi.org/10.1287/opre.1030.0070) provide the approximate-value dual construction. The distinction between a feasible policy value and an upper assessment of the optimum also predates this project. [Andersen and Broadie (2004)](https://doi.org/10.1287/mnsc.1040.0258) develop a primal-dual simulation procedure for pricing intervals.
+
+Non-nested dual evaluation is not a new contribution of this repository. [Belomestny, Bender and Schoenmakers (2009)](https://doi.org/10.1111/j.1467-9965.2008.00357.x) construct estimators that preserve the martingale property. [Cline (2026)](https://doi.org/10.1080/14697688.2026.2647986) studies regression-based dual algorithms and states conditional restrictions on their projection residuals. These papers prevent attributing novelty to computational efficiency or approximate-value martingales alone. I have not implemented their complete algorithms as comparative benchmarks here.
+
+## 2. The question addressed by this project
+
+I distinguish three interventions: changing a stopping policy, changing its evaluation martingale, and changing its exercise opportunities. Each identifies a different quantity. Replacing a valid martingale while retaining the policy can reduce dual slack without increasing the reward earned by the policy. A common martingale permits paired differences to identify policy gains. Changing the calendar requires stating whether the original rule, its terminal decision or its earlier training target also changes.
+
+This organisation makes a claim about computational allocation testable. Spending more on evaluation can improve knowledge about an unchanged policy; spending more on training can change its reward. A smaller dual gap alone cannot establish which expenditure creates more economic value. Identifying that trade-off requires matched financial inputs, declared workloads and independent evaluation. The public methods paper defines these comparisons; it contains no estimate of an optimal allocation or empirical claim of algorithmic superiority.
+
+## 3. Why the conditional-drift derivation is included
+
+The derivation in Appendix A addresses the consequences of replacing exact conditional centring with an approximation. Its starting point is the predictable compensator: subtracting accumulated conditional increment means from an adapted penalty produces a martingale. Optional sampling then converts the residual drift into an explicit allowance for the policy-loss bound. The same calculation gives the bias remaining in a paired comparison after the common upper payoff cancels.
+
+This is an application of established theory. I do not describe the result, proof or finite counterexample as novel. Independent exposition establishes neither priority nor the absence of an earlier derivation. The purpose is to make the consequences of the assumptions transparent within this research design. The counterexample shows why unconditional mean-zero increments and non-negative gaps cannot certify the conditional requirement. It is not a replication or a rejection of Cline's algorithms.
+
+The rational-arithmetic implementation checks the inequalities and paired identity against finite-tree stopping policies and a separate dynamic programme. Every input is a declared mathematical fixture. No simulated observation is represented as a market observation, and none of these checks establishes an empirical result or a floating-point error certificate.
+
+## 4. Sources consulted and limits of the comparison
+
+For Andersen and Broadie, I consulted the published journal version, including the introduction and Sections 2 and 3 on the dual construction. For Belomestny, Bender and Schoenmakers, I consulted the published article through its publisher's HTML, principally the introduction and Section 2. For Cline, I consulted the published version, principally Sections 3.3.1, 4.1 and 4.2, including Conditions A and B and the discussion of conditional approximation error. The comparison concerns constructions and assumptions; it does not reproduce the papers' numerical tables.
+
+This focused review is sufficient to attribute the methods used here. It is not an exhaustive priority search. A claim of a new theoretical contribution would require a separate comparison of precise assumptions and conclusions, including related results outside option pricing. I retain the source versions and reading scope locally; the repository provides bibliographic references without redistributing the articles.
