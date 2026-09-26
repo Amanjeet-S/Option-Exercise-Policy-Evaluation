@@ -57,6 +57,6 @@ The policy gain need not be bounded above by the increase in the optimum: a subo
 
 \subsection{Retraining as a separate comparison}
 
-Replacing the terminal training response by $g_h$ can also change earlier continuation regressions. To isolate that effect, use the same training paths, basis, regression safeguards and financial inputs for original and revised fits, and give both policies the same final waiting instruction. Freeze the fits before fresh paired evaluation.
+Replacing the terminal training response by $g_h$ can also change earlier continuation regressions. To isolate that effect, I use the same training paths, basis, regression safeguards and financial inputs for original and revised fits, and give both policies the same final waiting instruction. I freeze the fits before fresh paired evaluation.
 
 Equation~\eqref{eq:terminal-gain} does not imply that finite-sample retraining improves value. Changed stopping decisions alter the responses entering earlier regressions, and estimated continuation can move in either direction. A common upper payoff identifies the incremental expected value through \eqref{eq:common-upper}. Unfavourable and inconclusive paired outcomes must remain in the comparison.

@@ -1,22 +1,15 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage[british]{babel}
-\usepackage{amsmath,amsthm}
-\usepackage{newtxtext,newtxmath}
-\usepackage[margin=27mm]{geometry}
-\usepackage{microtype}
-\usepackage{booktabs,tabularx}
-\usepackage{enumitem}
+\usepackage{booktabs,tabularx,float}
+\usepackage{url}
 \usepackage[round,authoryear]{natbib}
-\usepackage{xcolor}
-\definecolor{linkblue}{HTML}{174A72}
-\usepackage[colorlinks=true,allcolors=linkblue,pdftitle={Exercise-policy loss under computational and financial constraints: Mathematical framework}]{hyperref}
-\usepackage{cleveref}
-\setlength{\parindent}{1.2em}
-\setlength{\parskip}{0.2em}
-\setlength{\emergencystretch}{2em}
-\linespread{1.06}
+\setlength{\bibhang}{1.5em}
+\setlength{\bibsep}{2pt}
+\renewcommand{\bibfont}{\small}
+\setlength{\textfloatsep}{12pt plus 2pt minus 4pt}
+\usepackage[hidelinks,pdftitle={Exercise-policy loss under computational and financial constraints: Mathematical framework},pdfauthor={Amanjeet Singh}]{hyperref}
 \newtheorem{proposition}{Proposition}
 \newtheorem{assumption}{Assumption}
 \newcommand{\E}{\mathbb E}
@@ -25,16 +18,16 @@
 \newcommand{\ind}{\mathbf 1}
 \newcommand{\loss}{\ell}
 \newcommand{\positive}[1]{\left(#1\right)^+}
-\title{Exercise-policy loss under computational\newline and financial constraints\\[0.45em]\large Mathematical framework}
-\author{}
-\date{26 September 2026}
+\title{Exercise-policy loss under computational and financial constraints}
+\author{Amanjeet Singh}
+\date{Draft of 26 September 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-An approximate exercise policy can be difficult to assess because its decisions are suboptimal, because the upper bound used to assess them is loose, or because the financial comparison assigns different exercise opportunities. This paper develops a framework that separates these objects in a finite-calendar stopping problem with deterministic funding and discrete cash events. A martingale decomposition distinguishes expected policy loss from dual slack. Analytically centred piecewise-linear values provide a practical upper construction. Nested calendars reduce a prescribed financial and expiry sensitivity family to its maximal endpoint for unchanged exercise instructions. A conditional terminal adjustment supplies an expected policy gain that can be isolated with a common upper payoff. Independent evaluation, simultaneous scenario limits and explicit timing accounting distinguish training error, sampling uncertainty, numerical approximation and financial specification. This methods-only version presents the model, derivations and experimental design. It reports no market observations, fitted empirical quantities or numerical research findings.
+\noindent An approximate exercise policy can be difficult to assess because its decisions are suboptimal, because the upper bound used to assess them is loose, or because the financial comparison assigns different exercise opportunities. I develop a framework that separates these objects in a finite-calendar stopping problem with deterministic funding and discrete cash events. A martingale decomposition distinguishes expected policy loss from dual slack. Analytically centred piecewise-linear values provide a practical upper construction. Nested calendars reduce a prescribed financial and expiry sensitivity family to its maximal endpoint for unchanged exercise instructions. A conditional terminal adjustment supplies an expected policy gain that can be isolated with a common upper payoff. Independent evaluation, simultaneous scenario limits and explicit timing accounting distinguish training error, sampling uncertainty, numerical approximation and financial specification. In this methods-only version, I present the model, derivations and experimental design. I report no market observations, fitted empirical quantities or numerical research findings.
 \end{abstract}
 \smallskip
-\noindent\textbf{Keywords:} optimal stopping; American options; martingale duality; Monte Carlo; discrete dividends; computational allocation.
+\noindent\textit{Keywords:} optimal stopping; American options; martingale duality; Monte Carlo; discrete dividends; computational allocation.
 
 \input{sections/01_question}
 \input{sections/02_model}
@@ -44,6 +37,6 @@ An approximate exercise policy can be difficult to assess because its decisions 
 \input{sections/06_computation}
 \input{sections/07_scope}
 
-\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
 \bibliography{references}
 \end{document}

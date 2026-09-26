@@ -2,14 +2,14 @@
 
 \subsection{State, payments and information}
 
-Work on a filtered probability space $(\Omega,\F,(\F_t)_{t\geq0},\Q)$ carrying a Brownian motion. Let $D_0(u)>0$ denote a deterministic discount factor for a payment at date $u$. If a quoted share price $S_t$ settles at $u(t)$, define
+Consider a filtered probability space $(\Omega,\F,(\F_t)_{t\geq0},\Q)$ carrying a Brownian motion. Let $D_0(u)>0$ denote a deterministic discount factor for a payment at date $u$. If a quoted share price $S_t$ settles at $u(t)$, define
 \begin{equation}
 Y_t=f_tS_t,\qquad f_t=D_0(u(t)).
 \label{eq:ownership}
 \end{equation}
 The variable $Y$ represents discounted economic ownership under the maintained settlement convention. This transformation requires the share and exercise transfer to represent matching economic entitlements. It does not establish a financing strategy or identify the correct funding curve from market prices alone.
 
-Between prescribed cash events, assume
+Between prescribed cash events, I assume
 \begin{equation}
  dY_t=\sigma Y_t\,dW_t^{\Q},\qquad \sigma\geq0.
 \label{eq:diffusion}
@@ -47,7 +47,7 @@ Cash-event observations needed for propagation do not automatically grant exerci
 
 Backward regression estimates continuation values on a training sample and converts them into stopping predicates \citep{longstaff2001}. All coefficients, basis choices, positivity safeguards and tie rules form part of the frozen policy. Independent forward evaluation estimates its value without treating its training fit as realised out-of-sample accuracy. Increasing basis dimension need not improve a finite-sample rule.
 
-When a financial scenario $\theta$ changes the ownership factor, preserve the instruction in quoted-price coordinates. If $a_j^\theta$ is the scenario share-settlement factor, the quoted state is $Q_j=Y_j^\theta/a_j^\theta$. A source predicate expressed in its original ownership coordinate receives
+When a financial scenario $\theta$ changes the ownership factor, I preserve the instruction in quoted-price coordinates. If $a_j^\theta$ is the scenario share-settlement factor, the quoted state is $Q_j=Y_j^\theta/a_j^\theta$. A source predicate expressed in its original ownership coordinate receives
 \begin{equation}
  T_j^\theta(Y_j^\theta)
  =Y_j^\theta\frac{a_j^0}{a_j^\theta}.
