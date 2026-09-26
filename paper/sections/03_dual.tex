@@ -1,0 +1,72 @@
+\section{Loss measurement and dual slack}
+
+\subsection{A pathwise gap}
+
+For an admissible martingale $M$ with $M_0=0$, set
+\begin{equation}
+ U(M)=\max_{1\leq j\leq J}\{H_j-M_j\},\qquad
+ L_\pi(M)=H_{\tau_\pi}-M_{\tau_\pi},\qquad
+ G_\pi(M)=U(M)-L_\pi(M).
+\label{eq:gap}
+\end{equation}
+Here the maximum ranges over the indexed exercise rights. The martingale dual approach is due to the published framework of \citet{haugh2004}.
+
+\begin{proposition}[What a gap measures]
+Under Assumption~\ref{ass:admissible}, $G_\pi(M)\geq0$ pathwise and
+\begin{equation}
+ \E[G_\pi(M)]
+ =\underbrace{V^*-V_\pi}_{\text{policy loss}}
+ +\underbrace{\E[U(M)]-V^*}_{\text{dual slack}}.
+\label{eq:decomposition}
+\end{equation}
+Both terms on the right are non-negative.
+\end{proposition}
+\begin{proof}
+The maximum defining $U$ includes the policy's stopping right, proving the pathwise inequality. Finite-horizon optional sampling gives $\E[M_\tau]=0$ for each admissible stopping time. Hence $\E[L_\pi]=V_\pi$. Also $U\geq H_\tau-M_\tau$ for every such $\tau$, so $\E[U]\geq\sup_\tau\E[H_\tau]=V^*$. Subtracting $V_\pi$ and adding and subtracting $V^*$ gives \eqref{eq:decomposition}.
+\end{proof}
+
+For a fixed policy and financial problem, a change in expected gap caused only by replacing $M$ is a change in dual slack. It is not a change in policy value. A numerical PDE value supplies an additional comparison but is not inserted as an exact $V^*$ without a justified error enclosure. Mesh agreement is evidence about numerical behaviour, not a proof of the financial model.
+
+If two policies use the same upper payoff and martingale, then
+\begin{equation}
+ G_\pi(M)-G_\rho(M)=L_\rho(M)-L_\pi(M),\qquad
+ \E[G_\pi-G_\rho]=V_\rho-V_\pi.
+\label{eq:common-upper}
+\end{equation}
+The upper payoff cancels pathwise. Paired gap differences can therefore identify expected policy gains without confounding them with changes in the bound.
+
+\subsection{Analytically centred approximate values}
+
+Let $v_{j+1}$ be a deterministic approximation to a subsequent value function, or a function fixed by an independent training procedure. Define
+\begin{equation}
+ \Delta M_{j+1}=v_{j+1}(Y_{j+1})
+ -\E[v_{j+1}(Y_{j+1})\mid\F_{t_j}].
+\label{eq:centred}
+\end{equation}
+When the conditional expectation is evaluated for the actual retained function and transition, these increments have conditional mean zero in exact arithmetic. Approximation quality affects tightness rather than supplying the reason for centring. The construction is the martingale component of an approximate value process described by \citet{haugh2004}.
+
+A useful representation on the non-negative state domain is
+\begin{equation}
+ v(y)=\alpha+\beta y+\sum_{r=1}^{R}\gamma_r\positive{y-k_r},
+ \qquad k_r\geq0.
+\label{eq:hinges}
+\end{equation}
+Over a no-cash interval of length $h$, $X=y\exp(-\sigma^2h/2+\sigma\sqrt h\,Z)$, with $Z$ standard normal. For $y,k>0$ and $\sigma^2h>0$,
+\begin{align}
+ \E[\positive{X-k}]&=y\Phi(d_1)-k\Phi(d_2),\\
+ d_1&=\frac{\log(y/k)+\sigma^2h/2}{\sigma\sqrt h},\qquad
+ d_2=d_1-\sigma\sqrt h.
+\label{eq:hinge-integral}
+\end{align}
+This is the lognormal option integral \citep{black1973}. Zero state, strike, variance or time uses its continuous limiting form. Each term in \eqref{eq:hinges} can consequently be integrated over the full support, including the retained tail rule.
+
+For a capped cash jump with size $c$, composition is explicit:
+\begin{equation}
+ v(\positive{x-c})
+ =\alpha+\beta\positive{x-c}
+ +\sum_{r=1}^{R}\gamma_r\positive{x-(c+k_r)}.
+\label{eq:composition}
+\end{equation}
+The identity uses $k_r\geq0$ and includes the constant segment for $x\leq c$. Cash-phase ordering must be preserved when multiple propagation intervals are joined. An approximate quadrature expectation or truncated integration range cannot simply be substituted into \eqref{eq:centred} while retaining an exact martingale claim.
+
+Floating-point evaluation, function compression and approximation of the dynamic programme are distinct numerical errors. Validation should check analytical limiting cases, cash accounting, tail treatment and independent pricing references. A compression tolerance for one function is not an accumulated error bound for the stopping problem.

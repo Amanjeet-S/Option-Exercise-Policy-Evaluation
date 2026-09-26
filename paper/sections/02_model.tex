@@ -1,0 +1,56 @@
+\section{The funded finite-calendar stopping problem}
+
+\subsection{State, payments and information}
+
+Work on a filtered probability space $(\Omega,\F,(\F_t)_{t\geq0},\Q)$ carrying a Brownian motion. Let $D_0(u)>0$ denote a deterministic discount factor for a payment at date $u$. If a quoted share price $S_t$ settles at $u(t)$, define
+\begin{equation}
+Y_t=f_tS_t,\qquad f_t=D_0(u(t)).
+\label{eq:ownership}
+\end{equation}
+The variable $Y$ represents discounted economic ownership under the maintained settlement convention. This transformation requires the share and exercise transfer to represent matching economic entitlements. It does not establish a financing strategy or identify the correct funding curve from market prices alone.
+
+Between prescribed cash events, assume
+\begin{equation}
+ dY_t=\sigma Y_t\,dW_t^{\Q},\qquad \sigma\geq0.
+\label{eq:diffusion}
+\end{equation}
+At an event with proposed discounted cash $c\geq0$, the detached entitlement and remaining state are
+\begin{equation}
+ C=\min(Y_{t-},c),\qquad Y_t=\positive{Y_{t-}-c},
+ \qquad Y_t+C=Y_{t-}.
+\label{eq:cash}
+\end{equation}
+The cap preserves non-negativity and cash accounting. This bounded cash specification is related to the stock-dependent dividend framework discussed by \citet{vellekoop2006}; the settlement and ownership equations here specify the particular maintained model. The ex-entitlement state is not a martingale across the cash detachment; between events it is. Conditional transition calculations must respect this distinction. Proposed cash, volatility and funding are model inputs, not identified expectations merely because they permit a price fit.
+
+For a put with strike $K>0$, let $\mathcal E=\{t_1,\ldots,t_J\}$, with $0<t_1<\cdots<t_J$, be a finite set of admissible exercise rights. Valuation is at $t_0=0$. Define
+\begin{equation}
+ H_j=\positive{Kf_{t_j}-Y_{t_j}}.
+\label{eq:reward}
+\end{equation}
+Write $Y_j=Y_{t_j}$ and $M_j=M_{t_j}$ when processes are indexed by the decision grid; $H_{t_j}=H_j$ identifies the reward at a calendar time. Thus $H_\tau$ denotes the reward at the selected exercise right. The exercise-settlement factor can differ from the premium-payment factor $b>0$. Values below are in discounted currency unless divided by $b$. The definition of $H_j$ presumes that the specified exercise settlement transfers the intended ownership state and entitlements. A change in deliverable or exercise funding can require a different reward.
+
+\begin{assumption}[Admissibility]
+The decision set is finite and fixed before evaluation. Rewards are adapted and integrable. Policies are stopping times taking values in $\mathcal E$. Evaluation martingales start at zero and are integrable at all rights. Whenever sampling variances are reported, the corresponding random variables have finite second moments. Learned coefficients and approximate value functions are fixed before independent evaluation paths are drawn.
+\label{ass:admissible}
+\end{assumption}
+
+With deterministic initial state and model inputs, the optimal and policy values are
+\begin{equation}
+ V^*=\sup_{\tau\in\mathcal T(\mathcal E)}\E[H_\tau],
+ \qquad V_\pi=\E[H_{\tau_\pi}],
+ \qquad \loss_\pi=\frac{V^*-V_\pi}{b}\geq0.
+\label{eq:loss}
+\end{equation}
+Cash-event observations needed for propagation do not automatically grant exercise rights. The order of an exercise decision, detachment and settlement is part of the problem definition. A finite exercise calendar represents a Bermudan problem; its numerical refinement alone does not verify the contractual exercise opportunities of an American option.
+
+\subsection{Learned exercise instructions}
+
+Backward regression estimates continuation values on a training sample and converts them into stopping predicates \citep{longstaff2001}. All coefficients, basis choices, positivity safeguards and tie rules form part of the frozen policy. Independent forward evaluation estimates its value without treating its training fit as realised out-of-sample accuracy. Increasing basis dimension need not improve a finite-sample rule.
+
+When a financial scenario $\theta$ changes the ownership factor, preserve the instruction in quoted-price coordinates. If $a_j^\theta$ is the scenario share-settlement factor, the quoted state is $Q_j=Y_j^\theta/a_j^\theta$. A source predicate expressed in its original ownership coordinate receives
+\begin{equation}
+ T_j^\theta(Y_j^\theta)
+ =Y_j^\theta\frac{a_j^0}{a_j^\theta}.
+\label{eq:transfer}
+\end{equation}
+Its original coefficients and decision conventions are retained, but the resulting stopping time is valued with scenario rewards. This preserves the instruction for an identical history of quoted prices. It does not preserve the distribution of stopping dates when the scenario dynamics change.

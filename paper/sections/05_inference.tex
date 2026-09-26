@@ -1,0 +1,51 @@
+\section{Conditional inference and scenario families}
+
+\subsection{What the probability statement conditions on}
+
+With the financial model, fitted policy and approximate values fixed, simulate independent outer paths. Let $X_i=G_\pi^{(i)}(M)/b$, with sample mean $\overline X$ and sample standard deviation $s_X$. A commonly used approximate upper limit is
+\begin{equation}
+ B_\pi=\overline X+t_{1-\alpha,n-1}\frac{s_X}{\sqrt n}.
+\label{eq:pointwise}
+\end{equation}
+Since $\loss_\pi\leq\E[X_i]$, a valid upper limit for the expected gap is also an upper limit for policy loss. Student calibration is generally approximate for non-normal gaps; it is not a finite-sample guarantee. Finite variance, independent evaluation and sufficiently informative Monte Carlo samples remain necessary. More outer paths improve precision about the expected gap but do not remove its dual slack.
+
+A conditional interval does not integrate over the uncertainty of policy training, financial calibration, contract conventions or sample selection. Training repetitions must be retained separately if their variation is investigated. Choosing a policy on the same evaluation outcomes used to advertise its bound can invalidate the selected-policy interpretation. Such a selection requires a separate evaluation design or an appropriate simultaneous guarantee.
+
+\subsection{Coverage for a prescribed financial family}
+
+For $m=|\Theta|$, compute a per-scenario limit at the maximal calendar using error allocation $\alpha/m$:
+\begin{equation}
+ B_\theta=\overline X_\theta+
+ t_{1-\alpha/m,n_\theta-1}\frac{s_\theta}{\sqrt{n_\theta}}.
+\label{eq:family}
+\end{equation}
+If each marginal limit has its stated coverage, the union bound and \eqref{eq:maximal} imply an event of probability at least $1-\alpha$ on which every prescribed scenario and smaller calendar is covered. With approximate marginal calibration, the joint statement inherits that approximation. Independence across scenarios is unnecessary for the union bound.
+
+There is no extra multiplicity factor for calendars already dominated by the maximal endpoint. There is also no automatic extension to all policies, a continuous funding region or scenarios introduced after inspection. A missing required scenario prevents a complete-family conclusion; the family size must not shrink opportunistically. Financial quote compatibility is a different condition and must be reported separately from mathematical completeness of the conditional family.
+
+\subsection{Pairing, independent runs and gap interactions}
+
+Within a common-path experiment, estimate policy gains or scenario effects from pathwise differences. For $D_i=X_i-Y_i$,
+\begin{equation}
+ \widehat{\operatorname{Var}}(\overline D)=\frac{s_D^2}{n}
+ =\frac{s_X^2+s_Y^2-2s_{XY}}{n}.
+\label{eq:paired}
+\end{equation}
+Discarding covariance would answer a different uncertainty question. Conversely, unrelated evaluation streams are not paired merely because policies or model labels coincide.
+
+For independent mean estimates $R$ and $L$, possibly with different path counts,
+\begin{equation}
+ \widehat v=\frac{s_R^2}{n_R}+\frac{s_L^2}{n_L},\qquad
+ \nu=\frac{\widehat v^2}
+ {(s_R^2/n_R)^2/(n_R-1)+(s_L^2/n_L)^2/(n_L-1)}.
+\label{eq:welch}
+\end{equation}
+The usual Welch interval uses $t_{1-\alpha/2,\nu}\sqrt{\widehat v}$. Degenerate zero-variance cases require explicit treatment. A difference between reported confidence endpoints is a descriptive comparison, not itself a confidence interval for a policy-value difference.
+
+A financial/calendar interaction can be written in terms of expected quoted gaps as
+\begin{equation}
+ I_\theta=\{g_\theta(d_{\max})-g_0(d_{\max})\}
+          -\{g_\theta(0)-g_0(0)\}.
+\label{eq:interaction}
+\end{equation}
+When each financial effect is paired internally but the two calendar experiments are independent, add the variances of their paired mean effects. By \eqref{eq:decomposition}, $I_\theta$ combines interactions in true loss and dual slack. It does not identify either component alone and has no causal interpretation. Repeated dependent pointwise comparisons do not constitute a simultaneous test; intervals containing zero do not establish equivalence or exact additivity.

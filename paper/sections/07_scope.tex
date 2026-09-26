@@ -1,0 +1,17 @@
+\section{Financial validation and interpretation}
+
+A numerical stopping problem can be well defined while its market interpretation is unresolved. Empirical application requires dated contract terms, a justified ownership state, cash information available at the valuation cutoff, and funding appropriate to the payment obligations. Event and source timestamps may describe different objects. Simultaneous records can require an explicit ordering rule; absent or stale inputs must not silently become valid observations.
+
+Joint call and put compatibility under a shared state, cash specification, funding convention and volatility is an informative diagnostic. Separate unconstrained calibrations can remove that restriction. Compatibility with bid--ask intervals is still not identification of the correct model or an executable arbitrage. A model that fails a renewed quote diagnostic after a sensitivity change can remain a conditional mathematical case, but must not be reclassified as an accepted empirical specification because its policy loss is small.
+
+A quoted spread offers a monetary scale. It is not automatically the cost of exercise, hedging or implementation. An upper loss limit below the spread establishes only that conditional scale comparison. A limit above it leaves the inequality unestablished; it does not prove that true loss exceeds the spread.
+
+A prospective evaluation should freeze its observations, admissibility rule, calibration and inference before outcomes can affect method choice. If no observation passes the prescribed screen, a performance estimate is unavailable. Wider post-sample thresholds can inform a future design but cannot silently replace the primary sample. Numerical replication, admissible measurement and independent economic validation are different requirements.
+
+\section{Conclusions and data availability}
+
+The framework separates policy quality from the tightness of its evaluation bound and from the financial opportunities used as the benchmark. Analytically centred values can improve the measurement of loss without changing the policy. A larger calendar changes the comparison problem, while a feasible terminal adjustment changes the rule itself. Common-upper comparisons identify expected policy gains; finite-family bounds and explicit timing accounting delimit what the resulting evidence can support.
+
+These distinctions provide a basis for a conditional computational investigation. They do not establish which specification performs best in observed markets or how the results generalise to additional state variables and uncertain funding or cash. Such conclusions require their own numerical and empirical evidence.
+
+This methods-only publication contains original exposition of the stated model and applications of the cited methods. It includes no raw or cleaned subscription observations, fitted market inputs, empirical summaries, research-result tables or data-derived figures. The complete numerical paper is maintained separately. The LaTeX sources and build instructions for this version are available in the accompanying repository.

@@ -1,0 +1,62 @@
+\section{Changed opportunities and changed policies}
+
+\subsection{Nested calendars with unchanged instructions}
+
+Let $\theta\in\Theta$ index a prescribed finite financial family and let $\mathcal E(d)$ be nested exercise calendars. Write $V^*_\theta(d)$ for the optimum and suppose that the original policy always stops on the smallest calendar. Its reward definition and pre-terminal dynamics remain unchanged when $d$ varies within a financial scenario.
+
+\begin{proposition}[Maximal-calendar reduction]
+If $\mathcal E(d_1)\subseteq\mathcal E(d_2)$ whenever $d_1\leq d_2$, and $b_\theta>0$ is constant across these calendars, then
+\begin{equation}
+ \max_{\theta\in\Theta,\,d\in D}
+ \frac{V^*_\theta(d)-V_{\pi,\theta}}{b_\theta}
+ =\max_{\theta\in\Theta}
+ \frac{V^*_\theta(d_{\max})-V_{\pi,\theta}}{b_\theta}.
+\label{eq:maximal}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Every stopping rule on a smaller calendar is feasible on a larger one, so the optimum is nondecreasing. The original policy value is constant within the scenario because its decisions and rewards remain unchanged. Subtracting this constant and dividing by a positive fixed premium factor preserves monotonicity. Taking the maxima gives \eqref{eq:maximal}.
+\end{proof}
+
+The statement concerns true expected losses. Sample upper limits need not increase with the calendar because sampling noise and dual slack can change. Evaluating the prespecified maximal calendar supplies a bound for smaller nested calendars; it does not claim to have priced or simulated every intermediate case. Recalibration across endpoints, a changed cash transfer or a policy allowed to use new observations would require a different comparison.
+
+\subsection{A feasible terminal adjustment}
+
+Suppose the original endpoint is $T$, the extended endpoint is $T+h$, and between them $Y$ is an integrable martingale with no cash event and a constant exercise threshold $k$. Define
+\begin{equation}
+ g(y)=\positive{k-y},\qquad
+ g_h(y)=\E[g(Y_{T+h})\mid Y_T=y],\qquad
+ q_h(y)=g_h(y)-g(y).
+\label{eq:wait}
+\end{equation}
+Conditional Jensen gives $q_h(y)\geq0$. Under the lognormal transition, $g_h$ follows the corresponding analytical put integral. The endpoint condition is stronger than calendar nesting: it provides a tractable terminal replacement and dominance of earlier exercise within the added interval.
+
+Let $A=\{\tau_\pi=T\}\in\F_T$. Change only the final instruction: if $A$ occurs, wait until $T+h$; otherwise retain the original stopping time. Denote this adjusted policy by $\widetilde\pi$.
+
+\begin{proposition}[Expected gain from the final instruction]
+The adjusted rule is feasible on the expanded calendar and
+\begin{equation}
+ V_{\widetilde\pi}-V_\pi=\E[\ind_Aq_h(Y_T)]\geq0.
+\label{eq:terminal-gain}
+\end{equation}
+The conditionally integrated gain has variance no greater than the direct realised payoff difference, when the latter has finite variance.
+\end{proposition}
+\begin{proof}
+The decision to wait is made using the $\F_T$-measurable event $A$, so the rule is a stopping time. Outside $A$, payoffs agree. On $A$, the tower property gives the expected difference as $q_h(Y_T)$. Conditional Jensen proves its sign. The integrated gain is the conditional expectation of the realised difference given $\F_T$; the law of total variance proves the variance comparison.
+\end{proof}
+
+The realised later payoff can still be smaller. Equation~\eqref{eq:terminal-gain} establishes an expected improvement under the maintained model, not a pathwise profit or executable market opportunity.
+
+For the expanded problem, a common upper payoff isolates this gain as in \eqref{eq:common-upper}. The residual discounted loss satisfies
+\begin{equation}
+ V_h^*-V_{\widetilde\pi}
+ =(V_0^*-V_\pi)+(V_h^*-V_0^*)-\E[\ind_Aq_h(Y_T)].
+\label{eq:remaining}
+\end{equation}
+The policy gain need not be bounded above by the increase in the optimum: a suboptimal original rule may survive where an optimal original rule would already stop. Residual loss for a changing policy need not be monotone in the endpoint.
+
+\subsection{Retraining as a separate comparison}
+
+Replacing the terminal training response by $g_h$ can also change earlier continuation regressions. To isolate that effect, use the same training paths, basis, regression safeguards and financial inputs for original and revised fits, and give both policies the same final waiting instruction. Freeze the fits before fresh paired evaluation.
+
+Equation~\eqref{eq:terminal-gain} does not imply that finite-sample retraining improves value. Changed stopping decisions alter the responses entering earlier regressions, and estimated continuation can move in either direction. A common upper payoff identifies the incremental expected value through \eqref{eq:common-upper}. Unfavourable and inconclusive paired outcomes must remain in the comparison.
