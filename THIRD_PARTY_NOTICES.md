@@ -12,4 +12,4 @@ Project source registers identify the mathematical and empirical methods used. C
 
 Dependencies retain their own licences and are installed through the environment files; their source is not vendored. Research papers are linked to their academic or publisher sources. Restricted provider exports and privately retained demonstration material are excluded from Git.
 
-No repository-wide licence is assigned to original material at this stage. Third-party data permissions remain applicable independently.
+Released original software is licensed under [MIT](LICENSE), and released original research writing under [CC BY 4.0](LICENSES/CC-BY-4.0.txt), as specified in the [licensing scope](LICENSING.md). Third-party data permissions remain applicable independently. These grants do not cover private material or clear outputs awaiting source-permission review.

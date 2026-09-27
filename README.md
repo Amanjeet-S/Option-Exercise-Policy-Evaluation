@@ -84,3 +84,7 @@ The next data requirement is a recent option-quote pilot from a dedicated histor
 The remaining work includes a data audit, numerical stress tests, observed-contract modelling, calibration, credible policy-loss measurement, a verified C++ kernel and a full research paper. Each stage has a completion criterion. The number of implemented methods is not the measure of completion.
 
 The [research log](research_log.md) records progress, revisions and unresolved questions. Established models and algorithms are credited in the source register; the project must earn its research conclusions through reproducible evidence.
+
+## Licensing
+
+Released original project code is under [MIT](../../LICENSE). Released original research writing, including the [methods-only paper](paper/README.md) and its LaTeX source, is under [CC BY 4.0](../../LICENSES/CC-BY-4.0.txt). The [licensing scope](../../LICENSING.md) preserves third-party terms and excludes private drafts, restricted observations and outputs awaiting publication clearance.
