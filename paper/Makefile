@@ -1,7 +1,7 @@
 .PHONY: all clean verify
 all: methods.pdf
 
-methods.pdf: main.tex references.bib $(wildcard sections/*.tex)
+methods.pdf: main.tex
 	latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -jobname=methods main.tex
 
 clean:

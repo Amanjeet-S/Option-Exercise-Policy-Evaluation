@@ -8,8 +8,12 @@ Project source registers identify the mathematical and empirical methods used. C
 - **Eurostat:** the German production and HICP JSON files are retained unchanged. Source: Eurostat, accessed 15 September 2026. Reuse is subject to the [Eurostat copyright and reuse notice](https://ec.europa.eu/eurostat/help/copyright-notice), including source acknowledgement and any applicable exceptions.
 - **ECB shock estimates:** the two CSV files are retained unchanged from [Marek Jarociński's update repository](https://github.com/marekjarocinski/jkshocks_update_ecb). The data are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite Jarociński, M. and Karadi, P. (2020), *American Economic Journal: Macroeconomics*, 12(2), 1–43, DOI 10.1257/mac.20180090. Attribution and exact file hashes are in the [snapshot manifest](data/public/germany_monetary_policy/2026-09-15/manifest.json).
 
+## Subscription data and derived findings
+
+Permission to publish research findings derived from the project's LSEG access was confirmed on 27 September 2026. Raw observations, cleaned subsets and reversibly transformed observations remain excluded. Original estimates, research comparisons and figures may be released after reviewing the complete output for source-data disclosure. This confirmation does not cover unrelated providers, copied papers or vendor documentation. See the [publication policy](docs/publication_policy.md).
+
 ## Software and publications
 
 Dependencies retain their own licences and are installed through the environment files; their source is not vendored. Research papers are linked to their academic or publisher sources. Restricted provider exports and privately retained demonstration material are excluded from Git.
 
-Released original software is licensed under [MIT](LICENSE), and released original research writing under [CC BY 4.0](LICENSES/CC-BY-4.0.txt), as specified in the [licensing scope](LICENSING.md). Third-party data permissions remain applicable independently. These grants do not cover private material or clear outputs awaiting source-permission review.
+Released original software is licensed under [MIT](LICENSE), and released original research writing under [CC BY 4.0](LICENSES/CC-BY-4.0.txt), as specified in the [licensing scope](LICENSING.md). Third-party data permissions remain applicable independently. These grants do not cover private material or bypass disclosure review of research outputs.

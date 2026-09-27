@@ -2,11 +2,11 @@
 
 In this methods-only paper for my optimal-stopping project, I develop the funded cash-event model, policy-loss decomposition, approximate-value martingales, expiry-calendar comparison, terminal adjustment, conditional inference and computational allocation design. Appendix A uses predictable compensation to quantify the effect of conditional drift in an approximate penalty.
 
-[Read the compiled paper](methods.pdf) or start with [the LaTeX source](main.tex). The text is divided into the files in `sections/`; published methodological references are in [references.bib](references.bib).
+[Read the compiled paper](methods.pdf) or start with [the LaTeX source](main.tex). `main.tex` is self-contained: it includes the complete text and bibliography and can be compiled directly in a single-document editor. The files in `sections/` retain the preceding modular source for reference; edit `main.tex` for the current paper. [references.bib](references.bib) retains the citation metadata.
 
 ## 1. Build
 
-Use a TeX distribution with `latexmk`, pdfLaTeX and BibTeX. The source uses Computer Modern, 11-point text, A4 pages with 25 mm margins, and standard packages including `amsmath`, `amsthm`, `natbib` and `hyperref`. References use the `apalike` BibTeX style.
+The open `main.tex` document compiles directly with the built-in editor. For a local command-line build, use a TeX distribution with `latexmk` and pdfLaTeX. The source uses Computer Modern, 11-point text, A4 pages with 25 mm margins, and standard packages including `amsmath`, `amsthm`, `natbib` and `hyperref`. The embedded bibliography preserves the existing author-year reference format and requires no external bibliography file at compilation.
 
 ```bash
 cd projects/01_optimal_stopping/paper
@@ -19,11 +19,11 @@ Alternatively:
 latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -jobname=methods main.tex
 ```
 
-The output is `methods.pdf`. `make clean` removes auxiliary files while retaining the PDF. On Overleaf, upload this directory, select `main.tex` as the main document and use pdfLaTeX.
+The output is `methods.pdf`. `make clean` removes auxiliary files while retaining the PDF. On Overleaf, uploading `main.tex` alone is sufficient; select it as the main document and use pdfLaTeX.
 
 ## 2. Scope
 
-This version contains no raw or cleaned subscription observations, fitted market inputs, empirical summaries, result tables or data-derived figures. I retain the full numerical manuscript locally while publication of its derived findings is clarified. Removing empirical findings changes the scope: this document presents the mathematical framework and research design, not the complete empirical paper.
+This version contains no raw or cleaned subscription observations, fitted market inputs, empirical summaries, result tables or data-derived figures. Permission to publish derived research findings has been confirmed. I retain the complete numerical manuscript locally while preparing a publication version that excludes restricted observations and recoverable input data, following the [publication policy](../../../docs/publication_policy.md). Removing empirical findings changes the scope: this document presents the mathematical framework and research design, not the complete empirical paper.
 
 I apply established methods to the stated stopping problem and cite their published sources. I make no claim that the duality result, regression method, lognormal option integral or elementary stopping comparisons are new general theorems.
 

@@ -85,6 +85,10 @@ The remaining work includes a data audit, numerical stress tests, observed-contr
 
 The [research log](research_log.md) records progress, revisions and unresolved questions. Established models and algorithms are credited in the source register; the project must earn its research conclusions through reproducible evidence.
 
+## Publication status
+
+The [methods paper](paper/README.md) presents the mathematical framework without subscription observations. Permission to publish derived research findings has been confirmed. The complete numerical manuscript remains local while a release version is checked for exact quotes, recoverable input data and restricted supplements. The [publication policy](../../docs/publication_policy.md) specifies that distinction. Publication permission does not establish empirical model validity.
+
 ## Licensing
 
 Released original project code is under [MIT](../../LICENSE). Released original research writing, including the [methods-only paper](paper/README.md) and its LaTeX source, is under [CC BY 4.0](../../LICENSES/CC-BY-4.0.txt). The [licensing scope](../../LICENSING.md) preserves third-party terms and excludes private drafts, restricted observations and outputs awaiting publication clearance.

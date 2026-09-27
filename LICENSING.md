@@ -19,7 +19,7 @@ These grants cover original material that I make publicly available under this n
 
 Third-party datasets, observations, documents, figures, software and other source material retain their own terms, including when copied, extracted or embedded in a notebook or report. The [third-party notices](THIRD_PARTY_NOTICES.md) identify the included open datasets and their attribution requirements. Treasury, Eurostat and the author-maintained ECB shock estimates retain their existing reuse permissions; this notice neither replaces nor narrows those permissions.
 
-LSEG observations, cleaned exports and subsets are excluded. Publication of dependent estimates, tables, figures, numerical summaries and written findings remains subject to the unresolved source-permission review. Issuer, exchange, calendar, demonstration and other provider material requires its own assessment. The MIT licence for original extraction code does not grant access to, or permission to redistribute, the data or vendor material used with it.
+LSEG observations, cleaned exports, subsets and reversible transformations of observations are excluded. Permission to publish derived research findings was confirmed on 27 September 2026. Original estimates, research tables, figures, numerical summaries and written findings may be released after review for disclosure or reconstruction of restricted observations, as set out in the [publication policy](docs/publication_policy.md). Issuer, exchange, calendar, demonstration and other provider material requires its own assessment. The MIT licence for original extraction code does not grant access to, or permission to redistribute, the data or vendor material used with it.
 
 ## 3. Publication and contributions
 
