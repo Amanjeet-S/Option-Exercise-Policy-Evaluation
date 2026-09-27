@@ -4,6 +4,8 @@ In this methods-only paper for my optimal-stopping project, I develop the funded
 
 [Read the compiled paper](methods.pdf) or start with [the LaTeX source](main.tex). `main.tex` is self-contained: it includes the complete text and bibliography and can be compiled directly in a single-document editor. The files in `sections/` retain the preceding modular source for reference; edit `main.tex` for the current paper. [references.bib](references.bib) retains the citation metadata.
 
+The separate [numerical supplement](numerical_results.md) reports reviewed findings on bound tightness, terminal adjustments, training gains and computational allocation. It includes six tables, a figure and [derived summaries](numerical_results.json). It preserves the failed CPU-budget predictions and the absence of an eligible prospective sample. It does not replace the methods paper or alter its LaTeX source.
+
 ## 1. Build
 
 The open `main.tex` document compiles directly with the built-in editor. For a local command-line build, use a TeX distribution with `latexmk` and pdfLaTeX. The source uses Computer Modern, 11-point text, A4 pages with 25 mm margins, and standard packages including `amsmath`, `amsthm`, `natbib` and `hyperref`. The embedded bibliography preserves the existing author-year reference format and requires no external bibliography file at compilation.
@@ -23,7 +25,9 @@ The output is `methods.pdf`. `make clean` removes auxiliary files while retainin
 
 ## 2. Scope
 
-This version contains no raw or cleaned subscription observations, fitted market inputs, empirical summaries, result tables or data-derived figures. Permission to publish derived research findings has been confirmed. I retain the complete numerical manuscript locally while preparing a publication version that excludes restricted observations and recoverable input data, following the [publication policy](../../../docs/publication_policy.md). Removing empirical findings changes the scope: this document presents the mathematical framework and research design, not the complete empirical paper.
+The methods paper contains no raw or cleaned subscription observations, fitted market inputs, empirical summaries, result tables or data-derived figures. Its scope remains the mathematical framework and research design. Permission to publish derived research findings has been confirmed, and the separate numerical supplement releases selected findings under the [publication policy](../../../docs/publication_policy.md). Restricted observations, exact financial inputs, reconstructable supplements and the complete numerical manuscript remain local.
+
+The supplement's summary check uses only Python's standard library. Run `python3 projects/01_optimal_stopping/paper/verification/numerical_results.py` from the repository root. It checks table presentation, case coverage and selected rounded arithmetic identities. It does not rerun the experiments or constitute independent verification against the private evidence. The public baseline code is not a complete implementation of the supplement's experiments.
 
 I apply established methods to the stated stopping problem and cite their published sources. I make no claim that the duality result, regression method, lognormal option integral or elementary stopping comparisons are new general theorems.
 

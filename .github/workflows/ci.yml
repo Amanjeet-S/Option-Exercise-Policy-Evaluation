@@ -42,6 +42,8 @@ jobs:
         run: python -m pytest -q
       - name: Check documentation and retained source files
         run: python scripts/check_repository.py
+      - name: Check released numerical summary tables
+        run: python projects/01_optimal_stopping/paper/verification/numerical_results.py
       - name: Audit Germany data coverage
         run: python scripts/audit_germany_data.py
       - name: Execute notebooks from fresh kernels

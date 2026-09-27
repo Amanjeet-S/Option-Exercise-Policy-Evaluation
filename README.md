@@ -1,8 +1,8 @@
 # Optimal stopping and option pricing
 
-**Stage 1 in progress: mathematical foundations and data feasibility.** This is an unfinished research project. The current code is a prototype for validating the methods that a later study of observed option markets will require.
+I study exercise-policy loss, its measurement and the allocation of computation between fitting and evaluation. The [methods paper](paper/README.md) and [numerical supplement](paper/numerical_results.md) report the framework and conditional findings from thirteen related development specifications. Research remains in progress: all 26 allocation arms missed their predicted CPU budgets, and the prospective sample supplied no eligible observations for independent market validation.
 
-The investigation asks how much value is lost through approximate exercise policies, how reliably that loss can be measured, and when greater computational accuracy matters financially. The intended study combines model calibration using observed data with numerical analysis, independent policy evaluation and economic interpretation.
+The public code and introductory notebook remain the earlier numerical-validation baseline. The supplement adds reviewed research summaries and a check of their presentation and arithmetic; it does not release the complete licensed-data experiment implementation. The implementation and acquisition sections below describe that baseline and its initial development plan.
 
 ## Read first
 
@@ -87,7 +87,7 @@ The [research log](research_log.md) records progress, revisions and unresolved q
 
 ## Publication status
 
-The [methods paper](paper/README.md) presents the mathematical framework without subscription observations. Permission to publish derived research findings has been confirmed. The complete numerical manuscript remains local while a release version is checked for exact quotes, recoverable input data and restricted supplements. The [publication policy](../../docs/publication_policy.md) specifies that distinction. Publication permission does not establish empirical model validity.
+The [methods paper](paper/README.md) presents the mathematical framework, while the [numerical supplement](paper/numerical_results.md) reports selected derived findings, intervals and computational costs. Permission to publish derived research findings has been confirmed. Exact quotes, restricted financial inputs, reconstructable supplements and the complete local manuscript remain private. The [publication policy](../../docs/publication_policy.md) specifies that distinction. Public summary checks do not reproduce the licensed-data experiments, and publication permission does not establish empirical model validity.
 
 ## Licensing
 
