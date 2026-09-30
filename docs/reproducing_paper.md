@@ -12,7 +12,7 @@ The [paper](../projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Com
 | Table 9 and CPU accounting | Reconstruct forecasts, errors, affordability and expenditure from eighteen released workload records | Uses retained timings and historical forecast inputs; does not rerun the original workloads or pilot |
 | Original financial experiments | Implementation and input requirements are documented in the [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) | Exact replay requires lawful access to the original input, design, source and evidence archive; a provider subscription alone is insufficient |
 
-The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../projects/01_optimal_stopping/replication/historical_replay.md) reports one completed financial-study replay and identifies the remaining studies. Independent market validation remains unresolved.
+The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../projects/01_optimal_stopping/replication/historical_replay.md) reports two completed financial-study replays and identifies the remaining studies. Independent market validation remains unresolved.
 
 ## 2. Install once
 

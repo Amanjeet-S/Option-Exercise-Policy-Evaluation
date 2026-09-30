@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "recorded_date": "2026-09-30",
-  "scope": "One complete model-input replay and separate reconstruction of retained ancillary evidence.",
+  "scope": "Two complete model-input replays and separate reconstruction of retained ancillary evidence.",
   "complete_historical_replay": false,
   "archive_verification": {
     "dependency_files": 23472,
@@ -34,10 +34,32 @@
         "scipy": "1.16.3",
         "workers": 1
       }
+    },
+    {
+      "study": "terminal_repair",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "calendar_scenarios": 39,
+      "policy_scenario_records": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 286042,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "c6d0759ab8b5c06f76b03b96e1502a3fb168a722a6a50d839b4ca29aab854db9",
+      "fresh_manifest_sha256": "3d16284c0aad0d1f9515cc1eeaab1b896fa3cdaee7a684796335ebc7fd414a1d",
+      "detailed_private_comparison_sha256": "9b0b3e4cc7ad042cff543f7954dac4dcd39675c6e68af687f13f8426037c3695",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ],
+      "environment": {
+        "workers": 1,
+        "original_interpreter_versions_recorded": false
+      }
     }
   ],
   "pending_studies": [
-    "terminal_repair",
     "terminal_training",
     "training_evaluation",
     "allocation_pilot",
