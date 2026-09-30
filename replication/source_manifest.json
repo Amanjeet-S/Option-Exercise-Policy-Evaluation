@@ -8,7 +8,7 @@
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
       "bytes": 7564,
-      "sha256": "89ffe97506cce73119aeb6d95d8e99661afcd7037931d259d9b05708982b9312"
+      "sha256": "52ef7f4b84d2736683922409d21ae7020aeafe8e36351f5bd75fe2f1dbea32f7"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -157,14 +157,14 @@
     {
       "path": "projects/01_optimal_stopping/replication/historical_replay.json",
       "category": "source_input_validation",
-      "bytes": 3359,
-      "sha256": "1b0c16b8593864edd359e067345c8bb469e6126f1a717a25a22d32b47de745c4"
+      "bytes": 7070,
+      "sha256": "1edc39c065aafeb65838317ce4aec103b7538fd9ea62642f2b2113a5b75ba768"
     },
     {
       "path": "projects/01_optimal_stopping/replication/historical_replay.md",
       "category": "research_document",
-      "bytes": 3990,
-      "sha256": "01aea88b9b4343c4e025126a19f2e03859167521ded779da115a84dbfc3122af"
+      "bytes": 5257,
+      "sha256": "9d1ec353af91654dce0b0cbc0208843dd7d171bd075c1022af94f90c0f85dc05"
     },
     {
       "path": "projects/01_optimal_stopping/replication/input.schema.json",

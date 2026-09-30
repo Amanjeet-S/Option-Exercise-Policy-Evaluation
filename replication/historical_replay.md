@@ -12,6 +12,10 @@ The value-martingale replay uses Python 3.13.9, NumPy 2.3.5 and SciPy 1.16.3, ma
 
 I also repeated the complete terminal-adjustment study. Across thirteen model cases and three calendar settings, all 624 combinations of policies and calendars agree exactly with the original numerical records. The complete summary agrees, including the extension reported in Table 2. The comparison covers 286,042 scalar fields and requires exact equality after excluding measured durations, execution timestamps and separately verified artifact hashes. The replay uses one worker. The original terminal-adjustment launch record does not identify interpreter or library versions, so it does not support a separate claim of environment-version identity.
 
+The separate terminal-target retraining study also reproduces all 624 policy and calendar combinations exactly. This repeats the policy fitting and evaluation calculations underlying the terminal-target comparison, in addition to the reconstruction of interval counts from saved results described below.
+
+The allocation pilot reproduces the financial outputs of 416 statistical pairs and 390 further evaluations across thirteen models. Its 65 setup constructions also agree. Fresh timing measurements can produce different pilot allocations; the main replay preserves the original registered allocations. Under those fixed counts, all 5,030 main pairs and their financial summaries agree exactly. The prospective allocation replay likewise reproduces all 3,978 primary pairs across nine arms, together with its four warm-up pairs and retained financial comparisons. Timing measurements and quantities derived from them remain separate observations. The paper's timing columns continue to refer to the original executions.
+
 Source and input verification covers 23,472 files across 89 manifests. These byte checks establish consistency with the preserved archive; they do not establish the financial validity of its inputs.
 
 ## 3. Reconstructed ancillary findings
@@ -26,11 +30,11 @@ The delete-one sensitivity results and their tabular output also agree byte for 
 | --- | --- |
 | Value-martingale assessment | Complete; exact agreement of retained numerical outputs |
 | Terminal adjustment | Complete; exact agreement of retained numerical outputs |
-| Terminal-target retraining | Pending |
+| Terminal-target retraining | Complete; exact agreement of retained financial outputs |
 | Repeated-training evaluation | Pending |
-| Allocation pilot | Pending |
-| Main allocation | Pending |
-| Prospective allocation | Pending |
+| Allocation pilot | Complete; financial outputs agree, with fresh timing-based allocations excluded |
+| Main allocation | Complete; financial outputs agree under the original registered counts |
+| Prospective allocation | Complete; financial outputs agree, with timing-based ratios excluded |
 | CPU workloads | Pending |
 
 The [licensed-input guide](licensed_reproduction.md) supplies the original study commands and the comparison procedure. The CPU records support comparison of retained workload identities, with the documented limitation that financial estimates were not saved independently of their timing-contaminated digest. Fresh processor observations cannot reproduce historical durations by specification. Original acquisition, calibration and earlier pricing references remain supplied evidence rather than newly executed computations.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "recorded_date": "2026-09-30",
-  "scope": "Two complete model-input replays and separate reconstruction of retained ancillary evidence.",
+  "scope": "Six complete model-input replays and separate reconstruction of retained ancillary evidence.",
   "complete_historical_replay": false,
   "archive_verification": {
     "dependency_files": 23472,
@@ -57,14 +57,95 @@
         "workers": 1,
         "original_interpreter_versions_recorded": false
       }
+    },
+    {
+      "study": "terminal_training",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "calendar_scenarios": 39,
+      "policy_scenario_records": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 530066,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "cb122acde8279da3f869da6ee03d155da10dd3618f6fbf1341de92603b85cde6",
+      "fresh_manifest_sha256": "dd7f39ae9a2964c04c5cc2b0b23f7618958d8fe0c8a22116d2dffc32935e98ae",
+      "detailed_private_comparison_sha256": "0d8fc47debfca1f8ba04585857fa4853ab154580ee72e6baa110e07bb2a2308c",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ]
+    },
+    {
+      "study": "allocation_pilot",
+      "process_exit_code": 0,
+      "model_blocks": 13,
+      "statistical_pairs": 416,
+      "timing_evaluations": 390,
+      "setup_constructions": 65,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 804423,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "61d5603b32c2d91bd69f7bb759d35b7c11e9bdcaedfbb45b47f4be8da2961c8e",
+      "fresh_manifest_sha256": "a82f490daef56835fabd89ff355f80b11840c6a31ea222e5ec8115b681b9c2e5",
+      "detailed_private_comparison_sha256": "376f5c6c56905e9eef8278166d52a33c7e610c5ed4fc6c28bfc19bf6efc9e97a",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Allocations derived from fresh pilot timings; the subsequent main replay uses the original registration"
+      ]
+    },
+    {
+      "study": "training_allocation",
+      "process_exit_code": 0,
+      "main_pairs": 5030,
+      "model_summaries": 13,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 4820056,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "a5b45731394b7962059d9e1b4924ac9c4eac627e2c4925c4ecdcea55ff9563b9",
+      "fresh_manifest_sha256": "ba2ab7c4420de4e3e95c14222b7ab28cf43babfaa17776af4fdba9fe2b8bd2a0",
+      "detailed_private_comparison_sha256": "e64775baa40e1c6ed7823bb7bf4bff140c92b9a78f860b0c3c409bab62124a82",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Quantities derived from fresh timing measurements"
+      ]
+    },
+    {
+      "study": "prospective_allocation",
+      "process_exit_code": 0,
+      "primary_pairs": 3978,
+      "arms": 9,
+      "setup_records": 9,
+      "warmup_pairs": 4,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 3766877,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "6be93cfab97d6d89d51abeda3e7eaf88c67d01088beca2bee8583b12c4ced825",
+      "fresh_manifest_sha256": "038199dd2dd127c40289ee78a40666016396f338b70a19641dc63159f5dbb051",
+      "detailed_private_comparison_sha256": "8039bd684802e727065bfc9a1cc121531a3ff50b2faf57a333f64503a05b817e",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Quantities derived from fresh timing measurements"
+      ]
     }
   ],
   "pending_studies": [
-    "terminal_training",
     "training_evaluation",
-    "allocation_pilot",
-    "training_allocation",
-    "prospective_allocation",
     "cpu_prediction"
   ],
   "ancillary_reconstruction": {
