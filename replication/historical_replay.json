@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "recorded_date": "2026-09-30",
-  "scope": "Six complete model-input replays and separate reconstruction of retained ancillary evidence.",
+  "scope": "Six complete financial-output replays, one complete CPU workload replay with retained identity checks, and separate reconstruction of retained ancillary evidence.",
   "complete_historical_replay": false,
   "archive_verification": {
     "dependency_files": 23472,
@@ -142,11 +142,37 @@
         "Runtime environment and telemetry",
         "Quantities derived from fresh timing measurements"
       ]
+    },
+    {
+      "study": "cpu_prediction",
+      "process_exit_code": 0,
+      "complete_workloads": 18,
+      "validation_pairs": 7956,
+      "local_calibration_pairs": 288,
+      "pass_calibration_pairs": 288,
+      "warmup_pairs": 4,
+      "setup_records": 55,
+      "financial_estimate_values_retained": 0,
+      "exact_retained_field_agreement": true,
+      "comparison_scope": "Saved policy, path and approximation fingerprints, stream identities, counts and retained non-timing metadata. Financial estimate equality cannot be established because those values were not saved separately.",
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 528501,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "84f54e877a6843fa202b6699585aa5d840f3f1b3c2b1ddb05e282cafab533bfc",
+      "fresh_manifest_sha256": "2f603fe7e3a49632796807c2251328a92cc9462511e12d6eda766db58d9a443d",
+      "detailed_private_comparison_sha256": "b96947601f37a0548d742f93096f11aa28599c99377b0dfef7fe7dbc6d52f15d",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Forecasts, accounting results and ratios derived from fresh timing measurements",
+        "Combined financial-record digests containing observed durations and financial values not otherwise retained"
+      ]
     }
   ],
   "pending_studies": [
-    "training_evaluation",
-    "cpu_prediction"
+    "training_evaluation"
   ],
   "ancillary_reconstruction": {
     "completed": true,

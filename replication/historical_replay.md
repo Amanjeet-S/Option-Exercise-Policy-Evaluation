@@ -16,6 +16,8 @@ The separate terminal-target retraining study also reproduces all 624 policy and
 
 The allocation pilot reproduces the financial outputs of 416 statistical pairs and 390 further evaluations across thirteen models. Its 65 setup constructions also agree. Fresh timing measurements can produce different pilot allocations; the main replay preserves the original registered allocations. Under those fixed counts, all 5,030 main pairs and their financial summaries agree exactly. The prospective allocation replay likewise reproduces all 3,978 primary pairs across nine arms, together with its four warm-up pairs and retained financial comparisons. Timing measurements and quantities derived from them remain separate observations. The paper's timing columns continue to refer to the original executions.
 
+I repeated all eighteen complete CPU workloads, comprising 7,956 validation pairs, 576 calibration pairs and four warm-up pairs. Retained policy, path and approximation fingerprints, stream identities and non-timing metadata agree exactly. The original workload records do not retain financial estimates separately, and their combined financial-record digests include measured durations. Equality of those estimates therefore cannot be established. The replay supplies new processor measurements; it does not replace the original CPU observations reported in the paper.
+
 Source and input verification covers 23,472 files across 89 manifests. These byte checks establish consistency with the preserved archive; they do not establish the financial validity of its inputs.
 
 ## 3. Reconstructed ancillary findings
@@ -35,6 +37,6 @@ The delete-one sensitivity results and their tabular output also agree byte for 
 | Allocation pilot | Complete; financial outputs agree, with fresh timing-based allocations excluded |
 | Main allocation | Complete; financial outputs agree under the original registered counts |
 | Prospective allocation | Complete; financial outputs agree, with timing-based ratios excluded |
-| CPU workloads | Pending |
+| CPU workloads | Complete; exact agreement of retained workload identities, with financial estimates unavailable for comparison |
 
 The [licensed-input guide](licensed_reproduction.md) supplies the original study commands and the comparison procedure. The CPU records support comparison of retained workload identities, with the documented limitation that financial estimates were not saved independently of their timing-contaminated digest. Fresh processor observations cannot reproduce historical durations by specification. Original acquisition, calibration and earlier pricing references remain supplied evidence rather than newly executed computations.
