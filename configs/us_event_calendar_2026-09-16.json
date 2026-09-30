@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-16",
+  "classification": "Current-source calendar specification; not a historical publication vintage or an accepted market calibration",
+  "coverage_start": "2026-09-01",
+  "coverage_end": "2027-02-01",
+  "dtc_schedule_through": "2026-12-31",
+  "timezone": "America/New_York",
+  "core_open": "09:30:00",
+  "core_close": "16:00:00",
+  "trading_holidays": {
+    "2026-09-07": "Labor Day",
+    "2026-11-26": "Thanksgiving Day",
+    "2026-12-25": "Christmas Day",
+    "2027-01-01": "New Year's Day",
+    "2027-01-18": "Martin Luther King Jr. Day"
+  },
+  "settlement_holidays": {
+    "2026-09-07": "DTC holiday",
+    "2026-10-12": "DTC open without settlement services: Columbus Day",
+    "2026-11-11": "DTC open without settlement services: Veterans Day",
+    "2026-11-26": "DTC holiday",
+    "2026-12-25": "DTC holiday",
+    "2027-01-01": "PROVISIONAL: Federal Reserve and NYSE holiday; no DTC 2027 schedule obtained",
+    "2027-01-18": "PROVISIONAL: Federal Reserve and NYSE holiday; no DTC 2027 schedule obtained"
+  },
+  "early_closes": {
+    "2026-11-27": "13:00:00",
+    "2026-12-24": "13:00:00"
+  },
+  "assumptions": {
+    "ordinary_weekdays": "Weekdays outside listed exceptions are scheduled sessions and, within DTC coverage, normal settlement days. Unscheduled closures are not modelled.",
+    "2027_settlement": "Explicit exploratory projection from weekday, NYSE and Federal Reserve calendars. Strict date generation rejects it.",
+    "exercise_decisions": "Underlying core close on each session, a restricted Bermudan research convention, not the full listed American opportunity set.",
+    "model_ex_event": "Underlying core opening at 09:30 New York on the issuer ex-date. This is a numerical timestamp convention, not a legal entitlement timestamp.",
+    "broker_instruction_cutoff": null,
+    "series_last_trading_time": null,
+    "settlement_cash_time_of_day": null,
+    "standard_expiry_regulatory_limit": "17:30 New York under FINRA Rule 2360(b)(23)(A)(iii); earlier firm cut-offs and modified-close provisions remain separate.",
+    "historical_publication_vintage_verified": false
+  },
+  "sources": [
+    {
+      "id": "nyse_sessions",
+      "url": "https://www.nyse.com/markets/hours-calendars",
+      "consulted": "2026 and 2027 holiday rows, 2026 early closes and core equity session hours in current extracted page",
+      "private_evidence": "data/private/research/dates_2026-09-16/dated-nyse-calendar.md",
+      "sha256": "d35d1c694f1a6da252d9f1afb59741bb8cc78d24712d1ebb33e3a91db74cd04a"
+    },
+    {
+      "id": "dtc_2026",
+      "url": "https://www.dtcc.com/Globals/PDFs/2025/October/15/23036-25",
+      "document_date": "2025-10-15",
+      "consulted": "Indexed primary-source text of notice 23036-25, anticipated 2026 schedule including no-settlement footnote. Both original URL forms returned 404; original PDF not inspected.",
+      "private_evidence": "data/private/research/dates_2026-09-16/dtc_annual_indexed_excerpt.txt",
+      "sha256": "cc8bb6c166aaa16d3d4bf9668499437f9370660204458ff7d4417e093d176337"
+    },
+    {
+      "id": "dtc_columbus_2026",
+      "url": "https://files.dtcc.com/download/assets/24807-26/cb01a23cb14611f185f8c6d844b54df3",
+      "document_date": "2026-09-15",
+      "consulted": "Original notice 24807-26, both pages extracted and first page visually inspected. No settlement 12 October; double settlement 13 October.",
+      "private_evidence": "data/private/research/dates_2026-09-16/dtc_columbus_2026.pdf",
+      "sha256": "571c0bfa44f74d8cb31617e51eb109db324725097778e26af9ccc721d5106c38"
+    },
+    {
+      "id": "federal_reserve",
+      "url": "https://www.frbservices.org/about/holiday-schedules",
+      "consulted": "2026 and 2027 banking holiday rows. Does not establish DTC 2027 services.",
+      "private_evidence": "data/private/research/dates_2026-09-16/fed_holidays.html",
+      "sha256": "6471fad18b7d73ef7c485294ced522b988c80f879f42c458a7eac928d08b8e18"
+    },
+    {
+      "id": "occ_2026",
+      "url": "https://infomemo.theocc.com/infomemos?number=57897",
+      "document_date": "2025-12-12",
+      "consulted": "Extracted notice 57897: 2026 holiday, banking-holiday and expiry table. Direct retrieval returned 403; PDF not visually inspected.",
+      "private_evidence": "data/private/research/dates_2026-09-16/dated-occ-holidays-0.md",
+      "sha256": "947a26ed5e3546b029f788e348f058639223251a32f908aabc8d5ed742fc3a18"
+    },
+    {
+      "id": "arca_late_close",
+      "url": "https://www.nyse.com/publicdocs/nyse/markets/arca-options/Options_Late_Close_ARCO.csv",
+      "consulted": "Current late-close class list contains SPY. Class membership alone is not certification of each sampled series' expiry session.",
+      "private_evidence": "data/private/research/dates_2026-09-16/nyse_arca_late_close.csv",
+      "sha256": "647a07379321348ff744947087df0e7accfae2c951b37b7efe9a70f48ecd01b0"
+    }
+  ]
+}
