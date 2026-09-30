@@ -1,7 +1,7 @@
 # Exercise-policy loss under computational and financial constraints: numerical findings
 
 Amanjeet Singh  
-27 September 2026
+30 September 2026
 
 Keywords: optimal stopping; American options; martingale duality; Monte Carlo; training uncertainty; computational allocation.
 
@@ -15,7 +15,7 @@ The original design crosses 5,000 and 20,000 training paths with polynomial degr
 
 ## 2. Tightening a bound without changing the policy
 
-The policy fitting follows the continuation-regression approach of [Longstaff and Schwartz (2001)](#9-references). The martingale comparison applies the dual construction of [Haugh and Kogan (2004)](#9-references), within the established primal-dual framework of [Andersen and Broadie (2004)](#9-references). If $V$ is the optimal value, $V_\pi$ the policy value and $U(M)$ a valid dual upper payoff, the expected gap satisfies
+The policy fitting follows the continuation-regression approach of [Longstaff and Schwartz (2001)](#11-references). The martingale comparison applies the dual construction of [Haugh and Kogan (2004)](#11-references), within the established primal-dual framework of [Andersen and Broadie (2004)](#11-references). If $V$ is the optimal value, $V_\pi$ the policy value and $U(M)$ a valid dual upper payoff, the expected gap satisfies
 
 $$
 \mathbb E[G_\pi(M)]=(V-V_\pi)+\{\mathbb E[U(M)]-V\}.
@@ -36,7 +36,7 @@ Table 1 reports mean estimated gaps across the 52 frozen policies in each config
 
 <!-- endtable:measurement -->
 
-The fine value construction reduces the mean gap by 91.42 to 95.23 per cent relative to the slope construction. Its improvement over the coarse value construction is much smaller. The exercise instructions are identical throughout this comparison, so the reduction provides more informative evidence about their loss rather than recovering additional policy value. I do not replace the unknown optimum with a deterministic grid price. Non-nested upper evaluation is also established in [Belomestny, Bender and Schoenmakers (2009)](#9-references); analytical centring alone is not a claim of theoretical novelty.
+The fine value construction reduces the mean gap by 91.42 to 95.23 per cent relative to the slope construction. Its improvement over the coarse value construction is much smaller. The exercise instructions are identical throughout this comparison, so the reduction provides more informative evidence about their loss rather than recovering additional policy value. I do not replace the unknown optimum with a deterministic grid price. Non-nested upper evaluation is also established in [Belomestny, Bender and Schoenmakers (2009)](#11-references); analytical centring alone is not a claim of theoretical novelty.
 
 ## 3. Changing the terminal instruction
 
@@ -167,19 +167,82 @@ Table 6 decomposes aggregate CPU charges in seconds. Predictions retain the trai
 
 Predicted totals of 673.405 and 672.594 CPU seconds become 305.977 and 296.953 seconds for the reference and selected arms. Both training and evaluation become cheaper; setup explains less than one per cent of either shortfall. Recorded software and requested thread settings agree across stages, but effective native thread counts and processor conditions were not measured. The evidence does not identify the cause of the cost change.
 
-The pilot additionally consumes 457.980 process CPU seconds and 639.279 elapsed seconds. Its expense must be included when assessing a one-off application. Process CPU and elapsed time measure different aspects of expenditure and are not interchangeable. These frozen results support improved estimated precision about the training gain under the retained specifications. They do not establish a transferable CPU budget, an equal-cost optimum or the best allocation for assessing one frozen policy. Further CPU validation must be a separately specified experiment; it cannot retrospectively repair these predictions.
+The pilot additionally consumes 457.980 process CPU seconds and 639.279 elapsed seconds. Its expense must be included when assessing a one-off application. Process CPU and elapsed time measure different aspects of expenditure and are not interchangeable. These frozen results support improved estimated precision about the training gain under the retained specifications. They do not establish a transferable CPU budget, an equal-cost optimum or the best allocation for assessing one frozen policy. The separately specified timing experiment in Section 8 assesses new forecasts. It does not retrospectively repair these original predictions.
 
-## 7. Empirical limits
+## 7. Prospective allocation under a fixed design
+
+I next selected cases 5, 6 and 10 because the preceding analysis exposed ambiguity in the variance components or sensitivity to the cost scenario. I fixed three candidate allocations in each case, using 128, 256 and 4,096 evaluation paths, before drawing new samples. Each independent pair again trains degree-four policies on 5,000 and 20,000 paths and estimates their gain with shared evaluation paths. The nine arms complete 3,978 pairs; four warm-up pairs are separate. The financial specifications are unchanged. This experiment is prospective conditional on the selected design and earlier information, and introduces no new market observations.
+
+For $R$ independent pair means, the sample variance divided by $R$ estimates the variance of their mean. Conditional on the fixed design and the independent sampling model, that estimator is unbiased. It does not estimate mean squared error against an observed population truth. The counts in Table 7 satisfy both retained planning-cost scenarios. A prespecified rule minimising the worst relative variance over a declared enclosure of the asymptotic Fieller component-ratio set selects 256 paths in all three cases. The ratio construction follows [Fieller (1954)](#11-references) and the inversion account in [von Luxburg and Franz (2009)](#11-references); its application here uses asymptotically normal component contrasts rather than an exact normal-sample result. That decision is conditional on the set and cost assumptions; it does not certify that they contain the unknown population ratio or future expenditure.
+
+<!-- table:prospective_allocation -->
+
+| Case | Pairs, 128 paths | Pairs, 256 paths | Pairs, 4,096 paths | Variance ratio, 128 | Variance ratio, 256 | CPU ratio, 256 | Variance × CPU ratio, 256 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 | 776 | 687 | 91 | 0.169888 | 0.167421 | 1.510736 | 0.252928 |
+| 6 | 674 | 632 | 141 | 0.396693 | 0.340606 | 0.901768 | 0.307147 |
+| 10 | 438 | 399 | 140 | 0.364378 | 0.330904 | 0.655844 | 0.217021 |
+
+<!-- endtable:prospective_allocation -->
+
+Table 7. Independent pair counts and descriptive efficiency ratios for the prospective experiment. Each ratio uses the freshly simulated 4,096-path reference within the same case. CPU includes the arm's approximation construction, training and evaluation. The selected 256-path variance estimates are 16.7, 34.1 and 33.1 per cent of the reference estimates. Their variance-times-CPU ratios remain below one, but actual expenditures differ. These figures do not establish an improvement at exactly equal realised cost.
+
+I registered twelve contrasts: six differences in mean gain and six differences in the variance of the complete-sample mean. Each subtracts the 4,096-path reference from a smaller-path alternative. The intervals in Table 8 use the common cutoff $13/4$ and plug-in sampling variances, with asymptotic calibration for the twelve-contrast family. Their finite-sample coverage has not been validated. Mean differences are in USD per share in premium-quote units; variance differences are in squared premium-quote units. These are difference intervals, not confidence limits for the ratios in Table 7.
+
+<!-- table:prospective_contrasts -->
+
+| Case | Evaluation paths | Mean-difference interval | Variance-difference interval |
+| --- | --- | --- | --- |
+| 5 | 128 | [-0.009932236, 0.01029046] | [-1.091314e-05, -2.823286e-06] |
+| 5 | 256 | [-0.009629916, 0.01057145] | [-1.093775e-05, -2.839513e-06] |
+| 6 | 128 | [-0.005816441, 0.009489616] | [-3.959426e-06, -8.309205e-07] |
+| 6 | 256 | [-0.005216458, 0.009779123] | [-4.164466e-06, -1.071226e-06] |
+| 10 | 128 | [-0.01285611, 0.009544336] | [-1.018491e-05, -8.808303e-07] |
+| 10 | 256 | [-0.01311862, 0.009005322] | [-1.041016e-05, -1.23835e-06] |
+
+<!-- endtable:prospective_contrasts -->
+
+All six mean intervals include zero and all six variance-difference intervals have negative upper endpoints. The first finding is compatible with the common target, but does not establish equivalence. The second supports the precision comparison under the stated asymptotic procedure. The 256-path arm has lower point-estimated variance than the 128-path arm in each case, but that comparison lies outside the registered inferential family. I do not claim statistically established superiority between those two candidates.
+
+Fourth-moment concentration qualifies the variance inference. In case 5's 256-path arm, one pair contributes 63.98 per cent of the squared variance-influence sum. The corresponding largest contribution is 49.84 per cent in case 10's reference. These percentages concern estimated uncertainty about variance, not the share of the variance itself. No pair is removed. Large replication counts and a conservative cutoff do not by themselves validate the normal approximation under this observed concentration.
+
+All nine arms remain within their original numerical budgets, but none meets the ten per cent forecast tolerance. Actual-to-forecast ratios range from 0.514162 to 0.873429. The primary numerical charge is 349.644 CPU seconds against a combined forecast of 487.779 seconds. Fixed counts are retained despite unused predicted budgets. The result strengthens the observed precision comparison while leaving expenditure prediction unresolved at this stage.
+
+## 8. Local calibration of CPU forecasts
+
+I separately tested whether new local timing measurements improve predictions for those same nine complete allocations. Two passes execute fixed counts in opposite orders, giving 7,956 validation pairs, 576 calibration pairs and four warm-up pairs. At each pass's start, sixteen calibration pairs per arm determine a forecast of the complete arm. A second set of sixteen pairs immediately before each arm determines an immediate forecast. Both extrapolate the measured mean pair cost and include a fresh approximation construction. The unchanged historical forecast supplies the third comparison. The middle arm necessarily retains its middle position under reversal.
+
+For each complete arm, I define absolute relative error as $|C-\widehat C|/\widehat C$, with actual numerical CPU $C$ and forecast $\widehat C$. Table 9 averages this error equally across eighteen arms. The tolerance requires $C/\widehat C$ to lie between 0.9 and 1.1. The separate upper allowance is $1.1\widehat C$ and has no probabilistic coverage interpretation.
+
+<!-- table:cpu_prediction -->
+
+| Forecast | Within ten per cent | Within upper allowance | Mean absolute relative error (per cent) | Actual / forecast range |
+| --- | --- | --- | --- | --- |
+| Historical | 1/18 | 18/18 | 29.065 | [0.5154, 1.0782] |
+| Pass-start calibration | 16/18 | 16/18 | 3.669 | [0.9237, 1.2081] |
+| Immediate calibration | 17/18 | 17/18 | 2.841 | [0.9576, 1.2261] |
+
+<!-- endtable:cpu_prediction -->
+
+Local calibration reduces mean absolute relative error from 29.065 per cent to 3.669 per cent at pass start and 2.841 per cent immediately before execution. The immediate forecast meets the tolerance in seventeen of eighteen arms. Its remaining failure reaches an actual-to-forecast ratio of 1.2261 and exceeds the original numerical budget. Every point predictor classifies all eighteen arms as affordable, although only seventeen are. Thus improved average prediction does not guarantee budget protection.
+
+The historical upper allowance contains all eighteen observed costs, but classifies none of the arms as affordable at the unchanged budgets. The pass-start and immediate allowances classify eighteen and seventeen arms as affordable, respectively; each still makes one false affordability declaration. The comparison therefore separates tolerance, upper-allowance exceedance and affordability. A conservative forecast can cover every retained cost while being unusable for the planned allocations.
+
+Validation consumes 700.274 numerical CPU seconds. Pass-start and immediate calibration add 44.623 and 44.323 seconds; warm-up adds 0.332 seconds. Total numerical expenditure is 789.552 CPU seconds, while the measured process consumes 811.658 CPU seconds and 842.795 elapsed seconds. Process timing includes in-run recording and control operations, but excludes interpreter startup, pre-launch verification and post-run manifest hashing. Charging either calibration scheme alone to its associated validation arm retains seventeen affordable arms. Charging both schemes, as actually performed in this comparison, leaves fourteen. The latter count describes the two-scheme experiment, not deployment of immediate calibration alone.
+
+These two passes share one operating session. Fresh simulation streams do not make processor conditions independent and identically distributed, and reversed order does not identify a causal order effect. I make no statistical prediction-coverage claim or cross-device guarantee. Numerical kernels are unchanged, but the timing extension retains compact verification records instead of serialising every fitted coefficient; whole-process expenditure consequently belongs to this recording workflow. I use these runs only to assess cost prediction, not as additional inference about financial policy gains.
+
+## 9. Empirical limits
 
 A prospective protocol specified fifteen intended matched observations over five sessions, 21 to 25 September 2026. None passed the primary quote-measurement rule. There is therefore no prospective volatility fit, held-out put prediction or exercise-policy performance estimate. An empty eligible sample is neither a zero loss nor a rejection of the pricing model. More permissive exploratory screens cannot replace the primary rule after inspection.
 
 The computational findings consequently remain conditional. Funding, distribution entitlements, quote alignment and historical contract terms require independent validation before the results can support claims about actual exercise performance. Additional state variables would also change the numerical problem: a deterministic value approximation is particularly effective in this one-state setting. Neither greater simulation precision nor more complex probability theory removes these financial and empirical restrictions.
 
-## 8. Public evidence and reproducibility
+## 10. Public evidence and reproducibility
 
 The [released summaries](numerical_results.json) contain derived research outputs, including the displayed gains, intervals and CPU comparisons. Raw subscription observations, quote midpoints and spreads, exact financial inputs and reconstructable input supplements remain private under the [publication policy](../../../docs/publication_policy.md). Rounding controls presentation; it is not used to disguise restricted observations. Publication permission for derived findings does not make the underlying subscription data redistributable.
 
-From the repository root, the following standard-library command verifies the six table renderings, case coverage and selected arithmetic identities:
+From the repository root, the following standard-library command verifies the nine table renderings, case coverage, declared summary fields and selected arithmetic identities:
 
 ```bash
 python3 projects/01_optimal_stopping/paper/verification/numerical_results.py
@@ -187,14 +250,20 @@ python3 projects/01_optimal_stopping/paper/verification/numerical_results.py
 
 This check does not rerun simulations or independently verify the summaries against restricted observations. The public baseline implementation and mathematical checks are not a complete replication package for this supplement. I retain the complete manuscript, experiment records and input provenance locally. Readers can inspect the stated arguments and public arithmetic; reproducing the licensed-data experiments additionally requires authorised inputs and the complete experiment implementation.
 
-## 9. References
+## 11. References
 
 Andersen, L. and Broadie, M. (2004). Primal-dual simulation algorithm for pricing multidimensional American options. *Management Science*, 50(9), 1222–1234. [doi:10.1287/mnsc.1040.0258](https://doi.org/10.1287/mnsc.1040.0258).
 
 Belomestny, D., Bender, C. and Schoenmakers, J. (2009). True upper bounds for Bermudan products via non-nested Monte Carlo. *Mathematical Finance*, 19(1), 53–71. [doi:10.1111/j.1467-9965.2008.00357.x](https://doi.org/10.1111/j.1467-9965.2008.00357.x).
 
+Fieller, E. C. (1954). Some problems in interval estimation. *Journal of the Royal Statistical Society, Series B (Methodological)*, 16(2), 175–185. [doi:10.1111/j.2517-6161.1954.tb00159.x](https://doi.org/10.1111/j.2517-6161.1954.tb00159.x).
+
 Haugh, M. B. and Kogan, L. (2004). Pricing American options: A duality approach. *Operations Research*, 52(2), 258–270. [doi:10.1287/opre.1030.0070](https://doi.org/10.1287/opre.1030.0070).
 
 Longstaff, F. A. and Schwartz, E. S. (2001). Valuing American options by simulation: A simple least-squares approach. *The Review of Financial Studies*, 14(1), 113–147. [doi:10.1093/rfs/14.1.113](https://doi.org/10.1093/rfs/14.1.113).
 
+von Luxburg, U. and Franz, V. H. (2009). A geometric approach to confidence sets for ratios: Fieller's theorem, generalizations, and bootstrap. *Statistica Sinica*, 19(3), 1095–1117. [Published article](https://www3.stat.sinica.edu.tw/sstest/j19n3/j19n312/j19n312.html).
+
 These references identify the established methodological foundations. The [literature comparison](contribution_review.md) records the source versions and material consulted for the methods paper. This supplement consolidates retained experiments and does not claim a new general theorem or a further full-paper literature review.
+
+For ratio inference, I consulted the final journal text of von Luxburg and Franz (2009), including the inversion arguments on pages 1101–1105, and visually checked pages 1102–1103. For Fieller (1954), I read the publisher's extracted text of pages 175–177, including equations (5)–(10). I did not visually inspect those original pages; the accessible text and the checked 2009 presentation support the formula transcription.

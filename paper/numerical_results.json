@@ -1,8 +1,8 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "title": "Exercise-policy loss: released numerical summaries",
-  "date": "2026-09-27",
-  "scope": "Conditional computational findings from thirteen related development specifications. This is a derived-summary supplement, not a market-observation dataset or a complete experiment replication package.",
+  "date": "2026-09-30",
+  "scope": "Conditional computational findings from thirteen related development specifications. This is a derived-summary supplement, not a market-observation dataset or a complete experiment replication package. The prospective allocation and timing extensions use three inspected specifications, fixed counts and fresh simulations without additional market observations.",
   "monetary_unit": "USD per share in premium-quote units",
   "rounding": "Values use the displayed precision of the retained numerical manuscript. Rounding is for presentation; source observations are excluded rather than rounded for release.",
   "measurement": [
@@ -482,5 +482,211 @@
     "ratio_confidence_intervals": false,
     "validated_equal_realised_budget": false,
     "interval_type": "Approximate pointwise 95 per cent Student intervals across independent training-pair means; nominal coverage has not been validated."
+  },
+  "prospective_allocation": [
+    {
+      "case": 5,
+      "pairs_128": 776,
+      "pairs_256": 687,
+      "pairs_4096": 91,
+      "variance_ratio_128": 0.169888,
+      "variance_ratio_256": 0.167421,
+      "cpu_ratio_256": 1.510736,
+      "variance_cpu_ratio_256": 0.252928
+    },
+    {
+      "case": 6,
+      "pairs_128": 674,
+      "pairs_256": 632,
+      "pairs_4096": 141,
+      "variance_ratio_128": 0.396693,
+      "variance_ratio_256": 0.340606,
+      "cpu_ratio_256": 0.901768,
+      "variance_cpu_ratio_256": 0.307147
+    },
+    {
+      "case": 10,
+      "pairs_128": 438,
+      "pairs_256": 399,
+      "pairs_4096": 140,
+      "variance_ratio_128": 0.364378,
+      "variance_ratio_256": 0.330904,
+      "cpu_ratio_256": 0.655844,
+      "variance_cpu_ratio_256": 0.217021
+    }
+  ],
+  "prospective_contrasts": [
+    {
+      "case": 5,
+      "evaluation_paths": 128,
+      "mean_lower": -0.009932236,
+      "mean_upper": 0.01029046,
+      "variance_lower": -1.091314e-05,
+      "variance_upper": -2.823286e-06
+    },
+    {
+      "case": 5,
+      "evaluation_paths": 256,
+      "mean_lower": -0.009629916,
+      "mean_upper": 0.01057145,
+      "variance_lower": -1.093775e-05,
+      "variance_upper": -2.839513e-06
+    },
+    {
+      "case": 6,
+      "evaluation_paths": 128,
+      "mean_lower": -0.005816441,
+      "mean_upper": 0.009489616,
+      "variance_lower": -3.959426e-06,
+      "variance_upper": -8.309205e-07
+    },
+    {
+      "case": 6,
+      "evaluation_paths": 256,
+      "mean_lower": -0.005216458,
+      "mean_upper": 0.009779123,
+      "variance_lower": -4.164466e-06,
+      "variance_upper": -1.071226e-06
+    },
+    {
+      "case": 10,
+      "evaluation_paths": 128,
+      "mean_lower": -0.01285611,
+      "mean_upper": 0.009544336,
+      "variance_lower": -1.018491e-05,
+      "variance_upper": -8.808303e-07
+    },
+    {
+      "case": 10,
+      "evaluation_paths": 256,
+      "mean_lower": -0.01311862,
+      "mean_upper": 0.009005322,
+      "variance_lower": -1.041016e-05,
+      "variance_upper": -1.23835e-06
+    }
+  ],
+  "prospective_design": {
+    "cases": [
+      5,
+      6,
+      10
+    ],
+    "evaluation_paths": [
+      128,
+      256,
+      4096
+    ],
+    "primary_arms": 9,
+    "primary_pairs": 3978,
+    "warmup_pairs": 4,
+    "training_paths": [
+      5000,
+      20000
+    ],
+    "degree": 4,
+    "registered_choice": 256,
+    "contrast_family_size": 12,
+    "critical_value": 3.25,
+    "mean_intervals_including_zero": 6,
+    "negative_variance_intervals": 6,
+    "variance_ratio_confidence_intervals": false,
+    "finite_sample_coverage_verified": false,
+    "equal_realised_cost": false,
+    "fixed_counts": true,
+    "new_market_observations": 0,
+    "arms_within_budget": 9,
+    "arms_within_forecast_tolerance": 0,
+    "forecast_tolerance": [
+      0.9,
+      1.1
+    ],
+    "actual_to_forecast_range": [
+      0.514162,
+      0.873429
+    ],
+    "primary_numerical_cpu_seconds": 349.644,
+    "predicted_numerical_cpu_seconds": 487.779,
+    "largest_squared_variance_influence_percent": [
+      {
+        "case": 5,
+        "evaluation_paths": 256,
+        "percent": 63.98
+      },
+      {
+        "case": 10,
+        "evaluation_paths": 4096,
+        "percent": 49.84
+      }
+    ]
+  },
+  "cpu_prediction": [
+    {
+      "predictor": "historical",
+      "within_tolerance": 1,
+      "within_allowance": 18,
+      "mean_absolute_relative_error_percent": 29.065,
+      "actual_to_forecast_min": 0.5154,
+      "actual_to_forecast_max": 1.0782,
+      "forecast_affordable": 18,
+      "allowance_affordable": 0,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 0
+    },
+    {
+      "predictor": "pass_start",
+      "within_tolerance": 16,
+      "within_allowance": 16,
+      "mean_absolute_relative_error_percent": 3.669,
+      "actual_to_forecast_min": 0.9237,
+      "actual_to_forecast_max": 1.2081,
+      "forecast_affordable": 18,
+      "allowance_affordable": 18,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 1
+    },
+    {
+      "predictor": "immediate",
+      "within_tolerance": 17,
+      "within_allowance": 17,
+      "mean_absolute_relative_error_percent": 2.841,
+      "actual_to_forecast_min": 0.9576,
+      "actual_to_forecast_max": 1.2261,
+      "forecast_affordable": 18,
+      "allowance_affordable": 17,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 1
+    }
+  ],
+  "cpu_prediction_design": {
+    "validation_arms": 18,
+    "validation_pairs": 7956,
+    "calibration_pairs": 576,
+    "warmup_pairs": 4,
+    "passes": 2,
+    "calibration_pairs_per_arm_per_scheme": 16,
+    "calibration_schemes": 2,
+    "tolerance": [
+      0.9,
+      1.1
+    ],
+    "allowance_multiplier": 1.1,
+    "fixed_counts": true,
+    "prediction_coverage_claim": false,
+    "causal_order_effect_identified": false,
+    "new_financial_gain_inference": false,
+    "new_market_observations": 0,
+    "relative_error_denominator": "forecast",
+    "averaging": "Equal weight across eighteen complete validation arms",
+    "validation_within_original_budget": 17,
+    "within_budget_with_pass_start_calibration": 17,
+    "within_budget_with_immediate_calibration": 17,
+    "within_budget_with_both_calibration_schemes": 14,
+    "validation_numerical_cpu_seconds": 700.274,
+    "pass_start_calibration_cpu_seconds": 44.623,
+    "immediate_calibration_cpu_seconds": 44.323,
+    "warmup_numerical_cpu_seconds": 0.332,
+    "total_numerical_cpu_seconds": 789.552,
+    "process_cpu_seconds": 811.658,
+    "process_elapsed_seconds": 842.795
   }
 }

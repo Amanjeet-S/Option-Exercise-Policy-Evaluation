@@ -1,10 +1,10 @@
 # Exercise-policy loss under computational and financial constraints
 
-In this methods-only paper for my optimal-stopping project, I develop the funded cash-event model, policy-loss decomposition, approximate-value martingales, expiry-calendar comparison, terminal adjustment, conditional inference and computational allocation design. Appendix A uses predictable compensation to quantify the effect of conditional drift in an approximate penalty.
+In this methods-only paper for my optimal-stopping project, I develop the funded cash-event model, policy-loss decomposition, approximate-value martingales, expiry-calendar comparison, terminal adjustment, conditional inference and computational allocation design. Appendix A uses predictable compensation to quantify the effect of conditional drift in an approximate penalty. Appendix B specifies the probability space for repeated training, justifies optional sampling after the fitted policy is known, and derives the variance of a computationally allocated estimator.
 
 [Read the compiled paper](methods.pdf) or start with [the LaTeX source](main.tex). `main.tex` is self-contained: it includes the complete text and bibliography and can be compiled directly in a single-document editor. The files in `sections/` retain the preceding modular source for reference; edit `main.tex` for the current paper. [references.bib](references.bib) retains the citation metadata.
 
-The separate [numerical supplement](numerical_results.md) reports reviewed findings on bound tightness, terminal adjustments, training gains and computational allocation. It includes six tables, a figure and [derived summaries](numerical_results.json). It preserves the failed CPU-budget predictions and the absence of an eligible prospective sample. It does not replace the methods paper or alter its LaTeX source.
+The separate [numerical supplement](numerical_results.md) reports reviewed findings on bound tightness, terminal adjustments, training gains and computational allocation. It also reports the subsequent fixed-count allocation comparison and local CPU prediction study, while preserving the earlier failed forecasts and the absence of an eligible prospective market sample. The [derived summaries](numerical_results.json) supply its nine tables. The methods paper contains the mathematical argument; the supplement contains the selected numerical evidence.
 
 ## 1. Build
 
@@ -43,3 +43,11 @@ python3 -m unittest discover -s verification -v
 ```
 
 The first command checks every admissible policy on a deterministic grid of finite trees and reports the analytical counterexample. The second also checks invalid stopping rules, probability inputs and the single-right boundary case. These are checks of the analytical implementation, not empirical evidence.
+
+The [allocation verification](verification/allocation_probability.py) separately enumerates finite probability laws with exact rational arithmetic. It checks the training and evaluation variance decomposition, independent selection of sample counts, and the bias that can arise when observation-dependent costs determine when a sample ends. The fixtures include different couplings between the two training samples. They illustrate the appendix's assumptions without claiming to prove its general probability statements or reproduce a market experiment.
+
+```bash
+python3 verification/allocation_probability.py
+```
+
+`make verify` runs both analytical checks, the released-summary check and the accompanying standard-library tests. No subscription access is needed for these commands. Repeating the empirical simulations remains a separate operation requiring the authorised financial inputs.
