@@ -183,4 +183,18 @@ The other study names are `terminal_repair`, `terminal_training`, `training_eval
 
 The original CPU study requires a narrower interpretation. Its records retain policy, path and approximation fingerprints, random-stream identities and workload counts, but omit the financial estimates themselves. Its `complete_financial_record_sha256` also incorporates measured durations. This digest cannot establish equality of unsaved estimates in a fresh run. The comparator records that limitation explicitly while checking the retained identities. Reconstruction of Table 9 continues to use the original timing observations.
 
-The [historical replay record](historical_replay.md) distinguishes completed numerical execution from reconstruction of retained evidence and identifies the studies still awaiting a full replay.
+The [historical replay record](historical_replay.md) distinguishes completed numerical execution from reconstruction of retained evidence and identifies the completed replay coverage and its comparison limits.
+
+## 9. Final assessment of retained market observations
+
+The [completed study](../completion.md) retains the unsuccessful primary admission decision. The [observation-coverage supplement](../paper/data_admission.md) reports descriptive intersections of the previously specified quote and funding tolerances. It contains no newly calibrated price, market-performance estimate or provider observation.
+
+A reader with lawful access to the original archive can reconstruct those aggregate counts from its adapter audit, configuration, cases and registration:
+
+```sh
+python scripts/summarise_market_admission.py \
+  --archive-root /path/to/authorised/archive \
+  --output data/private/reproduction/admission_summary
+```
+
+Run this command from the current repository root, using a new output path. It verifies the retained input relationships and reconstructs the mechanical predicates without network access. Its output remains under the current checkout's private data directory. No observation-level quotes, rates, strikes or instrument identifiers are exported. This reconstruction is separate from the public check of released counts and does not resolve absent documentary evidence concerning historical quotes or funding conventions. No further data acquisition is pending within the completed project.

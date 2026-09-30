@@ -10,9 +10,10 @@ The [paper](../projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Com
 | Numerical algorithms | Execute the stipulated funded-put fixture and baseline notebook | New model-conditional calculations using explicitly mathematical inputs |
 | Tables 1 to 8 | Check released summaries, selected arithmetic and agreement with the LaTeX tables | Does not regenerate the original financial simulations |
 | Table 9 and CPU accounting | Reconstruct forecasts, errors, affordability and expenditure from eighteen released workload records | Uses retained timings and historical forecast inputs; does not rerun the original workloads or pilot |
+| Observation coverage supplement | Recalculate totals and timing intersections from released daily counts | Checks aggregate arithmetic only; reconstruction from private observation records requires the original authorised archive |
 | Original financial experiments | Implementation and input requirements are documented in the [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) | Exact replay requires lawful access to the original input, design, source and evidence archive; a provider subscription alone is insufficient |
 
-The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../projects/01_optimal_stopping/replication/historical_replay.md) documents all eight completed registered replays. Seven reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with financial estimates unavailable for comparison. Original acquisition and calibration were not rerun. Independent market validation remains unresolved.
+The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../projects/01_optimal_stopping/replication/historical_replay.md) documents all eight completed registered replays. Seven reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with financial estimates unavailable for comparison. Original acquisition and calibration were not rerun. The independent market-validation attempt is closed without a performance estimate. The [completion record](../projects/01_optimal_stopping/completion.md) defines the completed scope and its empirical limitation; no further acquisition or data purchase is pending.
 
 ## 2. Install once
 
@@ -56,7 +57,10 @@ python -m unittest discover -s projects/01_optimal_stopping/paper/verification -
 python projects/01_optimal_stopping/paper/verification/numerical_results.py
 python projects/01_optimal_stopping/paper/verification/paper_results.py
 python projects/01_optimal_stopping/paper/verification/cpu_timings.py
+python scripts/summarise_market_admission.py --check-summary projects/01_optimal_stopping/paper/data_admission.json
 ```
+
+The [observation-coverage supplement](../projects/01_optimal_stopping/paper/data_admission.md) preserves the original empty primary sample and reports the previously specified timing sensitivities. Its public checker uses aggregate counts only. It does not open the private archive, verify the underlying observations or establish market validity.
 
 The PDF is already included. To rebuild it, compile the self-contained [main.tex](../projects/01_optimal_stopping/paper/main.tex) using pdfLaTeX, or use `make` in its directory with a TeX distribution and `latexmk`. The [paper guide](../projects/01_optimal_stopping/paper/README.md) describes this optional build. Neither PDF compilation nor the separate python-flint certification environment is required for the default public reproduction.
 

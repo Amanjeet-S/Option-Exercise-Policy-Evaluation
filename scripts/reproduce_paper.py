@@ -36,6 +36,7 @@ PUBLIC_INPUTS = (*NOTEBOOKS,
       ('numerical_results', 'paper_results', 'cpu_timings', 'allocation_probability', 'conditional_drift')),
     PAPER + '/main.tex', PAPER + '/numerical_results.json', PAPER + '/numerical_results.md',
     PAPER + '/cpu_timings.json', PAPER + '/cpu_timings.md',
+    PAPER + '/data_admission.json', 'scripts/summarise_market_admission.py',
     PROJECT + '/replication/configs/stipulated_fixture.json',
     PROJECT + '/configs/benchmark.json', PROJECT + '/results/baseline/manifest.json',
     PROJECT + '/results/baseline/grid_convergence.csv')
@@ -147,7 +148,7 @@ def reproduce(output, *, full_tests=False):
     inputs = {name:digest(verifier.checked_file(ROOT.resolve(), name)) for name in PUBLIC_INPUTS}
     output.mkdir(parents=True)
     record = dict(schema_version=1, complete=False,
-        scope='Public summary checks, retained CPU arithmetic and stipulated mathematical simulations only',
+        scope='Public summary and observation-coverage arithmetic, retained CPU arithmetic and stipulated mathematical simulations only',
         financial_simulation_tables_replayed=False, raw_market_data_read_or_exported=False,
         published_cpu_workloads_retimed=False, fixture_classification='stipulated_mathematical_fixture',
         exact_financial_replay='Requires the separate authorised original input and evidence archive',
@@ -159,6 +160,8 @@ def reproduce(output, *, full_tests=False):
         for name in ('numerical_results', 'paper_results', 'cpu_timings',
                      'allocation_probability', 'conditional_drift'):
             step(name, [VERIFICATION + '/' + name + '.py'], output, record['steps'])
+        step('data_admission', ['scripts/summarise_market_admission.py', '--check-summary',
+             PAPER + '/data_admission.json'], output, record['steps'])
         step('analytical_tests', ['-m', 'unittest', '-v', *ANALYTICAL_TESTS],
              output, record['steps'], cwd=ROOT/VERIFICATION)
         step('mathematical_fixture', [PROJECT + '/replication/run.py',

@@ -5,10 +5,46 @@
   "dependency_scope": "Reviewed implementation, declared environment inputs and attributed calendar. The external_imports mapping retains the original static inspection; it is not an exhaustive dependency certificate. Runtime project-module origins are checked separately.",
   "files": [
     {
+      "path": "CITATION.cff",
+      "category": "research_document",
+      "bytes": 556,
+      "sha256": "5d18ad583b9b82c754da95e42d096e3fdaae9ef2826741b666a3b5b413021248"
+    },
+    {
+      "path": "README.md",
+      "category": "research_document",
+      "bytes": 5579,
+      "sha256": "9f234d21a902c35571ea48ef7a5a28542e19b256c9d077e0a537a8e09e42e194"
+    },
+    {
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 7738,
-      "sha256": "a821c41c667ee11dfaebf77253937cd98fcf723df6529ba9a8fa80255abb43c4"
+      "bytes": 8652,
+      "sha256": "d93679a6817c7c25731eacecf9ae8b1adc5ca6285d19c07cd2fa29ebe8ec0730"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "category": "research_document",
+      "bytes": 2234,
+      "sha256": "2a10c9a1cd363d58ba1068d15e4193cd01045c33de2f4e9c1db39e1c2397bbc4"
+    },
+    {
+      "path": "projects/01_optimal_stopping/README.md",
+      "category": "research_document",
+      "bytes": 6115,
+      "sha256": "baa650f24cc0a73bdfa271c8bcaef19db6857c1eec2a5708cb077b5ad3dc2b79"
+    },
+    {
+      "path": "projects/01_optimal_stopping/completion.json",
+      "category": "research_document",
+      "bytes": 1157,
+      "sha256": "351de1ccd85fb5c6dde1fe438e4ed8083b14669cccbfb2fe6833ccd3e707c344"
+    },
+    {
+      "path": "projects/01_optimal_stopping/completion.md",
+      "category": "research_document",
+      "bytes": 3425,
+      "sha256": "c2841af4e1dbf0c3e8b1f0d490a519eb77b730eaff92941e697ffd366e6ed0f8"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -35,6 +71,12 @@
       "bytes": 1358
     },
     {
+      "path": "projects/01_optimal_stopping/data_plan.md",
+      "category": "research_document",
+      "bytes": 5363,
+      "sha256": "cdebbf4dc7e3f8a10f12f2c8c4a7e24b5a23f021c3a487e7bc4d47060b4d6858"
+    },
+    {
       "path": "projects/01_optimal_stopping/notebooks/01_numerical_validation.ipynb",
       "category": "public_reproduction",
       "bytes": 67424,
@@ -47,10 +89,22 @@
       "sha256": "f75754562436f016670db8f4205cd20c56c703ecaa296d77cf984c26c4e36ecf"
     },
     {
+      "path": "projects/01_optimal_stopping/option_quote_pilot_request.md",
+      "category": "research_document",
+      "bytes": 4745,
+      "sha256": "aaebce0d20ad0f498ab4a3807c4fd39e1fcb18473d855bdbcff14e086ecbb124"
+    },
+    {
       "path": "projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
       "category": "public_reproduction",
       "bytes": 375030,
       "sha256": "0d4fc6e0b78baab3de2e5e40ffdb26d8cd6062e8765396211a16c0ec15d239ae"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/README.md",
+      "category": "research_document",
+      "bytes": 4334,
+      "sha256": "795215005af3b7158b63c38b3e226505f5e5843ef2f009b12e846113e742623b"
     },
     {
       "path": "projects/01_optimal_stopping/paper/cpu_timings.json",
@@ -63,6 +117,18 @@
       "category": "research_document",
       "bytes": 9754,
       "sha256": "e4a05dfb0aaf92ce84a628f118abf3e18cf28ae4dc4da3ade63b3e1889bafa41"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/data_admission.json",
+      "category": "public_reproduction",
+      "bytes": 13701,
+      "sha256": "7c810d465d9e72495f5fd37809f3edff962249621adae38f4c8972b168f69770"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/data_admission.md",
+      "category": "research_document",
+      "bytes": 6628,
+      "sha256": "8f3e083cecd125c23319e368ec4a67e778865af10e12a7c9e41f6a0129beca44"
     },
     {
       "path": "projects/01_optimal_stopping/paper/main.tex",
@@ -144,9 +210,9 @@
     },
     {
       "path": "projects/01_optimal_stopping/replication/README.md",
-      "sha256": "05efc375ffcf6fdcac84bdc6b9865b32b98fde60dd272ad12c5f0a7c8bf6da27",
       "category": "replication_interface",
-      "bytes": 14877
+      "bytes": 15373,
+      "sha256": "d792a1edf891bd3348d1e95b03f51f0b506740d73c238394c55d672570a54c0e"
     },
     {
       "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
@@ -175,8 +241,8 @@
     {
       "path": "projects/01_optimal_stopping/replication/licensed_reproduction.md",
       "category": "research_document",
-      "bytes": 23383,
-      "sha256": "6ae5f979a5d4eeca0022ab07b31a3305367c3ca316169531084b68c67be36f2c"
+      "bytes": 24702,
+      "sha256": "b29daf01de3c42e71abca5a72d61be52dc42b4b9de161916390e64ee5d787b0d"
     },
     {
       "path": "projects/01_optimal_stopping/replication/licensed_requirements.json",
@@ -197,6 +263,12 @@
       "bytes": 9309
     },
     {
+      "path": "projects/01_optimal_stopping/research_design.md",
+      "category": "research_document",
+      "bytes": 5376,
+      "sha256": "58c37c7a92b2751b6df976cc3bd14501cad532a0c91f5cc7c72eb51f03fb114e"
+    },
+    {
       "path": "projects/01_optimal_stopping/results/baseline/grid_convergence.csv",
       "category": "public_reproduction",
       "bytes": 1730,
@@ -207,6 +279,12 @@
       "category": "public_reproduction",
       "bytes": 2303,
       "sha256": "ff525ac4c0ea2c20f1c8676469b8c9a2db771d38484e2d53f4d891e7f31cc508"
+    },
+    {
+      "path": "projects/README.md",
+      "category": "research_document",
+      "bytes": 1318,
+      "sha256": "46dd3f435907402d6abb4d08c07a989b9ffd327e9da6b239a979fc1834edf3c2"
     },
     {
       "path": "requirements-certification.lock",
@@ -685,8 +763,8 @@
     {
       "path": "scripts/reproduce_paper.py",
       "category": "public_reproduction",
-      "bytes": 10223,
-      "sha256": "8537d62ca693f875d3776df8f4b81a6dc28c6b1e511acfeb8526a64bd6e7c3cf"
+      "bytes": 10492,
+      "sha256": "53bafbec75da3d0fa0b2060ad9712506eadc73aff1052470389ef8e9cd74d955"
     },
     {
       "path": "scripts/reproduce_training_allocation.py",
@@ -807,6 +885,12 @@
       "sha256": "b6995a7ce10671cc34c30a3bf09ede226be344c3ea324285cdb4e2a74783996b",
       "category": "historical_entry_point",
       "bytes": 6325
+    },
+    {
+      "path": "scripts/summarise_market_admission.py",
+      "category": "source_input_validation",
+      "bytes": 27030,
+      "sha256": "7cfeeb8ca43b9d4ae144591107921d7783b0a5f6faf75117129750250e5cf59a"
     },
     {
       "path": "scripts/test_certified_residual.py",
@@ -1473,6 +1557,12 @@
       "sha256": "e12691ddcba55204f8d1a7a897185178c6a2e7a2b9524fc8b05a84bd13dbd684",
       "category": "test_fixture",
       "bytes": 9265
+    },
+    {
+      "path": "tests/test_market_admission_summary.py",
+      "category": "test",
+      "bytes": 13133,
+      "sha256": "37ac49767b9b1c3b9b92593d6875f2118ddfbf458f125d54fe744bf5a9a43ac0"
     },
     {
       "path": "tests/test_occ_series.py",

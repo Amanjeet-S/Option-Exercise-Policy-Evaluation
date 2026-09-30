@@ -6,6 +6,8 @@ I provide the numerical kernels, experiment entry points and evidence checks use
 
 I distinguish three operations. A summary audit checks the arithmetic and presentation of released findings. A numerical replay recomputes a retained experiment using its original inputs, random streams and source versions. A fresh experiment uses a new specification or new streams. CPU timings are new observations on the executing machine even when the financial calculation is an exact replay.
 
+The [completion record](../completion.md) closes this conditional study and the unsuccessful market-validation attempt. No additional acquisition is pending. The final [observation-coverage supplement](../paper/data_admission.md) reconstructs the declared timing sensitivities without changing the original admission decisions. Public reproduction checks its released aggregate arithmetic; the original private evidence is required to reconstruct those counts from observation-level predicates.
+
 ## 2. Installation and the public example
 
 The [reader's reproduction instructions](../../../docs/reproducing_paper.md) provide a single command for the public paper checks, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.

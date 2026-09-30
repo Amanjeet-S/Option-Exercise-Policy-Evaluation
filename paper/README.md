@@ -6,11 +6,11 @@ Amanjeet Singh
 
 ## 1. Paper and scope
 
-The [compiled paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) and [self-contained LaTeX source](main.tex) present the mathematical framework and completed conditional computational study. The paper contains nine result tables on loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. Independent market validation remains unresolved, and the unsuccessful original observation-admission exercise is reported explicitly.
+The [compiled paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) and [self-contained LaTeX source](main.tex) present the mathematical framework and completed conditional computational study. The paper contains nine result tables on loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. The [project is completed](../completion.md), with independent market validity retained as a limitation. The unsuccessful original observation-admission exercise is reported explicitly.
 
 `main.tex` contains the full text and bibliography and compiles in a single-document editor. The `sections/` files preserve the preceding modular methods source; they are not inputs to the current document. [references.bib](references.bib) retains citation metadata. The compiled research paper is `Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf`.
 
-The [numerical supplement](numerical_results.md) presents the same nine tables in Markdown. Their [derived summaries](numerical_results.json) are released research findings, not observation-level financial inputs. The [CPU measurement supplement](cpu_timings.md) releases the eighteen workload records needed to reconstruct Table 9, including calibration charges and the budget overrun. The [literature comparison](contribution_review.md) distinguishes the research contribution from established theory.
+The [numerical supplement](numerical_results.md) presents the same nine tables in Markdown. Their [derived summaries](numerical_results.json) are released research findings, not observation-level financial inputs. The [CPU measurement supplement](cpu_timings.md) releases the eighteen workload records needed to reconstruct Table 9, including calibration charges and the budget overrun. The [literature comparison](contribution_review.md) distinguishes the research contribution from established theory. The final [observation-admission supplement](data_admission.md) and [aggregate results](data_admission.json) assess the retained sample under the registered primary and descriptive timing rules without changing the paper's market-validation conclusion.
 
 ## 2. Build
 

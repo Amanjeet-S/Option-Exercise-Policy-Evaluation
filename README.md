@@ -4,7 +4,7 @@
 
 I study how approximate exercise policies lose value, how tightly that loss can be measured, and how computation should be allocated to estimate a training procedure's performance. The financial problem is a finite-calendar put with deterministic funding and capped discrete cash events. Conditional expectations and martingale bounds connect the stopping problem to independently evaluated regression policies. A separate cost study tests whether earlier processor measurements predict expenditure for complete numerical workloads.
 
-The [paper](paper/README.md) contains the model, derivations, nine tables of conditional findings and the limits of their interpretation. The conditional computational investigation is complete. Independent market validation remains unresolved: the original prospective observation screen admits no primary observations. I retain that outcome without replacing its admission rule after inspecting the sample.
+The [paper](paper/README.md) contains the model, derivations, nine tables of conditional findings and the limits of their interpretation. The project is [completed as of 30 September 2026](completion.md), including the declared descriptive assessment of retained observations. No further data acquisition or purchased dataset is required for this completed scope. Independent market validity remains a limitation: the original prospective observation screen admits no primary observations. I retain that outcome without replacing its admission rule after inspecting the sample.
 
 ## 2. Findings and interpretation
 
@@ -30,4 +30,4 @@ I publish derived findings and reviewed original code and writing. Raw provider 
 
 The [publication policy](../../docs/publication_policy.md) and [licensing scope](../../LICENSING.md) govern the release. Established mathematical methods are attributed in the paper and [literature comparison](paper/contribution_review.md). The contribution is the controlled argument and evidence for the stated computational questions, without a claim of a new general pricing theorem.
 
-The [market-validation data plan](data_plan.md) restricts further acquisition to free sources and existing authorised access without additional payment. The [Cboe demonstration audit](cboe_sample_audit.md) provides an executable format check, while independent market validation remains unresolved.
+The final [observation-admission supplement](paper/data_admission.md) quantifies the effect of the registered timing allowances. Relaxed quote checks and the original mechanical funding requirements leave three candidates on one session, without resolving the documentary requirements for market validation. The [data assessment](data_plan.md) and [Cboe demonstration audit](cboe_sample_audit.md) record the limits of the available material. A separate empirical extension is optional and is not pending work in this completed project.

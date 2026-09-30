@@ -1,0 +1,525 @@
+{
+  "title": "Observation admission and timing sensitivity",
+  "author": "Amanjeet Singh",
+  "released_on": "2026-09-30",
+  "classification": "Reviewed aggregate descriptive findings; no observation-level market inputs",
+  "summary": {
+    "per_day": [
+      {
+        "date": "2026-09-21",
+        "intended_groups": 3,
+        "quote_age_groups": {
+          "1": 0,
+          "5": 3,
+          "15": 3,
+          "60": 3
+        },
+        "joint_primary_funding_construction_reference_groups": {
+          "1": 0,
+          "5": 3,
+          "15": 3,
+          "60": 3
+        },
+        "quote_funding_age_groups": {
+          "1": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "5": {
+            "60": 0,
+            "300": 3,
+            "1800": 3
+          },
+          "15": {
+            "60": 0,
+            "300": 3,
+            "1800": 3
+          },
+          "60": {
+            "60": 0,
+            "300": 3,
+            "1800": 3
+          }
+        },
+        "primary_funding_groups": 3,
+        "retained_construction_groups": 3,
+        "recorded_reference_clear_groups": 3,
+        "recorded_reference_issue_count": 0,
+        "statuses": {
+          "primary_quote_screen_failed": 3
+        },
+        "quotes": {
+          "call": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "put": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "underlying": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          }
+        },
+        "underlying_daily_snapshots": {
+          "present": 1,
+          "price_screen": 1,
+          "resolved_state": 1,
+          "price_and_state": 1
+        }
+      },
+      {
+        "date": "2026-09-22",
+        "intended_groups": 3,
+        "quote_age_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "joint_primary_funding_construction_reference_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "quote_funding_age_groups": {
+          "1": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "5": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "15": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "60": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          }
+        },
+        "primary_funding_groups": 0,
+        "retained_construction_groups": 0,
+        "recorded_reference_clear_groups": 3,
+        "recorded_reference_issue_count": 0,
+        "statuses": {
+          "primary_quote_screen_failed": 3
+        },
+        "quotes": {
+          "call": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "put": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "underlying": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 0,
+            "price_and_state_groups": 0
+          }
+        },
+        "underlying_daily_snapshots": {
+          "present": 1,
+          "price_screen": 1,
+          "resolved_state": 0,
+          "price_and_state": 0
+        }
+      },
+      {
+        "date": "2026-09-23",
+        "intended_groups": 3,
+        "quote_age_groups": {
+          "1": 0,
+          "5": 3,
+          "15": 3,
+          "60": 3
+        },
+        "joint_primary_funding_construction_reference_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "quote_funding_age_groups": {
+          "1": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "5": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "15": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "60": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          }
+        },
+        "primary_funding_groups": 0,
+        "retained_construction_groups": 0,
+        "recorded_reference_clear_groups": 3,
+        "recorded_reference_issue_count": 0,
+        "statuses": {
+          "primary_quote_screen_failed": 3
+        },
+        "quotes": {
+          "call": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "put": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "underlying": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          }
+        },
+        "underlying_daily_snapshots": {
+          "present": 1,
+          "price_screen": 1,
+          "resolved_state": 1,
+          "price_and_state": 1
+        }
+      },
+      {
+        "date": "2026-09-24",
+        "intended_groups": 3,
+        "quote_age_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "joint_primary_funding_construction_reference_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "quote_funding_age_groups": {
+          "1": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "5": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "15": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "60": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          }
+        },
+        "primary_funding_groups": 0,
+        "retained_construction_groups": 0,
+        "recorded_reference_clear_groups": 3,
+        "recorded_reference_issue_count": 0,
+        "statuses": {
+          "primary_quote_screen_failed": 3
+        },
+        "quotes": {
+          "call": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "put": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "underlying": {
+            "present_groups": 3,
+            "price_screen_groups": 0,
+            "resolved_state_groups": 0,
+            "price_and_state_groups": 0
+          }
+        },
+        "underlying_daily_snapshots": {
+          "present": 1,
+          "price_screen": 0,
+          "resolved_state": 0,
+          "price_and_state": 0
+        }
+      },
+      {
+        "date": "2026-09-25",
+        "intended_groups": 3,
+        "quote_age_groups": {
+          "1": 0,
+          "5": 1,
+          "15": 3,
+          "60": 3
+        },
+        "joint_primary_funding_construction_reference_groups": {
+          "1": 0,
+          "5": 0,
+          "15": 0,
+          "60": 0
+        },
+        "quote_funding_age_groups": {
+          "1": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "5": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "15": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          },
+          "60": {
+            "60": 0,
+            "300": 0,
+            "1800": 0
+          }
+        },
+        "primary_funding_groups": 0,
+        "retained_construction_groups": 0,
+        "recorded_reference_clear_groups": 3,
+        "recorded_reference_issue_count": 0,
+        "statuses": {
+          "primary_quote_screen_failed": 3
+        },
+        "quotes": {
+          "call": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "put": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          },
+          "underlying": {
+            "present_groups": 3,
+            "price_screen_groups": 3,
+            "resolved_state_groups": 3,
+            "price_and_state_groups": 3
+          }
+        },
+        "underlying_daily_snapshots": {
+          "present": 1,
+          "price_screen": 1,
+          "resolved_state": 1,
+          "price_and_state": 1
+        }
+      }
+    ],
+    "totals": {
+      "dates": 5,
+      "intended_groups": 15,
+      "primary_funding_groups": 3,
+      "primary_funding_dates": 1,
+      "retained_construction_groups": 3,
+      "retained_construction_dates": 1,
+      "recorded_reference_clear_groups": 15,
+      "recorded_reference_clear_dates": 5,
+      "recorded_reference_issue_count": 0,
+      "recorded_reference_issue_dates": 0,
+      "quote_age_groups": {
+        "1": 0,
+        "5": 7,
+        "15": 9,
+        "60": 9
+      },
+      "quote_age_dates": {
+        "1": 0,
+        "5": 3,
+        "15": 3,
+        "60": 3
+      },
+      "joint_primary_funding_construction_reference_groups": {
+        "1": 0,
+        "5": 3,
+        "15": 3,
+        "60": 3
+      },
+      "joint_primary_funding_construction_reference_dates": {
+        "1": 0,
+        "5": 1,
+        "15": 1,
+        "60": 1
+      },
+      "quote_funding_age": {
+        "1": {
+          "60": {
+            "groups": 0,
+            "dates": 0
+          },
+          "300": {
+            "groups": 0,
+            "dates": 0
+          },
+          "1800": {
+            "groups": 0,
+            "dates": 0
+          }
+        },
+        "5": {
+          "60": {
+            "groups": 0,
+            "dates": 0
+          },
+          "300": {
+            "groups": 3,
+            "dates": 1
+          },
+          "1800": {
+            "groups": 3,
+            "dates": 1
+          }
+        },
+        "15": {
+          "60": {
+            "groups": 0,
+            "dates": 0
+          },
+          "300": {
+            "groups": 3,
+            "dates": 1
+          },
+          "1800": {
+            "groups": 3,
+            "dates": 1
+          }
+        },
+        "60": {
+          "60": {
+            "groups": 0,
+            "dates": 0
+          },
+          "300": {
+            "groups": 3,
+            "dates": 1
+          },
+          "1800": {
+            "groups": 3,
+            "dates": 1
+          }
+        }
+      },
+      "quotes": {
+        "call": {
+          "present_groups": 15,
+          "price_screen_groups": 15,
+          "resolved_state_groups": 15,
+          "price_and_state_groups": 15
+        },
+        "put": {
+          "present_groups": 15,
+          "price_screen_groups": 15,
+          "resolved_state_groups": 15,
+          "price_and_state_groups": 15
+        },
+        "underlying": {
+          "present_groups": 15,
+          "price_screen_groups": 12,
+          "resolved_state_groups": 9,
+          "price_and_state_groups": 9
+        }
+      },
+      "underlying_daily_snapshots": {
+        "present": 5,
+        "price_screen": 4,
+        "resolved_state": 3,
+        "price_and_state": 3
+      },
+      "statuses": {
+        "primary_quote_screen_failed": 15
+      }
+    },
+    "schema_version": 1,
+    "complete": true,
+    "empirical_validation_established": false,
+    "original_primary_screen_unchanged": true,
+    "relaxed_thresholds_descriptive_only": true,
+    "primary_quote_age_seconds": 1,
+    "quote_ages_seconds": [
+      1,
+      5,
+      15,
+      60
+    ],
+    "primary_funding_age_seconds": 300,
+    "funding_ages_seconds": [
+      60,
+      300,
+      1800
+    ],
+    "scope": [
+      "Counts reconstruct retained audit predicates; no new acquisition, calibration or repricing is performed.",
+      "Repeated underlying group records represent one daily snapshot and are counted separately from distinct daily snapshots.",
+      "Empty recorded reference issues do not establish complete documentary clearance, synchronisation or equal-time ordering.",
+      "Construction counts concern the retained original dated funding construction; alternative thresholds do not create alternative curves.",
+      "Relaxed-threshold intersections are descriptive candidates, not admitted primary observations or independent pricing validation."
+    ]
+  },
+  "provenance": {
+    "source_sha256": {
+      "audit.json": "5fd035d4c06482d10ea43618063cba40314c25a18c525cfb86cd7d59dac9bced",
+      "configuration.json": "eeeb1f9974d3908dfc871fc0ac14d60e226cc26f566bef6853fb796d4be7cf06",
+      "cases.json": "93261c8738d0b4d2aa6ea5bf439f79f17322e6ad7bda5c7e2b33b3658fc40fb2"
+    },
+    "input_manifest_sha256": "11c0ca56d1201fa49b964f1585aa1767267255c7f7f917cb7ad85e8d48858453",
+    "registration_manifest_sha256": "d5e683c7a2a960e83903566d19aae95225ec98121f2755c45d69dec4010cf05d",
+    "registered_sample_plan_sha256": "930f53d49e477bc6c3c7af35f5390ca6e7e5a31d69bbd108a2926252a89fa3a6",
+    "source_bytes_rechecked": true,
+    "summariser_sha256": "7cfeeb8ca43b9d4ae144591107921d7783b0a5f6faf75117129750250e5cf59a"
+  }
+}
