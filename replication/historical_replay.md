@@ -2,7 +2,7 @@
 
 ## 1. Scope
 
-I distinguish a fresh calculation from reconstruction of a saved result. The [machine-readable record](historical_replay.json) identifies the completed replays and the remaining studies. Detailed financial records remain private. The public record contains verification metadata and coverage counts, without provider observations, fitted coefficients or simulated financial paths.
+I distinguish a fresh calculation from reconstruction of a saved result. The [machine-readable record](historical_replay.json) documents completion of all eight registered replay designs from the supplied historical archive. Detailed financial records remain private. The public record contains verification metadata and coverage counts, without provider observations, fitted coefficients or simulated financial paths.
 
 ## 2. Completed calculations
 
@@ -14,11 +14,13 @@ I also repeated the complete terminal-adjustment study. Across thirteen model ca
 
 The separate terminal-target retraining study also reproduces all 624 policy and calendar combinations exactly. This repeats the policy fitting and evaluation calculations underlying the terminal-target comparison, in addition to the reconstruction of interval counts from saved results described below.
 
+I repeated the crossed training-and-evaluation design across thirteen cases and eight repetitions per case. The 104 blocks contain 208 fitted policies and 832 evaluation workloads. All 157,861 compared scalar fields agree exactly, including policy gains, assessment differences, sampling comparisons and the retained study summaries. The original registration and random streams remain unchanged; measured durations and runtime metadata are excluded from numerical equality.
+
 The allocation pilot reproduces the financial outputs of 416 statistical pairs and 390 further evaluations across thirteen models. Its 65 setup constructions also agree. Fresh timing measurements can produce different pilot allocations; the main replay preserves the original registered allocations. Under those fixed counts, all 5,030 main pairs and their financial summaries agree exactly. The prospective allocation replay likewise reproduces all 3,978 primary pairs across nine arms, together with its four warm-up pairs and retained financial comparisons. Timing measurements and quantities derived from them remain separate observations. The paper's timing columns continue to refer to the original executions.
 
 I repeated all eighteen complete CPU workloads, comprising 7,956 validation pairs, 576 calibration pairs and four warm-up pairs. Retained policy, path and approximation fingerprints, stream identities and non-timing metadata agree exactly. The original workload records do not retain financial estimates separately, and their combined financial-record digests include measured durations. Equality of those estimates therefore cannot be established. The replay supplies new processor measurements; it does not replace the original CPU observations reported in the paper.
 
-Source and input verification covers 23,472 files across 89 manifests. These byte checks establish consistency with the preserved archive; they do not establish the financial validity of its inputs.
+After all replays finished, source and input verification covered 23,472 files across 89 manifests. All eight compressed outputs also matched their file inventories and comparison records, covering 18,778 retained files. These byte checks establish consistency with the preserved archive; they do not establish the financial validity of its inputs.
 
 ## 3. Reconstructed ancillary findings
 
@@ -26,14 +28,14 @@ I recomputed the original market-admission decisions from the retained acquisiti
 
 The delete-one sensitivity results and their tabular output also agree byte for byte. The checks recover the reported terminal-target interval counts and independently reconstruct the polynomial moments and influence-concentration summaries of all nine prospective allocation arms. These are checks of saved outcomes, rather than fresh executions of their financial simulations. The unavailable original market-audit entry point was not executed; its absence is not replaced by a claim of equivalent coverage.
 
-## 4. Remaining numerical execution
+## 4. Replay status
 
 | Study | Full historical replay |
 | --- | --- |
 | Value-martingale assessment | Complete; exact agreement of retained numerical outputs |
 | Terminal adjustment | Complete; exact agreement of retained numerical outputs |
 | Terminal-target retraining | Complete; exact agreement of retained financial outputs |
-| Repeated-training evaluation | Pending |
+| Repeated-training evaluation | Complete; exact agreement of all 104 blocks and 832 evaluation workloads |
 | Allocation pilot | Complete; financial outputs agree, with fresh timing-based allocations excluded |
 | Main allocation | Complete; financial outputs agree under the original registered counts |
 | Prospective allocation | Complete; financial outputs agree, with timing-based ratios excluded |

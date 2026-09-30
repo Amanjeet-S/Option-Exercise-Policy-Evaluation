@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "qf-research"
 version = "0.1.0"
 description = "Reproducible research in quantitative finance and empirical economics"
+authors = [{name = "Amanjeet Singh"}]
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

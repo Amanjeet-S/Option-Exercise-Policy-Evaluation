@@ -7,8 +7,8 @@
     {
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 7649,
-      "sha256": "f0f3b7220cba29982d4a476dccf993cc611396f9525f30af81ff99f8bce45039"
+      "bytes": 7738,
+      "sha256": "a821c41c667ee11dfaebf77253937cd98fcf723df6529ba9a8fa80255abb43c4"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -37,14 +37,14 @@
     {
       "path": "projects/01_optimal_stopping/notebooks/01_numerical_validation.ipynb",
       "category": "public_reproduction",
-      "bytes": 67365,
-      "sha256": "c11ae8436853796baeb19ba07cb2a8743662863c4d3293387ab6f2a68969f39a"
+      "bytes": 67424,
+      "sha256": "ba6a1805f7929d211d27e6615c33afdf3838f62818dfb3848784ff3fc34b2d26"
     },
     {
       "path": "projects/01_optimal_stopping/notebooks/27_conditional_research_replication.ipynb",
       "category": "public_reproduction",
-      "bytes": 32834,
-      "sha256": "f79be9938640e04b656a2fafb6e3874d79e1d088bcb517381335def4aa98d89b"
+      "bytes": 32893,
+      "sha256": "f75754562436f016670db8f4205cd20c56c703ecaa296d77cf984c26c4e36ecf"
     },
     {
       "path": "projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
@@ -157,14 +157,14 @@
     {
       "path": "projects/01_optimal_stopping/replication/historical_replay.json",
       "category": "source_input_validation",
-      "bytes": 8599,
-      "sha256": "e5168f35ac6dad8b37bb797afa71254cd73d85204636de4c0df7797a971863b6"
+      "bytes": 9994,
+      "sha256": "3b63581d2e17c8f1c0eee39be7792bf0e91593e037704111b86e3f6d47f89a05"
     },
     {
       "path": "projects/01_optimal_stopping/replication/historical_replay.md",
       "category": "research_document",
-      "bytes": 5931,
-      "sha256": "674df4d973200df1513cb6c7831470a035a22d6b00bd6c7bb166ba58936760c5"
+      "bytes": 6644,
+      "sha256": "72cfcb9f69175e79f452af752de0b0305f5ba6795e6000e5d0df38ba4ccfa53d"
     },
     {
       "path": "projects/01_optimal_stopping/replication/input.schema.json",

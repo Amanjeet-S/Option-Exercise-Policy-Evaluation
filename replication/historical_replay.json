@@ -1,12 +1,17 @@
 {
   "schema_version": 1,
   "recorded_date": "2026-09-30",
-  "scope": "Six complete financial-output replays, one complete CPU workload replay with retained identity checks, and separate reconstruction of retained ancillary evidence.",
-  "complete_historical_replay": false,
+  "scope": "All eight registered replay designs completed from the supplied historical archive: seven financial-output replays and one CPU workload replay with retained identity checks. Original acquisition and calibration were not rerun.",
+  "complete_historical_replay": true,
   "archive_verification": {
     "dependency_files": 23472,
     "manifests": 89,
-    "passed": true
+    "passed": true,
+    "checked_after_all_replays": true,
+    "compressed_archives_verified": 8,
+    "compressed_files_verified": 18778,
+    "detailed_private_archive_verification_sha256": "7aaf25335d8441e8650120c4e30c2c737436e97601193e21695fee92bce5cde0",
+    "detailed_private_dependency_verification_sha256": "479e36e52987a0e4d65e9e1c82aaaa16a813dd9bd1fd08fe261491e084650bc1"
   },
   "completed_studies": [
     {
@@ -169,11 +174,32 @@
         "Forecasts, accounting results and ratios derived from fresh timing measurements",
         "Combined financial-record digests containing observed durations and financial values not otherwise retained"
       ]
+    },
+    {
+      "study": "training_evaluation",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "training_repetitions_per_case": 8,
+      "training_evaluation_blocks": 104,
+      "fitted_policies": 208,
+      "evaluation_workloads": 832,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 157861,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "ecb3691c61118b9efc7f1598339ab0c097ed0c240716483f8136e36a6ac00807",
+      "fresh_manifest_sha256": "793c4ab1c6f57a32bbdacd1f64231cb7288787bee94e558a036e6e913a679724",
+      "detailed_private_comparison_sha256": "20ef6c5b85790a4b0b7ff4a1d3cc87cc3c838ebfc0c46c9e8768d1a0302900cb",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry"
+      ]
     }
   ],
-  "pending_studies": [
-    "training_evaluation"
-  ],
+  "pending_studies": [],
   "ancillary_reconstruction": {
     "completed": true,
     "fresh_financial_simulations": false,

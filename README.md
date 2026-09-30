@@ -22,7 +22,7 @@ The [reproduction instructions](../../docs/reproducing_paper.md) provide a singl
 
 The [replication guide](replication/README.md) describes installation, the public executable example and the input schema for a new authorised experiment. The [licensed-input guide](replication/licensed_reproduction.md) traces each table and additional quantitative findings to the original experiment entry points and specifies the archive requirements for exact replay. Python implements the model, simulation, regression, inference and experiment orchestration. The C++ propagation kernel has a Python/SciPy reference and cross-language checks. Optional outward-rounded verification uses a separate python-flint environment.
 
-The [historical replay record](replication/historical_replay.md) identifies six completed financial-study replays, a completed CPU workload replay with exact retained identity checks, and the ancillary reconstructions. The repeated-training replay remains in progress. The research findings and the extent of subsequent replay verification remain distinct claims.
+The [historical replay record](replication/historical_replay.md) documents all eight completed registered replays and the ancillary reconstructions. Seven replays reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with financial estimates unavailable for comparison. Original acquisition and calibration were not rerun. The research findings and the extent of subsequent replay verification remain distinct claims.
 
 ## 4. Evidence and publication
 
