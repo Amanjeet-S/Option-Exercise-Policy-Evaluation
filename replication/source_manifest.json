@@ -7,8 +7,8 @@
     {
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 7037,
-      "sha256": "1d82c1a463607a6929f6dd96712ab550dc9d3e4a95ea5e91478d12f47721b479"
+      "bytes": 7374,
+      "sha256": "d30fd02314057317c36e4e002a64800a647e1d398c0406585666e81d623fabfa"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -144,9 +144,9 @@
     },
     {
       "path": "projects/01_optimal_stopping/replication/README.md",
-      "sha256": "9623a64947ae5d9b78219c84e5e37cb0accaf992ca434cb50416987d14505ad1",
+      "sha256": "05efc375ffcf6fdcac84bdc6b9865b32b98fde60dd272ad12c5f0a7c8bf6da27",
       "category": "replication_interface",
-      "bytes": 14285
+      "bytes": 14877
     },
     {
       "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
@@ -159,6 +159,18 @@
       "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226",
       "category": "replication_interface",
       "bytes": 4920
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/licensed_reproduction.md",
+      "category": "research_document",
+      "bytes": 20988,
+      "sha256": "f60152e04d3b95fd54d4feda1464040646aaea2ac98e8352d1ede731a1075339"
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/licensed_requirements.json",
+      "category": "archive_requirements",
+      "bytes": 15722,
+      "sha256": "b9ed591f4421f64e50bc0037129465bcaa54579c8d62153e42ee49091f6f2c51"
     },
     {
       "path": "projects/01_optimal_stopping/replication/run.py",
@@ -465,6 +477,12 @@
       "sha256": "134dbdc5b89b1a26aa76058f3fa0737521e0cace451d9d19fac1f834320b0e2c",
       "category": "historical_entry_point",
       "bytes": 23460
+    },
+    {
+      "path": "scripts/check_licensed_reproduction.py",
+      "category": "verification",
+      "bytes": 11377,
+      "sha256": "091a20f8a6874c75261b4c494258436c16e95c727e341df93e61a60745de14c5"
     },
     {
       "path": "scripts/check_residual_inference.py",
@@ -1419,6 +1437,12 @@
       "sha256": "f4988b9112b1393db81910babad122bf07a8d3d17944eae5193254fb833ecfda",
       "category": "test_fixture",
       "bytes": 6180
+    },
+    {
+      "path": "tests/test_licensed_reproduction.py",
+      "category": "test_fixture",
+      "bytes": 8327,
+      "sha256": "3166bdf8f83e0eef9846bde1ec724ed8143b2348cbebb3cc1bf3384ba7ac0eeb"
     },
     {
       "path": "tests/test_local_cpu_transfer.py",

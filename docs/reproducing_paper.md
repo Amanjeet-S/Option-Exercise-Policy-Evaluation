@@ -10,7 +10,7 @@ The [paper](../projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Com
 | Numerical algorithms | Execute the stipulated funded-put fixture and baseline notebook | New model-conditional calculations using explicitly mathematical inputs |
 | Tables 1 to 8 | Check released summaries, selected arithmetic and agreement with the LaTeX tables | Does not regenerate the original financial simulations |
 | Table 9 and CPU accounting | Reconstruct forecasts, errors, affordability and expenditure from eighteen released workload records | Uses retained timings and historical forecast inputs; does not rerun the original workloads or pilot |
-| Original financial experiments | Implementation and input requirements are documented | Exact replay requires the original private licensed input and evidence archive |
+| Original financial experiments | Implementation and input requirements are documented in the [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) | Exact replay requires lawful access to the original input, design, source and evidence archive; a provider subscription alone is insufficient |
 
 The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. Independent market validation remains unresolved.
 
@@ -80,4 +80,4 @@ The first suite contains thirty finite-innovation replay checks; the second cont
 
 ## 6. Further verification
 
-The [development guide](development.md) covers the complete repository test suite, optional C++ checks, public-source audits and Germany data notebook. The [detailed replication guide](../projects/01_optimal_stopping/replication/README.md) maps the research questions to the original experiment entry points and specifies the evidence required for an authorised financial replay. Those historical scripts do not distribute their original inputs.
+The [development guide](development.md) covers the complete repository test suite, optional C++ checks, public-source audits and Germany data notebook. The [detailed replication guide](../projects/01_optimal_stopping/replication/README.md) maps the numerical implementation. The [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) traces the paper's tables and additional quantitative findings to their original designs, specifies the required archive and distinguishes complete runs from representative replays. Those historical scripts do not distribute their original inputs.

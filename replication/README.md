@@ -52,6 +52,8 @@ The output path must be inside `data/private` and must not already exist. The co
 
 ## 4. Implementation and historical replay
 
+The [licensed-input reproduction guide](licensed_reproduction.md) gives the table lineage, additional quantitative claims, required archive roles and commands for the complete registered designs. A provider licence alone does not supply those original inputs, registrations or historical source files. The guide distinguishes numerical replay from reconstruction of retained timings and from an audit of acquisition provenance.
+
 | Research operation | Principal implementation | Retained-evidence entry points |
 | --- | --- | --- |
 | Cash events, exercise and funding | `src/qf_research/optimal_stopping/funded_cash.py` | `scripts/validate_funded_cash.py`, `scripts/refine_funded_calendar.py` |
@@ -68,7 +70,7 @@ The output path must be inside `data/private` and must not already exist. The co
 
 Module names without a directory in this table refer to `src/qf_research/optimal_stopping`. The source manifest includes dependency helpers, tests and the attributed historical session calendar in addition to these principal files. Earlier acquisition helpers are included where historical validation code depends on them. Their inclusion does not make acquisition necessary for the public mathematical example or establish permission to redistribute a response.
 
-The historical study scripts retain their original dated registration paths. Exact reproduction requires the corresponding original private archive, including its input manifests, frozen policies, registrations, prior evidence and source versions. Access to Workspace alone does not supply that archive. No public substitute for a withheld curve, quote history or fitted model bundle is provided. Authorised users with an exact archive should preserve its relative paths under `data/private` and restore the source versions bound by its hashes before invoking an audit or replay. A hash mismatch is a failure to satisfy that reproduction contract; the check must not be disabled or repaired by changing the archived hashes.
+The historical study scripts retain their original dated registration paths. Exact reproduction requires the corresponding original archive, including its input manifests, frozen policies, registrations, prior evidence and source versions. Access to Workspace alone does not supply that archive. No public substitute for a withheld curve, quote history or fitted model bundle is provided. Readers who already lawfully hold the complete matching archive should preserve all its relative paths in a separate reproduction checkout, including required historical configurations and evidence outside `data/private`. Restore the source versions bound by its hashes before invoking an audit or replay. The repository does not distribute that archive. A hash mismatch is a failure to satisfy the reproduction contract; the check must not be disabled or repaired by changing the archived hashes.
 
 For example, with the original prospective-allocation archive present, the following commands audit its retained records and replay three specified financial rows. The replay deliberately excludes elapsed and CPU times from equality comparisons.
 
