@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from dataclasses import asdict
 import hashlib
+import importlib.util
 import json
 import math
 import os
@@ -17,6 +18,14 @@ from pathlib import Path
 import platform
 from statistics import median
 from types import SimpleNamespace
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[2]
+FIXTURE = HERE/'configs/stipulated_fixture.json'
+_verifier_spec = importlib.util.spec_from_file_location(
+    '_replication_source_verifier', HERE/'verify_sources.py')
+source_verifier = importlib.util.module_from_spec(_verifier_spec)
+_verifier_spec.loader.exec_module(source_verifier)
 
 import numpy as np
 import scipy
@@ -38,9 +47,6 @@ from qf_research.optimal_stopping.value_martingale import (
     build_values, observation_rights, value_martingale,
 )
 
-HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
-FIXTURE = HERE/'configs/stipulated_fixture.json'
 TOP_FIELDS = {'schema_version', 'classification', 'description', 'model', 'option',
               'decisions', 'experiment'}
 EXPERIMENT_FIELDS = {'root_seed', 'training_paths', 'evaluation_paths', 'repetitions',
@@ -49,9 +55,7 @@ EXPERIMENT_FIELDS = {'root_seed', 'training_paths', 'evaluation_paths', 'repetit
 
 
 def read_json(path):
-    def reject(value):
-        raise ValueError('JSON input must not contain non-finite numbers: '+value)
-    return json.loads(Path(path).read_text(), parse_constant=reject)
+    return source_verifier.read_json_bytes(Path(path).read_bytes())
 
 
 def integer(value, name, minimum=1):
@@ -140,7 +144,30 @@ def canonical_digest(value):
                                     separators=(',', ':')).encode()).hexdigest()
 
 
-def run(specification):
+def source_preflight(specification):
+    required = tuple(path.relative_to(ROOT).as_posix() for path in
+                     (Path(__file__).resolve(), HERE/'verify_sources.py', FIXTURE))
+    verification = source_verifier.verify_sources(ROOT, required_paths=required)
+    source_verifier.check_import_origins(verification, ROOT)
+    validate(specification)
+    return dict(verification=verification,
+                input_specification_sha256=canonical_digest(specification))
+
+
+def execution_provenance(specification, before):
+    verification = source_verifier.verify_sources(ROOT)
+    if verification != before['verification']:
+        raise ValueError('Source manifest or listed sources changed during execution')
+    if canonical_digest(specification) != before['input_specification_sha256']:
+        raise ValueError('Input specification changed during execution')
+    origins = source_verifier.check_import_origins(verification, ROOT)
+    return dict(input_specification_sha256=before['input_specification_sha256'],
+                source_manifest_sha256=verification['source_manifest_sha256'],
+                verified_source_files=verification['verified_source_files'],
+                project_module_origins=origins, scope=verification['scope'])
+
+
+def _run_numerics(specification):
     """Run fixed counts; return aggregate results and separate measured costs.
 
     Counts never depend on realised costs or gains. The allocation calculation
@@ -224,13 +251,21 @@ def run(specification):
                 ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS')}))
 
 
+def run(specification):
+    """Execute the conditional study with source and input provenance checks."""
+    before = source_preflight(specification)
+    result = _run_numerics(specification)
+    result['provenance'] = execution_provenance(specification, before)
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, default=FIXTURE)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--validate-only', action='store_true')
     args = parser.parse_args()
-    specification = load_specification(args.config)
+    specification = read_json(args.config)
     output = args.output.resolve()
     # Keeping even authorised derived outputs private avoids silently exporting
     # an unreviewed model bundle through a convenience command.
@@ -238,8 +273,12 @@ def main():
         raise ValueError('Output must remain under data/private until separately reviewed')
     if output.exists():
         raise FileExistsError('Use a fresh output file')
-    result = (dict(valid=True, schema_version=1, classification=specification['classification'])
-              if args.validate_only else run(specification))
+    if args.validate_only:
+        before = source_preflight(specification)
+        result = dict(valid=True, schema_version=1, classification=specification['classification'],
+                      provenance=execution_provenance(specification, before))
+    else:
+        result = run(specification)
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open('x') as stream:
         stream.write(json.dumps(result, indent=2, allow_nan=False)+'\n')

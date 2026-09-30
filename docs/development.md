@@ -1,5 +1,7 @@
 # Development and reproduction
 
+For the paper's public material, start with the [reproduction instructions](reproducing_paper.md). The commands below cover development and the other projects as well.
+
 ## Installation
 
 Clone the repository and run these commands from its root. Python 3.13 is the reference version. The existing numerical validation record was produced with Python 3.13.9 on macOS; continuous integration checks the supported environment separately.
@@ -9,6 +11,7 @@ git clone https://github.com/Amanjeet-S/Quantitative-Finance.git
 cd Quantitative-Finance
 python3 -m venv .venv
 source .venv/bin/activate
+python projects/01_optimal_stopping/replication/verify_sources.py
 python -m pip install -r requirements.lock
 python -m pip install -e . --no-deps
 python -m pytest -q
@@ -35,6 +38,6 @@ The commands are in the [numerical reproduction guide](../projects/01_optimal_st
 
 ## Continuous integration
 
-GitHub Actions installs the frozen core and notebook dependencies, runs pytest, checks tracked Markdown file links and source hashes, audits the saved Germany data, and executes the notebooks. These checks require no provider credentials or live data downloads. Actions are pinned to commit identifiers.
+GitHub Actions verifies the published implementation inventory, installs the frozen core and notebook dependencies, runs pytest, checks tracked Markdown file links and retained data hashes, reconstructs the CPU timing summaries, audits the saved Germany data, and executes the notebooks. These checks require no provider credentials or live data downloads. Actions are pinned to commit identifiers. Inventory verification establishes consistency with its listed hashes rather than authenticity or completeness of the release.
 
 The optional [C++ propagation component](../projects/01_optimal_stopping/cpp/README.md) requires a C++17 compiler. Tests build it in a temporary directory; native tests explicitly skip if no compiler is installed. Continuous integration requires a compiler before running the suite. The retained performance study was run on macOS, and does not establish performance on the CI host. R work remains planned.

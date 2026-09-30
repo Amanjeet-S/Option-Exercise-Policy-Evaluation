@@ -1,4 +1,4 @@
-# Exercise-policy loss under computational and financial constraints
+# Option Exercise-Policy Evaluation
 
 ## 1. Research question
 
@@ -16,9 +16,9 @@ Historical CPU forecasts fail to transfer. Immediate local calibration reduces m
 
 ## 3. Reading and replication
 
-The [main paper (PDF)](paper/methods.pdf) is the principal research document, with a [self-contained LaTeX source](paper/main.tex). The [numerical supplement](paper/numerical_results.md) provides the same nine tables in Markdown, with a [machine-readable summary](paper/numerical_results.json). The [research design](research_design.md) identifies the completed questions and the unmet empirical criterion.
+The [main paper (PDF)](paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) is the principal research document, with a [self-contained LaTeX source](paper/main.tex). The [numerical supplement](paper/numerical_results.md) provides the same nine tables in Markdown, with a [machine-readable summary](paper/numerical_results.json). The [research design](research_design.md) identifies the completed questions and the unmet empirical criterion.
 
-The [numerical-validation notebook](notebooks/01_numerical_validation.ipynb) introduces the baseline pricing checks. The [conditional-research notebook](notebooks/27_conditional_research_replication.ipynb) executes the funded-model example, exact finite-law probability checks and released-summary audit. Both notebooks distinguish stipulated mathematical examples from financial evidence.
+The [reproduction instructions](../../docs/reproducing_paper.md) provide a single command for the public checks after installation. The [numerical-validation notebook](notebooks/01_numerical_validation.ipynb) introduces the baseline pricing checks. The [conditional-research notebook](notebooks/27_conditional_research_replication.ipynb) executes the funded-model example, exact finite-law probability checks and released-summary audit. It reconstructs Table 9 from the eighteen workloads in the [CPU measurement supplement](paper/cpu_timings.md). Both notebooks distinguish stipulated mathematical examples from financial evidence.
 
 The [replication guide](replication/README.md) describes installation, the public executable example, the input schema for a new authorised experiment, the original experiment entry points and the private-input requirements for exact historical replay. Python implements the model, simulation, regression, inference and experiment orchestration. The C++ propagation kernel has a Python/SciPy reference and cross-language checks. Optional outward-rounded verification uses a separate python-flint environment.
 

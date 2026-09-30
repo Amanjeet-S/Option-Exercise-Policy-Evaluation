@@ -11,4 +11,6 @@ Research findings derived from LSEG observations may be published under the conf
 
 Future cleaned analysis datasets must be generated from an identified snapshot by documented code. Record units, seasonal adjustments, transformations, date alignment, exclusions and missing values. A missing observation must never silently become a zero. Preserve source files when creating a new vintage.
 
+The [paper reproduction route](../docs/reproducing_paper.md) uses published mathematical fixtures, released research summaries and original computational timing measurements. It does not read or export restricted financial observations. Its local outputs are explicitly distinct from the paper's original financial simulation results.
+
 See [third-party notices](../THIRD_PARTY_NOTICES.md) and [provenance](../PROVENANCE.md).

@@ -8,10 +8,13 @@ I distinguish three operations. A summary audit checks the arithmetic and presen
 
 ## 2. Installation and the public example
 
-From the repository root, create an environment and install the numerical package. Python 3.11 or later is required.
+The [reader's reproduction instructions](../../../docs/reproducing_paper.md) provide a single command for the public paper checks, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.
+
+For the numerical fixture alone, create an environment and install the package from the repository root. Python 3.11 or later is required; continuous integration checks Python 3.11 and 3.13.
 
 ```sh
 python3 -m venv .venv
+.venv/bin/python projects/01_optimal_stopping/replication/verify_sources.py
 .venv/bin/python -m pip install -r requirements.lock
 .venv/bin/python -m pip install --no-deps -e .
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
@@ -23,9 +26,11 @@ The input [stipulated_fixture.json](configs/stipulated_fixture.json) specifies a
 
 The result contains paired policy-gain estimates, non-negative pathwise dual gaps, the signed training-variance moment estimate, conditional and realised terminal gains, and measured setup and pair costs. The common upper payoff makes the difference in paired mean gaps equal to the policy-gain estimate. The allocation calculation uses the measured costs and estimated variance components as a pilot diagnostic. It does not execute the selected counts or establish that the small example estimates an optimal allocation reliably. A negative component estimate remains visible and produces the selector's unresolved status.
 
-The numerical checksum excludes timing and environment metadata. Exact equality is meaningful under the same numerical implementation and environment; different library versions or linear-algebra backends can change floating-point results. Timings and any allocation computed from them can change on repeated execution. The pair cost counts a full training and evaluation workload for each evaluation size. The actual runner shares its trained policies across sizes, so summing those pair charges would not measure its total process time. Terminal diagnostics are outside that cost comparison.
+The numerical checksum excludes timing, environment and provenance metadata. Exact equality is meaningful under the same numerical implementation and environment; different library versions or linear-algebra backends can change floating-point results. Timings and any allocation computed from them can change on repeated execution. The pair cost counts a full training and evaluation workload for each evaluation size. The actual runner shares its trained policies across sizes, so summing those pair charges would not measure its total process time. Terminal diagnostics are outside that cost comparison.
 
-The [executed notebook](../notebooks/27_conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [source manifest](source_manifest.json) identifies the reviewed implementation files and their SHA-256 hashes. It is a source inventory, not a manifest of restricted observations.
+The [executed notebook](../notebooks/27_conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [source manifest](source_manifest.json) identifies the reviewed files, their byte counts and SHA-256 hashes. The [standalone verifier](verify_sources.py) checks every declared file with the Python standard library, before scientific dependencies are needed. It rejects malformed entries, duplicate or escaping paths, symbolic links and altered or missing files. This checks consistency with the supplied inventory; it does not authenticate that inventory, prove its completeness or verify a financial input.
+
+The experiment runner checks the inventory and the origins of loaded project modules before numerical work and again before returning a result. Each result records the canonical input-specification digest, manifest digest and checked module origins separately from the numerical checksum. The module check prevents an unnoticed import from another installed copy of the project. These checks do not certify third-party binaries, hardware or the interpreter's in-memory state. Use a fresh kernel or interpreter for a reproducible run. An intentional source change requires its own reviewed inventory; the runner does not silently rewrite recorded hashes.
 
 ## 3. Inputs for a new authorised experiment
 

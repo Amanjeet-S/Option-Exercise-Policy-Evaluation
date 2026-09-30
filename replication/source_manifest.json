@@ -1,9 +1,21 @@
 {
   "schema_version": 1,
   "title": "Conditional stopping research implementation",
-  "scope": "Reviewed source, mathematical fixtures and tests. Restricted observations, calibrated model bundles, retained simulation records and private evidence archives are excluded.",
-  "dependency_scope": "Static local Python import closure, attributed historical calendar and declared C++ kernels; other runtime data dependencies remain external.",
+  "scope": "Reviewed public implementation, mathematical fixtures, computational timing measurements and declared environment inputs. Restricted financial observations, calibrated input bundles and retained financial simulation records are excluded.",
+  "dependency_scope": "Reviewed implementation, declared environment inputs and attributed calendar. The external_imports mapping retains the original static inspection; it is not an exhaustive dependency certificate. Runtime project-module origins are checked separately.",
   "files": [
+    {
+      "path": "docs/reproducing_paper.md",
+      "category": "public_reproduction",
+      "bytes": 5603,
+      "sha256": "67e87f08dd9c6328d65b4bfabbaf0c70bc0353337ab65506953289b1937c69d9"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/benchmark.json",
+      "category": "public_reproduction",
+      "bytes": 835,
+      "sha256": "6aaaf827d9f52a622b9deff64275979cb43046af7c98634e42853e4a86f31e0a"
+    },
     {
       "path": "projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json",
       "category": "attributed_historical_calendar",
@@ -23,10 +35,118 @@
       "bytes": 1358
     },
     {
+      "path": "projects/01_optimal_stopping/notebooks/01_numerical_validation.ipynb",
+      "category": "public_reproduction",
+      "bytes": 67365,
+      "sha256": "c11ae8436853796baeb19ba07cb2a8743662863c4d3293387ab6f2a68969f39a"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/27_conditional_research_replication.ipynb",
+      "category": "public_reproduction",
+      "bytes": 32834,
+      "sha256": "f79be9938640e04b656a2fafb6e3874d79e1d088bcb517381335def4aa98d89b"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
+      "category": "public_reproduction",
+      "bytes": 375030,
+      "sha256": "0d4fc6e0b78baab3de2e5e40ffdb26d8cd6062e8765396211a16c0ec15d239ae"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/cpu_timings.json",
+      "category": "computational_measurement",
+      "bytes": 14392,
+      "sha256": "79a6eaa4d58979b7e0180a29dfac2a7f6e883deb6506beb33cb8d81d19b28115"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/cpu_timings.md",
+      "category": "research_document",
+      "bytes": 9754,
+      "sha256": "e4a05dfb0aaf92ce84a628f118abf3e18cf28ae4dc4da3ade63b3e1889bafa41"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/main.tex",
+      "category": "public_reproduction",
+      "bytes": 85905,
+      "sha256": "047a404f8c03e4d0e9437f1241acd8a2bb4eaf7dd5b4210b9917ee2eeca6a1a5"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/numerical_results.json",
+      "category": "public_reproduction",
+      "bytes": 18028,
+      "sha256": "fd9693b52f0146555ef381b8feafba8cd1d47144d4dfad6f86e438023cc1523d"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/numerical_results.md",
+      "category": "public_reproduction",
+      "bytes": 30386,
+      "sha256": "1ac8f5f74f7ad0d19d9c0124155356af51c6fbe094196bd14af1d677d5c8fc62"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/allocation_probability.py",
+      "category": "public_reproduction",
+      "bytes": 9408,
+      "sha256": "ad846a04d684f3b3749889d5c6037313a0c399046cbd103fcb5e4c4aa2d98f5c"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/conditional_drift.py",
+      "category": "public_reproduction",
+      "bytes": 8613,
+      "sha256": "51c02c22ca6f89bbc2d4e0d983e351db39a5410e6f924584db2c3f0164172f5f"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/cpu_timings.py",
+      "category": "verification",
+      "bytes": 15713,
+      "sha256": "2791084bd78fac6a6419e69360a3c9d7befa1e0c58701d9df6e50a8c24a94b82"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/numerical_results.py",
+      "category": "public_reproduction",
+      "bytes": 18705,
+      "sha256": "1dae4dfe15690cff691daa2b404982888096c99e19fdd0337f5c32a5e03d3fcd"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/paper_results.py",
+      "category": "public_reproduction",
+      "bytes": 8819,
+      "sha256": "cd18da91409e446fd2889937984a69846f7a3e6f044611b16698e0438b9da933"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/test_allocation_probability.py",
+      "category": "public_reproduction",
+      "bytes": 5991,
+      "sha256": "a673d432a26d63cf4a534c43d29694aea8cb6c6c8fdaa5e36992c62c6c107f4f"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/test_conditional_drift.py",
+      "category": "public_reproduction",
+      "bytes": 3121,
+      "sha256": "effc6b62067162c9beb33a12f132b5f4142cdb7265a9389e8abe403d23c22846"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/test_cpu_timings.py",
+      "category": "test_fixture",
+      "bytes": 6640,
+      "sha256": "de82122f59e9df0e3b971c4686daebb3ca4f681358ada0b939ae4cd10c5421b9"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/test_numerical_results.py",
+      "category": "public_reproduction",
+      "bytes": 4903,
+      "sha256": "642c58210affdca6efa3e9eac41db278a998f9eb8b200ff7c814a147019477f5"
+    },
+    {
+      "path": "projects/01_optimal_stopping/paper/verification/test_paper_results.py",
+      "category": "public_reproduction",
+      "bytes": 1753,
+      "sha256": "5bb52acef806bbc86947183b33df35d1b4e334d98cb53ed040ef8a9ca32e08ea"
+    },
+    {
       "path": "projects/01_optimal_stopping/replication/README.md",
-      "sha256": "242ecfc7a753415039170255975b4dcb722108cc658b6702b2dea2b4cd282af9",
+      "sha256": "bd1792d65d44ccf982fd128605388882ab8c2234cd0c3165870ca42e7de5bff7",
       "category": "replication_interface",
-      "bytes": 12477
+      "bytes": 14084
     },
     {
       "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
@@ -42,9 +162,39 @@
     },
     {
       "path": "projects/01_optimal_stopping/replication/run.py",
-      "sha256": "c8f8746046fc07a2c1c50ee82634e0f49bf6f2c62cadd5c30a49e71fc3fe3a36",
+      "sha256": "ae57ac4c1e62c803653d11503d2a384f2f9ff9d5b617ed157ef368bea6fe5d05",
       "category": "replication_interface",
-      "bytes": 13875
+      "bytes": 15711
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/verify_sources.py",
+      "category": "replication_interface",
+      "sha256": "955e676c8a4d9b28792d03d958adf1ac911afc6b0f8157d8ff1b7102a1fb761c",
+      "bytes": 9309
+    },
+    {
+      "path": "projects/01_optimal_stopping/results/baseline/grid_convergence.csv",
+      "category": "public_reproduction",
+      "bytes": 1730,
+      "sha256": "ba4d83c163b1dfaa351c56af90aa6666752309de039820241eef6203f1441ed1"
+    },
+    {
+      "path": "projects/01_optimal_stopping/results/baseline/manifest.json",
+      "category": "public_reproduction",
+      "bytes": 2303,
+      "sha256": "ff525ac4c0ea2c20f1c8676469b8c9a2db771d38484e2d53f4d891e7f31cc508"
+    },
+    {
+      "path": "requirements-notebooks.lock",
+      "category": "environment_definition",
+      "sha256": "73a2b511539ba0fbecd33a6654330e5311e783a9460fd9559302df1545027d15",
+      "bytes": 947
+    },
+    {
+      "path": "requirements.lock",
+      "category": "environment_definition",
+      "sha256": "6cdc623e7afa659cad3f0599ec929b365eb465ef5496392276d93eb9d084b927",
+      "bytes": 333
     },
     {
       "path": "scripts/acquire_prospective_sample.py",
@@ -347,6 +497,18 @@
       "bytes": 13448
     },
     {
+      "path": "scripts/execute_notebooks.py",
+      "category": "public_reproduction",
+      "bytes": 1012,
+      "sha256": "4b68cbed57f8e927b614b6002f2e6a01ff4100dafca591b5f8565ade2283ff6e"
+    },
+    {
+      "path": "scripts/execute_release_notebooks.py",
+      "category": "public_reproduction",
+      "bytes": 2935,
+      "sha256": "beac801d57c1a3ac37587bc7675a80e16cd5aafc77ddbe0443f0ac45e2690122"
+    },
+    {
       "path": "scripts/export_gain_replay.py",
       "sha256": "3e6436512827b1293a81a86a67a1057aecb48f8458b2030ba9102e79f893cdaf",
       "category": "historical_entry_point",
@@ -477,6 +639,12 @@
       "sha256": "23b6a8a178f7494e3a2cb9fe3fdf06b923cae0c22e1eeb8078044935f887a640",
       "category": "historical_entry_point",
       "bytes": 19996
+    },
+    {
+      "path": "scripts/reproduce_paper.py",
+      "category": "public_reproduction",
+      "bytes": 10223,
+      "sha256": "8537d62ca693f875d3776df8f4b81a6dc28c6b1e511acfeb8526a64bd6e7c3cf"
     },
     {
       "path": "scripts/reproduce_training_allocation.py",
@@ -789,6 +957,12 @@
       "sha256": "1f9331ae7458b785ff76854a488136cf18f0d7cb7cdbdd343af874aad99b27ea",
       "category": "source_input_validation",
       "bytes": 9336
+    },
+    {
+      "path": "src/qf_research/market_data/treasury.py",
+      "category": "source_input_validation",
+      "sha256": "e5a0f3200007e084ee7d4138a4428e5c56f0db9df9fd6ffc3f6dd2dc80183555",
+      "bytes": 5714
     },
     {
       "path": "src/qf_research/market_data/underlying_quote_interval.py",
@@ -1253,6 +1427,12 @@
       "bytes": 1332
     },
     {
+      "path": "tests/test_optimal_stopping.py",
+      "category": "public_reproduction",
+      "bytes": 9970,
+      "sha256": "93a2563bf30b2a15f22202709779a42564d70afb0820bd03743b9e510ab64d10"
+    },
+    {
       "path": "tests/test_option_quotes.py",
       "sha256": "ff16d87f8bf70d984eb6e99fdb84c71842f9381c62f5c3a7650a13fb616eef5f",
       "category": "test_fixture",
@@ -1308,9 +1488,21 @@
     },
     {
       "path": "tests/test_replication_runner.py",
-      "sha256": "5512eb7aa9c39c99544a2f5bce6d7ac2367a0e51a924fdf38d4c8de86cc987db",
+      "sha256": "5e63798001b76111d2ee0e9bae14a98d5095dbdbfd0a7291c1553eda3d01f5ea",
       "category": "test_fixture",
-      "bytes": 3505
+      "bytes": 7746
+    },
+    {
+      "path": "tests/test_replication_sources.py",
+      "category": "test_fixture",
+      "sha256": "a2a4dc967853b14dd84ad0020bdb22a4afeaa916f18a183b1c0c8c976a4e81d0",
+      "bytes": 7407
+    },
+    {
+      "path": "tests/test_reproduce_paper.py",
+      "category": "public_reproduction",
+      "bytes": 6084,
+      "sha256": "082e1a3047feba8e754664553e505c3bc885318052be8609448dbba8d38c79d3"
     },
     {
       "path": "tests/test_residual_envelope.py",
@@ -1413,6 +1605,12 @@
       "sha256": "90d30f75591e5acd6d63975b9012ed8970d4e3317b066ba727cffb3bbe73b036",
       "category": "test_fixture",
       "bytes": 2421
+    },
+    {
+      "path": "tests/test_treasury.py",
+      "category": "public_reproduction",
+      "bytes": 2362,
+      "sha256": "453de5dcd33f78422bfb114c41f81110b7cd07161e97594c2a03f42fc1168390"
     },
     {
       "path": "tests/test_underlying_quote_interval.py",

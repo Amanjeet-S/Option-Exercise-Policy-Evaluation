@@ -8,11 +8,14 @@ The [replication guide](../projects/01_optimal_stopping/replication/README.md) m
 
 | Command from the repository root | Purpose |
 | --- | --- |
+| `python scripts/reproduce_paper.py --output data/private/reproduction/reviewer_run` | Run the public paper checks, numerical fixture and two notebooks; preserve a verification record |
+| `python projects/01_optimal_stopping/replication/verify_sources.py` | Check listed file sizes and hashes against the published inventory |
 | `python scripts/check_repository.py` | Check tracked Markdown targets and retained public-source hashes |
 | `python scripts/audit_germany_data.py` | Audit observed source coverage without estimating economic effects |
 | `python scripts/execute_notebooks.py` | Execute all project notebooks in fresh kernels in the published checkout |
 | `python scripts/execute_release_notebooks.py` | Execute the two reader notebooks for the stopping study |
 | `python projects/01_optimal_stopping/paper/verification/numerical_results.py` | Check released Markdown summaries and selected arithmetic |
 | `python projects/01_optimal_stopping/paper/verification/paper_results.py` | Check the LaTeX result tables against those summaries |
+| `python projects/01_optimal_stopping/paper/verification/cpu_timings.py` | Reconstruct Table 9 and expenditure from eighteen released computational workloads |
 
 Notebook execution needs the notebook dependency lock. Without `--write`, execution leaves saved notebook files unchanged. The [development guide](../docs/development.md) describes installation and continuous integration. A summary check, a mathematical fixture and a financial replay answer distinct verification questions.
