@@ -1,0 +1,2 @@
+# Separate arithmetic environment; no scientific simulation dependencies.
+python-flint==0.9.0

@@ -7,8 +7,8 @@
     {
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 5603,
-      "sha256": "67e87f08dd9c6328d65b4bfabbaf0c70bc0353337ab65506953289b1937c69d9"
+      "bytes": 7037,
+      "sha256": "1d82c1a463607a6929f6dd96712ab550dc9d3e4a95ea5e91478d12f47721b479"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -144,9 +144,9 @@
     },
     {
       "path": "projects/01_optimal_stopping/replication/README.md",
-      "sha256": "bd1792d65d44ccf982fd128605388882ab8c2234cd0c3165870ca42e7de5bff7",
+      "sha256": "9623a64947ae5d9b78219c84e5e37cb0accaf992ca434cb50416987d14505ad1",
       "category": "replication_interface",
-      "bytes": 14084
+      "bytes": 14285
     },
     {
       "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
@@ -183,6 +183,12 @@
       "category": "public_reproduction",
       "bytes": 2303,
       "sha256": "ff525ac4c0ea2c20f1c8676469b8c9a2db771d38484e2d53f4d891e7f31cc508"
+    },
+    {
+      "path": "requirements-certification.lock",
+      "category": "environment_definition",
+      "bytes": 94,
+      "sha256": "9626baacbd90c04643de37ffbb2a28bc78958cc6c74b04e62dc9149df48c921f"
     },
     {
       "path": "requirements-notebooks.lock",

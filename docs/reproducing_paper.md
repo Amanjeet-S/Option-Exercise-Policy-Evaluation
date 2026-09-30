@@ -60,6 +60,24 @@ python projects/01_optimal_stopping/paper/verification/cpu_timings.py
 
 The PDF is already included. To rebuild it, compile the self-contained [main.tex](../projects/01_optimal_stopping/paper/main.tex) using pdfLaTeX, or use `make` in its directory with a TeX distribution and `latexmk`. The [paper guide](../projects/01_optimal_stopping/paper/README.md) describes this optional build. Neither PDF compilation nor the separate python-flint certification environment is required for the default public reproduction.
 
-## 5. Further verification
+## 5. Interval arithmetic
+
+The outward-rounded arithmetic checks use a separate environment with `python-flint==0.9.0`. From the repository root, create and activate it:
+
+```sh
+python3 -m venv .venv-certification
+source .venv-certification/bin/activate
+python -m pip install -r requirements-certification.lock
+python projects/01_optimal_stopping/replication/verify_sources.py
+mkdir -p data/private
+python -m unittest discover -s tests -p test_certify_gain_replay.py -v
+python scripts/test_certified_residual.py
+```
+
+On Windows, create the environment with `py -3.13 -m venv .venv-certification`, activate with `.venv-certification\Scripts\Activate.ps1` and use `New-Item -ItemType Directory -Force data/private` in place of `mkdir -p`. No installation of the simulation package is needed in this environment.
+
+The first suite contains thirty finite-innovation replay checks; the second contains twenty-two residual-enclosure checks. They cover exact interpretation of binary inputs, outward rounding, cash-event and exercise boundaries, conditional expectations, global tails, ambiguous decisions and rejection of altered evidence. All inputs are stipulated mathematical fixtures. These tests check the certification implementation without certifying the paper's withheld financial inputs, general statistical coverage or market validity. A separate continuous-integration job runs both suites with the pinned arithmetic dependency.
+
+## 6. Further verification
 
 The [development guide](development.md) covers the complete repository test suite, optional C++ checks, public-source audits and Germany data notebook. The [detailed replication guide](../projects/01_optimal_stopping/replication/README.md) maps the research questions to the original experiment entry points and specifies the evidence required for an authorised financial replay. Those historical scripts do not distribute their original inputs.

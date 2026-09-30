@@ -90,7 +90,7 @@ These operations do not rerun all 3,978 primary allocation pairs or the 7,956 la
 
 The public example and most research calculations use NumPy and SciPy. Plotting uses Matplotlib. The C++ propagation comparison needs a C++17 compiler and is optional; the Python path remains available. The original C++ code is released under the repository's MIT licence.
 
-The outward-rounded enclosure scripts require `python-flint==0.9.0`, the version used for the retained certification work. They are designed for a separate environment and exchange explicit JSON artifacts with the simulation environment. Installing that package is unnecessary for the public example. A certified enclosure only covers the quantities and mathematical assumptions encoded in its input and audit; it is not a certificate for market-data validity or the complete modelling chain.
+The outward-rounded enclosure scripts use the separate [arithmetic dependency lock](../../../requirements-certification.lock), which pins `python-flint==0.9.0`, the version used for the retained certification work. They exchange explicit JSON artifacts with the simulation environment. Installing that package is unnecessary for the public example. The [installation instructions](../../../docs/reproducing_paper.md#5-interval-arithmetic) reproduce the dedicated continuous-integration checks locally. A certified enclosure only covers the quantities and mathematical assumptions encoded in its input and audit; it is not a certificate for market-data validity or the complete modelling chain.
 
 From that separate arithmetic environment, the following commands check finite-innovation replay and the global residual enclosure on exact mathematical fixtures.
 
