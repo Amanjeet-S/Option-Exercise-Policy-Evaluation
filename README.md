@@ -16,7 +16,7 @@ Historical CPU forecasts fail to transfer. Immediate local calibration reduces m
 
 ## 3. Reading and replication
 
-The [self-contained paper](paper/main.tex) is the principal research document. The [numerical supplement](paper/numerical_results.md) provides the same nine tables in Markdown, with a [machine-readable summary](paper/numerical_results.json). The [research design](research_design.md) identifies the completed questions and the unmet empirical criterion.
+The [main paper (PDF)](paper/methods.pdf) is the principal research document, with a [self-contained LaTeX source](paper/main.tex). The [numerical supplement](paper/numerical_results.md) provides the same nine tables in Markdown, with a [machine-readable summary](paper/numerical_results.json). The [research design](research_design.md) identifies the completed questions and the unmet empirical criterion.
 
 The [numerical-validation notebook](notebooks/01_numerical_validation.ipynb) introduces the baseline pricing checks. The [conditional-research notebook](notebooks/27_conditional_research_replication.ipynb) executes the funded-model example, exact finite-law probability checks and released-summary audit. Both notebooks distinguish stipulated mathematical examples from financial evidence.
 
@@ -27,3 +27,5 @@ The [replication guide](replication/README.md) describes installation, the publi
 I publish derived findings and reviewed original code and writing. Raw provider exports and observation-level subscription inputs remain private. The public example uses explicitly stipulated mathematical quantities and does not reproduce the financial tables. Exact financial replay requires the original licensed input and evidence archive; the public summary checker verifies transcription and selected arithmetic, not a rerun of the experiments.
 
 The [publication policy](../../docs/publication_policy.md) and [licensing scope](../../LICENSING.md) govern the release. Established mathematical methods are attributed in the paper and [literature comparison](paper/contribution_review.md). The contribution is the controlled argument and evidence for the stated computational questions, without a claim of a new general pricing theorem.
+
+The [market-validation data plan](data_plan.md) restricts further acquisition to free sources and existing authorised access without additional payment. The [Cboe demonstration audit](cboe_sample_audit.md) provides an executable format check, while independent market validation remains unresolved.

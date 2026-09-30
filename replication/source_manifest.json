@@ -125,6 +125,12 @@
       "bytes": 22806
     },
     {
+      "path": "scripts/audit_cboe_snapshot.py",
+      "sha256": "3570e0422c950ab37da24dfc64a21269e6bb7e19a20a873a50445b7755f33dcd",
+      "category": "market_data_format_audit",
+      "bytes": 4078
+    },
+    {
       "path": "scripts/audit_certified_residual.py",
       "sha256": "562d9bd51681c9494babb32aa6a3e90a12049fd61be2138f378a1b261339c063",
       "category": "historical_entry_point",
@@ -653,6 +659,12 @@
       "bytes": 2895
     },
     {
+      "path": "src/qf_research/market_data/cboe_snapshot.py",
+      "sha256": "b2260c8d3a9c74adb06be44395d00d74a5c624b4036edd6da433ce3bb2542cbb",
+      "category": "market_data_format_audit",
+      "bytes": 14573
+    },
+    {
       "path": "src/qf_research/market_data/conditional_calibration.py",
       "sha256": "743c7537fe36fc694f4832440808f735ef60e4cbfcd82023fd5d61b6643f599d",
       "category": "source_input_validation",
@@ -1041,6 +1053,12 @@
       "sha256": "e8af60aad0e1aca789830912bded4c5bd7882d5babb06d30ed5ae44c3be8e4b2",
       "category": "test_fixture",
       "bytes": 7859
+    },
+    {
+      "path": "tests/test_cboe_snapshot.py",
+      "sha256": "c3e7603b4b6c2ffda5640ffa04715b0989a9b5e53ca6455e6205525da995cfa5",
+      "category": "test",
+      "bytes": 11770
     },
     {
       "path": "tests/test_certify_gain_replay.py",
