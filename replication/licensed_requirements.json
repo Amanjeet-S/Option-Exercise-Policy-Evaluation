@@ -28,6 +28,12 @@
       "sha256": "ecb3691c61118b9efc7f1598339ab0c097ed0c240716483f8136e36a6ac00807"
     },
     {
+      "id": "training_evaluation_registration",
+      "tables": [],
+      "path": "data/private/training_evaluation/2026-09-26/registration_v1/manifest.json",
+      "sha256": "cbe7f2d1d0e38d02315234cf88c636363103a73e00a90b3255a4c2093e4a35b2"
+    },
+    {
       "id": "training_allocation",
       "tables": [
         4,
@@ -361,6 +367,7 @@
     "Paths are relative to an archive checkout. Required historical files also occur outside data/private. Preserve original bytes and relative paths; do not rehash changed evidence.",
     "Historical native libraries are checked as archived evidence only. The checker does not load or execute them, establish binary portability or validate the current computational environment.",
     "The checker follows explicit supported path-to-digest maps in hash-bound manifests. It does not infer dependencies from prose, opaque scalar digests or acquisition metadata.",
+    "The training-evaluation registration is an explicit root because its completed run records registration_sha256 as a scalar. Its configuration, tasks and protocol must be present even when the run's other mapped dependencies are complete.",
     "Readiness covers the enumerated experiment and analysis roots. It is not a comprehensive audit of mathematical proofs, bibliographic sources, qualitative interpretations or prior paper editions.",
     "Retained CPU records can reconstruct published timing arithmetic. Rerunning workloads measures a new machine and session, so original timings are not reproducible constants."
   ]

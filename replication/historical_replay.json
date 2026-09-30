@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-30",
+  "scope": "One complete model-input replay and separate reconstruction of retained ancillary evidence.",
+  "complete_historical_replay": false,
+  "archive_verification": {
+    "dependency_files": 23472,
+    "manifests": 89,
+    "passed": true
+  },
+  "completed_studies": [
+    {
+      "study": "value_martingale",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "frozen_policies": 208,
+      "method_assessments": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 346154,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "a7dc57d7bffd3fcd328cecd0207aba21c32807634a5fd10b276ae6af002036fd",
+      "fresh_manifest_sha256": "77fff7ecafc3ca18a20d6c466dd9657bf7ab47b47f6184e4053227aeaefca710",
+      "detailed_private_comparison_sha256": "7039d1204d6a67a58210c77a3d0a16c9b69b28743f95f93a121980570957033a",
+      "exclusions": [
+        "Measured execution times",
+        "Runtime environment and telemetry",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ],
+      "environment": {
+        "python": "3.13.9",
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "workers": 1
+      }
+    }
+  ],
+  "pending_studies": [
+    "terminal_repair",
+    "terminal_training",
+    "training_evaluation",
+    "allocation_pilot",
+    "training_allocation",
+    "prospective_allocation",
+    "cpu_prediction"
+  ],
+  "ancillary_reconstruction": {
+    "completed": true,
+    "fresh_financial_simulations": false,
+    "market_admission_cases": 15,
+    "primary_admitted_cases": 0,
+    "terminal_training_policies": 208,
+    "training_evaluation_pairs": 104,
+    "prospective_pairs": 3978,
+    "prospective_arms": 9,
+    "scope": "Original snapshot admission, delete-one sensitivity, interval counts, polynomial moments and influence summaries.",
+    "original_market_audit_entry_point_executed": false
+  },
+  "cpu_record_limitation": "Original CPU records omit financial estimates and include durations in their combined digest. Only saved workload identities can be compared exactly with fresh executions.",
+  "new_market_data_acquired": false,
+  "financial_acquisition_replayed": false,
+  "independent_market_validation_completed": false,
+  "raw_financial_data_included": false
+}

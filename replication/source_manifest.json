@@ -7,8 +7,8 @@
     {
       "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 7374,
-      "sha256": "d30fd02314057317c36e4e002a64800a647e1d398c0406585666e81d623fabfa"
+      "bytes": 7563,
+      "sha256": "ee6b88925384a93e8a633040f27ed01e174ada52a621a27f629b9ca99f9a07c4"
     },
     {
       "path": "projects/01_optimal_stopping/configs/benchmark.json",
@@ -155,6 +155,18 @@
       "bytes": 1187
     },
     {
+      "path": "projects/01_optimal_stopping/replication/historical_replay.json",
+      "category": "source_input_validation",
+      "bytes": 2425,
+      "sha256": "537ae225b5a9231de84539ce600043042a3c88e43e584a75d3533f2768ce2d6f"
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/historical_replay.md",
+      "category": "research_document",
+      "bytes": 3267,
+      "sha256": "3634ea1cda88a7e43ab103e19ea023adfefbc69b25154ecbbe4e0872ba3b5df2"
+    },
+    {
       "path": "projects/01_optimal_stopping/replication/input.schema.json",
       "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226",
       "category": "replication_interface",
@@ -163,14 +175,14 @@
     {
       "path": "projects/01_optimal_stopping/replication/licensed_reproduction.md",
       "category": "research_document",
-      "bytes": 20988,
-      "sha256": "f60152e04d3b95fd54d4feda1464040646aaea2ac98e8352d1ede731a1075339"
+      "bytes": 23383,
+      "sha256": "6ae5f979a5d4eeca0022ab07b31a3305367c3ca316169531084b68c67be36f2c"
     },
     {
       "path": "projects/01_optimal_stopping/replication/licensed_requirements.json",
       "category": "archive_requirements",
-      "bytes": 15722,
-      "sha256": "b9ed591f4421f64e50bc0037129465bcaa54579c8d62153e42ee49091f6f2c51"
+      "bytes": 16222,
+      "sha256": "f1c12bdf7aad57a48c05d6b42784078d92672c96d01578b4646bcb1412d91b95"
     },
     {
       "path": "projects/01_optimal_stopping/replication/run.py",
@@ -495,6 +507,12 @@
       "sha256": "203ec0605c5291d7f2f0d4e69cd7609b910cc2f8e24af9d9853c930e69315c7a",
       "category": "historical_entry_point",
       "bytes": 3297
+    },
+    {
+      "path": "scripts/compare_licensed_replay.py",
+      "category": "verification",
+      "bytes": 21925,
+      "sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa"
     },
     {
       "path": "scripts/construct_joint_funding_witnesses.py",
@@ -1265,6 +1283,12 @@
       "bytes": 15919
     },
     {
+      "path": "tests/test_compare_licensed_replay.py",
+      "category": "test_fixture",
+      "bytes": 10349,
+      "sha256": "25e8dfaf45d7a656815deb67342b32f4e70412245fbcec6b185858dae5135350"
+    },
+    {
       "path": "tests/test_component_confidence.py",
       "sha256": "5ce14e2312c1351f4a1aef787e135b75512764b344a3cbcdfc0e02ba11efcdf3",
       "category": "test_fixture",
@@ -1441,8 +1465,8 @@
     {
       "path": "tests/test_licensed_reproduction.py",
       "category": "test_fixture",
-      "bytes": 8327,
-      "sha256": "3166bdf8f83e0eef9846bde1ec724ed8143b2348cbebb3cc1bf3384ba7ac0eeb"
+      "bytes": 10614,
+      "sha256": "136a86d13b8cabc08bae425a51868e31a4eb6bc06f717027da1fb01511a52f71"
     },
     {
       "path": "tests/test_local_cpu_transfer.py",
@@ -1819,6 +1843,7 @@
       "tests/test_allocation_workload.py",
       "tests/test_calendar_robustness.py",
       "tests/test_cash_dividends.py",
+      "tests/test_compare_licensed_replay.py",
       "tests/test_component_confidence.py",
       "tests/test_component_ratio.py",
       "tests/test_component_ratio_audit.py",

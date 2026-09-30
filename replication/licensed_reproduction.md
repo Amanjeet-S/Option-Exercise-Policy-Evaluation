@@ -63,7 +63,7 @@ Use a separate local checkout for the historical reproduction. Keep the current 
 
 First identify the intended original run and its registration or configuration. Check the complete manifest closure before creating a new numerical output directory: each referenced file must exist at the expected relative path, its bytes must match the recorded hash, and the required source version must be available. Verify the run's case coverage, registered counts and completion status. An archive inventory is necessary but does not establish the financial validity of those inputs.
 
-The [requirements record](licensed_requirements.json) identifies ten original root manifests covering the table studies and the additional quantitative claims described above. From the published checkout, run the standard-library [readiness checker](../../../scripts/check_licensed_reproduction.py) against a separately held, authorised archive checkout:
+The [requirements record](licensed_requirements.json) identifies eleven original root manifests covering the table studies, the repeated-training registration and the additional quantitative claims described above. The registration requires an explicit entry because the completed training-evaluation run records its digest outside the path-to-hash maps. From the published checkout, run the standard-library [readiness checker](../../../scripts/check_licensed_reproduction.py) against a separately held, authorised archive checkout:
 
 ```sh
 python scripts/check_licensed_reproduction.py \
@@ -166,3 +166,21 @@ Retained CPU measurements are observations of the original execution. Tables 4, 
 A model-input replay also has narrower scope than an acquisition replay. It can establish that supplied financial specifications lead to the retained numerical results without re-establishing the original quotes, funding construction, contractual interpretation or information available at valuation. Source PDFs and acquisition records belong to that larger provenance assessment. Their absence must be reported when it prevents the relevant historical claim, rather than filled with a substitute observation.
 
 A completed reproduction record should identify the supplied archive and source versions, the calculations actually repeated, the retained quantities reconstructed, the comparison rules and any failures. Report numerical agreement separately from fresh timing measurements. Retain incomplete runs and discrepancies. A new authorised model study should use the [general input interface](README.md#3-inputs-for-a-new-authorised-experiment) and receive its own interpretation; it must not inherit the original paper's table labels as a claim of exact reproduction.
+
+## 8. Comparing a completed replay
+
+The standard-library [comparison tool](../../../scripts/compare_licensed_replay.py) checks the complete manifested record of a fresh study against its historical counterpart. Place both study directories beneath the published checkout's `data/private` directory, including any isolated archive checkout. The comparison destination must also be private and unused. For the value-martingale study:
+
+```sh
+python scripts/compare_licensed_replay.py \
+  --study value_martingale \
+  --archive-root data/private/authorised_archive \
+  --fresh data/private/authorised_archive/data/private/reproduction/licensed/value_martingale \
+  --output data/private/reproduction/value_martingale_comparison
+```
+
+The other study names are `terminal_repair`, `terminal_training`, `training_evaluation`, `allocation_pilot`, `training_allocation`, `prospective_allocation` and `cpu_prediction`. Each comparison verifies artifact hashes, coverage and retained values. Numerical equality is exact; small floating-point differences remain failures. Execution times, telemetry and quantities derived from fresh timings have explicit exclusions, recorded in compressed private ledgers. Original registered allocations and their historical cost inputs remain part of the comparison. A successful comparison of two directories does not, by itself, establish that either was freshly computed; the launch commands, process outcomes and source checks supply that separate evidence.
+
+The original CPU study requires a narrower interpretation. Its records retain policy, path and approximation fingerprints, random-stream identities and workload counts, but omit the financial estimates themselves. Its `complete_financial_record_sha256` also incorporates measured durations. This digest cannot establish equality of unsaved estimates in a fresh run. The comparator records that limitation explicitly while checking the retained identities. Reconstruction of Table 9 continues to use the original timing observations.
+
+The [historical replay record](historical_replay.md) distinguishes completed numerical execution from reconstruction of retained evidence and identifies the studies still awaiting a full replay.

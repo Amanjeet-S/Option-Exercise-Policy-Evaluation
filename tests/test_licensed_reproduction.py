@@ -182,3 +182,44 @@ def test_help_runs_without_scientific_packages():
                             capture_output=True, text=True, check=True)
     assert '--archive-root' in result.stdout and '--output' in result.stdout
     assert 'without executing financial' in result.stdout
+
+
+@pytest.mark.parametrize('missing', ['manifest.json', 'configuration.json', 'tasks.json', 'protocol.md'])
+def test_explicit_registration_root_requires_its_complete_artifacts(tmp_path, missing):
+    """A run's scalar registration digest does not supply its execution inputs."""
+    root, contract, name, *_ = archive(tmp_path)
+    registration = 'data/private/fixture/registration'
+    artifacts = {filename: write(root, registration+'/'+filename, contents)
+                 for filename, contents in (
+                     ('configuration.json', {'declared_paths': 8}),
+                     ('tasks.json', {'declared_cases': [0, 1]}),
+                     ('protocol.md', b'Declared mathematical fixture protocol.\n'))}
+    registration_hash = write(root, registration+'/manifest.json',
+                              {'artifact_sha256': artifacts})
+    run = json.loads((root/name).read_text())
+    run.update(registration=registration, registration_sha256=registration_hash)
+    run_hash = write(root, name, run)
+    specification = json.loads(contract.read_text())
+    specification['roots'][0]['sha256'] = run_hash
+    specification['roots'].append(dict(id='fixture_registration', tables=[],
+        path=registration+'/manifest.json', sha256=registration_hash))
+    contract.write_text(json.dumps(specification))
+    assert readiness.check_archive(root, contract)['evidence_ready'] is True
+
+    (root/registration/missing).unlink()
+    report = readiness.check_archive(root, contract)
+    assert report['evidence_ready'] is False
+    assert report['issues'] == [dict(path=registration+'/'+missing,
+                                     status='missing_or_non_regular')]
+
+
+def test_published_requirements_explicitly_bind_training_evaluation_registration():
+    """Preserve the execution prerequisite that is absent from the run's maps."""
+    _, contract = readiness.requirements()
+    registrations = [r for r in contract['roots']
+                     if r['id'] == 'training_evaluation_registration']
+    assert len(registrations) == 1
+    assert registrations[0]['path'] == (
+        'data/private/training_evaluation/2026-09-26/registration_v1/manifest.json')
+    assert registrations[0]['sha256'] == (
+        'cbe7f2d1d0e38d02315234cf88c636363103a73e00a90b3255a4c2093e4a35b2')
