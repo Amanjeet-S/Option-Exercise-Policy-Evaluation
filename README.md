@@ -1,94 +1,29 @@
-# Optimal stopping and option pricing
+# Exercise-policy loss under computational and financial constraints
 
-I study exercise-policy loss, its measurement and the allocation of computation between fitting and evaluation. The [methods paper](paper/README.md) and [numerical supplement](paper/numerical_results.md) report the framework and conditional findings from thirteen related development specifications. Research remains in progress: all 26 allocation arms missed their predicted CPU budgets, and the prospective sample supplied no eligible observations for independent market validation.
+## 1. Research question
 
-The public code and introductory notebook remain the earlier numerical-validation baseline. The supplement adds reviewed research summaries and a check of their presentation and arithmetic; it does not release the complete licensed-data experiment implementation. The implementation and acquisition sections below describe that baseline and its initial development plan.
+I study how approximate exercise policies lose value, how tightly that loss can be measured, and how computation should be allocated to estimate a training procedure's performance. The financial problem is a finite-calendar put with deterministic funding and capped discrete cash events. Conditional expectations and martingale bounds connect the stopping problem to independently evaluated regression policies. A separate cost study tests whether earlier processor measurements predict expenditure for complete numerical workloads.
 
-## Read first
+The [paper](paper/README.md) contains the model, derivations, nine tables of conditional findings and the limits of their interpretation. The conditional computational investigation is complete. Independent market validation remains unresolved: the original prospective observation screen admits no primary observations. I retain that outcome without replacing its admission rule after inspecting the sample.
 
-1. [Research design and stage completion criteria](research_design.md).
-2. [Observed-data plan and source requirements](data_plan.md), [option-quote pilot request](option_quote_pilot_request.md) and [Cboe sample format audit](cboe_sample_audit.md).
-3. [Model, derivations and numerical decisions](theory.md).
-4. [Preliminary numerical validation record](results/baseline/findings.md).
-5. [Sources and attribution](SOURCES.md).
-6. [Executed numerical-validation notebook](notebooks/01_numerical_validation.ipynb).
+## 2. Findings and interpretation
 
-The validation record uses analytically specified test inputs and simulated GBM paths. It checks mathematical and computational behaviour. It contains no observed option prices and supports no empirical conclusion about actual markets.
+Analytically centred value functions reduce estimated dual gaps by 91.42 to 95.23 per cent relative to the slope construction while leaving the exercise policies unchanged. This measures tighter assessment rather than increased policy reward. A common upper payoff separately identifies the expected gain from a feasible terminal adjustment. Individual finite-sample retraining outcomes can still be unfavourable.
 
-## Implemented so far
+Repeating fixed training procedures distinguishes variation between fitted policies from evaluation noise within each pair. In a prespecified computational follow-up, the selected estimator-variance estimates are 16.7 to 34.1 per cent of their reference estimates. The registered variance-difference intervals support the conditional precision comparison under their asymptotic calibration; influential observations limit confidence in its small-sample accuracy.
 
-| Component | Purpose | Current limitation |
-| --- | --- | --- |
-| European prices and Greeks | Analytical reference and sensitivity checks | Constant coefficients and continuous dividend yield |
-| Exact GBM simulation and Monte Carlo | Risk-neutral expectations and sampling diagnostics | One diffusion model; simulated paths are not market observations |
-| CRR tree | Independent backward-induction reference | Grid-aligned exercise dates and lattice error |
-| Finite-difference solver | PDE reference with exercise projection and smoothing | Uniform spot grid, finite domain and preliminary stress coverage |
-| Least-squares exercise policy | Backward training and independent forward evaluation | Polynomial approximation; no certified optimality gap |
-| Treasury data ingestion | Preserve official observations, source bytes and provenance | Par yields have not been converted to a pricing curve |
+Historical CPU forecasts fail to transfer. Immediate local calibration reduces mean absolute relative forecast error from 29.065 to 2.841 per cent in the measured session, but incurs additional cost and retains a budget overrun. The study does not establish reliable future expenditure, equal-realised-cost superiority, market profitability or generalisation beyond the retained specifications.
 
-The package implements European and finite-calendar Bermudan contracts. Maturity is always an exercise date; time zero is excluded. A tree or PDE calculation rejects misaligned exercise dates. A listed American option will require explicit exercise refinement and its actual dividend and settlement conventions.
+## 3. Reading and replication
 
-## Set up the Python environment
+The [self-contained paper](paper/main.tex) is the principal research document. The [numerical supplement](paper/numerical_results.md) provides the same nine tables in Markdown, with a [machine-readable summary](paper/numerical_results.json). The [research design](research_design.md) identifies the completed questions and the unmet empirical criterion.
 
-Run these commands from the repository root. The frozen environment has been checked with Python 3.13.9 on macOS. Other Python and operating-system combinations still need verification. A virtual environment outside the repository avoids cloud-sync interference with Python's import-path files.
+The [numerical-validation notebook](notebooks/01_numerical_validation.ipynb) introduces the baseline pricing checks. The [conditional-research notebook](notebooks/27_conditional_research_replication.ipynb) executes the funded-model example, exact finite-law probability checks and released-summary audit. Both notebooks distinguish stipulated mathematical examples from financial evidence.
 
-```bash
-python3 -m venv "$HOME/.venvs/qf-research"
-source "$HOME/.venvs/qf-research/bin/activate"
-python -m pip install -r requirements.lock
-python -m pip install -e . --no-deps
-python -m pytest -q
-```
+The [replication guide](replication/README.md) describes installation, the public executable example, the input schema for a new authorised experiment, the original experiment entry points and the private-input requirements for exact historical replay. Python implements the model, simulation, regression, inference and experiment orchestration. The C++ propagation kernel has a Python/SciPy reference and cross-language checks. Optional outward-rounded verification uses a separate python-flint environment.
 
-The dependency lock includes the test tools. It freezes versions for this validation environment; it is not a claim that these are the latest versions of every package.
+## 4. Evidence and publication
 
-### Optional notebook tools
+I publish derived findings and reviewed original code and writing. Raw provider exports and observation-level subscription inputs remain private. The public example uses explicitly stipulated mathematical quantities and does not reproduce the financial tables. Exact financial replay requires the original licensed input and evidence archive; the public summary checker verifies transcription and selected arithmetic, not a rerun of the experiments.
 
-The notebook environment supports the included numerical-validation notebook and future research notebooks. Install its frozen dependencies into the same activated environment:
-
-```bash
-python -m pip install -r requirements-notebooks.lock
-```
-
-The `notebooks` package extra also declares the direct notebook dependencies. The separate notebook lock includes their transitive dependencies and retains the core numerical versions. A notebook editor can use this environment's Python interpreter. Run `python scripts/execute_notebooks.py` from the repository root to verify all project notebooks in fresh kernels.
-
-## Reproduce the numerical checks
-
-```bash
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-python -m qf_research.optimal_stopping.experiments \
-  --config projects/01_optimal_stopping/configs/benchmark.json \
-  --output projects/01_optimal_stopping/results/baseline
-```
-
-This command regenerates the specified results directory. Choose a new directory to retain a separate run. It writes grid comparisons, repeated Monte Carlo checks, independent policy evaluations, conditioning diagnostics, figures and a manifest with seeds, versions, hardware and source hashes. Runtime measurements are machine dependent.
-
-Policies use separate training and evaluation random streams. Within each repetition, configurations share evaluation paths, so comparisons are dependent. Reported policy intervals quantify evaluation noise conditional on the fitted policy. They do not cover approximation error or training variability.
-
-## Retrieve observed public rates
-
-The saved [Treasury snapshot](../../data/public/treasury/2026-09-14/metadata.json) records the exact source and latest available observation. To create a fresh snapshot, supply a new output directory:
-
-```bash
-python -m qf_research.market_data.treasury \
-  --as-of 2026-09-14 \
-  --output data/public/treasury/new-review-snapshot
-```
-
-Set the cutoff deliberately for a later run. An existing snapshot directory is rejected to preserve saved evidence. The command retains missing values and never creates substitute observations. Filtering by historical date does not reconstruct a historical publication vintage.
-
-The next data requirement is a recent option-quote pilot from a dedicated historical source. Capital IQ Pro is retained for underlying prices, dividends and corporate actions. A Cboe demonstration archive has passed basic structural checks, but its 2023 date and demonstration status make it unsuitable as the current empirical panel. [The data plan](data_plan.md) lists the remaining checks before calibration and historical evaluation can begin.
-
-## Development standard
-
-The remaining work includes a data audit, numerical stress tests, observed-contract modelling, calibration, credible policy-loss measurement, a verified C++ kernel and a full research paper. Each stage has a completion criterion. The number of implemented methods is not the measure of completion.
-
-The [research log](research_log.md) records progress, revisions and unresolved questions. Established models and algorithms are credited in the source register; the project must earn its research conclusions through reproducible evidence.
-
-## Publication status
-
-The [methods paper](paper/README.md) presents the mathematical framework, while the [numerical supplement](paper/numerical_results.md) reports selected derived findings, intervals and computational costs. Permission to publish derived research findings has been confirmed. Exact quotes, restricted financial inputs, reconstructable supplements and the complete local manuscript remain private. The [publication policy](../../docs/publication_policy.md) specifies that distinction. Public summary checks do not reproduce the licensed-data experiments, and publication permission does not establish empirical model validity.
-
-## Licensing
-
-Released original project code is under [MIT](../../LICENSE). Released original research writing, including the [methods-only paper](paper/README.md) and its LaTeX source, is under [CC BY 4.0](../../LICENSES/CC-BY-4.0.txt). The [licensing scope](../../LICENSING.md) preserves third-party terms and excludes private drafts, restricted observations and outputs awaiting publication clearance.
+The [publication policy](../../docs/publication_policy.md) and [licensing scope](../../LICENSING.md) govern the release. Established mathematical methods are attributed in the paper and [literature comparison](paper/contribution_review.md). The contribution is the controlled argument and evidence for the stated computational questions, without a claim of a new general pricing theorem.

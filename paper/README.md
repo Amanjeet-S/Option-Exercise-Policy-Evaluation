@@ -1,53 +1,41 @@
 # Exercise-policy loss under computational and financial constraints
 
-In this methods-only paper for my optimal-stopping project, I develop the funded cash-event model, policy-loss decomposition, approximate-value martingales, expiry-calendar comparison, terminal adjustment, conditional inference and computational allocation design. Appendix A uses predictable compensation to quantify the effect of conditional drift in an approximate penalty. Appendix B specifies the probability space for repeated training, justifies optional sampling after the fitted policy is known, and derives the variance of a computationally allocated estimator.
+Amanjeet Singh
 
-[Read the compiled paper](methods.pdf) or start with [the LaTeX source](main.tex). `main.tex` is self-contained: it includes the complete text and bibliography and can be compiled directly in a single-document editor. The files in `sections/` retain the preceding modular source for reference; edit `main.tex` for the current paper. [references.bib](references.bib) retains the citation metadata.
+30 September 2026
 
-The separate [numerical supplement](numerical_results.md) reports reviewed findings on bound tightness, terminal adjustments, training gains and computational allocation. It also reports the subsequent fixed-count allocation comparison and local CPU prediction study, while preserving the earlier failed forecasts and the absence of an eligible prospective market sample. The [derived summaries](numerical_results.json) supply its nine tables. The methods paper contains the mathematical argument; the supplement contains the selected numerical evidence.
+## 1. Paper and scope
 
-## 1. Build
+The [compiled paper](methods.pdf) and [self-contained LaTeX source](main.tex) present the mathematical framework and completed conditional computational study. The paper contains nine result tables on loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. Independent market validation remains unresolved, and the unsuccessful original observation-admission exercise is reported explicitly.
 
-The open `main.tex` document compiles directly with the built-in editor. For a local command-line build, use a TeX distribution with `latexmk` and pdfLaTeX. The source uses Computer Modern, 11-point text, A4 pages with 25 mm margins, and standard packages including `amsmath`, `amsthm`, `natbib` and `hyperref`. The embedded bibliography preserves the existing author-year reference format and requires no external bibliography file at compilation.
+`main.tex` contains the full text and bibliography and compiles in a single-document editor. The `sections/` files preserve the preceding modular methods source; they are not inputs to the current document. [references.bib](references.bib) retains citation metadata. The output filename `methods.pdf` is retained for existing links.
 
-```bash
+The [numerical supplement](numerical_results.md) presents the same nine tables in Markdown. Their [derived summaries](numerical_results.json) are released research findings, not observation-level financial inputs. The [literature comparison](contribution_review.md) distinguishes the research contribution from established theory.
+
+## 2. Build
+
+The open `main.tex` compiles directly in the document editor. A command-line build needs a TeX distribution with `latexmk` and pdfLaTeX:
+
+```sh
 cd projects/01_optimal_stopping/paper
 make
 ```
 
-Alternatively:
+The source uses Computer Modern, 11-point text, A4 pages and 25 mm margins. Its embedded bibliography uses the existing author-year format and requires no external bibliography file during compilation. On Overleaf, upload `main.tex` and select pdfLaTeX. `make clean` removes auxiliary files while retaining the PDF.
 
-```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error -jobname=methods main.tex
+## 3. Analytical and table checks
+
+```sh
+cd projects/01_optimal_stopping/paper
+make verify
 ```
 
-The output is `methods.pdf`. `make clean` removes auxiliary files while retaining the PDF. On Overleaf, uploading `main.tex` alone is sufficient; select it as the main document and use pdfLaTeX.
+These standard-library checks enumerate finite probability laws using exact rational arithmetic, verify the conditional-drift example and repeated-training variance identities, and check the nine Markdown and LaTeX tables against the released summaries. The table renderer fails if a marked table differs from its source summary. It changes only those blocks when explicitly invoked with `--write`.
 
-## 2. Scope
+The finite examples are stipulated mathematical constructions, not market observations. They check implementations of the arguments without proving the general measure-theoretic statements or establishing theoretical novelty. The summary checks verify presentation and selected arithmetic identities; they do not rerun the financial experiments or validate statistical coverage.
 
-The methods paper contains no raw or cleaned subscription observations, fitted market inputs, empirical summaries, result tables or data-derived figures. Its scope remains the mathematical framework and research design. Permission to publish derived research findings has been confirmed, and the separate numerical supplement releases selected findings under the [publication policy](../../../docs/publication_policy.md). Restricted observations, exact financial inputs, reconstructable supplements and the complete numerical manuscript remain local.
+## 4. Numerical replication and access
 
-The supplement's summary check uses only Python's standard library. Run `python3 projects/01_optimal_stopping/paper/verification/numerical_results.py` from the repository root. It checks table presentation, case coverage and selected rounded arithmetic identities. It does not rerun the experiments or constitute independent verification against the private evidence. The public baseline code is not a complete implementation of the supplement's experiments.
+The [replication guide](../replication/README.md) identifies the numerical kernels, executable public example, input schema and original experiment entry points. The [research notebook](../notebooks/27_conditional_research_replication.ipynb) explains these computations alongside the released findings. Exact replay of the retained financial experiments requires their original licensed input archive. A fresh authorised specification defines a new conditional experiment.
 
-I apply established methods to the stated stopping problem and cite their published sources. I make no claim that the duality result, regression method, lognormal option integral or elementary stopping comparisons are new general theorems.
-
-## 3. Analytical verification
-
-The [literature comparison](contribution_review.md) distinguishes the research question from its established mathematical foundations. The appendix includes a stipulated finite example, not a market observation. Its derivation states why the correction is needed, how it follows from compensation and optional sampling, and what it permits in a policy comparison. No claim of theoretical priority is made.
-
-The finite-tree checks use Python's standard library and exact rational arithmetic:
-
-```bash
-python3 verification/conditional_drift.py
-python3 -m unittest discover -s verification -v
-```
-
-The first command checks every admissible policy on a deterministic grid of finite trees and reports the analytical counterexample. The second also checks invalid stopping rules, probability inputs and the single-right boundary case. These are checks of the analytical implementation, not empirical evidence.
-
-The [allocation verification](verification/allocation_probability.py) separately enumerates finite probability laws with exact rational arithmetic. It checks the training and evaluation variance decomposition, independent selection of sample counts, and the bias that can arise when observation-dependent costs determine when a sample ends. The fixtures include different couplings between the two training samples. They illustrate the appendix's assumptions without claiming to prove its general probability statements or reproduce a market experiment.
-
-```bash
-python3 verification/allocation_probability.py
-```
-
-`make verify` runs both analytical checks, the released-summary check and the accompanying standard-library tests. No subscription access is needed for these commands. Repeating the empirical simulations remains a separate operation requiring the authorised financial inputs.
+Derived findings are published under the confirmed permission. Raw provider exports and observation-level subscription inputs remain private under the [publication policy](../../../docs/publication_policy.md). The [licensing scope](../../../LICENSING.md) distinguishes original software and writing from third-party data.

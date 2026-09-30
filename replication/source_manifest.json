@@ -1,0 +1,1692 @@
+{
+  "schema_version": 1,
+  "title": "Conditional stopping research implementation",
+  "scope": "Reviewed source, mathematical fixtures and tests. Restricted observations, calibrated model bundles, retained simulation records and private evidence archives are excluded.",
+  "dependency_scope": "Static local Python import closure, attributed historical calendar and declared C++ kernels; other runtime data dependencies remain external.",
+  "files": [
+    {
+      "path": "projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json",
+      "category": "attributed_historical_calendar",
+      "sha256": "33f39d14b7ea3b78d8f2f67e327ee17c13a987527e8852e7dbc7e3fa48347513",
+      "bytes": 4879
+    },
+    {
+      "path": "projects/01_optimal_stopping/cpp/funded_step.cpp",
+      "sha256": "c3a13a46d499edac09439620208d5d5b4c45b60789af1b635b60f3a68b8924f5",
+      "category": "cpp_kernel",
+      "bytes": 2612
+    },
+    {
+      "path": "projects/01_optimal_stopping/cpp/test_funded_step.cpp",
+      "sha256": "31d4d4c078e8af44499006bc13c57a66d0498f9fda40a730334b15848c70bf4d",
+      "category": "cpp_kernel",
+      "bytes": 1358
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/README.md",
+      "sha256": "242ecfc7a753415039170255975b4dcb722108cc658b6702b2dea2b4cd282af9",
+      "category": "replication_interface",
+      "bytes": 12477
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
+      "sha256": "c1af22cbd62d31636c86cb40828589836aecba5a5efe167ffb76ca5303fbaf2c",
+      "category": "replication_interface",
+      "bytes": 1187
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/input.schema.json",
+      "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226",
+      "category": "replication_interface",
+      "bytes": 4920
+    },
+    {
+      "path": "projects/01_optimal_stopping/replication/run.py",
+      "sha256": "c8f8746046fc07a2c1c50ee82634e0f49bf6f2c62cadd5c30a49e71fc3fe3a36",
+      "category": "replication_interface",
+      "bytes": 13875
+    },
+    {
+      "path": "scripts/acquire_prospective_sample.py",
+      "sha256": "0d5b48b0afcdf4ed25233a61cf4d4c38ac6c80fd21ae68035d8e35bccf4cb531",
+      "category": "historical_entry_point",
+      "bytes": 5592
+    },
+    {
+      "path": "scripts/acquire_prospective_schedules.py",
+      "sha256": "7e9539cc2824ea1731508e65eaed7da35819740564c87f70639ad8a153072a29",
+      "category": "historical_entry_point",
+      "bytes": 2253
+    },
+    {
+      "path": "scripts/acquire_short_ois_conventions.py",
+      "sha256": "34be6eeba6d0c102979dca3ec0486bdf3b8c42500985e46b1c09300f7da52b52",
+      "category": "historical_entry_point",
+      "bytes": 3708
+    },
+    {
+      "path": "scripts/adapt_prospective_sample.py",
+      "sha256": "e45e5b82e9afdb1ba551112d43f68965423b8424a44e58a690cf02b929fb259d",
+      "category": "historical_entry_point",
+      "bytes": 11519
+    },
+    {
+      "path": "scripts/analyse_allocation_cost_sensitivity.py",
+      "sha256": "0cca3062e500e50c2b3feb319944d57abf037c2d3a5a2a5289a787322709c336",
+      "category": "historical_entry_point",
+      "bytes": 11828
+    },
+    {
+      "path": "scripts/analyse_allocation_variance_sensitivity.py",
+      "sha256": "a041d9f7029583e7c2bdf7466c3be20ddfcfb3ef4f56cebde060070dd6e724d1",
+      "category": "historical_entry_point",
+      "bytes": 11315
+    },
+    {
+      "path": "scripts/analyse_component_confidence.py",
+      "sha256": "55563e0277a7b1580bd933740b6c6db77eee0f78d5f96b67a0ffed360bbd69d8",
+      "category": "historical_entry_point",
+      "bytes": 10310
+    },
+    {
+      "path": "scripts/analyse_component_ratio.py",
+      "sha256": "ad557fbf387ef709a9a53f85226dd5b564fce72d31412b0e9f8a9138939b4a6d",
+      "category": "historical_entry_point",
+      "bytes": 14905
+    },
+    {
+      "path": "scripts/analyse_local_cpu_transfer.py",
+      "sha256": "30790249b2c58d914947353b09507e0251f38d73d7add0d6cb7850cb6968022d",
+      "category": "historical_entry_point",
+      "bytes": 7017
+    },
+    {
+      "path": "scripts/analyse_training_evaluation.py",
+      "sha256": "f335fe0302e4c37df83fb4e60b10ed0a4b63f2d84e68f98561b12cb088a04ad2",
+      "category": "historical_entry_point",
+      "bytes": 9018
+    },
+    {
+      "path": "scripts/assemble_research_paper.py",
+      "sha256": "d13fc0582513ed3f1f589baeca02e2e053192730d22075cf5f120d5a25345462",
+      "category": "historical_entry_point",
+      "bytes": 4962
+    },
+    {
+      "path": "scripts/audit_allocation_cost_sensitivity.py",
+      "sha256": "30f17aa54828b055d6fa3228b3e22159f43588793cc315ba9513630974488244",
+      "category": "historical_entry_point",
+      "bytes": 23623
+    },
+    {
+      "path": "scripts/audit_allocation_variance_sensitivity.py",
+      "sha256": "4fb6e47c463074b45a3d7140b934d2d2711816906794dbcf59639b9c18e1f31d",
+      "category": "historical_entry_point",
+      "bytes": 22806
+    },
+    {
+      "path": "scripts/audit_certified_residual.py",
+      "sha256": "562d9bd51681c9494babb32aa6a3e90a12049fd61be2138f378a1b261339c063",
+      "category": "historical_entry_point",
+      "bytes": 23818
+    },
+    {
+      "path": "scripts/audit_component_confidence.py",
+      "sha256": "240c3e4a542caafcef9133f8b2e79ae9b92af723ff9fff5950cb788499f43fb8",
+      "category": "historical_entry_point",
+      "bytes": 19768
+    },
+    {
+      "path": "scripts/audit_component_ratio.py",
+      "sha256": "b4493993a6338e9b03206100d6772557b1365e626c9365ad87f46a5b257859f3",
+      "category": "historical_entry_point",
+      "bytes": 31393
+    },
+    {
+      "path": "scripts/audit_cost_budget.py",
+      "sha256": "797e165073f0fd487cd646a7301d76779d5cbfbd26049b6d4b0d103fbadcc53c",
+      "category": "historical_entry_point",
+      "bytes": 13396
+    },
+    {
+      "path": "scripts/audit_cpu_prediction.py",
+      "sha256": "9f8f5aa38427f4c4af5999b14464f797ae756e91e54a2afb3b760a92d52da74e",
+      "category": "historical_entry_point",
+      "bytes": 14997
+    },
+    {
+      "path": "scripts/audit_expiry_extension.py",
+      "sha256": "27e3fc30ca30761fe8003bbe8aead487f29074969eb1f1611b265e9e9665c68a",
+      "category": "historical_entry_point",
+      "bytes": 8437
+    },
+    {
+      "path": "scripts/audit_fitted_policy_gain.py",
+      "sha256": "9acb23a96a61e8f865d278d49e9a4e8a8c3887e2c8ae9919f831d257742a2ea0",
+      "category": "historical_entry_point",
+      "bytes": 6866
+    },
+    {
+      "path": "scripts/audit_gain_replay.py",
+      "sha256": "c889ab4cabe3f21c25b78f39ddfcbeab73b352c18279130e9ce0b988f53b3f7a",
+      "category": "historical_entry_point",
+      "bytes": 13419
+    },
+    {
+      "path": "scripts/audit_joint_input_expiry.py",
+      "sha256": "6d2c8f7b4edbdd2eb04be870ef96b68e8a90a96699692c62022678fa652aa7d7",
+      "category": "historical_entry_point",
+      "bytes": 14716
+    },
+    {
+      "path": "scripts/audit_local_cpu_records.py",
+      "sha256": "924b8a03f3696cb02361ca51f590ca720646af6114a6a41096e4d4baec134a70",
+      "category": "historical_entry_point",
+      "bytes": 21108
+    },
+    {
+      "path": "scripts/audit_local_cpu_transfer.py",
+      "sha256": "409e87ffbf1a4b19fd9e91a69acaf7af53887fbc032c5ad287dcd023135fab5d",
+      "category": "historical_entry_point",
+      "bytes": 12808
+    },
+    {
+      "path": "scripts/audit_policy_input_sensitivity.py",
+      "sha256": "8c9e8713669c4a1eca79715322a1dff01cdee491ec6f5224fe0b499842d0c7ab",
+      "category": "historical_entry_point",
+      "bytes": 12150
+    },
+    {
+      "path": "scripts/audit_prospective_allocation.py",
+      "sha256": "24297903d73987e6cc4ae4537772b8241b234db709585138da088f67ac6586aa",
+      "category": "historical_entry_point",
+      "bytes": 36079
+    },
+    {
+      "path": "scripts/audit_terminal_repair.py",
+      "sha256": "119eda08ab1c8511935978362983f15ad546e041b5dba48fa68fae2d16c91ef7",
+      "category": "historical_entry_point",
+      "bytes": 8125
+    },
+    {
+      "path": "scripts/audit_terminal_training.py",
+      "sha256": "e1b4671ec595f326618179b477030030bfacff9620d3945e909d916bcfbed5ee",
+      "category": "historical_entry_point",
+      "bytes": 6941
+    },
+    {
+      "path": "scripts/audit_training_allocation.py",
+      "sha256": "f0b82a3ed119ffb261e0de99b557caadccc624f915737c606254e66c77124a00",
+      "category": "historical_entry_point",
+      "bytes": 12130
+    },
+    {
+      "path": "scripts/audit_training_allocation_main.py",
+      "sha256": "7d14dfe65092102b620538fc1a72fa965d8f7afb8d3e445a7bb9cc05cea775a3",
+      "category": "historical_entry_point",
+      "bytes": 22864
+    },
+    {
+      "path": "scripts/audit_training_evaluation.py",
+      "sha256": "4fc9d7ddc74719a4e2fbd124101863f1dcd8ece2035e2f0a58d895149848974c",
+      "category": "historical_entry_point",
+      "bytes": 7560
+    },
+    {
+      "path": "scripts/audit_value_martingale.py",
+      "sha256": "02b0a6b9bcd901c22b5f010cedd2edcd5eecfe9b06e07c0e7d89b32df32fedca",
+      "category": "historical_entry_point",
+      "bytes": 5044
+    },
+    {
+      "path": "scripts/benchmark_funded_kernel.py",
+      "sha256": "29cbde91f18b20665339843f62c36108f963f43e65c9a6e605e60ff45ef7761e",
+      "category": "historical_entry_point",
+      "bytes": 10526
+    },
+    {
+      "path": "scripts/build_funded_kernel.py",
+      "sha256": "0bd6541b73c2f8553b5962b32a5183cf9cc036f6d6c0d930d62834e472fb5108",
+      "category": "historical_entry_point",
+      "bytes": 2355
+    },
+    {
+      "path": "scripts/build_training_allocation_paper_assets.py",
+      "sha256": "f1bb03bbf8db39480899343db5131ab41e8c1eff99df299fe634bc2e8d454504",
+      "category": "historical_entry_point",
+      "bytes": 20428
+    },
+    {
+      "path": "scripts/build_valuation_inputs.py",
+      "sha256": "934df97c26e5e7a372fbe79c535c9a24f68fac46c7caf8ee9848f77c4b70d713",
+      "category": "historical_entry_point",
+      "bytes": 12552
+    },
+    {
+      "path": "scripts/calibrate_policy_sensitivity.py",
+      "sha256": "519eb5489854be0b7fd86d1a886ebe66989315c8014ed2bf573332e11c89b097",
+      "category": "historical_entry_point",
+      "bytes": 8227
+    },
+    {
+      "path": "scripts/certify_component_radii.py",
+      "sha256": "53a56b3ce7c4402ea5fe7baeecbbefe2563af752498de66ecd0d33c9b78faf8e",
+      "category": "historical_entry_point",
+      "bytes": 2284
+    },
+    {
+      "path": "scripts/certify_component_ratio.py",
+      "sha256": "190b87d74b15471436514f81aaf2918a9ddf405ae8327d27e8e2fbeff860af20",
+      "category": "historical_entry_point",
+      "bytes": 6915
+    },
+    {
+      "path": "scripts/certify_gain_replay.py",
+      "sha256": "377927a66dfea48c8f98b8fb48e5a15f6787919bfc377fbca1ed3913b33eba12",
+      "category": "historical_entry_point",
+      "bytes": 18297
+    },
+    {
+      "path": "scripts/certify_residual_envelope.py",
+      "sha256": "450a40fe9dd073110520b401a3ef518316bcf5736c9ef17c45049a74b127da6e",
+      "category": "historical_entry_point",
+      "bytes": 21762
+    },
+    {
+      "path": "scripts/certify_residual_primitives.py",
+      "sha256": "a6ed3f98123fb9094f54f81ab8e6fe3e5e929f6f8f9b7e396ccd1b0d77cc0d53",
+      "category": "historical_entry_point",
+      "bytes": 12904
+    },
+    {
+      "path": "scripts/check_allocation_inference.py",
+      "sha256": "134dbdc5b89b1a26aa76058f3fa0737521e0cace451d9d19fac1f834320b0e2c",
+      "category": "historical_entry_point",
+      "bytes": 23460
+    },
+    {
+      "path": "scripts/check_residual_inference.py",
+      "sha256": "abc76fdb7003d5f350b3c23107080dda6c37597587b2eeb5c76a5780551abc05",
+      "category": "historical_entry_point",
+      "bytes": 16149
+    },
+    {
+      "path": "scripts/check_training_evaluation_contrasts.py",
+      "sha256": "203ec0605c5291d7f2f0d4e69cd7609b910cc2f8e24af9d9853c930e69315c7a",
+      "category": "historical_entry_point",
+      "bytes": 3297
+    },
+    {
+      "path": "scripts/construct_joint_funding_witnesses.py",
+      "sha256": "9fb03e00370af66abfae90c67fd0493728f30ec7c62b1625adc3b869f4fb6787",
+      "category": "historical_entry_point",
+      "bytes": 10950
+    },
+    {
+      "path": "scripts/cover_joint_cash_funding.py",
+      "sha256": "af264b67a9f40b5a374e200dd81c771036130bd8e192928a6bdb245a42730c67",
+      "category": "historical_entry_point",
+      "bytes": 17188
+    },
+    {
+      "path": "scripts/diagnose_fitted_calendars.py",
+      "sha256": "7ac6faece2a98089d23616ec6df2d77f7bddd154fea83c20300d97015ea9e665",
+      "category": "historical_entry_point",
+      "bytes": 11371
+    },
+    {
+      "path": "scripts/diagnose_paired_volatility.py",
+      "sha256": "7921541ae5479bbabd4405b0b4ba3cee4ab93f4edf7864037b7ad83f595ecb1a",
+      "category": "historical_entry_point",
+      "bytes": 13448
+    },
+    {
+      "path": "scripts/export_gain_replay.py",
+      "sha256": "3e6436512827b1293a81a86a67a1057aecb48f8458b2030ba9102e79f893cdaf",
+      "category": "historical_entry_point",
+      "bytes": 17977
+    },
+    {
+      "path": "scripts/export_residual_certificate.py",
+      "sha256": "c12cf3c8aac21a8d40caf3457d44a0d38ae9188a234fc710819138f3ecba2a40",
+      "category": "historical_entry_point",
+      "bytes": 16079
+    },
+    {
+      "path": "scripts/lseg_option_pilot.py",
+      "sha256": "aad33e7d5b63850297fcca28b7b53415114eefa30ca948e78d0a54565d0df909",
+      "category": "historical_entry_point",
+      "bytes": 13544
+    },
+    {
+      "path": "scripts/plot_allocation_cost_sensitivity.py",
+      "sha256": "b65d6f81c22a86023af5da1c003554c4dfaec74eee0e05584989ab4c3a5af2ba",
+      "category": "historical_entry_point",
+      "bytes": 9293
+    },
+    {
+      "path": "scripts/plot_allocation_variance_sensitivity.py",
+      "sha256": "494606b5aad273e774260415caa9434fd9557e6f99fa40f09d3f14ed96860363",
+      "category": "historical_entry_point",
+      "bytes": 4919
+    },
+    {
+      "path": "scripts/plot_component_confidence.py",
+      "sha256": "bdaabe375654b9b27708042e155160d389cd8ffcae109e92ef577b0c8bfec581",
+      "category": "historical_entry_point",
+      "bytes": 4668
+    },
+    {
+      "path": "scripts/plot_component_ratio.py",
+      "sha256": "483eccae7fa00b7ee79374f3c58be7120370955c0050e4e03ab584b4eeb712c6",
+      "category": "historical_entry_point",
+      "bytes": 16251
+    },
+    {
+      "path": "scripts/plot_cost_budget.py",
+      "sha256": "e426678e3fdc959006e602c9ce28a1c039c70e3f50196a58326075777cd4bc8f",
+      "category": "historical_entry_point",
+      "bytes": 4787
+    },
+    {
+      "path": "scripts/plot_expiry_extension.py",
+      "sha256": "90c3f6d0fcd7096ff7ff68c217eb88704f8c4585e3e4f65e0637ad0b3f4caa3d",
+      "category": "historical_entry_point",
+      "bytes": 4296
+    },
+    {
+      "path": "scripts/plot_fitted_policy_gain.py",
+      "sha256": "8536e88bece9e4f13669d0feed9acb6c665ee20af76bc7f0ca8e051413ce681b",
+      "category": "historical_entry_point",
+      "bytes": 4257
+    },
+    {
+      "path": "scripts/plot_joint_input_expiry.py",
+      "sha256": "eacead3dc607a2fd8304118543bbff76247898d818a8602891ddee94e5fa44b1",
+      "category": "historical_entry_point",
+      "bytes": 5313
+    },
+    {
+      "path": "scripts/plot_local_cpu_transfer.py",
+      "sha256": "33bbcd398f17f7270457d5742ea828f4a41f3f3d291620767fc1c44a2fa9b1aa",
+      "category": "historical_entry_point",
+      "bytes": 3102
+    },
+    {
+      "path": "scripts/plot_policy_input_sensitivity.py",
+      "sha256": "ccf3f4ea1169a70c08f91652dd801bbde4450acf8bc0b53b68635e676419ca51",
+      "category": "historical_entry_point",
+      "bytes": 5690
+    },
+    {
+      "path": "scripts/plot_terminal_repair.py",
+      "sha256": "f45de3ed5fc0b8e615b704c93013849e69596a9e7992e6eac757f8898c325e21",
+      "category": "historical_entry_point",
+      "bytes": 4512
+    },
+    {
+      "path": "scripts/plot_terminal_training.py",
+      "sha256": "149cdb550aa891434ad0ff8e56b278c528894eb121ecac4c7963b257346e4dec",
+      "category": "historical_entry_point",
+      "bytes": 3703
+    },
+    {
+      "path": "scripts/plot_value_martingale.py",
+      "sha256": "f237a82b1ea580aed023862c94a3f478c85007e06877e178350ebb4ca083cdbf",
+      "category": "historical_entry_point",
+      "bytes": 4425
+    },
+    {
+      "path": "scripts/refine_funded_calendar.py",
+      "sha256": "0b2f72ee76d6dd7e65a78481467e104bae949d93532678f87e0a0e37add43332",
+      "category": "historical_entry_point",
+      "bytes": 5224
+    },
+    {
+      "path": "scripts/replay_prospective_allocation.py",
+      "sha256": "1948cf01d299e894da26372f18f59c955f57f30c4f08223b2a1e74e48a55672d",
+      "category": "historical_entry_point",
+      "bytes": 3534
+    },
+    {
+      "path": "scripts/report_cpu_prediction.py",
+      "sha256": "f22a6e24f6b4a767182617522121b18fa22010d0b29c9e16a6c2a3bb9f1cd954",
+      "category": "historical_entry_point",
+      "bytes": 6266
+    },
+    {
+      "path": "scripts/report_prospective_allocation.py",
+      "sha256": "3657cafd6a1aa5b6a71b1b661dee5c064ffbbecce49891d6bc282ebdb89355b9",
+      "category": "historical_entry_point",
+      "bytes": 24795
+    },
+    {
+      "path": "scripts/report_training_allocation.py",
+      "sha256": "7d3e406f6cf701ba6fa6666a7ef59747a91183b7a19425be9817afd79d7081f3",
+      "category": "historical_entry_point",
+      "bytes": 28443
+    },
+    {
+      "path": "scripts/reprice_settlement_funding.py",
+      "sha256": "23b6a8a178f7494e3a2cb9fe3fdf06b923cae0c22e1eeb8078044935f887a640",
+      "category": "historical_entry_point",
+      "bytes": 19996
+    },
+    {
+      "path": "scripts/reproduce_training_allocation.py",
+      "sha256": "5db87c9eef89860490f4991f505a3d6755bbf98b046d14f04c48abf79d4c582e",
+      "category": "historical_entry_point",
+      "bytes": 9436
+    },
+    {
+      "path": "scripts/reproduce_training_evaluation.py",
+      "sha256": "45ff4b4236d0080a2b2724c3aed3e117b46213c7c574ef338882954dac50d741",
+      "category": "historical_entry_point",
+      "bytes": 2814
+    },
+    {
+      "path": "scripts/review_lseg_pilot.py",
+      "sha256": "ff5e7de6e81c515dde5235f6b24bce9f4377dee50b5a13edef82f418d3daf483",
+      "category": "historical_entry_point",
+      "bytes": 9904
+    },
+    {
+      "path": "scripts/review_training_inference.py",
+      "sha256": "ec72f9a39def224d511a88897c08875f591fb50f2bcc678d10ed8aae56f26358",
+      "category": "historical_entry_point",
+      "bytes": 7254
+    },
+    {
+      "path": "scripts/run_conditional_calibration.py",
+      "sha256": "e787d685b20e99f269f7a541cbff5ef5dd8b50243826077a4640062a8b4b44af",
+      "category": "historical_entry_point",
+      "bytes": 15232
+    },
+    {
+      "path": "scripts/study_cost_budget.py",
+      "sha256": "1cebdae6a5e113a3ac026587707db82d23fe6dcf629352cc37d913038ad68e92",
+      "category": "historical_entry_point",
+      "bytes": 14470
+    },
+    {
+      "path": "scripts/study_cpu_budget_transfer.py",
+      "sha256": "d6db9ea55df0e71847c1618cba70ec997a53a99bafc5c0bde30d33e60bd260e0",
+      "category": "historical_entry_point",
+      "bytes": 16352
+    },
+    {
+      "path": "scripts/study_cpu_prediction.py",
+      "sha256": "eed666ced23ca2ecb527f4ccab1068923b0abc9e11e2e834928d667e5c8cd0ed",
+      "category": "historical_entry_point",
+      "bytes": 19617
+    },
+    {
+      "path": "scripts/study_expiry_extension.py",
+      "sha256": "d3d07dd176ec663da0ae49551e5fa3a662cffd0307d5ee51234cd8819d7d522a",
+      "category": "historical_entry_point",
+      "bytes": 15403
+    },
+    {
+      "path": "scripts/study_fitted_policy_gain.py",
+      "sha256": "35c805a486427b87d71fefa5b6940fe7b9e8478e1501f1495b07869af3576f48",
+      "category": "historical_entry_point",
+      "bytes": 13630
+    },
+    {
+      "path": "scripts/study_joint_input_expiry.py",
+      "sha256": "ec84ddd304e136c8168bb26f97f451b540e4dc235373fef0862da34ed70e53a0",
+      "category": "historical_entry_point",
+      "bytes": 18765
+    },
+    {
+      "path": "scripts/study_local_cpu_transfer.py",
+      "sha256": "0a4ec52530f7fdac7c765a0e665220364d323398e7aec5bad66da24f75c67e90",
+      "category": "historical_entry_point",
+      "bytes": 17377
+    },
+    {
+      "path": "scripts/study_policy_input_sensitivity.py",
+      "sha256": "6d2223417fda0c9fdc8651c7d591ff883f91d7da54b98cc1456cb57de932c5b5",
+      "category": "historical_entry_point",
+      "bytes": 13887
+    },
+    {
+      "path": "scripts/study_prospective_allocation.py",
+      "sha256": "8ffe3f845e30cbb83772ef29771db4bb2fc5f3aefe662742ff8ce3be6e99fde0",
+      "category": "historical_entry_point",
+      "bytes": 19479
+    },
+    {
+      "path": "scripts/study_terminal_repair.py",
+      "sha256": "f4e085cb669255ff2ea23d3be8edcc8fb49cda5e76f5e0032e788ea95c0a9a9d",
+      "category": "historical_entry_point",
+      "bytes": 12654
+    },
+    {
+      "path": "scripts/study_terminal_training.py",
+      "sha256": "913f0ebb310194403afb626b559e7d358bf7830a7af8d81ff883c678ee743eef",
+      "category": "historical_entry_point",
+      "bytes": 13552
+    },
+    {
+      "path": "scripts/study_training_allocation.py",
+      "sha256": "a4a785d434ada2057e331ddfc88cef626a819bdb1a4a3ef2f47b1e87d40c2abe",
+      "category": "historical_entry_point",
+      "bytes": 21549
+    },
+    {
+      "path": "scripts/study_training_evaluation.py",
+      "sha256": "53d71952273e9d02792f65c4ed54a1e1778cb47b5aa221ba11666bc0a9b784d7",
+      "category": "historical_entry_point",
+      "bytes": 16847
+    },
+    {
+      "path": "scripts/study_value_martingale.py",
+      "sha256": "7ec62e61fd8dcc3bf735eec392816b2f13569d365a56820d332ed8b153d9746f",
+      "category": "historical_entry_point",
+      "bytes": 10971
+    },
+    {
+      "path": "scripts/summarise_conditional_calibration.py",
+      "sha256": "b6995a7ce10671cc34c30a3bf09ede226be344c3ea324285cdb4e2a74783996b",
+      "category": "historical_entry_point",
+      "bytes": 6325
+    },
+    {
+      "path": "scripts/test_certified_residual.py",
+      "category": "certification_fixture_tests",
+      "sha256": "858c4da51ed5dd85f6e2339b7dc1305412260452456eb3832d505ea4560147d2",
+      "bytes": 24282
+    },
+    {
+      "path": "scripts/validate_funded_cash.py",
+      "sha256": "18ff52acbbacdf2eadb9198fd6b60ce9f6eb6b106a2583c21dc3957551e3614f",
+      "category": "historical_entry_point",
+      "bytes": 11105
+    },
+    {
+      "path": "scripts/validate_funded_dual.py",
+      "sha256": "174e466305030695c287a46715271744676e2b133072945236744b36d20f1dd7",
+      "category": "historical_entry_point",
+      "bytes": 7681
+    },
+    {
+      "path": "scripts/validate_funded_policy.py",
+      "sha256": "439137de884a3b3b4d84b90f4bf49f236de38220e83f986ce34c6e8f5c74f6f5",
+      "category": "historical_entry_point",
+      "bytes": 13306
+    },
+    {
+      "path": "scripts/verify_prospective_allocation.py",
+      "sha256": "af4a5b012bd850c018ba28127f7bb6cf895975697ec2c2311ac577b96d66abef",
+      "category": "historical_entry_point",
+      "bytes": 1256
+    },
+    {
+      "path": "src/qf_research/__init__.py",
+      "sha256": "09fc3828391073426d6ed131ed6d63254c4441ce2949a021e99817bbd36dc196",
+      "category": "source_input_validation",
+      "bytes": 101
+    },
+    {
+      "path": "src/qf_research/computational/__init__.py",
+      "sha256": "c14132a9999370cf59b25aaca8b3eced06adedac321ed9991bb93d9e0a69597a",
+      "category": "computational_library",
+      "bytes": 80
+    },
+    {
+      "path": "src/qf_research/computational/funded_kernel.py",
+      "sha256": "4fd76e58fc902cd6c60488f579a86b7ffebe6f742f0d80ba845be217d47f646e",
+      "category": "computational_library",
+      "bytes": 6886
+    },
+    {
+      "path": "src/qf_research/market_data/__init__.py",
+      "sha256": "89538179ed6799fca6b8162e63c4da0d230b38debff35b93b5d47cdc963ea500",
+      "category": "source_input_validation",
+      "bytes": 75
+    },
+    {
+      "path": "src/qf_research/market_data/calendar_robustness.py",
+      "sha256": "f2314de6ce1ea63c8cbba5fef68089cbbb78e3084ae7981fd85be71d0d71c966",
+      "category": "source_input_validation",
+      "bytes": 2895
+    },
+    {
+      "path": "src/qf_research/market_data/conditional_calibration.py",
+      "sha256": "743c7537fe36fc694f4832440808f735ef60e4cbfcd82023fd5d61b6643f599d",
+      "category": "source_input_validation",
+      "bytes": 9474
+    },
+    {
+      "path": "src/qf_research/market_data/dense_quotes.py",
+      "sha256": "43c02f11f8af4c43acf7bf2b8d804943035015df533be2e60a90cca08aa3db2f",
+      "category": "source_input_validation",
+      "bytes": 8112
+    },
+    {
+      "path": "src/qf_research/market_data/distribution_announcements.py",
+      "sha256": "21290567b07d108af17e1fbadd0bad492c437a19d889569bf99cb6c39b637afd",
+      "category": "source_input_validation",
+      "bytes": 10914
+    },
+    {
+      "path": "src/qf_research/market_data/distribution_history.py",
+      "sha256": "338e1a3177f27bc13b04163995a2f3d932eace4c0e26ac7a9f0bf844384f5dc0",
+      "category": "source_input_validation",
+      "bytes": 12117
+    },
+    {
+      "path": "src/qf_research/market_data/dividend_feasibility.py",
+      "sha256": "ff0b7fb6f601ea60bcfeb4f80cd473c77b111ee157f2b0341b5ab95fe0fa4378",
+      "category": "source_input_validation",
+      "bytes": 3672
+    },
+    {
+      "path": "src/qf_research/market_data/dividends.py",
+      "sha256": "b1dc8495b08931836941438514a7f5e3ecc71006019c521e80ef4f63d864956e",
+      "category": "source_input_validation",
+      "bytes": 11681
+    },
+    {
+      "path": "src/qf_research/market_data/event_calendar.py",
+      "sha256": "da0ed9111424b7d79b59d997cd7db7890a59dc32df7ded9bbdf1c2a1dca2a724",
+      "category": "source_input_validation",
+      "bytes": 6244
+    },
+    {
+      "path": "src/qf_research/market_data/exercise_calendar_sensitivity.py",
+      "sha256": "fe488e33888ce1c6e1fdad969dccc60faf3f0e09ff20bcdf257f14449ac3d24d",
+      "category": "source_input_validation",
+      "bytes": 4630
+    },
+    {
+      "path": "src/qf_research/market_data/front_funding.py",
+      "sha256": "1376cda7ea27eecdfe6605457ac42aaae94c0d7313848a4c5604c5f323705d84",
+      "category": "source_input_validation",
+      "bytes": 3283
+    },
+    {
+      "path": "src/qf_research/market_data/funded_inputs.py",
+      "sha256": "f0140717b2f066f515c96ca3385677a6be1441c67dd36a92edc3deab3454baf1",
+      "category": "source_input_validation",
+      "bytes": 5255
+    },
+    {
+      "path": "src/qf_research/market_data/funding_sensitivity.py",
+      "sha256": "b531b6e8b5916ab8d8c5ab29ca0d39bee427d60299bcad9e266216b40ee64cd9",
+      "category": "source_input_validation",
+      "bytes": 5407
+    },
+    {
+      "path": "src/qf_research/market_data/joint_cash_funding.py",
+      "sha256": "de0e1d4fe62ec20c388e73c56ba1c897e498350a0833b2b0011922424c916f40",
+      "category": "source_input_validation",
+      "bytes": 5467
+    },
+    {
+      "path": "src/qf_research/market_data/occ_series.py",
+      "sha256": "367bb178c2e4cb3907dc0443075926fef1daea5b723a985541513b5557d42046",
+      "category": "source_input_validation",
+      "bytes": 2243
+    },
+    {
+      "path": "src/qf_research/market_data/option_quotes.py",
+      "sha256": "9cc5b28b6ec059881cf69562d8896c1e492f2369930864a7fc3bd46aac467264",
+      "category": "source_input_validation",
+      "bytes": 7983
+    },
+    {
+      "path": "src/qf_research/market_data/paired_volatility.py",
+      "sha256": "e8b12020f9466d7520612137748f4fba259d8e9f1c2fef81d0d9dabf0b22af9a",
+      "category": "source_input_validation",
+      "bytes": 5828
+    },
+    {
+      "path": "src/qf_research/market_data/prospective_inputs.py",
+      "sha256": "9ef05bf722fb2d838203f2ca20a30442098d0d9a02ec8c47c60c650d45598ffb",
+      "category": "source_input_validation",
+      "bytes": 11340
+    },
+    {
+      "path": "src/qf_research/market_data/prospective_sample.py",
+      "sha256": "66d6f9c9780eec428b0c750b9706865d8a46ebfbab7b7904ab72ffd867d45bec",
+      "category": "source_input_validation",
+      "bytes": 6376
+    },
+    {
+      "path": "src/qf_research/market_data/quote_review.py",
+      "sha256": "b596513f6ef42a8939ccdf1050eee496e0770358ecebc96f66783779a59ee886",
+      "category": "source_input_validation",
+      "bytes": 9195
+    },
+    {
+      "path": "src/qf_research/market_data/settlement_comparison.py",
+      "sha256": "d6a5bddee088690defbe2638f9ebd124445ceb0a234a4c798a804c50c2e826e9",
+      "category": "source_input_validation",
+      "bytes": 6712
+    },
+    {
+      "path": "src/qf_research/market_data/settlement_funding.py",
+      "sha256": "d2dcce02280258edd0a78bf3827f70803b7d59bfb908b3cc62e28928b85e2b3b",
+      "category": "source_input_validation",
+      "bytes": 5624
+    },
+    {
+      "path": "src/qf_research/market_data/short_ois.py",
+      "sha256": "1f9331ae7458b785ff76854a488136cf18f0d7cb7cdbdd343af874aad99b27ea",
+      "category": "source_input_validation",
+      "bytes": 9336
+    },
+    {
+      "path": "src/qf_research/market_data/underlying_quote_interval.py",
+      "sha256": "3ff32fd0038b4193701d5e63ea00ce874b943cfa1936a919b639705b79db7634",
+      "category": "source_input_validation",
+      "bytes": 2143
+    },
+    {
+      "path": "src/qf_research/market_data/valuation_inputs.py",
+      "sha256": "50121da135c42fc52061076e65eeb85afed04746d37637186d53230ca8334f77",
+      "category": "source_input_validation",
+      "bytes": 8474
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/__init__.py",
+      "sha256": "0701ce6a5bf0e0e2eaeb08404c0f37ceebefc263db0da745a092943fd3fc803b",
+      "category": "numerical_library",
+      "bytes": 828
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/allocation_sensitivity.py",
+      "sha256": "f185ce86e5a7275829c22dfd02d078d8acf4791eae032854d38da95d08383f06",
+      "category": "numerical_library",
+      "bytes": 6738
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/allocation_variance_sensitivity.py",
+      "sha256": "df97ed9abcfc484aae3330e33c26846bae6725d123acf317d7a532853d7458a1",
+      "category": "numerical_library",
+      "bytes": 6243
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/allocation_workload.py",
+      "sha256": "654fbda8f5e3d14d07dc639bef715e3938df12a6c7bae2d8859777c14b73f089",
+      "category": "numerical_library",
+      "bytes": 8616
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/analytical.py",
+      "sha256": "22bc2b408e3c48744f446a13e13c1b7e81fa56f647e4e174f8bcecc123f70867",
+      "category": "numerical_library",
+      "bytes": 2247
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/cash_dividends.py",
+      "sha256": "97fa48f19938aea8903953de12284875939ee480aec7c0f892ed37c7f4fa9b51",
+      "category": "numerical_library",
+      "bytes": 15183
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/component_confidence.py",
+      "sha256": "990e6e8859284c0fcbbe9571856e640fe138a4f0dae78f544ede8186f1932e22",
+      "category": "numerical_library",
+      "bytes": 4160
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/component_ratio.py",
+      "sha256": "0c79769a57de5a58c1979c3d57bc849d2b7e209a8bd99a4d444663e8fe299a16",
+      "category": "numerical_library",
+      "bytes": 8403
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/contracts.py",
+      "sha256": "f00a256b820edc3371b0f315d676a00e1ef28fd9c144ccc88fd21cf21b22cf6a",
+      "category": "numerical_library",
+      "bytes": 3178
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/cost_budget.py",
+      "sha256": "e83d3ff8c2e259a48c501febbf3db7419f9e5b49981002256f427f3a6246f64a",
+      "category": "numerical_library",
+      "bytes": 3446
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/dividend_sensitivity.py",
+      "sha256": "3e613036d403c90e1c6c622e2e9f295540b05a37e0f82a1f55b6ad841e42a377",
+      "category": "numerical_library",
+      "bytes": 4328
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/escrowed_dividends.py",
+      "sha256": "eab26b8a833dc55ccbd689034e245d465b81f0a10e702b43da015e6b9eb7be66",
+      "category": "numerical_library",
+      "bytes": 12834
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/exercise_dominance.py",
+      "sha256": "ad666f8d72aec3538ab667bf52a541a8fe72798842ae5bc715a6a630efeeca67",
+      "category": "numerical_library",
+      "bytes": 3614
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/exercise_redundancy.py",
+      "sha256": "f9b67e74ba208c6854bb874be5a05776c5055a03c9da0f96b1795698ccfc62b3",
+      "category": "numerical_library",
+      "bytes": 1946
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/experiments.py",
+      "sha256": "748e8260b7409635b6c40b9cfef964b1a41cf3d85eeef5f619b2589d6d8a3630",
+      "category": "numerical_library",
+      "bytes": 21331
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/expiry_extension.py",
+      "sha256": "3eb88ae2cfe876c1c1e5b7e97318ee8bbd7a28b0c9bf3793f83f5a62b448ab21",
+      "category": "numerical_library",
+      "bytes": 7506
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/finite_difference.py",
+      "sha256": "ddcd4bc9637de3777315485f567100b0526aa601b08fe7cf42c7e8d7072be1d3",
+      "category": "numerical_library",
+      "bytes": 5464
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/funded_cash.py",
+      "sha256": "0629bec919e507753bca53fdc540c4c2e374951339c22cd044d6f0f85fa2cc6c",
+      "category": "numerical_library",
+      "bytes": 12705
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/funded_dual.py",
+      "sha256": "2ec4398f49baef3461d86eceef64881cb28e21e64298fc95a6f60b55d0a17f8d",
+      "category": "numerical_library",
+      "bytes": 5877
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/funded_policy.py",
+      "sha256": "ee051cbd7795b75456f4d8da5841e49672e8eb1f034d0cce78d71327b4abe92b",
+      "category": "numerical_library",
+      "bytes": 14985
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/joint_input_expiry.py",
+      "sha256": "4f4277224dd69649578622b34e59c7aee403f22269675c909077059a756b3330",
+      "category": "numerical_library",
+      "bytes": 2474
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/least_squares.py",
+      "sha256": "1dbd9214b3ab547495dd8b32f69cdcffda8170cce72e0ed965b1a191f8231d5e",
+      "category": "numerical_library",
+      "bytes": 5673
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/policy_gain.py",
+      "sha256": "2df4357a3751af7433c0876ff490a8cd447f1020fec440cfa7da120c7ab19554",
+      "category": "numerical_library",
+      "bytes": 3161
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/policy_transfer.py",
+      "sha256": "ee04aaf77b9672fa2da3068a63021435a563ee8f7248ecc436a8b71dea0da6cb",
+      "category": "numerical_library",
+      "bytes": 5201
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/prospective_allocation.py",
+      "sha256": "85bd03a16f3adb754d01b50b76c2630b72bc7aa0c6d377336e6736ac069b0b33",
+      "category": "numerical_library",
+      "bytes": 5858
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/prospective_evaluation.py",
+      "sha256": "25076e3b0667060338811e8bab3813c0d534568c7362d86e1c8d440ee9402476",
+      "category": "numerical_library",
+      "bytes": 10972
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/residual_envelope.py",
+      "sha256": "021d76f353043080c8fb4723f30185cc801f0ff72361de2d464d3a1eb55b1878",
+      "category": "numerical_library",
+      "bytes": 10346
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/sequential_inference.py",
+      "sha256": "62e9d9d6ef8c9bcf88c757266f5c0aee2da85adeef5ba9a7274daa527365c678",
+      "category": "numerical_library",
+      "bytes": 9489
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/settlement.py",
+      "sha256": "3c0a05a6267304ba0ca1001424e4f764942d1985fb4c855baf529fd049a46352",
+      "category": "numerical_library",
+      "bytes": 3674
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/simulation.py",
+      "sha256": "1161dfc31c51d79b26afb37a4d8e7b39c14153b7853d184c49c508616c7dc17a",
+      "category": "numerical_library",
+      "bytes": 3554
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/terminal_repair.py",
+      "sha256": "0960eba519f43edac411f18aa73ad9f43bd3a18518ddbc6318e9a0709abc6a9d",
+      "category": "numerical_library",
+      "bytes": 4987
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/terminal_training.py",
+      "sha256": "e028c3646b439964b5c7bdc008ee0de95a6782ee0e995639cfabdb825fc2a031",
+      "category": "numerical_library",
+      "bytes": 3022
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/training_allocation.py",
+      "sha256": "abac42a67f16e70b9fdc8252065d9625cd6b4984ead72c0f2e800b1fb678491d",
+      "category": "numerical_library",
+      "bytes": 8144
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/training_evaluation.py",
+      "sha256": "ebb80c4bf32137c9e69c5560194f9d967f3437b4fdbfc82b0d956291b47bb62f",
+      "category": "numerical_library",
+      "bytes": 3512
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/tree.py",
+      "sha256": "d066fd36e4df8ad0fb8ff694212c72ea4e9c451c92e1b2c546cf617744879d6f",
+      "category": "numerical_library",
+      "bytes": 2359
+    },
+    {
+      "path": "src/qf_research/optimal_stopping/value_martingale.py",
+      "sha256": "8187d00c2113b3c732457cb5430d4ff73dfc2e1260d18f8a2b2e82f5efb006e2",
+      "category": "numerical_library",
+      "bytes": 11315
+    },
+    {
+      "path": "tests/test_allocation_sensitivity.py",
+      "sha256": "3efb8e33f8868216158ad94d33090c5d18d3ac1aeb2a1ac5830c1af5a36da98e",
+      "category": "test_fixture",
+      "bytes": 15551
+    },
+    {
+      "path": "tests/test_allocation_variance_sensitivity.py",
+      "sha256": "1087632dbddebe8f5b57ad52d156d93d7b69aaa3cff0169aff3d90ab6b1ec9bd",
+      "category": "test_fixture",
+      "bytes": 14727
+    },
+    {
+      "path": "tests/test_allocation_workload.py",
+      "sha256": "d3de589d6f173fd96913f7d244fb04aae026ca8fc4c99dfacd1421f1fd354062",
+      "category": "test_fixture",
+      "bytes": 7520
+    },
+    {
+      "path": "tests/test_audit_certified_residual.py",
+      "sha256": "feac6f29a2d21453a087d55ea04d9c53dd4188b6784668783e8b07a95d84ae5f",
+      "category": "test_fixture",
+      "bytes": 4673
+    },
+    {
+      "path": "tests/test_calendar_robustness.py",
+      "sha256": "383fdf427421dc21bc36c49ae841d2d8c0515e23c78661169e4329e8c5350296",
+      "category": "test_fixture",
+      "bytes": 4033
+    },
+    {
+      "path": "tests/test_cash_dividends.py",
+      "sha256": "e8af60aad0e1aca789830912bded4c5bd7882d5babb06d30ed5ae44c3be8e4b2",
+      "category": "test_fixture",
+      "bytes": 7859
+    },
+    {
+      "path": "tests/test_certify_gain_replay.py",
+      "sha256": "d53d10f03c93664a8b462655f5bcc3d456ce262c35e7b4a6b68e0836654b1f82",
+      "category": "test_fixture",
+      "bytes": 15919
+    },
+    {
+      "path": "tests/test_component_confidence.py",
+      "sha256": "5ce14e2312c1351f4a1aef787e135b75512764b344a3cbcdfc0e02ba11efcdf3",
+      "category": "test_fixture",
+      "bytes": 16141
+    },
+    {
+      "path": "tests/test_component_ratio.py",
+      "sha256": "f250fc2017480f0ac4e8cda3f1af191fe0af82b4cc9559b2a6a9e0e8e5ad0ec6",
+      "category": "test_fixture",
+      "bytes": 20241
+    },
+    {
+      "path": "tests/test_component_ratio_audit.py",
+      "sha256": "8c4c3a60a4f190dbdea47417cac86d43527fc88bcf0968bb29b9d8dfe31d4d85",
+      "category": "test_fixture",
+      "bytes": 3268
+    },
+    {
+      "path": "tests/test_conditional_calibration.py",
+      "sha256": "96be4f5815778329686d166ce8a522ea70e4b2f6bf36854fc93dbe7113ff47b7",
+      "category": "test_fixture",
+      "bytes": 6578
+    },
+    {
+      "path": "tests/test_cost_budget.py",
+      "sha256": "eb3f414e318479aac79a7028f3801471e80c841e7a03effb257b6d1e15ba6769",
+      "category": "test_fixture",
+      "bytes": 5177
+    },
+    {
+      "path": "tests/test_cpu_prediction.py",
+      "sha256": "9f276c8f25f599d17bd04290a1855cd86dd144df79912d1e42f4a35c5ee19d32",
+      "category": "test_fixture",
+      "bytes": 6567
+    },
+    {
+      "path": "tests/test_cpu_prediction_audit.py",
+      "sha256": "295e534cd6f1094607b7d53e6bbd674264500db543b9750fab4c47c7ee0fb8ee",
+      "category": "test_fixture",
+      "bytes": 1575
+    },
+    {
+      "path": "tests/test_dense_quotes.py",
+      "sha256": "27f8a33cbef36f67f8c8ea61964fb1285b98fa162c01ad790066453bea44444e",
+      "category": "test_fixture",
+      "bytes": 5047
+    },
+    {
+      "path": "tests/test_distribution_announcements.py",
+      "sha256": "12da8923087638e8ef7b096fba56f0a36a8114b8bce6d70e441db31c5895dd60",
+      "category": "test_fixture",
+      "bytes": 8423
+    },
+    {
+      "path": "tests/test_distribution_history.py",
+      "sha256": "27759180a849c69befee45c47ab7d97ba3185201274af0da9984384f61d90c3e",
+      "category": "test_fixture",
+      "bytes": 7592
+    },
+    {
+      "path": "tests/test_dividend_feasibility.py",
+      "sha256": "e20a17f0102df1ba2d2009ab7d3452470172a9bbedc4192e21430407f262f447",
+      "category": "test_fixture",
+      "bytes": 4450
+    },
+    {
+      "path": "tests/test_dividend_sensitivity.py",
+      "sha256": "148f93bbc99b4413742423eed423603ed0df2537201e96d51fb8641686f9caf9",
+      "category": "test_fixture",
+      "bytes": 8815
+    },
+    {
+      "path": "tests/test_escrowed_dividends.py",
+      "sha256": "6b7cfe0c3d29a67c894da761563a5e0501fc3e8aad545b3726ebb0311e1d7598",
+      "category": "test_fixture",
+      "bytes": 8744
+    },
+    {
+      "path": "tests/test_event_calendar.py",
+      "sha256": "b131541831be81cf4059e6c52d7980c38041e2e99ab768a161e41ff10c070259",
+      "category": "test_fixture",
+      "bytes": 5313
+    },
+    {
+      "path": "tests/test_exercise_calendar_sensitivity.py",
+      "sha256": "47f8a44db1f700375bb9320e1d9ed41513e9313835952822f9fa4f035f95a88b",
+      "category": "test_fixture",
+      "bytes": 6688
+    },
+    {
+      "path": "tests/test_exercise_dominance.py",
+      "sha256": "464173b377e311364f68329ff2da5168627bc0519adea5ccb7359c885b1baa0e",
+      "category": "test_fixture",
+      "bytes": 5257
+    },
+    {
+      "path": "tests/test_exercise_redundancy.py",
+      "sha256": "3ea334c6f53d59eeeae8f380b22528bc01f4077dce107016f6cb815ec5934558",
+      "category": "test_fixture",
+      "bytes": 2652
+    },
+    {
+      "path": "tests/test_expiry_extension.py",
+      "sha256": "87bf05f1d51ae63572589b591f610142b491dbd83143eb376584d2cdf1a47fd6",
+      "category": "test_fixture",
+      "bytes": 5887
+    },
+    {
+      "path": "tests/test_export_gain_replay.py",
+      "sha256": "5596b2311a651a8484b6b5cdebeae27e2e133791133bd317f755a1dc64b89378",
+      "category": "test_fixture",
+      "bytes": 2643
+    },
+    {
+      "path": "tests/test_export_residual_certificate.py",
+      "sha256": "0619828190572917704d0f706a645a96086b41e709538ed6da7512fefde9d449",
+      "category": "test_fixture",
+      "bytes": 3807
+    },
+    {
+      "path": "tests/test_front_funding.py",
+      "sha256": "d14253dd412e4512310fcb201a059dd9106df939f49223908973100bd0821140",
+      "category": "test_fixture",
+      "bytes": 2294
+    },
+    {
+      "path": "tests/test_funded_cash.py",
+      "sha256": "d22adf251fe81a879e52316e460fa8c65d99418df9ca0cec03c2b4a1b21b0ca3",
+      "category": "test_fixture",
+      "bytes": 9679
+    },
+    {
+      "path": "tests/test_funded_dual.py",
+      "sha256": "454406fd140d3c9be5ff0cb0a3c7d92ba026bae6628d0530ae3cc1aae97d819f",
+      "category": "test_fixture",
+      "bytes": 6280
+    },
+    {
+      "path": "tests/test_funded_inputs.py",
+      "sha256": "a256b92d0994e866bc6dce532ee23ce1fb57e969c8f42e25e572daae418e5f90",
+      "category": "test_fixture",
+      "bytes": 5327
+    },
+    {
+      "path": "tests/test_funded_kernel.py",
+      "sha256": "1237bd99c8f885702d37e984794057858665ada69c231e9bf54a6b8d6630999b",
+      "category": "test_fixture",
+      "bytes": 6099
+    },
+    {
+      "path": "tests/test_funded_policy.py",
+      "sha256": "d29b9f1259dee79d1e8f03f4018ae47643704ed885ab50f57dbea6e9413e0dcb",
+      "category": "test_fixture",
+      "bytes": 9801
+    },
+    {
+      "path": "tests/test_funding_sensitivity.py",
+      "sha256": "44f22f0844a23fd8cc54e4c8a175c4a2b8be61987e106ac62bc4cc24e500e1b9",
+      "category": "test_fixture",
+      "bytes": 5636
+    },
+    {
+      "path": "tests/test_joint_cash_funding.py",
+      "sha256": "49bafd13bb978bbbf55c6ad12e4d50389993def5c9e62810713bd080665d5887",
+      "category": "test_fixture",
+      "bytes": 6841
+    },
+    {
+      "path": "tests/test_joint_input_expiry.py",
+      "sha256": "f4988b9112b1393db81910babad122bf07a8d3d17944eae5193254fb833ecfda",
+      "category": "test_fixture",
+      "bytes": 6180
+    },
+    {
+      "path": "tests/test_local_cpu_transfer.py",
+      "sha256": "e12691ddcba55204f8d1a7a897185178c6a2e7a2b9524fc8b05a84bd13dbd684",
+      "category": "test_fixture",
+      "bytes": 9265
+    },
+    {
+      "path": "tests/test_occ_series.py",
+      "sha256": "7fed80e8f4bf99f153e09ece25bd848252b265073394f04e673b34e50f3214bd",
+      "category": "test_fixture",
+      "bytes": 1332
+    },
+    {
+      "path": "tests/test_option_quotes.py",
+      "sha256": "ff16d87f8bf70d984eb6e99fdb84c71842f9381c62f5c3a7650a13fb616eef5f",
+      "category": "test_fixture",
+      "bytes": 5086
+    },
+    {
+      "path": "tests/test_paired_volatility.py",
+      "sha256": "b6708e3e9369a16c29f30072114acd55ac9341043b69ec31e1de86d24b293656",
+      "category": "test_fixture",
+      "bytes": 8862
+    },
+    {
+      "path": "tests/test_policy_gain.py",
+      "sha256": "50318f3844a676070f8531d8334b40873f05866cd278ccc98a33ae9b0b53d6df",
+      "category": "test_fixture",
+      "bytes": 5417
+    },
+    {
+      "path": "tests/test_policy_transfer.py",
+      "sha256": "9dd17a14216df349406862324bb5bfe96892c0fad8419ed99162fa27cce24ce6",
+      "category": "test_fixture",
+      "bytes": 5652
+    },
+    {
+      "path": "tests/test_prospective_allocation.py",
+      "sha256": "7861a33ae6353315fa6d3e50dbe581edac0ae7c5bbf34431bdea05702a435893",
+      "category": "test_fixture",
+      "bytes": 17385
+    },
+    {
+      "path": "tests/test_prospective_allocation_audit.py",
+      "sha256": "35602cbcb7bba28ca24a9a4cf588fb48ff159ea15d49ec565bfcac7fb14e15bf",
+      "category": "test_fixture",
+      "bytes": 5249
+    },
+    {
+      "path": "tests/test_prospective_inputs.py",
+      "sha256": "0f1ceeaf98b7fbdbe5345ef500084eae4d009aa324ba82d923e1fbc3971e66a7",
+      "category": "test_fixture",
+      "bytes": 16441
+    },
+    {
+      "path": "tests/test_prospective_sample.py",
+      "sha256": "70c23a1f4881081452c2acd1a761801c68c05626f223cb171c4072c6568f993a",
+      "category": "test_fixture",
+      "bytes": 4287
+    },
+    {
+      "path": "tests/test_quote_review.py",
+      "sha256": "10323ceedddc4ef0ef0935351613ab39c6849cdd80920f05c8d4b4064547cd76",
+      "category": "test_fixture",
+      "bytes": 6105
+    },
+    {
+      "path": "tests/test_replication_runner.py",
+      "sha256": "5512eb7aa9c39c99544a2f5bce6d7ac2367a0e51a924fdf38d4c8de86cc987db",
+      "category": "test_fixture",
+      "bytes": 3505
+    },
+    {
+      "path": "tests/test_residual_envelope.py",
+      "sha256": "06e4f94e5eb8c2c556bc5c5be30a38bbeedb95f3c01a0758b9fc254378bc2332",
+      "category": "test_fixture",
+      "bytes": 7178
+    },
+    {
+      "path": "tests/test_sequential_inference.py",
+      "sha256": "cad4654dbb2cfcb2a7bdd1d06fad57d2fcc7003b02c539dfcae667a250c00a68",
+      "category": "test_fixture",
+      "bytes": 5882
+    },
+    {
+      "path": "tests/test_settlement.py",
+      "sha256": "1d454e4b91326b1252ab079c54c7f01eaa7b2460b6f62c54cc8fd6fbcdae1361",
+      "category": "test_fixture",
+      "bytes": 3875
+    },
+    {
+      "path": "tests/test_settlement_comparison.py",
+      "sha256": "27e35812ad51a4a33426a5805be8290d5117b6edd77e94f9802366d6ca86d7e3",
+      "category": "test_fixture",
+      "bytes": 6687
+    },
+    {
+      "path": "tests/test_settlement_funding.py",
+      "sha256": "e2ace42dbe83346be16819a410194acb9cc37a2e2200cde8f2c432770df11b5c",
+      "category": "test_fixture",
+      "bytes": 6906
+    },
+    {
+      "path": "tests/test_short_ois.py",
+      "sha256": "3fd65da7cee4c7d5feb3186a0b7704328d85870e829871b70591e6e40235a2c1",
+      "category": "test_fixture",
+      "bytes": 6462
+    },
+    {
+      "path": "tests/test_terminal_repair.py",
+      "sha256": "02fa0d674f31213bfbde000e1745fac4fc6532e62580a680b60ef474e71adba3",
+      "category": "test_fixture",
+      "bytes": 6115
+    },
+    {
+      "path": "tests/test_terminal_training.py",
+      "sha256": "bc91c451458f884a70a53fbd340d29bf34539f8a4e68f3e7f62ef56c30e1fb6b",
+      "category": "test_fixture",
+      "bytes": 4495
+    },
+    {
+      "path": "tests/test_training_allocation.py",
+      "sha256": "3fac2e3d1a26681b99d08726bcba9872b7e90292102d4e596879bbeeaa707604",
+      "category": "test_fixture",
+      "bytes": 7959
+    },
+    {
+      "path": "tests/test_training_allocation_audit.py",
+      "sha256": "ef4ef256a9d6a9e1279733b8c0f7f0f75dfb011a2bb6387ffe0e1416a0159ea6",
+      "category": "test_fixture",
+      "bytes": 3214
+    },
+    {
+      "path": "tests/test_training_allocation_main_audit.py",
+      "sha256": "71070dd6ea8beeeea58e65b3af70ca2d8b2c53b8b3a80cd9e431561f1a5da556",
+      "category": "test_fixture",
+      "bytes": 6258
+    },
+    {
+      "path": "tests/test_training_allocation_paper_assets.py",
+      "sha256": "33ee566bdfdc11eeffc2c4488ec575fea5fd9c38767d573eee86c559b15b3f72",
+      "category": "test_fixture",
+      "bytes": 7218
+    },
+    {
+      "path": "tests/test_training_allocation_reproduction.py",
+      "sha256": "01e5737bcfad58aedf1e807c6eb595281728c1d19a20e80883154b7030edaf4c",
+      "category": "test_fixture",
+      "bytes": 9629
+    },
+    {
+      "path": "tests/test_training_allocation_study.py",
+      "sha256": "d486a31e8eaabcd8153cc1e2f00ef54fde97d64822c505d72e0ebb879e346420",
+      "category": "test_fixture",
+      "bytes": 4980
+    },
+    {
+      "path": "tests/test_training_evaluation.py",
+      "sha256": "9b1f3d2181d90b80f9aa6b678a152577320225ba39ee5322b3bd61047fbc37f2",
+      "category": "test_fixture",
+      "bytes": 5219
+    },
+    {
+      "path": "tests/test_training_evaluation_reproduction.py",
+      "sha256": "41ba9a0cdf5994fa6ea003b10587009b39046911e39470a2656f5612264b579a",
+      "category": "test_fixture",
+      "bytes": 1141
+    },
+    {
+      "path": "tests/test_training_inference_review.py",
+      "sha256": "90d30f75591e5acd6d63975b9012ed8970d4e3317b066ba727cffb3bbe73b036",
+      "category": "test_fixture",
+      "bytes": 2421
+    },
+    {
+      "path": "tests/test_underlying_quote_interval.py",
+      "sha256": "8ea6fb4f8535bb20bba72e1e44ad135bfc9b840e2ec0fb5c7b34ea5a84743823",
+      "category": "test_fixture",
+      "bytes": 4423
+    },
+    {
+      "path": "tests/test_valuation_inputs.py",
+      "sha256": "ccb87ddd0ec4e1e5293643c9ed0c0da883c9ef5a866586b7f5292ed865eaf710",
+      "category": "test_fixture",
+      "bytes": 7586
+    },
+    {
+      "path": "tests/test_value_martingale.py",
+      "sha256": "53de15e1b74797b60be697353a7a1f89055976e814cb9bc803cb345ff0f927d3",
+      "category": "test_fixture",
+      "bytes": 7664
+    }
+  ],
+  "external_imports": {
+    "flint": [
+      "scripts/audit_component_confidence.py",
+      "scripts/audit_gain_replay.py",
+      "scripts/certify_component_radii.py",
+      "scripts/certify_component_ratio.py",
+      "scripts/certify_gain_replay.py",
+      "scripts/certify_residual_envelope.py",
+      "scripts/certify_residual_primitives.py",
+      "scripts/test_certified_residual.py",
+      "tests/test_certify_gain_replay.py"
+    ],
+    "lseg": [
+      "scripts/acquire_prospective_sample.py",
+      "scripts/acquire_prospective_schedules.py",
+      "scripts/acquire_short_ois_conventions.py",
+      "scripts/build_valuation_inputs.py",
+      "scripts/lseg_option_pilot.py",
+      "scripts/review_lseg_pilot.py"
+    ],
+    "matplotlib": [
+      "scripts/analyse_local_cpu_transfer.py",
+      "scripts/analyse_training_evaluation.py",
+      "scripts/build_training_allocation_paper_assets.py",
+      "scripts/plot_allocation_cost_sensitivity.py",
+      "scripts/plot_allocation_variance_sensitivity.py",
+      "scripts/plot_component_confidence.py",
+      "scripts/plot_component_ratio.py",
+      "scripts/plot_cost_budget.py",
+      "scripts/plot_expiry_extension.py",
+      "scripts/plot_fitted_policy_gain.py",
+      "scripts/plot_joint_input_expiry.py",
+      "scripts/plot_local_cpu_transfer.py",
+      "scripts/plot_policy_input_sensitivity.py",
+      "scripts/plot_terminal_repair.py",
+      "scripts/plot_terminal_training.py",
+      "scripts/plot_value_martingale.py",
+      "scripts/report_cpu_prediction.py",
+      "scripts/report_prospective_allocation.py",
+      "scripts/report_training_allocation.py",
+      "scripts/validate_funded_cash.py",
+      "scripts/validate_funded_dual.py",
+      "scripts/validate_funded_policy.py",
+      "src/qf_research/optimal_stopping/experiments.py"
+    ],
+    "numpy": [
+      "projects/01_optimal_stopping/replication/run.py",
+      "scripts/analyse_training_evaluation.py",
+      "scripts/audit_cost_budget.py",
+      "scripts/audit_cpu_prediction.py",
+      "scripts/audit_expiry_extension.py",
+      "scripts/audit_fitted_policy_gain.py",
+      "scripts/audit_joint_input_expiry.py",
+      "scripts/audit_local_cpu_records.py",
+      "scripts/audit_local_cpu_transfer.py",
+      "scripts/audit_policy_input_sensitivity.py",
+      "scripts/audit_prospective_allocation.py",
+      "scripts/audit_terminal_repair.py",
+      "scripts/audit_training_allocation.py",
+      "scripts/audit_training_allocation_main.py",
+      "scripts/audit_training_evaluation.py",
+      "scripts/audit_value_martingale.py",
+      "scripts/benchmark_funded_kernel.py",
+      "scripts/check_allocation_inference.py",
+      "scripts/check_residual_inference.py",
+      "scripts/diagnose_paired_volatility.py",
+      "scripts/export_gain_replay.py",
+      "scripts/export_residual_certificate.py",
+      "scripts/plot_allocation_cost_sensitivity.py",
+      "scripts/plot_allocation_variance_sensitivity.py",
+      "scripts/plot_component_confidence.py",
+      "scripts/plot_cost_budget.py",
+      "scripts/plot_expiry_extension.py",
+      "scripts/plot_fitted_policy_gain.py",
+      "scripts/plot_joint_input_expiry.py",
+      "scripts/plot_policy_input_sensitivity.py",
+      "scripts/plot_terminal_repair.py",
+      "scripts/plot_terminal_training.py",
+      "scripts/plot_value_martingale.py",
+      "scripts/refine_funded_calendar.py",
+      "scripts/reprice_settlement_funding.py",
+      "scripts/run_conditional_calibration.py",
+      "scripts/study_cost_budget.py",
+      "scripts/study_cpu_budget_transfer.py",
+      "scripts/study_cpu_prediction.py",
+      "scripts/study_expiry_extension.py",
+      "scripts/study_fitted_policy_gain.py",
+      "scripts/study_joint_input_expiry.py",
+      "scripts/study_local_cpu_transfer.py",
+      "scripts/study_policy_input_sensitivity.py",
+      "scripts/study_prospective_allocation.py",
+      "scripts/study_terminal_repair.py",
+      "scripts/study_terminal_training.py",
+      "scripts/study_training_allocation.py",
+      "scripts/study_training_evaluation.py",
+      "scripts/study_value_martingale.py",
+      "scripts/summarise_conditional_calibration.py",
+      "scripts/validate_funded_cash.py",
+      "scripts/validate_funded_dual.py",
+      "scripts/validate_funded_policy.py",
+      "src/qf_research/computational/funded_kernel.py",
+      "src/qf_research/market_data/conditional_calibration.py",
+      "src/qf_research/market_data/exercise_calendar_sensitivity.py",
+      "src/qf_research/optimal_stopping/allocation_workload.py",
+      "src/qf_research/optimal_stopping/analytical.py",
+      "src/qf_research/optimal_stopping/cash_dividends.py",
+      "src/qf_research/optimal_stopping/contracts.py",
+      "src/qf_research/optimal_stopping/escrowed_dividends.py",
+      "src/qf_research/optimal_stopping/experiments.py",
+      "src/qf_research/optimal_stopping/expiry_extension.py",
+      "src/qf_research/optimal_stopping/finite_difference.py",
+      "src/qf_research/optimal_stopping/funded_cash.py",
+      "src/qf_research/optimal_stopping/funded_dual.py",
+      "src/qf_research/optimal_stopping/funded_policy.py",
+      "src/qf_research/optimal_stopping/joint_input_expiry.py",
+      "src/qf_research/optimal_stopping/least_squares.py",
+      "src/qf_research/optimal_stopping/policy_gain.py",
+      "src/qf_research/optimal_stopping/policy_transfer.py",
+      "src/qf_research/optimal_stopping/prospective_evaluation.py",
+      "src/qf_research/optimal_stopping/residual_envelope.py",
+      "src/qf_research/optimal_stopping/sequential_inference.py",
+      "src/qf_research/optimal_stopping/simulation.py",
+      "src/qf_research/optimal_stopping/terminal_repair.py",
+      "src/qf_research/optimal_stopping/terminal_training.py",
+      "src/qf_research/optimal_stopping/training_evaluation.py",
+      "src/qf_research/optimal_stopping/tree.py",
+      "src/qf_research/optimal_stopping/value_martingale.py",
+      "tests/test_allocation_workload.py",
+      "tests/test_cash_dividends.py",
+      "tests/test_cost_budget.py",
+      "tests/test_cpu_prediction.py",
+      "tests/test_escrowed_dividends.py",
+      "tests/test_expiry_extension.py",
+      "tests/test_export_gain_replay.py",
+      "tests/test_funded_cash.py",
+      "tests/test_funded_dual.py",
+      "tests/test_funded_kernel.py",
+      "tests/test_funded_policy.py",
+      "tests/test_joint_input_expiry.py",
+      "tests/test_policy_gain.py",
+      "tests/test_policy_transfer.py",
+      "tests/test_residual_envelope.py",
+      "tests/test_sequential_inference.py",
+      "tests/test_terminal_repair.py",
+      "tests/test_terminal_training.py",
+      "tests/test_training_allocation_study.py",
+      "tests/test_training_evaluation.py",
+      "tests/test_value_martingale.py"
+    ],
+    "psutil": [
+      "scripts/study_cpu_budget_transfer.py"
+    ],
+    "pytest": [
+      "tests/test_allocation_sensitivity.py",
+      "tests/test_allocation_variance_sensitivity.py",
+      "tests/test_allocation_workload.py",
+      "tests/test_calendar_robustness.py",
+      "tests/test_cash_dividends.py",
+      "tests/test_component_confidence.py",
+      "tests/test_component_ratio.py",
+      "tests/test_component_ratio_audit.py",
+      "tests/test_conditional_calibration.py",
+      "tests/test_cost_budget.py",
+      "tests/test_cpu_prediction.py",
+      "tests/test_cpu_prediction_audit.py",
+      "tests/test_dense_quotes.py",
+      "tests/test_distribution_announcements.py",
+      "tests/test_distribution_history.py",
+      "tests/test_dividend_feasibility.py",
+      "tests/test_dividend_sensitivity.py",
+      "tests/test_escrowed_dividends.py",
+      "tests/test_event_calendar.py",
+      "tests/test_exercise_calendar_sensitivity.py",
+      "tests/test_exercise_dominance.py",
+      "tests/test_exercise_redundancy.py",
+      "tests/test_expiry_extension.py",
+      "tests/test_export_gain_replay.py",
+      "tests/test_export_residual_certificate.py",
+      "tests/test_front_funding.py",
+      "tests/test_funded_cash.py",
+      "tests/test_funded_dual.py",
+      "tests/test_funded_inputs.py",
+      "tests/test_funded_kernel.py",
+      "tests/test_funded_policy.py",
+      "tests/test_funding_sensitivity.py",
+      "tests/test_joint_cash_funding.py",
+      "tests/test_joint_input_expiry.py",
+      "tests/test_local_cpu_transfer.py",
+      "tests/test_occ_series.py",
+      "tests/test_option_quotes.py",
+      "tests/test_paired_volatility.py",
+      "tests/test_policy_gain.py",
+      "tests/test_policy_transfer.py",
+      "tests/test_prospective_allocation.py",
+      "tests/test_prospective_allocation_audit.py",
+      "tests/test_prospective_inputs.py",
+      "tests/test_prospective_sample.py",
+      "tests/test_quote_review.py",
+      "tests/test_replication_runner.py",
+      "tests/test_residual_envelope.py",
+      "tests/test_sequential_inference.py",
+      "tests/test_settlement.py",
+      "tests/test_settlement_comparison.py",
+      "tests/test_settlement_funding.py",
+      "tests/test_short_ois.py",
+      "tests/test_terminal_repair.py",
+      "tests/test_terminal_training.py",
+      "tests/test_training_allocation.py",
+      "tests/test_training_allocation_audit.py",
+      "tests/test_training_allocation_main_audit.py",
+      "tests/test_training_allocation_paper_assets.py",
+      "tests/test_training_allocation_reproduction.py",
+      "tests/test_training_allocation_study.py",
+      "tests/test_training_evaluation.py",
+      "tests/test_training_evaluation_reproduction.py",
+      "tests/test_training_inference_review.py",
+      "tests/test_underlying_quote_interval.py",
+      "tests/test_valuation_inputs.py",
+      "tests/test_value_martingale.py"
+    ],
+    "scipy": [
+      "projects/01_optimal_stopping/replication/run.py",
+      "scripts/audit_cost_budget.py",
+      "scripts/audit_fitted_policy_gain.py",
+      "scripts/audit_joint_input_expiry.py",
+      "scripts/audit_prospective_allocation.py",
+      "scripts/audit_training_allocation_main.py",
+      "scripts/audit_training_evaluation.py",
+      "scripts/benchmark_funded_kernel.py",
+      "scripts/check_residual_inference.py",
+      "scripts/construct_joint_funding_witnesses.py",
+      "scripts/diagnose_paired_volatility.py",
+      "scripts/export_gain_replay.py",
+      "scripts/export_residual_certificate.py",
+      "scripts/refine_funded_calendar.py",
+      "scripts/reprice_settlement_funding.py",
+      "scripts/review_training_inference.py",
+      "scripts/study_cost_budget.py",
+      "scripts/study_cpu_budget_transfer.py",
+      "scripts/study_fitted_policy_gain.py",
+      "scripts/study_joint_input_expiry.py",
+      "scripts/study_training_allocation.py",
+      "scripts/study_training_evaluation.py",
+      "scripts/study_value_martingale.py",
+      "scripts/validate_funded_cash.py",
+      "scripts/validate_funded_dual.py",
+      "scripts/validate_funded_policy.py",
+      "src/qf_research/computational/funded_kernel.py",
+      "src/qf_research/market_data/conditional_calibration.py",
+      "src/qf_research/market_data/prospective_inputs.py",
+      "src/qf_research/optimal_stopping/analytical.py",
+      "src/qf_research/optimal_stopping/cash_dividends.py",
+      "src/qf_research/optimal_stopping/cost_budget.py",
+      "src/qf_research/optimal_stopping/escrowed_dividends.py",
+      "src/qf_research/optimal_stopping/expiry_extension.py",
+      "src/qf_research/optimal_stopping/finite_difference.py",
+      "src/qf_research/optimal_stopping/funded_cash.py",
+      "src/qf_research/optimal_stopping/policy_transfer.py",
+      "src/qf_research/optimal_stopping/sequential_inference.py",
+      "src/qf_research/optimal_stopping/simulation.py",
+      "src/qf_research/optimal_stopping/value_martingale.py",
+      "tests/test_cost_budget.py",
+      "tests/test_policy_transfer.py",
+      "tests/test_residual_envelope.py",
+      "tests/test_terminal_repair.py",
+      "tests/test_training_allocation.py",
+      "tests/test_training_evaluation.py",
+      "tests/test_training_inference_review.py",
+      "tests/test_value_martingale.py"
+    ],
+    "threadpoolctl": [
+      "scripts/study_cpu_budget_transfer.py"
+    ]
+  }
+}

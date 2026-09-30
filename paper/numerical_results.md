@@ -7,7 +7,7 @@ Keywords: optimal stopping; American options; martingale duality; Monte Carlo; t
 
 ## 1. Question and scope
 
-I investigate how approximate exercise decisions lose value, how tightly that loss can be assessed, and how computational effort should be divided between fitting policies and evaluating them. This supplement reports selected numerical findings alongside the [methods paper](README.md). The distinction between a better decision and a better assessment is central. A narrower upper bound can result from reducing dual slack while leaving the exercise policy unchanged. Increasing the number of independently fitted policies instead improves information about a training procedure's average performance.
+I investigate how approximate exercise decisions lose value, how tightly that loss can be assessed, and how computational effort should be divided between fitting policies and evaluating them. This supplement reports selected numerical findings in Markdown alongside the [complete conditional research paper](README.md). The distinction between a better decision and a better assessment is central. A narrower upper bound can result from reducing dual slack while leaving the exercise policy unchanged. Increasing the number of independently fitted policies instead improves information about a training procedure's average performance.
 
 The calculations condition on thirteen related development specifications for one expiry, using observations from a short intraday window on 10 September 2026. These cases are neither independent trading days nor a representative market sample. Each specification uses a one-state diffusion, deterministic funding and a capped discrete cash event. The original calendar contains 27 daily exercise rights. Calibration and historical information restrictions remain relevant even when simulation uncertainty is small. The findings concern the maintained models and their fitted rules; they do not measure losses realised by option holders.
 
@@ -40,7 +40,7 @@ The fine value construction reduces the mean gap by 91.42 to 95.23 per cent rela
 
 ## 3. Changing the terminal instruction
 
-The terminal experiment adds ninety minutes to the original endpoint, assumes no intervening cash event and preserves the settlement threshold and volatility dynamics. A surviving policy waits until the later endpoint; all earlier instructions remain fixed. Under these assumptions, conditional convexity gives a non-negative expected gain from this adjustment. Individual realised payoffs can nevertheless decrease. The methods paper derives the conditional payoff and states why the no-cash and constant-threshold assumptions are needed.
+The terminal experiment adds ninety minutes to the original endpoint, assumes no intervening cash event and preserves the settlement threshold and volatility dynamics. A surviving policy waits until the later endpoint; all earlier instructions remain fixed. Under these assumptions, conditional convexity gives a non-negative expected gain from this adjustment. Individual realised payoffs can nevertheless decrease. The paper derives the conditional payoff and states why the no-cash and constant-threshold assumptions are needed.
 
 Table 2 compares both instructions using the same upper payoff for the expanded problem. The common term cancels pathwise. The reduction in expected gap therefore identifies the policy-value gain under the model, unlike the martingale comparison in Table 1. Each entry again averages 52 original policies. The unadjusted gaps refer to the expanded opportunity set and must not be confused with the original-calendar gaps in Table 1.
 
@@ -248,7 +248,7 @@ From the repository root, the following standard-library command verifies the ni
 python3 projects/01_optimal_stopping/paper/verification/numerical_results.py
 ```
 
-This check does not rerun simulations or independently verify the summaries against restricted observations. The public baseline implementation and mathematical checks are not a complete replication package for this supplement. I retain the complete manuscript, experiment records and input provenance locally. Readers can inspect the stated arguments and public arithmetic; reproducing the licensed-data experiments additionally requires authorised inputs and the complete experiment implementation.
+This check does not rerun simulations or independently verify the summaries against restricted observations. The [replication package](../replication/README.md) supplies the relevant implementation, historical entry points and a public mathematical example. Exact replay of the original financial experiments additionally requires their licensed input archive and source versions. The consolidated paper includes these derived findings; observation-level inputs and original evidence records remain private.
 
 ## 11. References
 
@@ -264,6 +264,6 @@ Longstaff, F. A. and Schwartz, E. S. (2001). Valuing American options by simulat
 
 von Luxburg, U. and Franz, V. H. (2009). A geometric approach to confidence sets for ratios: Fieller's theorem, generalizations, and bootstrap. *Statistica Sinica*, 19(3), 1095–1117. [Published article](https://www3.stat.sinica.edu.tw/sstest/j19n3/j19n312/j19n312.html).
 
-These references identify the established methodological foundations. The [literature comparison](contribution_review.md) records the source versions and material consulted for the methods paper. This supplement consolidates retained experiments and does not claim a new general theorem or a further full-paper literature review.
+These references identify the established methodological foundations. The [literature comparison](contribution_review.md) records the source versions and material consulted for the paper. This supplement consolidates retained experiments and does not claim a new general theorem or a further full-paper literature review.
 
 For ratio inference, I consulted the final journal text of von Luxburg and Franz (2009), including the inversion arguments on pages 1101–1105, and visually checked pages 1102–1103. For Fieller (1954), I read the publisher's extracted text of pages 175–177, including equations (5)–(10). I did not visually inspect those original pages; the accessible text and the checked 2009 presentation support the formula transcription.

@@ -9,7 +9,7 @@
 \setlength{\bibsep}{2pt}
 \renewcommand{\bibfont}{\small}
 \setlength{\textfloatsep}{12pt plus 2pt minus 4pt}
-\usepackage[hidelinks,pdftitle={Exercise-policy loss under computational and financial constraints: Mathematical framework},pdfauthor={Amanjeet Singh}]{hyperref}
+\usepackage[hidelinks,pdftitle={Exercise-policy loss under computational and financial constraints},pdfauthor={Amanjeet Singh}]{hyperref}
 \newtheorem{proposition}{Proposition}
 \newtheorem{assumption}{Assumption}
 \newcommand{\E}{\mathbb E}
@@ -24,7 +24,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\noindent An approximate exercise policy can be difficult to assess because its decisions are suboptimal, because the upper bound used to assess them is loose, or because the financial comparison assigns different exercise opportunities. I develop a framework that separates these objects in a finite-calendar stopping problem with deterministic funding and discrete cash events. A martingale decomposition distinguishes expected policy loss from dual slack. Analytically centred piecewise-linear values provide a practical upper construction. Nested calendars reduce a prescribed financial and expiry sensitivity family to its maximal endpoint for unchanged exercise instructions. A conditional terminal adjustment supplies an expected policy gain that can be isolated with a common upper payoff. A predictable-compensation argument quantifies how conditional drift would affect loss bounds and paired policy comparisons. A repeated-training variance decomposition separates training variation from evaluation noise when preceding evidence determines fixed sample counts. Independent evaluation, simultaneous scenario limits and timing accounting delimit the resulting inference. In this methods-only version, I present the model, derivations and experimental design. I report no market observations, fitted empirical quantities or numerical research findings.
+\noindent An approximate exercise policy can be difficult to assess because its decisions are suboptimal, its evaluation bound is loose, or its financial benchmark grants different exercise opportunities. I separate these objects in a finite-calendar stopping model with deterministic funding and discrete cash events. Conditional martingale arguments distinguish policy loss from dual slack and isolate a feasible terminal-policy gain. Repeated-training inference separates variation between fitted policies from evaluation noise. In thirteen related development specifications, analytically centred value functions reduce estimated gaps by 91.42 to 95.23 per cent without changing the exercise policies. A prespecified computational follow-up shifts evaluation effort towards more independent training pairs; its selected estimator-variance estimates are 16.7 to 34.1 per cent of their reference estimates. Historical cost forecasts nevertheless fail to transfer. Local calibration reduces mean absolute relative CPU forecast error from 29.065 to 2.841 per cent, but retains an overrun and incurs additional cost. These are conditional simulation findings, not evidence of market profitability or reliable budget protection. The attempted independent market-validation sample yields no admissible observations. I therefore delimit the completed computational study from the unresolved empirical validation.
 \end{abstract}
 \smallskip
 \noindent\textit{Keywords:} optimal stopping; American options; martingale duality; Monte Carlo; discrete dividends; computational allocation.
@@ -34,7 +34,7 @@
 
 The economic value of an exercise algorithm is the expected reward obtained by its stopping rule. Regression fit, numerical resolution and the number of simulated paths are means of constructing or evaluating that rule; none is itself a measure of value. A useful comparison must identify the financial problem, specify a feasible policy and state what its benchmark establishes. A finely resolved price can be a valuable numerical reference without being a known optimum. A valid upper bound can remain too loose to establish that policy loss is economically small.
 
-I ask three related questions. How much expected value does a fixed exercise instruction forgo within a specified model? How much computation is needed to measure that loss with useful precision? How does the answer change when the financial inputs or opportunity set change? These questions require different comparisons. Changing the martingale used for evaluation changes bound tightness. Changing a policy changes its expected reward. Changing the exercise calendar can change the optimum even when the original policy is left untouched.
+I ask three related questions. Can a tighter loss assessment be distinguished from an improvement in the exercise policy? How should a fixed computational budget be divided between independent training repetitions and evaluation paths? Can measured costs predict expenditure for those complete workloads? The questions require different comparisons. Changing the martingale used for evaluation changes bound tightness. Changing a policy changes its expected reward. Repeating a fixed training procedure changes the precision of its estimated average performance. Financial and exercise-calendar sensitivity supply supporting comparisons because they can alter the benchmark itself.
 
 The methodological foundations are established. \citet{longstaff2001} construct exercise policies through backward continuation regression. \citet{haugh2004} develop martingale upper bounds and the use of approximate value processes. The lognormal hinge expectation used below follows the analytical pricing foundation of \citet{black1973}. I apply these foundations to an explicitly funded cash-event model and organise the resulting policy comparisons. I do not claim the dual inequality, conditional Jensen argument or finite-family inference as new general theorems.
 
@@ -42,7 +42,7 @@ Pricing intervals and policy assessment are already central to \citet{andersen20
 
 Appendix~\ref{app:drift} applies predictable compensation to penalties with conditional drift. It gives a loss allowance and a paired-comparison correction, together with a finite analytical example. Appendix~\ref{app:training-allocation} specifies the information available to a learned policy and derives the variance of a repeated-training comparison when earlier evidence determines its sample sizes. I present these as consequences of established theory. The literature comparison does not establish priority for the propositions or their proofs.
 
-I restrict this mathematical component of my research to a framework independent of any particular observed contract, fitted parameter, sample size or empirical result. I specify the evidence required for numerical and financial investigation; I make no claim here that those empirical requirements have been met.
+The project-specific contribution is a controlled comparison of these decisions in one funded stopping model. I retain both the conditional precision gains and the failed expenditure forecasts, then assess local timing calibration on complete, fixed workloads. Appendix~\ref{app:allocation-inference} connects uncertainty about the variance components to the implemented allocation rule. This argument joins the mathematical estimands to the measured computation; it does not introduce a new general pricing theorem. The development specifications share a narrow financial setting. A separate attempt at independent market validation supplies no admissible primary observations, so the completed study supports conditional computational conclusions only.
 % End sections/01_question
 
 % Begin sections/02_model
@@ -373,28 +373,295 @@ A more detailed approximate value can tighten the dual expectation while making 
 For independent-method evaluations, use \eqref{eq:welch}; for common-path evaluations, retain \eqref{eq:paired}. Report all retained policies and repetitions. Descriptive averages or medians across related cases are not independent observations of a population effect. Neither a tighter dual construction nor a larger outer sample changes a frozen policy's expected reward. Comparing these expenditures with extra policy training is a distinct resource-allocation problem.
 % End sections/06_computation
 
+\section{Conditional computational evidence}\label{sec:results}
+
+\subsection{Specifications, procedures and estimands}
+
+The investigation uses thirteen related development specifications for one SPY expiry, anchored to observations from a short intraday window on 10 September 2026. They are neither independent trading days nor a representative market sample. Each specification retains a one-state diffusion, deterministic funding and a capped discrete cash event. The original calendar contains 27 daily exercise rights. I treat these inputs as defining conditional numerical problems. The calculations do not establish that the retained funding, cash or quote conventions describe contemporaneous tradable opportunities.
+
+The original design crosses 5,000 and 20,000 training paths with polynomial degrees two and four. Four repetitions per case give 52 policies per configuration and 208 policies overall. The smaller training sample is a prefix of the larger sample in this design. Independent outer paths evaluate the frozen rules. Later experiments draw independent pairs of training samples to study procedure-level variation; the policies within each pair share evaluation paths. I distinguish a change in the expected reward of a policy, a change in the precision of its assessment, and a change in expenditure. These distinctions determine the comparisons below.
+
+All monetary results are USD per share in premium-quote units. The tables report the reviewed derived summaries; exact financial input bundles are excluded from the public edition. The observation-admission study in Section~\ref{sec:empirical-limits} remains a separate assessment of empirical validity.
+
+\subsection{Bound tightness and terminal policy gains}
+
+Table~\ref{tab:measurement} compares the slope martingale with coarse and fine approximate-value constructions while keeping each exercise policy unchanged. The fine construction reduces the mean estimated gap by 91.42 to 95.23 per cent relative to the slope construction. Its improvement over the coarse construction is substantially smaller. By equation~\eqref{eq:decomposition}, changing the martingale changes the dual slack and leaves the expected reward of the policy fixed. The comparison measures an improvement in loss assessment, rather than additional reward earned by the holder. The averages describe related retained specifications and do not estimate a population effect across markets.
+
+% Begin result-table:measurement
+\begin{table}[htbp]
+\centering\small
+\caption{Expected-gap estimates for unchanged exercise policies}\label{tab:measurement}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+\shortstack{Training\\paths} & Degree & Slope & Coarse value & Fine value & \shortstack{Reduction\\(per cent)} \\
+\midrule
+5,000 & 2 & 0.652833 & 0.051285 & 0.051125 & 92.17 \\
+5,000 & 4 & 0.703839 & 0.060522 & 0.060364 & 91.42 \\
+20,000 & 2 & 0.624587 & 0.037099 & 0.036941 & 94.09 \\
+20,000 & 4 & 0.506690 & 0.024304 & 0.024150 & 95.23 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each entry averages 52 policies. Gaps are USD per share in premium-quote units and contain both policy loss and dual slack. Reduction compares the fine value construction with the slope construction.\end{minipage}
+\end{table}
+% End result-table:measurement
+
+The terminal experiment adds ninety minutes to the original endpoint, with no intervening cash event and a constant settlement threshold. Earlier decisions are retained and a surviving policy waits until the later endpoint. Under the assumptions of the terminal-adjustment proposition, conditional convexity gives a non-negative expected gain even though individual realised payoffs can decrease. Table~\ref{tab:terminal-adjustment} compares both instructions under the same expanded opportunity set and common upper payoff. The common term cancels, so the paired expected-gap reduction identifies a policy-value gain. These expanded-calendar gaps must not be confused with the original-calendar gaps in Table~\ref{tab:measurement}.
+
+% Begin result-table:terminal_adjustment
+\begin{table}[htbp]
+\centering\small
+\caption{Terminal adjustment under a common upper payoff}\label{tab:terminal-adjustment}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+\shortstack{Training\\paths} & Degree & Unadjusted gap & Adjusted gap & Policy gain \\
+\midrule
+5,000 & 2 & 0.06111782 & 0.05009106 & 0.01102676 \\
+5,000 & 4 & 0.07063052 & 0.06023823 & 0.01039229 \\
+20,000 & 2 & 0.04703011 & 0.03593234 & 0.01109777 \\
+20,000 & 4 & 0.03441110 & 0.02377610 & 0.01063500 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Means across 52 original policies per configuration, in premium-quote units. Both instructions are assessed on the expanded calendar. The common upper term cancels in their paired difference.\end{minipage}
+\end{table}
+% End result-table:terminal_adjustment
+
+For the 20,000-path degree-four configuration, the gap estimate falls from 0.03441110 to 0.02377610, giving a paired gain of 0.01063500. This conclusion concerns a specified feasible change in the terminal instruction. Revising the earlier continuation regressions is a different intervention. In the separate matched terminal-target retraining comparison, the 208 pointwise intervals comprise 81 positive intervals, 108 negative intervals and 19 intervals containing zero. These dependent comparisons do not establish a simultaneous policy ranking. They show why an analytically justified change in a terminal instruction does not imply that every finite-sample refit will improve its preceding decisions.
+
+\subsection{Variation between fitted policies}
+
+The repeated-training comparison fixes degree four and compares policies fitted using 5,000 and 20,000 paths. It draws eight independent training pairs per specification; the two training samples within each pair are independent in this experiment. A common fine value martingale and 80,000 common evaluation paths estimate their adjusted gain. Table~\ref{tab:training-evaluation} reports the resulting mean and pointwise Student interval across the eight pair means, together with the estimated contribution of within-pair evaluation noise to the variance of the mean estimator.
+
+% Begin result-table:training_evaluation
+\begin{table}[htbp]
+\centering\small
+\caption{Mean gains across independent training pairs}\label{tab:training-evaluation}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Case & Mean gain & Pointwise interval & \shortstack{Evaluation share\\(per cent)} \\
+\midrule
+0 & 0.03203 & $[0.00922,0.05484]$ & 0.071 \\
+1 & 0.02721 & $[0.00193,0.05249]$ & 0.046 \\
+2 & 0.02941 & $[-0.00635,0.06517]$ & 0.029 \\
+3 & 0.04352 & $[0.01747,0.06958]$ & 0.077 \\
+4 & 0.03362 & $[0.01262,0.05462]$ & 0.123 \\
+5 & 0.03872 & $[0.02509,0.05236]$ & 0.284 \\
+6 & 0.03173 & $[0.01776,0.04570]$ & 0.152 \\
+7 & 0.03283 & $[0.01873,0.04694]$ & 0.179 \\
+8 & 0.02892 & $[0.01123,0.04661]$ & 0.144 \\
+9 & 0.01419 & $[-0.00237,0.03076]$ & 0.107 \\
+10 & 0.05397 & $[-0.00186,0.10980]$ & 0.014 \\
+11 & 0.03105 & $[0.02017,0.04194]$ & 0.267 \\
+12 & 0.03255 & $[0.00226,0.06285]$ & 0.056 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Eight pairs per case; 80,000 common evaluation paths per pair. Intervals use a pointwise 95 per cent Student approximation across pair means. Finite-sample coverage is unverified; the thirteen intervals are not simultaneous.\end{minipage}
+\end{table}
+% End result-table:training_evaluation
+
+Every estimated mean is positive, but the intervals for cases 2, 9 and 10 contain zero. Eight of the 104 individual pair gains are negative. Omitting repetitions one at a time leaves all reduced-sample means positive, while the positive-interval conclusions for cases 1 and 12 depend on the omission. These diagnostics qualify the interpretation of eight repetitions; they do not replace the original estimates. The reported intervals are pointwise approximations, and their finite-sample coverage has not been validated.
+
+The estimated evaluation shares range from 0.014 to 0.284 per cent. Under equation~\eqref{eq:training-allocation}, extra evaluation paths reduce only the within-pair component, whereas additional independent pairs reduce both components. The small estimated shares therefore motivate shifting expenditure towards more repetitions of the fixed training procedures. They are estimated variance components, not known population quantities, and do not establish a preferred allocation without a cost comparison.
+
+\subsection{Independent allocation and failed budget transfer}
+
+A new pilot fits 32 independent pairs per case and evaluates each pair on 4,096 paths. Separate timing measurements cover 128, 256, 512, 1,024, 2,048 and 4,096 evaluation paths. The reference uses 64 pairs and 4,096 paths per pair. The selector minimises estimated variance over affordable integer counts from 64 to 1,024 and the measured path grid, using the pilot's predicted reference CPU budget. A non-positive estimated component invokes the reference allocation. The allocation is fixed before new main draws; a comparison is not dropped because its realised cost or gain is unfavourable.
+
+The independent main arms complete 832 reference pairs and 4,198 selected pairs. The selected allocations use 256 evaluation paths in twelve cases and 128 in case 12. The latter is a measured-grid boundary choice and gives no evidence about smaller inner counts. Table~\ref{tab:allocation-comparison} reports the descriptive ratios. Main variance ratios range from 0.157 to 0.507 and variance-times-CPU ratios from 0.155 to 0.485. These ratios have no confidence intervals. Several are less favourable than predicted, particularly for cases 6 and 11.
+
+% Begin result-table:allocation_comparison
+\begin{table}[htbp]
+\centering\small
+\caption{Independent allocation comparison}\label{tab:allocation-comparison}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Case & Pairs & Paths & \shortstack{Pilot\\variance} & \shortstack{Main\\variance} & CPU & \shortstack{Variance\\times CPU} \\
+\midrule
+0 & 306 & 256 & 0.237 & 0.204 & 0.962 & 0.197 \\
+1 & 352 & 256 & 0.230 & 0.311 & 1.078 & 0.336 \\
+2 & 327 & 256 & 0.238 & 0.268 & 1.041 & 0.279 \\
+3 & 332 & 256 & 0.224 & 0.179 & 1.026 & 0.184 \\
+4 & 318 & 256 & 0.272 & 0.311 & 0.970 & 0.302 \\
+5 & 318 & 256 & 0.262 & 0.331 & 1.042 & 0.345 \\
+6 & 338 & 256 & 0.253 & 0.486 & 0.998 & 0.485 \\
+7 & 335 & 256 & 0.220 & 0.157 & 0.991 & 0.155 \\
+8 & 333 & 256 & 0.246 & 0.266 & 1.001 & 0.266 \\
+9 & 320 & 256 & 0.261 & 0.277 & 1.011 & 0.280 \\
+10 & 279 & 256 & 0.255 & 0.356 & 0.924 & 0.329 \\
+11 & 253 & 256 & 0.327 & 0.507 & 0.659 & 0.334 \\
+12 & 387 & 128 & 0.238 & 0.247 & 0.930 & 0.230 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Counts describe the selected allocation. Ratios are selected relative to the independent reference, which uses 64 pairs and 4,096 paths. Variance refers to the estimated variance of the mean gain. Ratios are descriptive and have no ratio confidence intervals.\end{minipage}
+\end{table}
+% End result-table:allocation_comparison
+
+The additional independent repetitions give more information about the procedures' average gain than the eight-pair experiment. Both arms have positive pointwise intervals in every case (Table~\ref{tab:allocation-gains}). This remains conditional inference across training repetitions, not independent confirmation from new market observations. Increasing the number of fitted pairs improves estimation of the fixed procedures' mean difference; it does not improve each fitted policy by increasing its own training sample.
+
+% Begin result-table:allocation_gains
+\begin{table}[htbp]
+\centering\small
+\caption{Training-procedure gains under the two allocations}\label{tab:allocation-gains}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Case & Reference mean & Reference interval & Selected mean & Selected interval \\
+\midrule
+0 & 0.03407 & $[0.02661,0.04153]$ & 0.02988 & $[0.02656,0.03319]$ \\
+1 & 0.02515 & $[0.01936,0.03094]$ & 0.03296 & $[0.02978,0.03614]$ \\
+2 & 0.03214 & $[0.02590,0.03838]$ & 0.03354 & $[0.03035,0.03672]$ \\
+3 & 0.03219 & $[0.02472,0.03966]$ & 0.02970 & $[0.02658,0.03281]$ \\
+4 & 0.03112 & $[0.02517,0.03707]$ & 0.03028 & $[0.02701,0.03355]$ \\
+5 & 0.02989 & $[0.02381,0.03598]$ & 0.03136 & $[0.02791,0.03481]$ \\
+6 & 0.02916 & $[0.02361,0.03472]$ & 0.03502 & $[0.03121,0.03883]$ \\
+7 & 0.03858 & $[0.02998,0.04718]$ & 0.03161 & $[0.02826,0.03497]$ \\
+8 & 0.02732 & $[0.02058,0.03406]$ & 0.03141 & $[0.02799,0.03483]$ \\
+9 & 0.03380 & $[0.02761,0.04000]$ & 0.03278 & $[0.02957,0.03600]$ \\
+10 & 0.03578 & $[0.02878,0.04279]$ & 0.04138 & $[0.03726,0.04549]$ \\
+11 & 0.03114 & $[0.02531,0.03698]$ & 0.03381 & $[0.02972,0.03791]$ \\
+12 & 0.03329 & $[0.02667,0.03991]$ & 0.03304 & $[0.02980,0.03628]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Premium-quote units. Intervals use a pointwise 95 per cent Student approximation over independent pair means. Positive intervals concern the fixed conditional specifications, not independent market confirmations.\end{minipage}
+\end{table}
+% End result-table:allocation_gains
+
+Every one of the 26 main arms falls below the prescribed forecast-tolerance interval. Actual CPU divided by the pilot's reference budget ranges from 0.392 to 0.811, against the interval $[0.9,1.1]$. Selected-to-reference actual CPU ratios are closer to one, ranging from 0.659 to 1.078, but this does not establish equality of realised expenditure. I retain the fixed allocations instead of using the apparent surplus to add observations after inspecting their outcomes.
+
+% Begin result-table:allocation_costs
+\begin{table}[htbp]
+\centering\small
+\caption{Predicted and actual allocation CPU expenditure}\label{tab:allocation-costs}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Component & \shortstack{Reference\\predicted} & \shortstack{Reference\\actual} & \shortstack{Selected\\predicted} & \shortstack{Selected\\actual} \\
+\midrule
+Setup & 2.333 & 1.104 & 2.333 & 1.060 \\
+Training & 75.569 & 34.814 & 366.801 & 166.359 \\
+Evaluation & 595.503 & 270.059 & 303.460 & 129.534 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Aggregate seconds. Component predictions retain the pilot observation supplying the median total pair cost. The separate pilot expense is excluded from this table and reported in the text.\end{minipage}
+\end{table}
+% End result-table:allocation_costs
+
+Table~\ref{tab:allocation-costs} decomposes the aggregate numerical charges. Predicted totals of 673.405 and 672.594 CPU seconds become 305.977 and 296.953 seconds for the reference and selected arms. Predictions retain the training and evaluation components of the pilot observation supplying the median total pair cost. Summing separate component medians would generally change the forecast. Both training and evaluation become cheaper; setup explains less than one per cent of either shortfall. Recorded software and requested thread settings agree across stages, but the effective native thread counts and processor conditions were not measured for this earlier comparison. I cannot identify the cause of the change.
+
+The pilot additionally consumes 457.980 process CPU seconds and 639.279 elapsed seconds. This is a separate expense in a one-off application. The evidence supports improved estimated precision under the retained specifications, while leaving equal-realised-cost superiority and budget transfer unestablished. A subsequent experiment assesses new forecasts; it cannot retrospectively repair these original predictions.
+
+\subsection{A prespecified computational follow-up}
+
+I selected cases 5, 6 and 10 because earlier evidence exposed uncertainty about variance components or sensitivity to the cost scenario. Each case has three candidate allocations, using 128, 256 and 4,096 evaluation paths. The count of independent training pairs is the largest affordable integer under both retained mean-cost scenarios. A prespecified rule minimises worst relative variance over a declared enclosure of the asymptotic component-ratio set, as derived in Appendix~\ref{app:allocation-inference}. The rule selects 256 paths in all three cases. The set's coverage and the cost scenarios remain assumptions of that decision.
+
+All nine arms are executed, completing 3,978 training pairs, with four warm-up pairs recorded separately. The earlier information determines the design and cases, while the new simulation outcomes do not determine their own counts. This is prospective computational evidence conditional on the preceding research and fixed financial specifications. It supplies no new market observations.
+
+% Begin result-table:prospective_allocation
+\begin{table}[htbp]
+\centering\small
+\caption{Prespecified computational allocation follow-up}\label{tab:prospective-allocation}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Case & \shortstack{Pairs\\128} & \shortstack{Pairs\\256} & \shortstack{Pairs\\4,096} & \shortstack{Variance\\128} & \shortstack{Variance\\256} & \shortstack{CPU\\256} & \shortstack{Variance\\times CPU\\256} \\
+\midrule
+5 & 776 & 687 & 91 & 0.169888 & 0.167421 & 1.510736 & 0.252928 \\
+6 & 674 & 632 & 141 & 0.396693 & 0.340606 & 0.901768 & 0.307147 \\
+10 & 438 & 399 & 140 & 0.364378 & 0.330904 & 0.655844 & 0.217021 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Column suffixes give evaluation paths per pair. Ratios use the fresh within-case 4,096-path reference. The prespecified choice is 256 paths. Ratios and comparisons between 128 and 256 paths remain descriptive; realised costs differ.\end{minipage}
+\end{table}
+% End result-table:prospective_allocation
+
+The selected 256-path variance estimates are 16.7, 34.1 and 33.1 per cent of their fresh within-case reference estimates (Table~\ref{tab:prospective-allocation}). Their variance-times-CPU ratios are also below one. Actual expenditures differ, so these point estimates do not establish an improvement at exactly equal realised cost. The 128-versus-256 point comparison favours 256 in each case but is outside the registered inferential family.
+
+The registered family contains twelve contrasts: six mean differences and six differences between the estimated variances of the complete-sample means. Each smaller-path arm is compared with its independent 4,096-path reference. Intervals use $\widehat\Delta\pm(13/4)\widehat s$. The cutoff supplies an asymptotic union-bound calibration for the family; shared references do not require independence between the contrasts. Appendix~\ref{app:allocation-inference} states the moment assumptions and the variance-influence calculation. Neither exact arithmetic in the decision rule nor a conservative normal cutoff establishes finite-sample coverage.
+
+% Begin result-table:prospective_contrasts
+\begin{table}[htbp]
+\centering\small
+\caption{Registered mean and estimator-variance difference intervals}\label{tab:prospective-contrasts}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Case & Paths & Mean difference & Variance difference \\
+\midrule
+5 & 128 & $[-0.009932236,0.01029046]$ & $[-1.091314\times10^{-5},-2.823286\times10^{-6}]$ \\
+5 & 256 & $[-0.009629916,0.01057145]$ & $[-1.093775\times10^{-5},-2.839513\times10^{-6}]$ \\
+6 & 128 & $[-0.005816441,0.009489616]$ & $[-3.959426\times10^{-6},-8.309205\times10^{-7}]$ \\
+6 & 256 & $[-0.005216458,0.009779123]$ & $[-4.164466\times10^{-6},-1.071226\times10^{-6}]$ \\
+10 & 128 & $[-0.01285611,0.009544336]$ & $[-1.018491\times10^{-5},-8.808303\times10^{-7}]$ \\
+10 & 256 & $[-0.01311862,0.009005322]$ & $[-1.041016\times10^{-5},-1.23835\times10^{-6}]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each contrast subtracts the independent 4,096-path reference. Mean differences use premium-quote units and variance differences their square. The common cutoff 13/4 supplies asymptotic family calibration for twelve contrasts; finite-sample coverage is unverified.\end{minipage}
+\end{table}
+% End result-table:prospective_contrasts
+
+All six mean intervals include zero, which is compatible with the common target but does not establish equivalence. All six variance-difference intervals have negative upper endpoints, supporting the precision comparison under the specified asymptotic procedure. Fourth-moment concentration qualifies that interpretation: one pair supplies 63.98 per cent of the squared variance-influence sum in case 5's 256-path arm, and the largest contribution is 49.84 per cent in case 10's reference. These are shares of estimated uncertainty about variance, not shares of the variance itself. No pair is removed.
+
+All nine arms are within their original numerical budgets, but none meets the ten per cent forecast tolerance. Actual-to-forecast ratios range from 0.514162 to 0.873429. The primary numerical charge is 349.644 CPU seconds against a combined forecast of 487.779 seconds. This second comparison strengthens the conditional precision evidence while leaving expenditure prediction unresolved at that stage.
+
+\subsection{Local CPU calibration}
+
+The final timing experiment asks whether local measurements predict those nine complete allocations more accurately. Two passes execute fixed counts in opposite orders, giving 7,956 validation pairs, 576 calibration pairs and four warm-up pairs. At each pass's start, sixteen calibration pairs per arm determine a pass-start forecast. Another sixteen pairs immediately before each arm determine an immediate forecast. Both extrapolate mean pair cost and include a fresh approximation construction. The historical forecast is unchanged. Reversal changes eight positions; the middle arm retains its position.
+
+For actual numerical CPU $C$ and forecast $\widehat C$, I assess $|C-\widehat C|/\widehat C$, averaging equally across eighteen arms. The tolerance requires $C/\widehat C\in[0.9,1.1]$. A separate upper allowance is $1.1\widehat C$, without a statistical prediction-coverage interpretation. Table~\ref{tab:cpu-prediction} preserves all eighteen outcomes.
+
+% Begin result-table:cpu_prediction
+\begin{table}[htbp]
+\centering\small
+\caption{Historical and locally calibrated CPU forecasts}\label{tab:cpu-prediction}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Forecast & \shortstack{Within\\ten per cent} & \shortstack{Within upper\\allowance} & \shortstack{Mean absolute error\\(per cent of forecast)} & \shortstack{Actual / forecast\\range} \\
+\midrule
+Historical & 1/18 & 18/18 & 29.065 & $[0.5154,1.0782]$ \\
+Pass start & 16/18 & 16/18 & 3.669 & $[0.9237,1.2081]$ \\
+Immediate & 17/18 & 17/18 & 2.841 & $[0.9576,1.2261]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each forecast is assessed on the same eighteen complete validation charges. The error denominator is the forecast; arms receive equal weight. The upper allowance is 1.1 times the forecast and has no statistical coverage guarantee.\end{minipage}
+\end{table}
+% End result-table:cpu_prediction
+
+Local calibration reduces mean absolute relative error from 29.065 per cent to 3.669 per cent at pass start and 2.841 per cent immediately before execution. The immediate forecast meets the tolerance in seventeen of eighteen arms. Its remaining failure has an actual-to-forecast ratio of 1.2261 and exceeds the original numerical budget. Every point forecast classifies all eighteen arms as affordable, although only seventeen are. Thus the improvement in average prediction does not establish reliable budget protection.
+
+The historical upper allowance contains all eighteen costs, but classifies none of the planned allocations as affordable. Pass-start and immediate allowances classify eighteen and seventeen arms as affordable, respectively, with one false affordability declaration each. Tolerance, upper-allowance exceedance and affordability answer different planning questions. Covering all observed costs is insufficient if the resulting allowance makes every planned allocation infeasible.
+
+Validation uses 700.274 numerical CPU seconds. Pass-start and immediate calibration add 44.623 and 44.323 seconds, and warm-up adds 0.332 seconds. Total numerical CPU is 789.552 seconds; whole-process CPU is 811.658 seconds and elapsed time is 842.795 seconds. Process timing includes in-run recording and control operations but excludes interpreter startup, pre-launch verification and post-run manifest hashing. Charging either calibration scheme alone retains seventeen affordable arms. Charging both, as executed here, leaves fourteen. The latter count describes this two-scheme investigation rather than deployment of immediate calibration alone.
+
+Both passes share one operating session. Fresh simulation streams do not make processor conditions independent and identically distributed, and reverse order does not identify a causal order effect. Numerical kernels are unchanged, but this experiment retains compact verification records rather than serialising every fitted coefficient. Whole-process timing therefore belongs to that recording workflow. I use these runs to assess cost forecasts, without treating them as additional inference about financial gains or a guarantee for another processor.
+
 % Begin sections/07_scope
-\section{Financial validation and interpretation}
+\section{Financial validation and interpretation}\label{sec:empirical-limits}
 
 A numerical stopping problem can be well defined while its market interpretation is unresolved. Empirical application requires dated contract terms, a justified ownership state, cash information available at the valuation cutoff, and funding appropriate to the payment obligations. Event and source timestamps may describe different objects. Simultaneous records can require an explicit ordering rule; absent or stale inputs must not silently become valid observations.
 
+I registered a prospective primary sample of fifteen matched observations over five sessions, 21--25 September 2026. No observation meets the retained admission requirements. I report no performance estimate for that sample. Subsequent access checks do not supply the missing evidence needed to admit it. In particular, the retrieved curve information does not provide a complete verified set of dated funding inputs, and a partially identified curve cannot be treated as a completed bootstrap. The original empirical criterion remains unmet. The narrower completed scope is a conditional computational study; I have not relaxed the original screen to create a successful validation sample.
+
 Joint call and put compatibility under a shared state, cash specification, funding convention and volatility is an informative diagnostic. Separate unconstrained calibrations can remove that restriction. Compatibility with bid--ask intervals is still not identification of the correct model or an executable arbitrage. A model that fails a renewed quote diagnostic after a sensitivity change can remain a conditional mathematical case, but must not be reclassified as an accepted empirical specification because its policy loss is small.
 
-A quoted spread offers a monetary scale. It is not automatically the cost of exercise, hedging or implementation. An upper loss limit below the spread establishes only that conditional scale comparison. A limit above it leaves the inequality unestablished; it does not prove that true loss exceeds the spread.
+A quoted spread offers a monetary scale. It is not automatically the cost of exercise, hedging or implementation. An upper loss limit below the spread establishes only that conditional scale comparison. A limit above it leaves the inequality unestablished; it does not prove that true loss exceeds the spread. The results above accordingly concern model rewards and computation, without a trading-profitability claim.
 
-A prospective evaluation should freeze its observations, admissibility rule, calibration and inference before outcomes can affect method choice. If no observation passes the prescribed screen, a performance estimate is unavailable. Wider post-sample thresholds can inform a future design but cannot silently replace the primary sample. Numerical replication, admissible measurement and independent economic validation are different requirements.
+Additional historical quotes with documented sampling conventions could support a new empirical design. Such a design would need its own observation rule, dated cash and funding information, and independent evaluation. It would not retrospectively convert the present failed admission exercise into a successful prospective test. Neither fresh simulation seeds nor additional training repetitions replace new financial observations.
 
 \section{Conclusions and data availability}
 
-I distinguish policy quality from the tightness of its evaluation bound and from the financial opportunities used as the benchmark. Analytically centred values can improve the measurement of loss without changing the policy. A larger calendar changes the comparison problem, while a feasible terminal adjustment changes the rule itself. Common-upper comparisons with valid martingales identify expected policy gains; finite-family bounds and explicit timing accounting delimit what the resulting evidence can support.
+The first comparison separates measurement from action. Analytically centred approximate values substantially reduce estimated dual gaps for unchanged policies. A common upper payoff then isolates the expected gain from a feasible terminal adjustment. Finite-sample retraining can still worsen individual fitted rules, so a favourable terminal argument cannot justify every earlier regression decision. The relevant object is the policy's reward under the stated exercise opportunities.
 
-I use this separation to distinguish two allocation questions. Additional computation spent on the dual construction can improve knowledge of a fixed policy's loss; additional computation spent on training can change the policy's reward. Neither expenditure can be ranked solely by the resulting dual gap because that gap combines loss and slack. Repeating fixed training procedures introduces a further distinction between variation across fitted policies and evaluation noise within a fit. The conditional variance decomposition identifies these margins without estimating their relative importance or establishing a reliable CPU forecast. An optimal allocation requires evidence about both variance and expenditure.
+The second comparison concerns the precision of a training-procedure contrast. Conditional total variance identifies the variation between fitted pairs and the evaluation noise remaining within each pair. Reallocating computation towards independent pairs reduces the retained variance estimates. The prespecified follow-up supports that conclusion under its asymptotic contrast procedure, while influential fourth moments limit finite-sample confidence. More precise estimation of a fixed training comparison is distinct from improving each policy or establishing population-optimal allocation.
 
-Predictable compensation identifies a separate source of error if the conditional mean-zero requirement is relaxed. A zero apparent gap or a common upper payoff cannot certify policy quality in its presence. I therefore retain analytical centring as a validity condition, separate from the approximation choices used to tighten the bound.
+The third comparison shows why the cost model belongs inside the research design. Historical CPU forecasts fail to transfer even when the numerical procedures remain fixed. Local calibration improves prediction for the measured session but costs computation and does not eliminate a budget overrun. A favourable variance-times-CPU ratio therefore cannot substitute for a validated expenditure forecast or an end-to-end cost accounting.
 
-These distinctions provide a basis for a conditional computational investigation. They do not establish which specification performs best in observed markets or how the results generalise to additional state variables and uncertain funding or cash. Such conclusions require their own numerical and empirical evidence.
+The probability arguments specify which conditioning makes these conclusions coherent. Independent training information preserves the evaluation martingale, fixed fresh counts preserve the repeated-training estimand, and predictable compensation identifies the correction needed when conditional centring fails. These arguments explain the implemented comparisons and their limits. They do not establish theoretical novelty, exact small-sample coverage or validity of the maintained financial inputs.
 
-In this methods-only publication, I set out the model and apply the cited methods. The finite-tree example is stipulated for analytical verification. I include no raw or cleaned subscription observations, fitted market inputs, empirical summaries, research-result tables or data-derived figures. I retain the complete numerical paper separately. The LaTeX sources and build instructions for this version are available in the accompanying repository.
+I publish the derived numerical findings, the self-contained LaTeX source and the relevant numerical implementation. The accompanying notebooks execute analytical examples and inspect the released result summaries. A separate replication interface runs the principal kernels on explicitly stipulated mathematical inputs. Those examples are not observed market data and do not reproduce the financial result tables. Exact replay of the retained financial experiments requires their original licensed inputs and evidence records, which remain private; independently supplied authorised inputs define new conditional experiments. Raw provider exports and observation-level subscription inputs are excluded from this release. The original market-validation criterion remains unsatisfied, and any extension to additional contracts, state variables or operating environments requires further evidence.
 % End sections/07_scope
 
 
@@ -543,6 +810,80 @@ The accompanying \texttt{verification/allocation\_probability.py} uses exact rat
 
 
 \clearpage
+\section{Allocation uncertainty and registered contrasts}
+\label{app:allocation-inference}
+
+\subsection{A ratio that preserves the sampling covariance}
+
+I derive a common variance coordinate to compare allocations without treating estimated components as known. Fix the financial specification and the two training procedures. For a source with $m$ independent pairs and $n\geq2$ evaluation paths per pair, retain the pair means $W_r$ and put $U_r=s_r^2/n$, where $s_r^2$ is the within-pair sample variance of the gains $Z$. Then
+\[
+ v_n=\operatorname{Var}(W_r)=\mathcal V_{\rm tr}+\mathcal V_{\rm ev}/n,
+ \qquad u_n=\E U_r=\mathcal V_{\rm ev}/n.
+\]
+The independent units are the complete training pairs. Evaluation gains sharing a fitted pair are generally dependent after training is averaged out, so replacing the pair count by the total path count would understate uncertainty. The preceding record may select counts before fresh draws, as established in Appendix~\ref{app:training-allocation}; the new outcomes do not determine their own inclusion.
+
+For reference count $n_0$ and $\kappa=n/n_0$, define
+\[
+ d_0=v_n+(\kappa-1)u_n=\mathcal V_{\rm tr}+\mathcal V_{\rm ev}/n_0,
+ \quad e_0=\kappa u_n=\mathcal V_{\rm ev}/n_0,
+ \quad w=e_0/d_0.
+\]
+The implemented reference is $n_0=4096$, a computational design choice. When $d_0>0$, $w\in[0,1]$. If both components vanish, the ratio is undefined and every allocation has zero population variance. I estimate $d_0$ and $e_0$ by replacing $v_n$ with $S_W^2$ and $u_n$ with $\bar U$, retaining their signs without flooring a negative component estimate.
+
+The identity
+\[
+ S_W^2=\frac{m}{m-1}
+ \left\{\frac1m\sum_r(W_r-\mu)^2-(\bar W-\mu)^2\right\}
+\]
+gives the first-order variance influence $(W_r-\mu)^2-v_n$. Write $q_r=(W_r-\bar W)^2$, $\bar q=m^{-1}\sum_rq_r$, and form the centred empirical influences
+\[
+ \widehat\psi_{v,r}=q_r-\bar q,\qquad
+ \widehat\psi_{u,r}=U_r-\bar U,\qquad
+ \widehat\phi_r=
+ \begin{pmatrix}
+ \widehat\psi_{v,r}+(\kappa-1)\widehat\psi_{u,r}\\
+ \kappa\widehat\psi_{u,r}
+ \end{pmatrix},\qquad
+ \widehat\Sigma=\frac{\sum_r\widehat\phi_r\widehat\phi_r^{\mathsf T}}{m(m-1)}.
+\]
+This estimates the sampling covariance of $(\widehat d_0,\widehat e_0)$ jointly. Centring $q_r$ by its own average matters because the unbiased sample variance has a different divisor.
+
+Following \citet{fieller1954} and \citet{vonluxburg2009}, I invert the contrast rather than dividing two separate intervals:
+\begin{equation}
+ (\widehat e_0-w\widehat d_0)^2
+ \leq z^2\{\widehat\Sigma_{ee}-2w\widehat\Sigma_{de}
+                         +w^2\widehat\Sigma_{dd}\}.
+ \label{eq:allocation-fieller}
+\end{equation}
+The complete quadratic acceptance set is calculated on the real line before intersection with $[0,1]$. Unbounded or disconnected sets are retained. The justification requires independent complete pairs, finite fourth moments, consistent covariance estimation and positive population variance of the true contrast. It is asymptotic as the number of pairs grows; positive empirical covariance rank is insufficient. Exact quadratic arithmetic does not certify normal approximation, finite-sample coverage or the original summary rounding errors. A weak denominator can produce a broad or disconnected unrestricted set even when the point ratio appears precise. Intersecting with the model domain restricts possible component shares; it does not supply additional observations or rescue an inaccurate normal approximation. These are applications of established ratio inference, without a claim of theoretical priority.
+
+\subsection{An endpoint comparison for the allocation rule}
+
+For feasible candidate $i$ with $m_i$ pairs and $n_i$ paths per pair,
+\[
+ \operatorname{Var}(\widehat\mu_i)=d_0g_i(w),\qquad
+ g_i(w)=\frac{1-w}{m_i}+\frac{n_0w}{m_in_i}.
+\]
+The common positive scale cancels when comparing candidates. I use a non-empty closed outward enclosure $[l,u]\subseteq[0,1]$ of the retained ratio set and minimise the worst ratio to the best candidate at each $w$. To reduce this optimisation to a finite calculation, write $g_i=a_i+b_iw$. Every denominator is positive and
+\[
+ \frac{d}{dw}\frac{g_i(w)}{g_k(w)}
+ =\frac{b_ia_k-a_ib_k}{(a_k+b_kw)^2}.
+\]
+Each pairwise ratio is monotone or constant. Since $g_i/\min_kg_k=\max_kg_i/g_k$, its supremum is attained at $l$ or $u$. Comparing these endpoint maxima and applying the declared tie rule determines the choice. An outward enclosure may be conservative. This argument establishes the implemented decision conditional on its set and costs; it does not establish population optimality, accurate cost forecasts or that the set covers the true ratio.
+
+\subsection{Uncertainty about a variance improvement}
+
+For an independently executed arm, $\widehat V=S_W^2/m$ estimates the variance of its complete-sample mean. Applying the same influence calculation gives
+\begin{equation}
+ \widehat{\operatorname{Var}}(\widehat V)
+ =\frac{\sum_r(q_r-\bar q)^2}{m^3(m-1)}.
+ \label{eq:allocation-variance-se}
+\end{equation}
+The empirical influence variance is divided by $m$ to estimate uncertainty in $S_W^2$, then by $m^2$ for the variance of the mean. This is an asymptotic estimate, not an exact finite-sample fourth-moment formula. Independent arms permit addition of their sampling-variance estimates. Taking the square root gives the standard error of their variance difference; mean-difference standard errors instead use the sum of their estimated mean variances.
+
+The registered intervals use the difference plus or minus $13/4$ standard errors. A union bound calibrates the twelve normal-approximation contrasts without assuming independence between contrasts sharing a reference. Growing row counts, finite fourth moments and non-degenerate limiting influences are required; influential rows can make the approximation poor at the observed counts. The intervals assess differences, not variance ratios. Including zero does not establish equivalence, and no registered contrast ranks 128 against 256 paths.
+
+\clearpage
 \begin{thebibliography}{}
 
 \bibitem[Andersen and Broadie, 2004]{andersen2004}
@@ -568,6 +909,11 @@ Cline, D.~A. (2026).
   from backward primals.
 \newblock {\em Quantitative Finance}, 26(7):1071--1089.
 
+\bibitem[Fieller, 1954]{fieller1954}
+Fieller, E.~C. (1954).
+\newblock Some problems in interval estimation.
+\newblock {\em Journal of the Royal Statistical Society: Series B}, 16(2):175--185.
+
 \bibitem[Glynn and Whitt, 1992]{glynn1992}
 Glynn, P.~W. and Whitt, W. (1992).
 \newblock The asymptotic efficiency of simulation estimators.
@@ -588,6 +934,11 @@ Longstaff, F.~A. and Schwartz, E.~S. (2001).
 Vellekoop, M.~H. and Nieuwenhuis, J.~W. (2006).
 \newblock Efficient pricing of derivatives on assets with discrete dividends.
 \newblock {\em Applied Mathematical Finance}, 13(3):265--284.
+
+\bibitem[von Luxburg and Franz, 2009]{vonluxburg2009}
+von Luxburg, U. and Franz, V.~H. (2009).
+\newblock A geometric approach to confidence sets for ratios: {Fieller}'s theorem, generalizations, and bootstrap.
+\newblock {\em Statistica Sinica}, 19(3):1095--1117.
 
 \end{thebibliography}
 \end{document}

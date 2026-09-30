@@ -7,7 +7,7 @@ Copyright (c) 2026 Amanjeet Singh. I license the original material released with
 | Released original material | Licence |
 | --- | --- |
 | Software, including Python and C++ source, scripts, tests, notebook code, build configuration, code comments, docstrings and software usage documentation | [MIT](LICENSE) |
-| Research writing, mathematical exposition, notebook narrative, reports and original research figures, including the methods-only [optimal-stopping paper](projects/01_optimal_stopping/paper/README.md) and its LaTeX source | [Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt), also available from [Creative Commons](https://creativecommons.org/licenses/by/4.0/) |
+| Research writing, mathematical exposition, notebook narrative, reports and original research figures, including the [optimal-stopping paper](projects/01_optimal_stopping/paper/README.md) and its LaTeX source | [Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt), also available from [Creative Commons](https://creativecommons.org/licenses/by/4.0/) |
 
 Research writing remains under CC BY 4.0 when it explains software. Code snippets in that writing are under MIT. In notebooks, code and narrative follow the corresponding terms above; displayed data and results require their own source assessment. Material that is not subject to copyright or other licensed rights does not acquire new restrictions through this notice.
 

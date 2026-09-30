@@ -11,4 +11,5 @@ verify:
 	python3 verification/conditional_drift.py
 	python3 verification/allocation_probability.py
 	python3 verification/numerical_results.py
+	python3 verification/paper_results.py
 	python3 -m unittest discover -s verification -v
