@@ -1,0 +1,692 @@
+{
+  "schema_version": 2,
+  "title": "Exercise-policy loss: released numerical summaries",
+  "date": "2026-09-30",
+  "scope": "Conditional computational findings from thirteen related development specifications. This is a derived-summary supplement, not a market-observation dataset or a complete experiment replication package. The prospective allocation and timing extensions use three inspected specifications, fixed counts and fresh simulations without additional market observations.",
+  "monetary_unit": "USD per share in premium-quote units",
+  "rounding": "Values use the displayed precision of the retained numerical manuscript. Rounding is for presentation; source observations are excluded rather than rounded for release.",
+  "measurement": [
+    {
+      "training_paths": 5000,
+      "degree": 2,
+      "policies": 52,
+      "slope": 0.652833,
+      "coarse": 0.051285,
+      "fine": 0.051125,
+      "reduction": 0.921688
+    },
+    {
+      "training_paths": 5000,
+      "degree": 4,
+      "policies": 52,
+      "slope": 0.703839,
+      "coarse": 0.060522,
+      "fine": 0.060364,
+      "reduction": 0.914236
+    },
+    {
+      "training_paths": 20000,
+      "degree": 2,
+      "policies": 52,
+      "slope": 0.624587,
+      "coarse": 0.037099,
+      "fine": 0.036941,
+      "reduction": 0.940856
+    },
+    {
+      "training_paths": 20000,
+      "degree": 4,
+      "policies": 52,
+      "slope": 0.50669,
+      "coarse": 0.024304,
+      "fine": 0.02415,
+      "reduction": 0.952338
+    }
+  ],
+  "terminal_adjustment": [
+    {
+      "training_paths": 5000,
+      "degree": 2,
+      "policies": 52,
+      "original": 0.06111782,
+      "adjusted": 0.05009106,
+      "gain": 0.01102676
+    },
+    {
+      "training_paths": 5000,
+      "degree": 4,
+      "policies": 52,
+      "original": 0.07063052,
+      "adjusted": 0.06023823,
+      "gain": 0.01039229
+    },
+    {
+      "training_paths": 20000,
+      "degree": 2,
+      "policies": 52,
+      "original": 0.04703011,
+      "adjusted": 0.03593234,
+      "gain": 0.01109777
+    },
+    {
+      "training_paths": 20000,
+      "degree": 4,
+      "policies": 52,
+      "original": 0.0344111,
+      "adjusted": 0.0237761,
+      "gain": 0.010635
+    }
+  ],
+  "training_evaluation": [
+    {
+      "case": 0,
+      "gain": 0.03203,
+      "lower": 0.00922,
+      "upper": 0.05484,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.071
+    },
+    {
+      "case": 1,
+      "gain": 0.02721,
+      "lower": 0.00193,
+      "upper": 0.05249,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.046
+    },
+    {
+      "case": 2,
+      "gain": 0.02941,
+      "lower": -0.00635,
+      "upper": 0.06517,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.029
+    },
+    {
+      "case": 3,
+      "gain": 0.04352,
+      "lower": 0.01747,
+      "upper": 0.06958,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.077
+    },
+    {
+      "case": 4,
+      "gain": 0.03362,
+      "lower": 0.01262,
+      "upper": 0.05462,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.123
+    },
+    {
+      "case": 5,
+      "gain": 0.03872,
+      "lower": 0.02509,
+      "upper": 0.05236,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.284
+    },
+    {
+      "case": 6,
+      "gain": 0.03173,
+      "lower": 0.01776,
+      "upper": 0.0457,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.152
+    },
+    {
+      "case": 7,
+      "gain": 0.03283,
+      "lower": 0.01873,
+      "upper": 0.04694,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.179
+    },
+    {
+      "case": 8,
+      "gain": 0.02892,
+      "lower": 0.01123,
+      "upper": 0.04661,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.144
+    },
+    {
+      "case": 9,
+      "gain": 0.01419,
+      "lower": -0.00237,
+      "upper": 0.03076,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.107
+    },
+    {
+      "case": 10,
+      "gain": 0.05397,
+      "lower": -0.00186,
+      "upper": 0.1098,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.014
+    },
+    {
+      "case": 11,
+      "gain": 0.03105,
+      "lower": 0.02017,
+      "upper": 0.04194,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.267
+    },
+    {
+      "case": 12,
+      "gain": 0.03255,
+      "lower": 0.00226,
+      "upper": 0.06285,
+      "repetitions": 8,
+      "evaluation_share_percent": 0.056
+    }
+  ],
+  "allocation_comparison": [
+    {
+      "case": 0,
+      "selected_repetitions": 306,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.237,
+      "estimated_variance_ratio": 0.204,
+      "actual_cpu_ratio": 0.962,
+      "estimated_variance_cpu_ratio": 0.197
+    },
+    {
+      "case": 1,
+      "selected_repetitions": 352,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.23,
+      "estimated_variance_ratio": 0.311,
+      "actual_cpu_ratio": 1.078,
+      "estimated_variance_cpu_ratio": 0.336
+    },
+    {
+      "case": 2,
+      "selected_repetitions": 327,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.238,
+      "estimated_variance_ratio": 0.268,
+      "actual_cpu_ratio": 1.041,
+      "estimated_variance_cpu_ratio": 0.279
+    },
+    {
+      "case": 3,
+      "selected_repetitions": 332,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.224,
+      "estimated_variance_ratio": 0.179,
+      "actual_cpu_ratio": 1.026,
+      "estimated_variance_cpu_ratio": 0.184
+    },
+    {
+      "case": 4,
+      "selected_repetitions": 318,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.272,
+      "estimated_variance_ratio": 0.311,
+      "actual_cpu_ratio": 0.97,
+      "estimated_variance_cpu_ratio": 0.302
+    },
+    {
+      "case": 5,
+      "selected_repetitions": 318,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.262,
+      "estimated_variance_ratio": 0.331,
+      "actual_cpu_ratio": 1.042,
+      "estimated_variance_cpu_ratio": 0.345
+    },
+    {
+      "case": 6,
+      "selected_repetitions": 338,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.253,
+      "estimated_variance_ratio": 0.486,
+      "actual_cpu_ratio": 0.998,
+      "estimated_variance_cpu_ratio": 0.485
+    },
+    {
+      "case": 7,
+      "selected_repetitions": 335,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.22,
+      "estimated_variance_ratio": 0.157,
+      "actual_cpu_ratio": 0.991,
+      "estimated_variance_cpu_ratio": 0.155
+    },
+    {
+      "case": 8,
+      "selected_repetitions": 333,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.246,
+      "estimated_variance_ratio": 0.266,
+      "actual_cpu_ratio": 1.001,
+      "estimated_variance_cpu_ratio": 0.266
+    },
+    {
+      "case": 9,
+      "selected_repetitions": 320,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.261,
+      "estimated_variance_ratio": 0.277,
+      "actual_cpu_ratio": 1.011,
+      "estimated_variance_cpu_ratio": 0.28
+    },
+    {
+      "case": 10,
+      "selected_repetitions": 279,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.255,
+      "estimated_variance_ratio": 0.356,
+      "actual_cpu_ratio": 0.924,
+      "estimated_variance_cpu_ratio": 0.329
+    },
+    {
+      "case": 11,
+      "selected_repetitions": 253,
+      "selected_paths": 256,
+      "pilot_predicted_variance_ratio": 0.327,
+      "estimated_variance_ratio": 0.507,
+      "actual_cpu_ratio": 0.659,
+      "estimated_variance_cpu_ratio": 0.334
+    },
+    {
+      "case": 12,
+      "selected_repetitions": 387,
+      "selected_paths": 128,
+      "pilot_predicted_variance_ratio": 0.238,
+      "estimated_variance_ratio": 0.247,
+      "actual_cpu_ratio": 0.93,
+      "estimated_variance_cpu_ratio": 0.23
+    }
+  ],
+  "allocation_gains": [
+    {
+      "case": 0,
+      "reference_mean": 0.03407,
+      "reference_lower": 0.02661,
+      "reference_upper": 0.04153,
+      "selected_mean": 0.02988,
+      "selected_lower": 0.02656,
+      "selected_upper": 0.03319
+    },
+    {
+      "case": 1,
+      "reference_mean": 0.02515,
+      "reference_lower": 0.01936,
+      "reference_upper": 0.03094,
+      "selected_mean": 0.03296,
+      "selected_lower": 0.02978,
+      "selected_upper": 0.03614
+    },
+    {
+      "case": 2,
+      "reference_mean": 0.03214,
+      "reference_lower": 0.0259,
+      "reference_upper": 0.03838,
+      "selected_mean": 0.03354,
+      "selected_lower": 0.03035,
+      "selected_upper": 0.03672
+    },
+    {
+      "case": 3,
+      "reference_mean": 0.03219,
+      "reference_lower": 0.02472,
+      "reference_upper": 0.03966,
+      "selected_mean": 0.0297,
+      "selected_lower": 0.02658,
+      "selected_upper": 0.03281
+    },
+    {
+      "case": 4,
+      "reference_mean": 0.03112,
+      "reference_lower": 0.02517,
+      "reference_upper": 0.03707,
+      "selected_mean": 0.03028,
+      "selected_lower": 0.02701,
+      "selected_upper": 0.03355
+    },
+    {
+      "case": 5,
+      "reference_mean": 0.02989,
+      "reference_lower": 0.02381,
+      "reference_upper": 0.03598,
+      "selected_mean": 0.03136,
+      "selected_lower": 0.02791,
+      "selected_upper": 0.03481
+    },
+    {
+      "case": 6,
+      "reference_mean": 0.02916,
+      "reference_lower": 0.02361,
+      "reference_upper": 0.03472,
+      "selected_mean": 0.03502,
+      "selected_lower": 0.03121,
+      "selected_upper": 0.03883
+    },
+    {
+      "case": 7,
+      "reference_mean": 0.03858,
+      "reference_lower": 0.02998,
+      "reference_upper": 0.04718,
+      "selected_mean": 0.03161,
+      "selected_lower": 0.02826,
+      "selected_upper": 0.03497
+    },
+    {
+      "case": 8,
+      "reference_mean": 0.02732,
+      "reference_lower": 0.02058,
+      "reference_upper": 0.03406,
+      "selected_mean": 0.03141,
+      "selected_lower": 0.02799,
+      "selected_upper": 0.03483
+    },
+    {
+      "case": 9,
+      "reference_mean": 0.0338,
+      "reference_lower": 0.02761,
+      "reference_upper": 0.04,
+      "selected_mean": 0.03278,
+      "selected_lower": 0.02957,
+      "selected_upper": 0.036
+    },
+    {
+      "case": 10,
+      "reference_mean": 0.03578,
+      "reference_lower": 0.02878,
+      "reference_upper": 0.04279,
+      "selected_mean": 0.04138,
+      "selected_lower": 0.03726,
+      "selected_upper": 0.04549
+    },
+    {
+      "case": 11,
+      "reference_mean": 0.03114,
+      "reference_lower": 0.02531,
+      "reference_upper": 0.03698,
+      "selected_mean": 0.03381,
+      "selected_lower": 0.02972,
+      "selected_upper": 0.03791
+    },
+    {
+      "case": 12,
+      "reference_mean": 0.03329,
+      "reference_lower": 0.02667,
+      "reference_upper": 0.03991,
+      "selected_mean": 0.03304,
+      "selected_lower": 0.0298,
+      "selected_upper": 0.03628
+    }
+  ],
+  "allocation_costs": [
+    {
+      "component": "setup",
+      "reference_predicted_cpu_seconds": 2.333,
+      "reference_actual_cpu_seconds": 1.104,
+      "selected_predicted_cpu_seconds": 2.333,
+      "selected_actual_cpu_seconds": 1.06
+    },
+    {
+      "component": "training",
+      "reference_predicted_cpu_seconds": 75.569,
+      "reference_actual_cpu_seconds": 34.814,
+      "selected_predicted_cpu_seconds": 366.801,
+      "selected_actual_cpu_seconds": 166.359
+    },
+    {
+      "component": "evaluation",
+      "reference_predicted_cpu_seconds": 595.503,
+      "reference_actual_cpu_seconds": 270.059,
+      "selected_predicted_cpu_seconds": 303.46,
+      "selected_actual_cpu_seconds": 129.534
+    }
+  ],
+  "allocation_design": {
+    "training_paths": [
+      5000,
+      20000
+    ],
+    "degree": 4,
+    "pilot_pairs_per_case": 32,
+    "pilot_evaluation_paths": 4096,
+    "reference_pairs_per_case": 64,
+    "reference_evaluation_paths": 4096,
+    "measured_evaluation_path_grid": [
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "pairs_allowed": [
+      64,
+      1024
+    ],
+    "budget_tolerance": [
+      0.9,
+      1.1
+    ],
+    "reference_pairs_total": 832,
+    "selected_pairs_total": 4198,
+    "actual_to_pilot_reference_budget_range": [
+      0.392,
+      0.811
+    ],
+    "arms_outside_budget_tolerance": 26,
+    "pilot_cpu_seconds": 457.98,
+    "pilot_elapsed_seconds": 639.279,
+    "ratio_confidence_intervals": false,
+    "validated_equal_realised_budget": false,
+    "interval_type": "Approximate pointwise 95 per cent Student intervals across independent training-pair means; nominal coverage has not been validated."
+  },
+  "prospective_allocation": [
+    {
+      "case": 5,
+      "pairs_128": 776,
+      "pairs_256": 687,
+      "pairs_4096": 91,
+      "variance_ratio_128": 0.169888,
+      "variance_ratio_256": 0.167421,
+      "cpu_ratio_256": 1.510736,
+      "variance_cpu_ratio_256": 0.252928
+    },
+    {
+      "case": 6,
+      "pairs_128": 674,
+      "pairs_256": 632,
+      "pairs_4096": 141,
+      "variance_ratio_128": 0.396693,
+      "variance_ratio_256": 0.340606,
+      "cpu_ratio_256": 0.901768,
+      "variance_cpu_ratio_256": 0.307147
+    },
+    {
+      "case": 10,
+      "pairs_128": 438,
+      "pairs_256": 399,
+      "pairs_4096": 140,
+      "variance_ratio_128": 0.364378,
+      "variance_ratio_256": 0.330904,
+      "cpu_ratio_256": 0.655844,
+      "variance_cpu_ratio_256": 0.217021
+    }
+  ],
+  "prospective_contrasts": [
+    {
+      "case": 5,
+      "evaluation_paths": 128,
+      "mean_lower": -0.009932236,
+      "mean_upper": 0.01029046,
+      "variance_lower": -1.091314e-05,
+      "variance_upper": -2.823286e-06
+    },
+    {
+      "case": 5,
+      "evaluation_paths": 256,
+      "mean_lower": -0.009629916,
+      "mean_upper": 0.01057145,
+      "variance_lower": -1.093775e-05,
+      "variance_upper": -2.839513e-06
+    },
+    {
+      "case": 6,
+      "evaluation_paths": 128,
+      "mean_lower": -0.005816441,
+      "mean_upper": 0.009489616,
+      "variance_lower": -3.959426e-06,
+      "variance_upper": -8.309205e-07
+    },
+    {
+      "case": 6,
+      "evaluation_paths": 256,
+      "mean_lower": -0.005216458,
+      "mean_upper": 0.009779123,
+      "variance_lower": -4.164466e-06,
+      "variance_upper": -1.071226e-06
+    },
+    {
+      "case": 10,
+      "evaluation_paths": 128,
+      "mean_lower": -0.01285611,
+      "mean_upper": 0.009544336,
+      "variance_lower": -1.018491e-05,
+      "variance_upper": -8.808303e-07
+    },
+    {
+      "case": 10,
+      "evaluation_paths": 256,
+      "mean_lower": -0.01311862,
+      "mean_upper": 0.009005322,
+      "variance_lower": -1.041016e-05,
+      "variance_upper": -1.23835e-06
+    }
+  ],
+  "prospective_design": {
+    "cases": [
+      5,
+      6,
+      10
+    ],
+    "evaluation_paths": [
+      128,
+      256,
+      4096
+    ],
+    "primary_arms": 9,
+    "primary_pairs": 3978,
+    "warmup_pairs": 4,
+    "training_paths": [
+      5000,
+      20000
+    ],
+    "degree": 4,
+    "registered_choice": 256,
+    "contrast_family_size": 12,
+    "critical_value": 3.25,
+    "mean_intervals_including_zero": 6,
+    "negative_variance_intervals": 6,
+    "variance_ratio_confidence_intervals": false,
+    "finite_sample_coverage_verified": false,
+    "equal_realised_cost": false,
+    "fixed_counts": true,
+    "new_market_observations": 0,
+    "arms_within_budget": 9,
+    "arms_within_forecast_tolerance": 0,
+    "forecast_tolerance": [
+      0.9,
+      1.1
+    ],
+    "actual_to_forecast_range": [
+      0.514162,
+      0.873429
+    ],
+    "primary_numerical_cpu_seconds": 349.644,
+    "predicted_numerical_cpu_seconds": 487.779,
+    "largest_squared_variance_influence_percent": [
+      {
+        "case": 5,
+        "evaluation_paths": 256,
+        "percent": 63.98
+      },
+      {
+        "case": 10,
+        "evaluation_paths": 4096,
+        "percent": 49.84
+      }
+    ]
+  },
+  "cpu_prediction": [
+    {
+      "predictor": "historical",
+      "within_tolerance": 1,
+      "within_allowance": 18,
+      "mean_absolute_relative_error_percent": 29.065,
+      "actual_to_forecast_min": 0.5154,
+      "actual_to_forecast_max": 1.0782,
+      "forecast_affordable": 18,
+      "allowance_affordable": 0,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 0
+    },
+    {
+      "predictor": "pass_start",
+      "within_tolerance": 16,
+      "within_allowance": 16,
+      "mean_absolute_relative_error_percent": 3.669,
+      "actual_to_forecast_min": 0.9237,
+      "actual_to_forecast_max": 1.2081,
+      "forecast_affordable": 18,
+      "allowance_affordable": 18,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 1
+    },
+    {
+      "predictor": "immediate",
+      "within_tolerance": 17,
+      "within_allowance": 17,
+      "mean_absolute_relative_error_percent": 2.841,
+      "actual_to_forecast_min": 0.9576,
+      "actual_to_forecast_max": 1.2261,
+      "forecast_affordable": 18,
+      "allowance_affordable": 17,
+      "falsely_forecast_affordable": 1,
+      "falsely_allowance_affordable": 1
+    }
+  ],
+  "cpu_prediction_design": {
+    "validation_arms": 18,
+    "validation_pairs": 7956,
+    "calibration_pairs": 576,
+    "warmup_pairs": 4,
+    "passes": 2,
+    "calibration_pairs_per_arm_per_scheme": 16,
+    "calibration_schemes": 2,
+    "tolerance": [
+      0.9,
+      1.1
+    ],
+    "allowance_multiplier": 1.1,
+    "fixed_counts": true,
+    "prediction_coverage_claim": false,
+    "causal_order_effect_identified": false,
+    "new_financial_gain_inference": false,
+    "new_market_observations": 0,
+    "relative_error_denominator": "forecast",
+    "averaging": "Equal weight across eighteen complete validation arms",
+    "validation_within_original_budget": 17,
+    "within_budget_with_pass_start_calibration": 17,
+    "within_budget_with_immediate_calibration": 17,
+    "within_budget_with_both_calibration_schemes": 14,
+    "validation_numerical_cpu_seconds": 700.274,
+    "pass_start_calibration_cpu_seconds": 44.623,
+    "immediate_calibration_cpu_seconds": 44.323,
+    "warmup_numerical_cpu_seconds": 0.332,
+    "total_numerical_cpu_seconds": 789.552,
+    "process_cpu_seconds": 811.658,
+    "process_elapsed_seconds": 842.795
+  }
+}

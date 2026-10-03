@@ -1,0 +1,21 @@
+{
+  "provider": "US Department of the Treasury",
+  "dataset": "Daily Treasury Par Yield Curve Rates",
+  "data_kind": "observed_official_published_series",
+  "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
+  "final_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
+  "documentation_url": "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed",
+  "retrieved_utc": "2026-09-14T10:53:54.558405+00:00",
+  "observation_cutoff": "2026-09-14",
+  "first_observation": "2026-01-02",
+  "latest_observation": "2026-09-11",
+  "calendar_days_since_latest_observation": 3,
+  "observations": 175,
+  "units": "annual percentage par yields, as published",
+  "missing_value_policy": "preserved as empty CSV cells; no imputation",
+  "transformation": "XML fields parsed numerically; sorted by observation date; cutoff applied",
+  "vintage_limitation": "Current source retrieval, not an as-published historical vintage",
+  "pricing_limitation": "Par yields are not zero rates or an OIS discount curve; no direct substitution into pricing",
+  "raw_sha256": "6d51c6119e6a21eae54666e4626f83a4f8808acec246d88b8a182dfa73bfaf17",
+  "content_type": "text/xml; charset=UTF-8"
+}

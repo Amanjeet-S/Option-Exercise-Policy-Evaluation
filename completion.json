@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "project": "Option Exercise-Policy Evaluation",
+  "author": "Amanjeet Singh",
+  "status": "completed",
+  "completed_on": "2026-09-30",
+  "scope": "Conditional computational study, research paper, numerical verification and retained-data admission assessment.",
+  "pending_work": [],
+  "additional_data_required_for_completed_scope": false,
+  "purchased_data_used_for_closure": false,
+  "further_acquisition_pending": false,
+  "independent_market_validation_established": false,
+  "original_primary_admission_rule_changed": false,
+  "restricted_observations_published": false,
+  "completion_record": "README.md",
+  "paper": "paper/README.md",
+  "historical_replay_record": "replication/historical_replay.json",
+  "data_admission_supplement": "paper/data_admission.md",
+  "limitations": [
+    "No primary observation passes the original market-admission screen.",
+    "Descriptive relaxed-timing candidates do not resolve historical observation and funding conventions.",
+    "Original acquisition and calibration were not rerun.",
+    "Original CPU financial estimates were not separately retained for exact comparison."
+  ]
+}

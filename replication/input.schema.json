@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conditional stopping experiment input",
+  "description": "Structural schema. run.py additionally checks the published fixture identity, chronological ordering, strictly increasing sample counts, terminal coverage, event phases and absence of cash events in the terminal extension.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "classification": {
+      "enum": [
+        "stipulated_mathematical_fixture",
+        "authorised_model"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "quoted_spot": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "volatility": {
+          "type": "number",
+          "minimum": 0
+        },
+        "initial_share_factor": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "premium_factor": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "dividends": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ex_time": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "discounted_cash": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "ex_time",
+              "discounted_cash"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "quoted_spot",
+        "volatility",
+        "initial_share_factor",
+        "premium_factor",
+        "dividends"
+      ],
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object",
+      "properties": {
+        "strike": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maturity": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "kind": {
+          "const": "put"
+        }
+      },
+      "required": [
+        "strike",
+        "maturity",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "number",
+            "minimum": 0
+          },
+          "settlement_factor": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "phase": {
+            "enum": [
+              "before",
+              "after"
+            ]
+          }
+        },
+        "required": [
+          "time",
+          "settlement_factor",
+          "phase"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "properties": {
+        "root_seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "training_paths": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 2
+          }
+        },
+        "evaluation_paths": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 2
+          }
+        },
+        "repetitions": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "degree": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimum_itm_paths": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "condition_limit": {
+          "type": "number",
+          "minimum": 1
+        },
+        "approximation": {
+          "type": "object",
+          "properties": {
+            "core_steps": {
+              "type": "integer",
+              "minimum": 4
+            },
+            "wing_steps": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "core_steps",
+            "wing_steps",
+            "tolerance"
+          ],
+          "additionalProperties": false
+        },
+        "terminal_extension": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "root_seed",
+        "training_paths",
+        "evaluation_paths",
+        "repetitions",
+        "degree",
+        "minimum_itm_paths",
+        "condition_limit",
+        "approximation",
+        "terminal_extension"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "classification",
+    "description",
+    "model",
+    "option",
+    "decisions",
+    "experiment"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-30",
+  "scope": "All eight registered replay designs completed from the supplied historical archive: seven financial-output replays and one CPU workload replay with retained identity checks. Original acquisition and calibration were not rerun.",
+  "complete_historical_replay": true,
+  "archive_verification": {
+    "dependency_files": 23472,
+    "manifests": 89,
+    "passed": true,
+    "checked_after_all_replays": true,
+    "compressed_archives_verified": 8,
+    "compressed_files_verified": 18778,
+    "detailed_private_archive_verification_sha256": "7aaf25335d8441e8650120c4e30c2c737436e97601193e21695fee92bce5cde0",
+    "detailed_private_dependency_verification_sha256": "479e36e52987a0e4d65e9e1c82aaaa16a813dd9bd1fd08fe261491e084650bc1"
+  },
+  "completed_studies": [
+    {
+      "study": "value_martingale",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "frozen_policies": 208,
+      "method_assessments": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 346154,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "a7dc57d7bffd3fcd328cecd0207aba21c32807634a5fd10b276ae6af002036fd",
+      "fresh_manifest_sha256": "77fff7ecafc3ca18a20d6c466dd9657bf7ab47b47f6184e4053227aeaefca710",
+      "detailed_private_comparison_sha256": "7039d1204d6a67a58210c77a3d0a16c9b69b28743f95f93a121980570957033a",
+      "exclusions": [
+        "Measured execution times",
+        "Runtime environment and telemetry",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ],
+      "environment": {
+        "python": "3.13.9",
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "workers": 1
+      }
+    },
+    {
+      "study": "terminal_repair",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "calendar_scenarios": 39,
+      "policy_scenario_records": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 286042,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "c6d0759ab8b5c06f76b03b96e1502a3fb168a722a6a50d839b4ca29aab854db9",
+      "fresh_manifest_sha256": "3d16284c0aad0d1f9515cc1eeaab1b896fa3cdaee7a684796335ebc7fd414a1d",
+      "detailed_private_comparison_sha256": "9b0b3e4cc7ad042cff543f7954dac4dcd39675c6e68af687f13f8426037c3695",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ],
+      "environment": {
+        "workers": 1,
+        "original_interpreter_versions_recorded": false
+      }
+    },
+    {
+      "study": "terminal_training",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "calendar_scenarios": 39,
+      "policy_scenario_records": 624,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 530066,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "cb122acde8279da3f869da6ee03d155da10dd3618f6fbf1341de92603b85cde6",
+      "fresh_manifest_sha256": "dd7f39ae9a2964c04c5cc2b0b23f7618958d8fe0c8a22116d2dffc32935e98ae",
+      "detailed_private_comparison_sha256": "0d8fc47debfca1f8ba04585857fa4853ab154580ee72e6baa110e07bb2a2308c",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps"
+      ]
+    },
+    {
+      "study": "allocation_pilot",
+      "process_exit_code": 0,
+      "model_blocks": 13,
+      "statistical_pairs": 416,
+      "timing_evaluations": 390,
+      "setup_constructions": 65,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 804423,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "61d5603b32c2d91bd69f7bb759d35b7c11e9bdcaedfbb45b47f4be8da2961c8e",
+      "fresh_manifest_sha256": "a82f490daef56835fabd89ff355f80b11840c6a31ea222e5ec8115b681b9c2e5",
+      "detailed_private_comparison_sha256": "376f5c6c56905e9eef8278166d52a33c7e610c5ed4fc6c28bfc19bf6efc9e97a",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Allocations derived from fresh pilot timings; the subsequent main replay uses the original registration"
+      ]
+    },
+    {
+      "study": "training_allocation",
+      "process_exit_code": 0,
+      "main_pairs": 5030,
+      "model_summaries": 13,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 4820056,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "a5b45731394b7962059d9e1b4924ac9c4eac627e2c4925c4ecdcea55ff9563b9",
+      "fresh_manifest_sha256": "ba2ab7c4420de4e3e95c14222b7ab28cf43babfaa17776af4fdba9fe2b8bd2a0",
+      "detailed_private_comparison_sha256": "e64775baa40e1c6ed7823bb7bf4bff140c92b9a78f860b0c3c409bab62124a82",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Quantities derived from fresh timing measurements"
+      ]
+    },
+    {
+      "study": "prospective_allocation",
+      "process_exit_code": 0,
+      "primary_pairs": 3978,
+      "arms": 9,
+      "setup_records": 9,
+      "warmup_pairs": 4,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 3766877,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "6be93cfab97d6d89d51abeda3e7eaf88c67d01088beca2bee8583b12c4ced825",
+      "fresh_manifest_sha256": "038199dd2dd127c40289ee78a40666016396f338b70a19641dc63159f5dbb051",
+      "detailed_private_comparison_sha256": "8039bd684802e727065bfc9a1cc121531a3ff50b2faf57a333f64503a05b817e",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Quantities derived from fresh timing measurements"
+      ]
+    },
+    {
+      "study": "cpu_prediction",
+      "process_exit_code": 0,
+      "complete_workloads": 18,
+      "validation_pairs": 7956,
+      "local_calibration_pairs": 288,
+      "pass_calibration_pairs": 288,
+      "warmup_pairs": 4,
+      "setup_records": 55,
+      "financial_estimate_values_retained": 0,
+      "exact_retained_field_agreement": true,
+      "comparison_scope": "Saved policy, path and approximation fingerprints, stream identities, counts and retained non-timing metadata. Financial estimate equality cannot be established because those values were not saved separately.",
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 528501,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "84f54e877a6843fa202b6699585aa5d840f3f1b3c2b1ddb05e282cafab533bfc",
+      "fresh_manifest_sha256": "2f603fe7e3a49632796807c2251328a92cc9462511e12d6eda766db58d9a443d",
+      "detailed_private_comparison_sha256": "b96947601f37a0548d742f93096f11aa28599c99377b0dfef7fe7dbc6d52f15d",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry",
+        "Forecasts, accounting results and ratios derived from fresh timing measurements",
+        "Combined financial-record digests containing observed durations and financial values not otherwise retained"
+      ]
+    },
+    {
+      "study": "training_evaluation",
+      "process_exit_code": 0,
+      "model_cases": 13,
+      "training_repetitions_per_case": 8,
+      "training_evaluation_blocks": 104,
+      "fitted_policies": 208,
+      "evaluation_workloads": 832,
+      "warmup_records": 1,
+      "exact_retained_field_agreement": true,
+      "numerical_tolerance": 0,
+      "compared_scalar_fields": 157861,
+      "comparison_source_sha256": "d3b162b06fbf39f4220f56c3d214c3989e21ba196c8bb81065126962aa2b31fa",
+      "original_manifest_sha256": "ecb3691c61118b9efc7f1598339ab0c097ed0c240716483f8136e36a6ac00807",
+      "fresh_manifest_sha256": "793c4ab1c6f57a32bbdacd1f64231cb7288787bee94e558a036e6e913a679724",
+      "detailed_private_comparison_sha256": "20ef6c5b85790a4b0b7ff4a1d3cc87cc3c838ebfc0c46c9e8768d1a0302900cb",
+      "exclusions": [
+        "Measured execution times",
+        "Verified per-run artifact hashes",
+        "Execution timestamps",
+        "Runtime environment and telemetry"
+      ]
+    }
+  ],
+  "pending_studies": [],
+  "ancillary_reconstruction": {
+    "completed": true,
+    "fresh_financial_simulations": false,
+    "market_admission_cases": 15,
+    "primary_admitted_cases": 0,
+    "terminal_training_policies": 208,
+    "training_evaluation_pairs": 104,
+    "prospective_pairs": 3978,
+    "prospective_arms": 9,
+    "scope": "Original snapshot admission, delete-one sensitivity, interval counts, polynomial moments and influence summaries.",
+    "original_market_audit_entry_point_executed": false
+  },
+  "cpu_record_limitation": "Original CPU records omit financial estimates and include durations in their combined digest. Only saved workload identities can be compared exactly with fresh executions.",
+  "new_market_data_acquired": false,
+  "financial_acquisition_replayed": false,
+  "independent_market_validation_completed": false,
+  "raw_financial_data_included": false
+}

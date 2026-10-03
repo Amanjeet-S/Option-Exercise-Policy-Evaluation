@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "title": "Exact-archive requirements for the reported financial experiments",
+  "scope": "Byte consistency of the enumerated evidence closure for Tables 1 to 9 and the ancillary empirical analyses cited in the current paper; no financial rerun, licence verification or market-data export.",
+  "roots": [
+    {
+      "id": "policy_bounds",
+      "tables": [
+        1
+      ],
+      "path": "data/private/value_martingale/2026-09-20/run_v1/manifest.json",
+      "sha256": "a7dc57d7bffd3fcd328cecd0207aba21c32807634a5fd10b276ae6af002036fd"
+    },
+    {
+      "id": "terminal_adjustment",
+      "tables": [
+        2
+      ],
+      "path": "data/private/terminal_repair/2026-09-20/run_v1/manifest.json",
+      "sha256": "c6d0759ab8b5c06f76b03b96e1502a3fb168a722a6a50d839b4ca29aab854db9"
+    },
+    {
+      "id": "training_evaluation",
+      "tables": [
+        3
+      ],
+      "path": "data/private/training_evaluation/2026-09-26/run_v1/manifest.json",
+      "sha256": "ecb3691c61118b9efc7f1598339ab0c097ed0c240716483f8136e36a6ac00807"
+    },
+    {
+      "id": "training_evaluation_registration",
+      "tables": [],
+      "path": "data/private/training_evaluation/2026-09-26/registration_v1/manifest.json",
+      "sha256": "cbe7f2d1d0e38d02315234cf88c636363103a73e00a90b3255a4c2093e4a35b2"
+    },
+    {
+      "id": "training_allocation",
+      "tables": [
+        4,
+        5,
+        6
+      ],
+      "path": "data/private/training_allocation/2026-09-27/main_run_v1/manifest.json",
+      "sha256": "a5b45731394b7962059d9e1b4924ac9c4eac627e2c4925c4ecdcea55ff9563b9"
+    },
+    {
+      "id": "prospective_allocation",
+      "tables": [
+        7,
+        8
+      ],
+      "path": "data/private/prospective_allocation/2026-09-28/run_v1/manifest.json",
+      "sha256": "6be93cfab97d6d89d51abeda3e7eaf88c67d01088beca2bee8583b12c4ced825"
+    },
+    {
+      "id": "cpu_prediction",
+      "tables": [
+        9
+      ],
+      "path": "data/private/cpu_prediction/2026-09-28/run_v1/manifest.json",
+      "sha256": "84f54e877a6843fa202b6699585aa5d840f3f1b3c2b1ddb05e282cafab533bfc"
+    },
+    {
+      "id": "terminal_training",
+      "tables": [],
+      "path": "data/private/terminal_training/2026-09-20/run_v1/manifest.json",
+      "sha256": "cb122acde8279da3f869da6ee03d155da10dd3618f6fbf1341de92603b85cde6"
+    },
+    {
+      "id": "inference_review",
+      "tables": [],
+      "path": "data/private/policy_paper/2026-09-27/inference_review_v1/manifest.json",
+      "sha256": "a2e51a1a9a736f8dc2a071ab76200d33a93c3be50487637ae4161042a7e02f97"
+    },
+    {
+      "id": "prospective_market_registration",
+      "tables": [],
+      "path": "data/private/prospective_validation/2026-09-20/registration_v1/manifest.json",
+      "sha256": "d5e683c7a2a960e83903566d19aae95225ec98121f2755c45d69dec4010cf05d"
+    },
+    {
+      "id": "prospective_market_evaluation",
+      "tables": [],
+      "path": "data/private/prospective_validation/2026-09-26/evaluation_v1/manifest.json",
+      "sha256": "6b1682d05b4c9f4a1edaba9bb9accedcbd705af78de58e16d50e526ce0d39891"
+    }
+  ],
+  "additional_archive_files": [
+    {
+      "path": "projects/01_optimal_stopping/configs/dense_funding_chunks_2026-09-19.json",
+      "sha256": "c97d2db0d56b7434494360f4a81465823669c80f9d05b263988c6f1fcf2e873d",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/dense_quote_panel_2026-09-19.json",
+      "sha256": "44c9d8034f86a50647060cfb26650428fec6b5a7fe1dd51d3b0685f08f6c2821",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/dividend_announcements_2026-09-17.json",
+      "sha256": "d1d8e7b52c6806a012f15dfcebd1f6df62fbd09ea957e307122efa909b1a1654",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/dividend_history_2026-09-17.json",
+      "sha256": "eb3a73526ae1fb88ef3f1f692f99ecebc33b586af9da7f59f0fed2f7d90d32fe",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/expiry_extension_2026-09-20.json",
+      "sha256": "83c89235cabf343a1c503cd528ce3eb6711780dfb60d1dd8280f4e506b259ccf",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/fitted_calendar_robustness_2026-09-20.json",
+      "sha256": "c75cf372b638ef8422bf8fd72e00a311bf6a35eee15345d340377f96c608c933",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/fitted_policy_gain_2026-09-20.json",
+      "sha256": "f57300fcc0690b2c742aab88856baa348d0f6ec8493c81c5aeed0285199fa1b0",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/front_funding_2026-09-20.json",
+      "sha256": "df4e83abc727098f5f96bfe14774d076754923afba1e12c5419600737015f73b",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/joint_cash_funding_2026-09-20.json",
+      "sha256": "d4b130b3a5376c59f473776a0446018b5e25f1ef686544d6fb86ad8a8f107057",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/policy_input_sensitivity_2026-09-20.json",
+      "sha256": "03a22c51c4d95d5b40a1c57c1f8b978963d7f5a27030b4ef4a8cf32b3b1031e0",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/settlement_repricing_2026-09-20.json",
+      "sha256": "b04b0cea587320da187be9b58c686d5f070265fd939d90843adae434ae0c5c32",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/short_ois_2026-09-20.json",
+      "sha256": "72702ac448164d39dab11da7041521c5210f8355c4acf430a7433e9a759e6576",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/terminal_repair_2026-09-20.json",
+      "sha256": "449d122f7670309d4c62161192a127252cb556a55bda3d19c03410982429fb2a",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/terminal_training_2026-09-20.json",
+      "sha256": "7ba88796323e80532c70dc29601f1038256b8c30cdd9c73e9afbda0f46c59537",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/underlying_quote_interval_2026-09-19.json",
+      "sha256": "30411b9d356438a50f1984adb3216f6f78d11684ee1ec670fd2772021e2065e9",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/valuation_inputs_2026-09-16.json",
+      "sha256": "d8118c69a9eb33ddde82bc9fe6093e7e6c08d2b69ccbdd8ee46711035153eb93",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/configs/value_martingale_2026-09-20.json",
+      "sha256": "b599be196d888a0a387049217586c3f8b927190d22323134869d5590db0cd346",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/13_cpp_propagation.ipynb",
+      "sha256": "b60d007f7993dd1e612f95237445c73c6a9653f1ddbc7e96d73aa32af11d4f6e",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/18_fitted_calendar_robustness.ipynb",
+      "sha256": "4c76f186c07c6cceab0d8ec1d465e5fb76eb389354f037373f551f9a9d5b094a",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/19_fitted_policy_gain.ipynb",
+      "sha256": "c81a15f6c110e812762e72d0146c4979006c49b966e413062ede2c4bbcca9e82",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/20_value_martingale.ipynb",
+      "sha256": "37c6692e520b67022cedfa07d58bf34bf69f68ab552d1d849a1f54c6c5fc15ea",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/21_policy_input_sensitivity.ipynb",
+      "sha256": "4330d83979fcaf2451c0eb1cea6be524401c8fdbf3f4baa2eeb626f28b9cf908",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/22_expiry_extension.ipynb",
+      "sha256": "4bd628fc68a25c0744f83b878e6fc4020c69b06c813b2b73993db176b0c56fa6",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/notebooks/23_terminal_repair.ipynb",
+      "sha256": "d5904cc63610800149d0153280db61d220c68e31bd017d6c2457af91d1b9e4c7",
+      "role": "historical_notebook"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/cpp_propagation.md",
+      "sha256": "587b1d7959d7962829cf058dc9299e3ac871f297092ce810b453c479d78ce787",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/expiry_extension.md",
+      "sha256": "d320b7dfb486e6d3f0cffe314107607c4405df973c67de6d290cf6ce5580f4da",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/fitted_calendar_robustness.md",
+      "sha256": "81f1d89f01c3d8908884d4994252021f967a2b9b911a27a0a841b022f9330271",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/fitted_policy_gain.md",
+      "sha256": "99b85ddf51843688eedacbb311af676cd4693bcfab9699c4438b513acd42ee24",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/policy_input_sensitivity.md",
+      "sha256": "67054b7c7fb7667947dde1d866786bf78394e1b19160497b01cb902517b40023",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/terminal_repair.md",
+      "sha256": "84d6079498813c2b38bea21deab481d85b07c1f85b19495cbb9d31f624cfe77a",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/training_allocation.md",
+      "sha256": "eec0a7393f5d685a8d2cc9b23b57bd3484a9ff4670383758702ec5bef146def4",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/training_evaluation.md",
+      "sha256": "8f57d16286d45079328146c004d5bd052817563b79805c3eba7de14564c7ebc9",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/reports/value_martingale.md",
+      "sha256": "937d22ea72da5e51527fddc953ada91737c844b2d6619b437897b71860061062",
+      "role": "historical_report"
+    },
+    {
+      "path": "projects/01_optimal_stopping/results/cpp_propagation/verification.json",
+      "sha256": "135194cb17c48c44c36f039033aa3bb5135792e6e401c5f2a18116e494af2bc5",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "scripts/acquire_dense_funding_chunks.py",
+      "sha256": "a34a0236851297ef636672991293f8033a66f12ac760334664d333b3a3f635b7",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/acquire_dense_quote_panel.py",
+      "sha256": "849b88a6adf3134478beabf023cab64e74dc8b52be4a7a82fec788f7b23c77ec",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/audit_dense_quote_panel.py",
+      "sha256": "eae43c0feef9f70f607d340e4dc7d9577654d99563889b4deb4d2806173bea87",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/audit_distribution_announcements.py",
+      "sha256": "29a209d80873459722c50aea6d5617192603dff69c6848cfcc9ed3b65f08d6e8",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/audit_distribution_history.py",
+      "sha256": "6821c7849fcedefbdac9d6b8f2bf60c5a9cddc720d3bd5313cb1d683971006a7",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/audit_fitted_calendars.py",
+      "sha256": "9c1fdf289a967d7e49a7fb0743645fcfd85fec8b7bdf497460db0b33bda1526b",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/build_front_funding.py",
+      "sha256": "8eb11482b7284091c52074863600ee77e08eacfebdfb405ccd2fc35f3b432071",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/build_short_ois_inputs.py",
+      "sha256": "09cf0d100722dfc044a2b0edf8a1c2882d2e80a15f0d2f0f460c913c72ed795f",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/build_training_evaluation_paper.py",
+      "sha256": "3fa26778b85f93c444c2c3ca7d70f265f86497f86d79e2c44579e0f56f72602c",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/diagnose_cpu_transfer.py",
+      "sha256": "f5012e76ace4a9c9d0f88434976fddbad98b0774423303ebf099c66e7456c47c",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/diagnose_curve_date_sensitivity.py",
+      "sha256": "99ceabdd40bd8f818f7d37ae733b29c9f6ba8040dcaa58df7e17ca34c47d8772",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/diagnose_underlying_quote_interval.py",
+      "sha256": "09c644f6b43265c5cd2b9c767181cfac66f53095436d014f800e3812ac7c1e38",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/evaluate_prospective_sample.py",
+      "sha256": "2023f7555f46183d15b56ed7ba472812ab4231551a566f56b971c098a2235389",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/plot_fitted_calendars.py",
+      "sha256": "3e64082e25b8c8256d193c8ae1fa43c8efdd9b75f462480d14c29ba6c7156de9",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/plot_funded_kernel.py",
+      "sha256": "30a1922675a4e0e1decfc1a7038fb714343972535c06f61943a0af0ec8c7325d",
+      "role": "historical_code"
+    },
+    {
+      "path": "scripts/register_prospective_sample.py",
+      "sha256": "e879a0ecca44acfec006d448c8435f2e198e29ea322229c028b430f4351a7270",
+      "role": "historical_code"
+    },
+    {
+      "path": "src/qf_research/market_data/dividend_evaluation.py",
+      "sha256": "885a99ccc8640a6baefe28fd56d4c11f890dfc2b4315371a859cf8f8cd23df94",
+      "role": "historical_code"
+    },
+    {
+      "path": "src/qf_research/market_data/forecast_pages.py",
+      "sha256": "21489f4116eb1ac4b7e075e22b2cc45f13c92eef37b65833cbe76c6233f5af58",
+      "role": "historical_code"
+    },
+    {
+      "path": "src/qf_research/market_data/input_evidence.py",
+      "sha256": "9786eb8a3fc2f415ce06b03d959f23f57abb6a8933dde28c4c9311a5cd88ebea",
+      "role": "historical_code"
+    },
+    {
+      "path": "tmp/cpp_propagation/build_v1/build.json",
+      "sha256": "a01dd7ba5cfedd2fc93ccb49167fddb373484306b500af3ba0835f133e5d2102",
+      "role": "historical_configuration_or_evidence"
+    },
+    {
+      "path": "tmp/cpp_propagation/build_v1/libqf_funded_step.dylib",
+      "sha256": "9006722fab71736060b9f11e01d122961e91fd1a2a6a6f87f677da4ea35023ea",
+      "role": "historical_native_evidence"
+    }
+  ],
+  "limitations": [
+    "A provider licence does not supply the original acquisition vintage, frozen model and policy objects, registrations, seeds, derived records or unpublished historical source files. Possession and transfer of the archive must be separately authorised.",
+    "Paths are relative to an archive checkout. Required historical files also occur outside data/private. Preserve original bytes and relative paths; do not rehash changed evidence.",
+    "Historical native libraries are checked as archived evidence only. The checker does not load or execute them, establish binary portability or validate the current computational environment.",
+    "The checker follows explicit supported path-to-digest maps in hash-bound manifests. It does not infer dependencies from prose, opaque scalar digests or acquisition metadata.",
+    "The training-evaluation registration is an explicit root because its completed run records registration_sha256 as a scalar. Its configuration, tasks and protocol must be present even when the run's other mapped dependencies are complete.",
+    "Readiness covers the enumerated experiment and analysis roots. It is not a comprehensive audit of mathematical proofs, bibliographic sources, qualitative interpretations or prior paper editions.",
+    "Retained CPU records can reconstruct published timing arithmetic. Rerunning workloads measures a new machine and session, so original timings are not reproducible constants."
+  ]
+}

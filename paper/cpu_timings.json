@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "title": "Complete-workload CPU forecast measurements",
+  "measurement_date": "2026-09-28",
+  "unit": "CPU seconds",
+  "encoding": "Exact rational representations of retained binary timer measurements",
+  "design": {
+    "cases": [
+      5,
+      6,
+      10
+    ],
+    "evaluation_paths": [
+      128,
+      256,
+      4096
+    ],
+    "training_paths": [
+      5000,
+      20000
+    ],
+    "degree": 4,
+    "passes": 2,
+    "calibration_pairs_per_workload_per_scheme": 16,
+    "warmup_pairs": 4,
+    "tolerance": [
+      "9/10",
+      "11/10"
+    ],
+    "allowance_multiplier": "11/10",
+    "counts_fixed_before_validation": true
+  },
+  "run_costs": {
+    "warmup_cpu_seconds": "748110948501023/2251799813685248",
+    "process_cpu_seconds": "7139423518732231/8796093022208",
+    "process_elapsed_seconds": "463331513997879/549755813888"
+  },
+  "workloads": [
+    {
+      "pass_id": 0,
+      "position": 0,
+      "case": 6,
+      "evaluation_paths": 128,
+      "training_pairs": 674,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "3819149786391043/70368744177664",
+      "validation": {
+        "setup_cpu_seconds": "10545600739953/140737488355328",
+        "pairs_cpu_seconds": "10464124430244413/281474976710656"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "88742304757429/1125899906842624",
+        "pairs_cpu_seconds": "1075805242287477/1125899906842624"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "20459290157191/281474976710656",
+        "pairs_cpu_seconds": "126980398868593/140737488355328"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 1,
+      "case": 5,
+      "evaluation_paths": 4096,
+      "training_pairs": 91,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "16209134046918977/281474976710656",
+      "validation": {
+        "setup_cpu_seconds": "2594777072807/35184372088832",
+        "pairs_cpu_seconds": "2119241706678153/70368744177664"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "11227614608523/140737488355328",
+        "pairs_cpu_seconds": "12345231269750995/2251799813685248"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "325398267217/4398046511104",
+        "pairs_cpu_seconds": "183339500136671/35184372088832"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 2,
+      "case": 10,
+      "evaluation_paths": 256,
+      "training_pairs": 399,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "7124028502166757/140737488355328",
+      "validation": {
+        "setup_cpu_seconds": "4804777852451/70368744177664",
+        "pairs_cpu_seconds": "1982526988321229/70368744177664"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "40315660914267/562949953421312",
+        "pairs_cpu_seconds": "160518705293623/140737488355328"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "4575797958897/70368744177664",
+        "pairs_cpu_seconds": "4916831281461/4398046511104"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 3,
+      "case": 10,
+      "evaluation_paths": 128,
+      "training_pairs": 438,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "3557534434991981/70368744177664",
+      "validation": {
+        "setup_cpu_seconds": "2267351306149/35184372088832",
+        "pairs_cpu_seconds": "486798868797085/17592186044416"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "18966065405741/281474976710656",
+        "pairs_cpu_seconds": "141266661311543/140737488355328"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "1186962384603/17592186044416",
+        "pairs_cpu_seconds": "35573511244131/35184372088832"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 4,
+      "case": 5,
+      "evaluation_paths": 128,
+      "training_pairs": 776,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "8142827160579995/140737488355328",
+      "validation": {
+        "setup_cpu_seconds": "2645477752987/35184372088832",
+        "pairs_cpu_seconds": "761072589703577/17592186044416"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "21279226764349/281474976710656",
+        "pairs_cpu_seconds": "62968837408685/70368744177664"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "2898171913329/35184372088832",
+        "pairs_cpu_seconds": "7969550549191/8796093022208"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 5,
+      "case": 6,
+      "evaluation_paths": 4096,
+      "training_pairs": 141,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "1908015878066395/35184372088832",
+      "validation": {
+        "setup_cpu_seconds": "2484685172541/35184372088832",
+        "pairs_cpu_seconds": "51495017957447/1099511627776"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "10330835332723/140737488355328",
+        "pairs_cpu_seconds": "3059641441094129/562949953421312"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "1290175740125/17592186044416",
+        "pairs_cpu_seconds": "183235987713987/35184372088832"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 6,
+      "case": 10,
+      "evaluation_paths": 4096,
+      "training_pairs": 140,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "227598124167721453/4503599627370496",
+      "validation": {
+        "setup_cpu_seconds": "588520195837/8796093022208",
+        "pairs_cpu_seconds": "957376950412831/17592186044416"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "20820422552311/281474976710656",
+        "pairs_cpu_seconds": "362120231550539/70368744177664"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "651992803085/8796093022208",
+        "pairs_cpu_seconds": "44600888736267/8796093022208"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 7,
+      "case": 6,
+      "evaluation_paths": 256,
+      "training_pairs": 632,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "119295591044663/2199023255552",
+      "validation": {
+        "setup_cpu_seconds": "23303324317/274877906944",
+        "pairs_cpu_seconds": "419154987111931/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "20038766541985/281474976710656",
+        "pairs_cpu_seconds": "290155102042459/281474976710656"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "1589242902881/17592186044416",
+        "pairs_cpu_seconds": "22053370911235/17592186044416"
+      }
+    },
+    {
+      "pass_id": 0,
+      "position": 8,
+      "case": 5,
+      "evaluation_paths": 256,
+      "training_pairs": 687,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "260624300664899851/4503599627370496",
+      "validation": {
+        "setup_cpu_seconds": "1317039008215/17592186044416",
+        "pairs_cpu_seconds": "385967363323513/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "20304760394977/281474976710656",
+        "pairs_cpu_seconds": "71432860327119/70368744177664"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "1359137109419/17592186044416",
+        "pairs_cpu_seconds": "9387612685765/8796093022208"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 0,
+      "case": 5,
+      "evaluation_paths": 256,
+      "training_pairs": 687,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "260624300664899851/4503599627370496",
+      "validation": {
+        "setup_cpu_seconds": "1273392794639/17592186044416",
+        "pairs_cpu_seconds": "781905960104827/17592186044416"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "1281027803383/17592186044416",
+        "pairs_cpu_seconds": "17807690323461/17592186044416"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "624540196763/8796093022208",
+        "pairs_cpu_seconds": "17602882093533/17592186044416"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 1,
+      "case": 6,
+      "evaluation_paths": 256,
+      "training_pairs": 632,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "119295591044663/2199023255552",
+      "validation": {
+        "setup_cpu_seconds": "1241603714457/17592186044416",
+        "pairs_cpu_seconds": "351057183046365/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "19321442957/274877906944",
+        "pairs_cpu_seconds": "17552040675861/17592186044416"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "651042825039/8796093022208",
+        "pairs_cpu_seconds": "8845782151691/8796093022208"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 2,
+      "case": 10,
+      "evaluation_paths": 4096,
+      "training_pairs": 140,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "227598124167721453/4503599627370496",
+      "validation": {
+        "setup_cpu_seconds": "282803186757/4398046511104",
+        "pairs_cpu_seconds": "96669695632767/2199023255552"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "1144829099027/17592186044416",
+        "pairs_cpu_seconds": "43880145670123/8796093022208"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "602822643091/8796093022208",
+        "pairs_cpu_seconds": "43759709564463/8796093022208"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 3,
+      "case": 6,
+      "evaluation_paths": 4096,
+      "training_pairs": 141,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "1908015878066395/35184372088832",
+      "validation": {
+        "setup_cpu_seconds": "168227478073/2199023255552",
+        "pairs_cpu_seconds": "407515908864017/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "79368246851/1099511627776",
+        "pairs_cpu_seconds": "91235662877687/17592186044416"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "640601862621/8796093022208",
+        "pairs_cpu_seconds": "11357227238229/2199023255552"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 4,
+      "case": 5,
+      "evaluation_paths": 128,
+      "training_pairs": 776,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "8142827160579995/140737488355328",
+      "validation": {
+        "setup_cpu_seconds": "655291337969/8796093022208",
+        "pairs_cpu_seconds": "47991735317335/1099511627776"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "19752726393/274877906944",
+        "pairs_cpu_seconds": "7616545744023/8796093022208"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "162644158027/2199023255552",
+        "pairs_cpu_seconds": "3883615806795/4398046511104"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 5,
+      "case": 10,
+      "evaluation_paths": 128,
+      "training_pairs": 438,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "3557534434991981/70368744177664",
+      "validation": {
+        "setup_cpu_seconds": "596287145975/8796093022208",
+        "pairs_cpu_seconds": "30290555784761/1099511627776"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "565219345421/8796093022208",
+        "pairs_cpu_seconds": "8765253920073/8796093022208"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "617072313787/8796093022208",
+        "pairs_cpu_seconds": "8994867132323/8796093022208"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 6,
+      "case": 10,
+      "evaluation_paths": 256,
+      "training_pairs": 399,
+      "budget_cpu_seconds": "890790279944059/17592186044416",
+      "historical_forecast_cpu_seconds": "7124028502166757/140737488355328",
+      "validation": {
+        "setup_cpu_seconds": "145465388355/2199023255552",
+        "pairs_cpu_seconds": "61461666451749/2199023255552"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "1168912801721/17592186044416",
+        "pairs_cpu_seconds": "19653093047329/17592186044416"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "298288708523/4398046511104",
+        "pairs_cpu_seconds": "4922579528251/4398046511104"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 7,
+      "case": 5,
+      "evaluation_paths": 4096,
+      "training_pairs": 91,
+      "budget_cpu_seconds": "1018347315486863/17592186044416",
+      "historical_forecast_cpu_seconds": "16209134046918977/281474976710656",
+      "validation": {
+        "setup_cpu_seconds": "626105901321/8796093022208",
+        "pairs_cpu_seconds": "260463670143671/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "1234566840039/17592186044416",
+        "pairs_cpu_seconds": "45659287425257/8796093022208"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "651148378155/8796093022208",
+        "pairs_cpu_seconds": "45797597191941/8796093022208"
+      }
+    },
+    {
+      "pass_id": 1,
+      "position": 8,
+      "case": 6,
+      "evaluation_paths": 128,
+      "training_pairs": 674,
+      "budget_cpu_seconds": "119402749447911/2199023255552",
+      "historical_forecast_cpu_seconds": "3819149786391043/70368744177664",
+      "validation": {
+        "setup_cpu_seconds": "155207061377/2199023255552",
+        "pairs_cpu_seconds": "320139311897487/8796093022208"
+      },
+      "pass_start_calibration": {
+        "setup_cpu_seconds": "1288346152777/17592186044416",
+        "pairs_cpu_seconds": "1921106298469/2199023255552"
+      },
+      "immediate_calibration": {
+        "setup_cpu_seconds": "311232159405/4398046511104",
+        "pairs_cpu_seconds": "7730921341589/8796093022208"
+      }
+    }
+  ]
+}

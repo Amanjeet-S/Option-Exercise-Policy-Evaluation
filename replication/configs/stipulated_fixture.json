@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "classification": "stipulated_mathematical_fixture",
+  "description": "A dimensionless put example with stipulated values, a cash event and abstract year fractions. These are not observed, estimated or calibrated market inputs.",
+  "model": {
+    "quoted_spot": 100.0,
+    "volatility": 0.2,
+    "initial_share_factor": 1.0,
+    "premium_factor": 1.0,
+    "dividends": [{"ex_time": 0.5, "discounted_cash": 2.0}]
+  },
+  "option": {"strike": 100.0, "maturity": 1.0, "kind": "put"},
+  "decisions": [
+    {"time": 0.25, "settlement_factor": 0.99, "phase": "after"},
+    {"time": 0.5, "settlement_factor": 0.98, "phase": "before"},
+    {"time": 0.5, "settlement_factor": 0.98, "phase": "after"},
+    {"time": 0.75, "settlement_factor": 0.97, "phase": "after"},
+    {"time": 1.0, "settlement_factor": 0.96, "phase": "after"}
+  ],
+  "experiment": {
+    "root_seed": 20260930,
+    "training_paths": [512, 2048],
+    "evaluation_paths": [256, 1024],
+    "repetitions": 4,
+    "degree": 2,
+    "minimum_itm_paths": 32,
+    "condition_limit": 100000000.0,
+    "approximation": {"core_steps": 80, "wing_steps": 16, "tolerance": 0.001},
+    "terminal_extension": 0.1
+  }
+}
