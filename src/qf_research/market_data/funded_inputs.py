@@ -56,7 +56,9 @@ def build_dated_problem(calendar: EventCalendar, curve: DiscountCurve,
     """T+1 matched share/exercise settlement, with a separately supplied premium date.
 
     Exercise is at the underlying core close. Dividends jump at core opening by
-    convention. Funding uses date-only curve ratios; diffusion uses UTC seconds.
+    convention. Funding uses date-only curve ratios. Diffusion times are ACT/365F
+    year fractions computed from elapsed UTC seconds, including daylight-saving
+    changes; the supplied volatility is annualised for this clock.
     This adapter certifies neither broker timing nor the input amount basis.
     """
     timestamps = calendar.research_decisions(observation, expiry)

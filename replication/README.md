@@ -38,6 +38,8 @@ The experiment runner checks the inventory and the origins of loaded project mod
 
 The [input schema](input.schema.json) describes the structural interface. The executable validator also checks chronological exercise order, increasing sample sizes, terminal coverage, cash-event phases, finite numerical parameters and compatibility of the terminal extension. The runner currently supports puts and requires the model's discounted ownership state, settlement factors and cash-event caps. It does not estimate these inputs or verify the funding construction behind them.
 
+All model times are elapsed from valuation in one consistent unit, and volatility is expressed per square root of that unit. The public fixture uses abstract year fractions. The dated adapter uses ACT/365F years computed from elapsed UTC seconds, with annualised volatility. Exercise and cash-event times use this diffusion clock; payment-date discount factors retain their separately supplied funding conventions. A funding curve's contractual day-count basis need not equal the diffusion clock. CPU and elapsed execution costs are measured in seconds.
+
 For a new study, copy the public specification into `data/private`, change its classification to `authorised_model`, and supply the financial model, contract, decision calendar and fixed simulation design from documented sources. The fixture classification is reserved for the exact published example. Preserve the source observations and their provenance separately, including the observation date, information available at the valuation cutoff, curve construction, settlement conventions and dividend treatment. Neither a licence assertion nor a successful structural check establishes empirical identification.
 
 ```sh

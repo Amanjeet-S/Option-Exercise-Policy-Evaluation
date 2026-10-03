@@ -181,8 +181,8 @@
     {
       "path": "replication/README.md",
       "category": "replication_interface",
-      "bytes": 15203,
-      "sha256": "6fa3accfde85aad3f71436e486aeb6c1afbee50fc36bf0081cb565dbd8d1035b"
+      "bytes": 15758,
+      "sha256": "4c5ec9969d93e9d42bd48189346272595cf8940dd52f0ef0089063087d27afda"
     },
     {
       "path": "replication/configs/stipulated_fixture.json",
@@ -205,8 +205,8 @@
     {
       "path": "replication/input.schema.json",
       "category": "replication_interface",
-      "bytes": 4920,
-      "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226"
+      "bytes": 5674,
+      "sha256": "0b87dcd5b7ac6b0500800ce80d0803a3a4deea9e05b1935a0dbe2099c9fa7dfb"
     },
     {
       "path": "replication/licensed_reproduction.md",
@@ -961,8 +961,8 @@
     {
       "path": "src/qf_research/market_data/funded_inputs.py",
       "category": "source_input_validation",
-      "bytes": 5255,
-      "sha256": "f0140717b2f066f515c96ca3385677a6be1441c67dd36a92edc3deab3454baf1"
+      "bytes": 5403,
+      "sha256": "d48b2c4bc165fce9063a86b080de357d55dfeec3de3c4c73b20e4c93be24cb87"
     },
     {
       "path": "src/qf_research/market_data/funding_sensitivity.py",
