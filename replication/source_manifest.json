@@ -1231,8 +1231,8 @@
     {
       "path": "src/qf_research/optimal_stopping/terminal_repair.py",
       "category": "numerical_library",
-      "bytes": 4987,
-      "sha256": "0960eba519f43edac411f18aa73ad9f43bd3a18518ddbc6318e9a0709abc6a9d"
+      "bytes": 5668,
+      "sha256": "1672aeee1c3c7b3a00b26668c065bb4917e0c8af9f6134ba0583a0cf83b1ae42"
     },
     {
       "path": "src/qf_research/optimal_stopping/terminal_training.py",
@@ -1261,8 +1261,8 @@
     {
       "path": "src/qf_research/optimal_stopping/value_martingale.py",
       "category": "numerical_library",
-      "bytes": 11315,
-      "sha256": "8187d00c2113b3c732457cb5430d4ff73dfc2e1260d18f8a2b2e82f5efb006e2"
+      "bytes": 11564,
+      "sha256": "b3d29269a137e27ab3e0be0ddd72cef383de38cd636e76d8c498890675b8c707"
     },
     {
       "path": "tests/test_allocation_sensitivity.py",
@@ -1633,8 +1633,8 @@
     {
       "path": "tests/test_terminal_repair.py",
       "category": "test_fixture",
-      "bytes": 6115,
-      "sha256": "02fa0d674f31213bfbde000e1745fac4fc6532e62580a680b60ef474e71adba3"
+      "bytes": 8532,
+      "sha256": "b6747e787e60f097864df84e33f34191cc0a71b73370bfb685d07a2c568d7f93"
     },
     {
       "path": "tests/test_terminal_training.py",
