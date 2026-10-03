@@ -10,7 +10,7 @@ python scripts/check_repository.py
 python scripts/execute_release_notebooks.py
 ```
 
-Changed numerical routines require appropriate analytical benchmarks or independent comparisons. Execute changed notebooks in fresh kernels. The notebook command leaves saved files unchanged unless `--write` is supplied. Review outputs before publication.
+Changed numerical routines require appropriate analytical benchmarks or independent comparisons. Execute changed notebooks in fresh kernels. The notebook command uses its invoking Python interpreter and the checkout's source directory; a separately registered default kernel is not used. It leaves saved files unchanged unless `--write` is supplied. Review outputs before publication.
 
 ## 2. Optional environments
 

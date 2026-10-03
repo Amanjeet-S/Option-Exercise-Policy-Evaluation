@@ -11,15 +11,25 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sys
 
 import nbformat
 from nbclient import NotebookClient
+from jupyter_client import AsyncKernelManager
+from jupyter_client.kernelspec import KernelSpec, KernelSpecManager
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = (
     'notebooks/numerical_validation.ipynb',
     'notebooks/conditional_research_replication.ipynb',
 )
+
+class InvokingInterpreter(KernelSpecManager):
+    def get_kernel_spec(self, kernel_name):
+        return KernelSpec(argv=[sys.executable, '-m', 'ipykernel_launcher',
+                                '-f', '{connection_file}'],
+                          display_name='Research notebook evaluation',
+                          language='python', env={})
 
 
 def execute(*, write=False):
@@ -33,14 +43,20 @@ def execute(*, write=False):
                 cell.outputs = []
                 cell.execution_count = None
                 cell.metadata.pop('execution', None)
-        client = NotebookClient(notebook, timeout=240, kernel_name='python3',
+        manager = AsyncKernelManager(kernel_name='research-evaluation',
+                                     kernel_spec_manager=InvokingInterpreter())
+        client = NotebookClient(notebook, timeout=240, km=manager,
                                 resources={'metadata': {'path': str(ROOT)}})
         environment = dict(os.environ)
+        for variable in ('PYTHONHOME', 'PYTHONSTARTUP', 'PYTHONOPTIMIZE'):
+            environment.pop(variable, None)
+        environment['PYTHONPATH'] = str(ROOT/'src')
+        environment['PYTHONNOUSERSITE'] = '1'
         environment['MPLBACKEND'] = 'Agg'
         for variable in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS',
                          'MKL_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS'):
             environment[variable] = '1'
-        client.execute(env=environment)
+        client.execute(env=environment, cleanup_kc=True)
         for cell in notebook.cells:
             cell.metadata.pop('execution', None)
         nbformat.validate(notebook)

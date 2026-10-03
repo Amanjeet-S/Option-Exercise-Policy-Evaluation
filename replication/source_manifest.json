@@ -571,8 +571,8 @@
     {
       "path": "scripts/execute_release_notebooks.py",
       "category": "public_reproduction",
-      "bytes": 2871,
-      "sha256": "c98c9ae60ff5c21560f9a16bf1976838cdb80c3fa27f289ecd60c0f20d780b2f"
+      "bytes": 3722,
+      "sha256": "7348df39cfe02c0ddd50b64163ea881dbf5c171eee75235ead54912b03a79074"
     },
     {
       "path": "scripts/export_gain_replay.py",
@@ -1591,8 +1591,8 @@
     {
       "path": "tests/test_reproduce_paper.py",
       "category": "public_reproduction",
-      "bytes": 6084,
-      "sha256": "082e1a3047feba8e754664553e505c3bc885318052be8609448dbba8d38c79d3"
+      "bytes": 8044,
+      "sha256": "5ee91fd24b1b59f1430f8416c1880e28a4223d18d9846c6ba8289e68d7a7928a"
     },
     {
       "path": "tests/test_residual_envelope.py",
@@ -1721,5 +1721,9 @@
       "sha256": "53de15e1b74797b60be697353a7a1f89055976e814cb9bc803cb345ff0f927d3"
     }
   ],
-  "external_imports": {}
+  "external_imports": {
+    "jupyter_client": [
+      "scripts/execute_release_notebooks.py"
+    ]
+  }
 }
