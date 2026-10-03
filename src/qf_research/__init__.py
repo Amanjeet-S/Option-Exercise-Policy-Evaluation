@@ -1,4 +1,3 @@
 """Numerical research code. See PROVENANCE.md for authorship and sources."""
 
-__version__ = "0.1.0"
-
+__version__ = "1.0.0"

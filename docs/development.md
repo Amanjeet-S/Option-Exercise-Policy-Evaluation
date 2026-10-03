@@ -19,3 +19,9 @@ C++ propagation tests require a C++17 compiler and compare the native kernel wit
 ## 3. Continuous integration
 
 GitHub checks Python 3.11 and 3.13, the reviewed source inventory, numerical tests, documentation links, released summaries, public reproduction and fresh notebook execution. A separate job checks outward-rounded arithmetic. These checks require no market-data account. Timings can change across machines; numerical and empirical conclusions retain the limits stated in the paper.
+
+## 4. Revision history and releases
+
+I preserve the recorded author and commit dates of recovered project revisions. I have divided the largest bundled release into functional groups for review. Their shared date identifies the original release; the grouping does not establish when each underlying task was performed. I retain the original checkpoints in a private archive.
+
+I use the annotated tag `v1.0.0` to identify the completed, reviewed study snapshot. Subsequent changes require their own commits and verification before another release.

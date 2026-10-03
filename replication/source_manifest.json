@@ -13,8 +13,8 @@
     {
       "path": "README.md",
       "category": "research_document",
-      "bytes": 5097,
-      "sha256": "47239a6b25926e103d50ca31339a2cbf2d3bdc0f3aa47015737a93aa2f37070a"
+      "bytes": 5563,
+      "sha256": "c0dc8fa206cf27165be60d2fa92f2a4b9d090c5a037e8fdb3e8ffa3248161da6"
     },
     {
       "path": "completion.json",
@@ -871,8 +871,8 @@
     {
       "path": "src/qf_research/__init__.py",
       "category": "source_input_validation",
-      "bytes": 101,
-      "sha256": "09fc3828391073426d6ed131ed6d63254c4441ce2949a021e99817bbd36dc196"
+      "bytes": 100,
+      "sha256": "851ae965284c22de386a7eb1e0bdf62210a25c524fca7bfad91d11d7c7d36170"
     },
     {
       "path": "src/qf_research/computational/__init__.py",

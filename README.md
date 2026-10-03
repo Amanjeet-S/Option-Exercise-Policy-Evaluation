@@ -4,6 +4,8 @@
 
 I study three questions in a finite-calendar put model with deterministic funding and capped discrete cash events: how to distinguish exercise-policy loss from upper-bound slack, how to allocate computation between independent training repetitions and evaluation paths, and whether measured numerical costs predict expenditure for complete workloads. Conditional expectations, martingale bounds and independently evaluated regression policies connect the financial problem to these computational questions.
 
+I began planning and pre-empirical development in June 2026 and worked at approximately fortnightly intervals until the first empirical data acquisition in September. This chronology is retrospective; the original dated versions are unavailable.
+
 The study was completed on 30 September 2026. It comprises the mathematical argument, conditional numerical experiments, implementation, paper and reproduction package, including an unsuccessful independent market-validation attempt. The original prospective screen admits none of fifteen observations. I retain that criterion and outcome. No further acquisition or purchased dataset is pending within the completed scope; independent market validity remains a limitation.
 
 ## 2. Findings
@@ -15,6 +17,8 @@ Repeating fixed training procedures distinguishes variation between fitted polic
 Historical CPU forecasts fail to transfer. Immediate local calibration reduces mean absolute relative forecast error from 29.065 to 2.841 per cent in the measured session, but adds cost and retains a budget overrun. These findings do not establish transferable processor performance, reliable future budget compliance, equal-realised-cost superiority or market profitability.
 
 ## 3. Paper and reproduction
+
+I identify the reviewed study snapshot with the `v1.0.0` release tag. The [development guide](docs/development.md#4-revision-history-and-releases) explains the retained dates and retrospective grouping of the history.
 
 The principal document is the [research paper (PDF)](paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf), with [self-contained LaTeX source](paper/main.tex). The [paper guide](paper/README.md) links the nine-table numerical supplement, computational timing ledger, literature comparison and final observation assessment.
 
