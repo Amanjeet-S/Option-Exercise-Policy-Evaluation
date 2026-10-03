@@ -42,7 +42,7 @@ The fine value construction reduces the mean gap by 91.42 to 95.23 per cent rela
 
 The terminal experiment adds ninety minutes to the original endpoint, assumes no intervening cash event and preserves the settlement threshold and volatility dynamics. A surviving policy waits until the later endpoint; all earlier instructions remain fixed. Under these assumptions, conditional convexity gives a non-negative expected gain from this adjustment. Individual realised payoffs can nevertheless decrease. The paper derives the conditional payoff and states why the no-cash and constant-threshold assumptions are needed.
 
-Table 2 compares both instructions using the same upper payoff for the expanded problem. The common term cancels pathwise. The reduction in expected gap therefore identifies the policy-value gain under the model, unlike the martingale comparison in Table 1. Each entry again averages 52 original policies. The unadjusted gaps refer to the expanded opportunity set and must not be confused with the original-calendar gaps in Table 1.
+Table 2 integrates the extra diffusion and replaces the original terminal reward by its conditional later value. Endpoint dominance makes this original-clock stopping problem equivalent in optimal value to the expanded calendar. Both instructions use its common upper payoff, which cancels pathwise, so the expected-gap reduction identifies the policy-value gain under the model. The separate direct calculation uses simulated later payoffs and can have different pathwise gaps and sampling variance. Each entry again averages 52 original policies. These integrated gaps must not be confused with the original-calendar gaps in Table 1.
 
 <!-- table:terminal_adjustment -->
 
@@ -85,10 +85,10 @@ Table 3 reports mean gains, approximate pointwise 95 per cent Student intervals 
 
 Every estimated mean is positive, but the intervals for cases 2, 9 and 10 contain zero. Eight of the 104 individual pair gains are negative. Omitting repetitions one at a time leaves every reduced-sample mean positive, while the positive-interval conclusions for cases 1 and 12 depend on the omission. I retain the primary estimates and use this diagnostic to qualify the small-sample interpretation.
 
-Let $D$ denote a newly generated training pair, $\Delta(D)$ its conditional mean gain and $\sigma_D^2$ the conditional variance of a martingale-adjusted pathwise gain. Define $A=\operatorname{Var}\{\Delta(D)\}$ and $B=\mathbb E[\sigma_D^2]$. For $R$ independent pairs, each evaluated on $N$ conditionally independent paths,
+Let $D$ denote a newly generated training pair, $\Delta(D)$ its conditional mean gain and $\sigma_D^2$ the conditional variance of a martingale-adjusted pathwise gain. Define $A=\mathrm{Var}\{\Delta(D)\}$ and $B=\mathbb E[\sigma_D^2]$. For $R$ independent pairs, each evaluated on $N$ conditionally independent paths,
 
 $$
-\operatorname{Var}(\widehat\mu)=\frac{A}{R}+\frac{B}{RN}.
+\mathrm{Var}(\widehat\mu)=\frac{A}{R}+\frac{B}{RN}.
 $$
 
 Conditional averaging and the law of total variance give this identity. I use it because additional evaluation paths reduce only the second component, whereas additional independent pairs reduce both. The estimated evaluation shares of 0.014 to 0.284 per cent motivate a different allocation of computation. They are estimates from eight repetitions, not known population variance components.

@@ -22,7 +22,7 @@ The forecast predicts a fresh validation workload. The separate charge $K_i^k$ i
 
 I compute the equally weighted mean absolute relative error as
 
-$$\operatorname{MARE}_k=\frac{100}{18}\sum_{i=1}^{18}\frac{|C_i-\widehat C_i^k|}{\widehat C_i^k}.$$
+$$\mathrm{MARE}_k=\frac{100}{18}\sum_{i=1}^{18}\frac{|C_i-\widehat C_i^k|}{\widehat C_i^k}.$$
 
 The denominator is forecast cost. The tolerance requires $0.9\leq C_i/\widehat C_i^k\leq1.1$. The upper allowance is $1.1\widehat C_i^k$. Neither rule is a statistical prediction interval. All comparisons below use exact ledger values before display rounding.
 

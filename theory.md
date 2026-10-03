@@ -206,7 +206,7 @@ SciPy solves each tridiagonal system. Complexity is $O(MN)$ time and $O(M)$ work
 
 ## 7. Sampling uncertainty and experimental interpretation
 
-For iid finite-variance cash flows, $\operatorname{Var}(\bar Y_N)=\operatorname{Var}(Y)/N$. The central limit theorem motivates an approximate interval
+For iid finite-variance cash flows, $\mathrm{Var}(\bar Y_N)=\mathrm{Var}(Y)/N$. The central limit theorem motivates an approximate interval
 
 $$
 \bar Y_N\ \pm\ t_{N-1,0.975}\frac{s_Y}{\sqrt N}.

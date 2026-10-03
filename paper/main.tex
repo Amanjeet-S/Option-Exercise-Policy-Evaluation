@@ -3,6 +3,8 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[british]{babel}
 \usepackage{booktabs,tabularx,float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{url}
 \usepackage[round,authoryear]{natbib}
 \setlength{\bibhang}{1.5em}
@@ -24,7 +26,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\noindent An approximate exercise policy can be difficult to assess because its decisions are suboptimal, its evaluation bound is loose, or its financial benchmark grants different exercise opportunities. I separate these objects in a finite-calendar stopping model with deterministic funding and discrete cash events. Conditional martingale arguments distinguish policy loss from dual slack and isolate a feasible terminal-policy gain. Repeated-training inference separates variation between fitted policies from evaluation noise. In thirteen related development specifications, analytically centred value functions reduce estimated gaps by 91.42 to 95.23 per cent without changing the exercise policies. A prespecified computational follow-up shifts evaluation effort towards more independent training pairs; its selected estimator-variance estimates are 16.7 to 34.1 per cent of their reference estimates. Historical cost forecasts nevertheless fail to transfer. Local calibration reduces mean absolute relative CPU forecast error from 29.065 to 2.841 per cent, but retains an overrun and incurs additional cost. These are conditional simulation findings, not evidence of market profitability or reliable budget protection. The attempted independent market-validation sample yields no admissible observations. I therefore delimit the completed computational study from the unresolved empirical validation.
+\noindent An approximate exercise policy must be assessed against the best expected reward attainable under the same financial conventions and exercise rights, although that benchmark is generally unknown. I develop a consistent evaluation design for this problem in a finite-calendar stopping model with deterministic funding and discrete cash events. Conditional martingale arguments separate policy loss from dual slack, while calendar and policy comparisons distinguish changed opportunities from a feasible terminal-policy gain. Repeated-training inference separates variation between fitted policies from evaluation noise, and complete-workload timing assesses the expenditure forecasts used for allocation. In thirteen related development specifications, analytically centred value functions reduce estimated gaps by 91.42 to 95.23 per cent without changing the exercise policies. A prespecified computational follow-up shifts evaluation effort towards more independent training pairs; its selected estimator-variance estimates are 16.7 to 34.1 per cent of their reference estimates. Historical cost forecasts nevertheless fail to transfer. Local calibration reduces mean absolute relative CPU forecast error from 29.065 to 2.841 per cent, but retains an overrun and incurs additional cost. These are conditional simulation findings, not evidence of market profitability or reliable budget protection. The attempted independent market-validation sample yields no admissible observations. I therefore delimit the completed computational study from the unresolved empirical validation.
 \end{abstract}
 \smallskip
 \noindent\textit{Keywords:} optimal stopping; American options; martingale duality; Monte Carlo; discrete dividends; computational allocation.
@@ -32,9 +34,11 @@
 % Begin sections/01_question
 \section{Introduction}
 
-The economic value of an exercise algorithm is the expected reward obtained by its stopping rule. Regression fit, numerical resolution and the number of simulated paths are means of constructing or evaluating that rule; none is itself a measure of value. A useful comparison must identify the financial problem, specify a feasible policy and state what its benchmark establishes. A finely resolved price can be a valuable numerical reference without being a known optimum. A valid upper bound can remain too loose to establish that policy loss is economically small.
+For an early-exercise put, an approximate rule chooses whether to exercise at each admissible right using the information then available. The practical question is how much expected discounted reward that rule gives up, and how reliably that amount can be assessed within a computational budget. The optimal rule is generally unknown. A smaller measured gap may reflect a tighter evaluation bound rather than better exercise decisions; altering funding, cash entitlements or exercise rights may instead change the comparison problem. Fitting more policies, evaluating them more precisely and constructing tighter bounds also compete for computation.
 
-I ask three related questions. Can a tighter loss assessment be distinguished from an improvement in the exercise policy? How should a fixed computational budget be divided between independent training repetitions and evaluation paths? Can measured costs predict expenditure for those complete workloads? The questions require different comparisons. Changing the martingale used for evaluation changes bound tightness. Changing a policy changes its expected reward. Repeating a fixed training procedure changes the precision of its estimated average performance. Financial and exercise-calendar sensitivity supply supporting comparisons because they can alter the benchmark itself.
+The contribution of this paper is to organise these comparisons within one consistent evaluation design for a funded cash-event stopping model. I separate policy loss from dual slack while holding the exercise instructions fixed. I distinguish enlarged exercise opportunities from a feasible terminal-policy adjustment and from the additional effect of retraining. Conditional inference states which model inputs, fitted functions and sampling choices each comparison retains. Repeated-training evaluation separates variation between fitted policies from evaluation noise, and complete-workload timing tests the expenditure forecasts used to allocate computation. The design connects financial rewards, mathematical bounds, inferential precision and measured costs so that a change in one can be interpreted without attributing it to another.
+
+Within this design, I ask whether a tighter loss assessment reflects a change in policy reward, how computation should be divided between independent training repetitions and evaluation paths, and whether measured costs predict expenditure for the resulting complete workloads. A finely resolved PDE price supplies a numerical comparison, but is not treated as a known optimum without a justified error enclosure.
 
 The methodological foundations are established. \citet{longstaff2001} construct exercise policies through backward continuation regression. \citet{haugh2004} develop martingale upper bounds and the use of approximate value processes. The lognormal hinge expectation used below follows the analytical pricing foundation of \citet{black1973}. I apply these foundations to an explicitly funded cash-event model and organise the resulting policy comparisons. I do not claim the dual inequality, conditional Jensen argument or finite-family inference as new general theorems.
 
@@ -42,7 +46,32 @@ Pricing intervals and policy assessment are already central to \citet{andersen20
 
 Appendix~\ref{app:drift} applies predictable compensation to penalties with conditional drift. It gives a loss allowance and a paired-comparison correction, together with a finite analytical example. Appendix~\ref{app:training-allocation} specifies the information available to a learned policy and derives the variance of a repeated-training comparison when earlier evidence determines its sample sizes. I present these as consequences of established theory. The literature comparison does not establish priority for the propositions or their proofs.
 
-The project-specific contribution is a controlled comparison of these decisions in one funded stopping model. I retain both the conditional precision gains and the failed expenditure forecasts, then assess local timing calibration on complete, fixed workloads. Appendix~\ref{app:allocation-inference} connects uncertainty about the variance components to the implemented allocation rule. This argument joins the mathematical estimands to the measured computation; it does not introduce a new general pricing theorem. The development specifications share a narrow financial setting. A separate attempt at independent market validation supplies no admissible primary observations, so the completed study supports conditional computational conclusions only.
+The evidence concerns the controlled comparisons just described. I retain both the conditional precision gains and the failed expenditure forecasts, then assess local timing calibration on complete, fixed workloads. Appendix~\ref{app:allocation-inference} connects uncertainty about the variance components to the implemented allocation rule. The development specifications share a narrow financial setting, and a separate attempt at independent market validation supplies no admissible primary observations. The completed study therefore supports conditional computational conclusions only.
+
+Section~2 defines the financial state, cash transfers and admissible exercise rights. Sections~3 and~4 distinguish loss measurement, changed opportunities and policy gains. Sections~5 and~6 specify conditional inference and computational allocation. Section~7 reports the numerical comparisons, and Section~8 assesses their financial interpretation. The notation guide below collects the principal symbols; Figures~\ref{fig:event-timing} and~\ref{fig:evaluation-workflow} show the event order and evaluation sequence.
+
+\begin{table}[!htbp]
+\centering\small
+\textit{Core notation}\par\smallskip
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Symbols & Meaning \\
+\midrule
+$\Q,\F_j,\mathcal H_k$ & Maintained pricing measure; information at exercise right $j$ and propagation node $k$, respectively. \\
+$S_t,Y_t,D_0(u)$ & Quoted share price, discounted ownership state and deterministic payment discount factor. \\
+$\mathcal E,e_j=(t_j,p_j)$ & Admissible rights, ordered by physical date and cash-event phase. \\
+$f_t,f_j,b$ & Share-settlement, exercise-settlement and premium-payment factors, respectively. \\
+$c,C$ & Proposed discounted cash cap and detached entitlement at a cash event. \\
+$H_j,\pi,\tau_\pi$ & Discounted put reward, exercise policy and its selected right. \\
+$V^*,V_\pi,\loss_\pi$ & Optimal and policy values in discounted currency; only $\loss_\pi$ divides their difference by the premium factor $b$. \\
+$v_k,M_j$ & Retained values on the propagation grid and an integrable martingale restricted to exercise rights. \\
+$U,L_\pi,G_\pi$ & Upper payoff, martingale-adjusted policy payoff and their non-negative pathwise gap. \\
+$D,\mathcal P$ & Data fitting a policy pair and preceding evidence fixing fresh sample counts. \\
+$m,n,\widehat\mu$ & In the training comparison, independent fitted pairs, paths per pair and mean-gain estimator. \\
+$\mathcal V_{\rm tr},\mathcal V_{\rm ev}$ & Variation between conditional pair means and mean conditional evaluation variance. \\
+\bottomrule
+\end{tabularx}
+\end{table}
 % End sections/01_question
 
 % Begin sections/02_model
@@ -70,12 +99,14 @@ At an event with proposed discounted cash $c\geq0$, the detached entitlement and
 \end{equation}
 The cap preserves non-negativity and cash accounting. This bounded cash specification is related to the stock-dependent dividend framework discussed by \citet{vellekoop2006}; the settlement and ownership equations here specify the particular maintained model. The ex-entitlement state is not a martingale across the cash detachment; between events it is. Conditional transition calculations must respect this distinction. Proposed cash, volatility and funding are model inputs, not identified expectations merely because they permit a price fit.
 
-For a put with strike $K>0$, let $\mathcal E=\{t_1,\ldots,t_J\}$, with $0<t_1<\cdots<t_J$, be a finite set of admissible exercise rights. Valuation is at $t_0=0$. Define
+For a put with strike $K>0$, let $\mathcal E=\{e_1,\ldots,e_J\}$ be a finite ordered set of admissible exercise rights, where $e_j=(t_j,p_j)$ records the physical time and prescribed cash-event phase, with $0<t_1\leq\cdots\leq t_J$. Rights are ordered by time, with a pre-event right preceding a post-event right when their times coincide. A pre-event phase is used only at a prescribed cash event. Valuation is at $t_0=0$.
+
+Write $Y_j$ for the ownership state at right $e_j$ and $\F_j$ for the information available there. At a cash event, these states are $Y_{t_j-}$ before detachment and $Y_{t_j}$ afterwards. Use $\F_j=\F_{t_j-}$ for a pre-event right and $\F_j=\F_{t_j}$ otherwise, with valuation information $\F_0$ and $\F_0\subseteq\F_1\subseteq\cdots\subseteq\F_J$. Let $f_j=D_0(u_j)>0$ denote the factor for the exercise settlement specified at that right. Define
 \begin{equation}
- H_j=\positive{Kf_{t_j}-Y_{t_j}}.
+ H_j=\positive{Kf_j-Y_j}.
 \label{eq:reward}
 \end{equation}
-Write $Y_j=Y_{t_j}$ and $M_j=M_{t_j}$ when processes are indexed by the decision grid; $H_{t_j}=H_j$ identifies the reward at a calendar time. Thus $H_\tau$ denotes the reward at the selected exercise right. The exercise-settlement factor can differ from the premium-payment factor $b>0$. Values below are in discounted currency unless divided by $b$. The definition of $H_j$ presumes that the specified exercise settlement transfers the intended ownership state and entitlements. A change in deliverable or exercise funding can require a different reward.
+For quantities indexed by the rights, use $X_{e_j}=X_j$. Thus $H_\tau$ and $M_\tau$ refer to the selected right, including its phase, rather than to its physical date alone. Admissibility means that $\{\tau_\pi\preceq e_j\}\in\F_j$, where $\preceq$ denotes the stated order of rights. The exercise-settlement factor can differ from the premium-payment factor $b>0$. Values below are in discounted currency unless divided by $b$. The definition of $H_j$ presumes that the specified exercise settlement transfers the intended ownership state and entitlements. A change in deliverable or exercise funding can require a different reward.
 
 \begin{assumption}[Admissibility]
 The decision set is finite and fixed before evaluation. Rewards are adapted and integrable. Policies are stopping times taking values in $\mathcal E$. Evaluation martingales start at zero and are integrable at all rights. Whenever sampling variances are reported, the corresponding random variables have finite second moments. Learned coefficients and approximate value functions are fixed before independent evaluation paths are drawn.
@@ -91,6 +122,30 @@ With deterministic initial state and model inputs, the optimal and policy values
 \end{equation}
 Cash-event observations needed for propagation do not automatically grant exercise rights. The order of an exercise decision, detachment and settlement is part of the problem definition. A finite exercise calendar represents a Bermudan problem; its numerical refinement alone does not verify the contractual exercise opportunities of an American option.
 
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[
+ box/.style={draw,align=center,text width=4.0cm,minimum height=1.65cm,inner sep=5pt,font=\small},
+ flow/.style={-{Stealth[length=2mm]},semithick},
+ label/.style={font=\footnotesize,align=center}
+]
+\node[box] (before) {Pre-event right, if granted\\$Y_j=Y_{t-}$\\$H_j=(Kf_j-Y_{t-})^+$};
+\node[box,right=0.75cm of before] (cash) {Cash detachment\\$C=\min(Y_{t-},c)$\\$Y_t=(Y_{t-}-c)^+$};
+\node[box,right=0.75cm of cash] (after) {Post-event right, if granted\\$Y_j=Y_t$\\$H_j=(Kf_j-Y_t)^+$};
+\draw[flow] (before) -- node[above,label] {continue} (cash);
+\draw[flow] (cash) -- (after);
+\node[label,above=0.3cm of before] {Diffusion to $Y_{t-}$};
+\node[label,above=0.3cm of after] {Subsequent diffusion if continued};
+\node[box,text width=8.4cm,minimum height=1.05cm,below=1.05cm of cash] (settle)
+ {If exercised: the specified transfer settles at $u_j$\\
+ Exercise factor $f_j=D_0(u_j)$; premium-quote values divide by $b$};
+\draw[flow] (before.south) |- node[pos=0.25,left,label] {exercise} (settle.west);
+\draw[flow] (after.south) |- node[pos=0.25,right,label] {exercise} (settle.east);
+\end{tikzpicture}
+\caption{Decision order at a cash event. The calendar grants either, both or neither of the displayed exercise rights. Their factors belong to the selected right. Settlement is shown separately because its date is a payment convention, not an additional simulated right. The cap $c$ already expresses the proposed cash in discounted units; the detached entitlement is not an additional put payoff. Evaluation may retain the full ownership path after policy exercise to calculate the dual maximum.}
+\label{fig:event-timing}
+\end{figure}
+
 \subsection{Learned exercise instructions}
 
 Backward regression estimates continuation values on a training sample and converts them into stopping predicates \citep{longstaff2001}. All coefficients, basis choices, positivity safeguards and tie rules form part of the frozen policy. Independent forward evaluation estimates its value without treating its training fit as realised out-of-sample accuracy. Increasing basis dimension need not improve a finite-sample rule.
@@ -102,6 +157,24 @@ When a financial scenario $\theta$ changes the ownership factor, I preserve the 
 \label{eq:transfer}
 \end{equation}
 Its original coefficients and decision conventions are retained, but the resulting stopping time is valued with scenario rewards. This preserves the instruction for an identical history of quoted prices. It does not preserve the distribution of stopping dates when the scenario dynamics change.
+
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[
+ box/.style={draw,align=center,text width=3.05cm,minimum height=2.0cm,inner sep=5pt,font=\small},
+ flow/.style={-{Stealth[length=2mm]},semithick}
+]
+\node[box] (train) {Train on $D$\\Backward continuation regressions};
+\node[box,right=0.45cm of train] (freeze) {Freeze the policy\\Coefficients, safeguards and tie rules};
+\node[box,right=0.45cm of freeze] (rule) {Fix the evaluation rule\\Retained $v_k$ and analytical centring};
+\node[box,right=0.45cm of rule] (evaluate) {Evaluate independently\\Fresh paths; realise $\pi,M$ and calculate $U,L_\pi,G_\pi$};
+\draw[flow] (train) -- (freeze);
+\draw[flow] (freeze) -- (rule);
+\draw[flow] (rule) -- (evaluate);
+\end{tikzpicture}
+\caption{Information fixed before evaluation for the analytically centred value construction. Deterministic value construction can precede training or be shared across policies; the diagram specifies what must be retained before fresh paths are drawn. The realised martingale is computed on those paths, with conditional expectations integrating the retained functions analytically rather than through inner simulations. Training-procedure comparisons repeat complete fitted pairs independently and use common fresh evaluation paths within a pair. Costs refer to the declared workload in Section~6.}
+\label{fig:evaluation-workflow}
+\end{figure}
 % End sections/02_model
 
 % Begin sections/03_dual
@@ -144,13 +217,14 @@ The upper payoff cancels pathwise. With the martingale condition satisfied, pair
 
 \subsection{Analytically centred approximate values}
 
-Let $v_{j+1}$ be a deterministic approximation to a subsequent value function, or a function fixed by an independent training procedure. Define
+The propagation grid includes valuation, exercise rights and the cash-event observations needed between them. Index its ordered time-and-phase nodes by $k=0,\ldots,N$, write $\overline Y_k$ for the state there and $\mathcal H_k$ for the available path information, and let $\kappa(j)$ identify exercise right $e_j$. Thus $Y_j=\overline Y_{\kappa(j)}$ and $\F_j=\mathcal H_{\kappa(j)}$. Let $v_{k+1}$ be a deterministic approximate value at the next observation, or a function fixed by independent training information. Starting from $\overline M_0=0$, define
 \begin{equation}
- \Delta M_{j+1}=v_{j+1}(Y_{j+1})
- -\E[v_{j+1}(Y_{j+1})\mid\F_{t_j}].
+ \Delta\overline M_{k+1}=v_{k+1}(\overline Y_{k+1})
+ -\E[v_{k+1}(\overline Y_{k+1})\mid\mathcal H_k],
+ \qquad M_j=\overline M_{\kappa(j)}.
 \label{eq:centred}
 \end{equation}
-When the conditional expectation is evaluated for the actual retained function and transition, these increments have conditional mean zero in exact arithmetic. Approximation quality affects tightness rather than supplying the reason for centring. The construction is the martingale component of an approximate value process described by \citet{haugh2004}.
+When the conditional expectation is evaluated for the actual retained function and transition, these increments have conditional mean zero in exact arithmetic. A cash detachment is deterministic given its pre-event state, so its centred increment is zero. Restricting the observation-grid martingale to the prescribed exercise rights preserves the martingale property; the added observations grant no exercise rights. Across an intervening cash observation, an exercise-to-exercise increment may be a sum of centred terms rather than a single value residual. Approximation quality affects tightness rather than supplying the reason for centring. The construction is the martingale component of an approximate value process described by \citet{haugh2004}.
 
 I represent approximate values on the non-negative state domain as
 \begin{equation}
@@ -165,7 +239,7 @@ Over a no-cash interval of length $h$, $X=y\exp(-\sigma^2h/2+\sigma\sqrt h\,Z)$,
  d_2=d_1-\sigma\sqrt h.
 \label{eq:hinge-integral}
 \end{align}
-This is the lognormal option integral \citep{black1973}. Zero state, strike, variance or time uses its continuous limiting form. Each term in \eqref{eq:hinges} can consequently be integrated over the full support, including the retained tail rule.
+Here $\Phi$ is the standard-normal distribution function. This is the lognormal option integral \citep{black1973}. Zero state, strike, variance or time uses its continuous limiting form. Each term in \eqref{eq:hinges} can consequently be integrated over the full support, including the retained tail rule.
 
 For a capped cash jump with size $c$, composition is explicit:
 \begin{equation}
@@ -184,12 +258,12 @@ Floating-point evaluation, function compression and approximation of the dynamic
 
 \subsection{Nested calendars with unchanged instructions}
 
-Let $\theta\in\Theta$ index a prescribed finite financial family and let $\mathcal E(d)$ be nested exercise calendars. Write $V^*_\theta(d)$ for the optimum and suppose that the original policy always stops on the smallest calendar. Its reward definition and pre-terminal dynamics remain unchanged when $d$ varies within a financial scenario.
+Let $\theta\in\Theta$ index a prescribed finite financial family and let $d$ range over a finite ordered endpoint set $\mathcal D$ with largest element $d_{\max}$. Let $\mathcal E(d)$ be nested exercise calendars. Write $V^*_\theta(d)$ for the optimum and suppose that the original policy always stops on the smallest calendar. Its reward definition and pre-terminal dynamics remain unchanged when $d$ varies within a financial scenario.
 
 \begin{proposition}[Maximal-calendar reduction]
 If $\mathcal E(d_1)\subseteq\mathcal E(d_2)$ whenever $d_1\leq d_2$, and $b_\theta>0$ is constant across these calendars, then
 \begin{equation}
- \max_{\theta\in\Theta,\,d\in D}
+ \max_{\theta\in\Theta,\,d\in\mathcal D}
  \frac{V^*_\theta(d)-V_{\pi,\theta}}{b_\theta}
  =\max_{\theta\in\Theta}
  \frac{V^*_\theta(d_{\max})-V_{\pi,\theta}}{b_\theta}.
@@ -204,7 +278,7 @@ The statement concerns true expected losses. Sample upper limits need not increa
 
 \subsection{A feasible terminal adjustment}
 
-Suppose the original endpoint is $T$, the extended endpoint is $T+h$, and between them $Y$ is an integrable martingale with no cash event and a constant exercise threshold $k$. Define
+Suppose the original endpoint is $T$ and the extended endpoint is $T+h$. Retain every original exercise right and add rights only after $T$. Between the endpoints, the maintained lognormal state $Y$ is an integrable martingale with no cash event. Every added exercise right has the same funded strike $k=Kf_J$ as the original terminal right. The transition depends on the current state rather than on additional past information, so $\E[g(Y_{T+h})\mid\F_T]=g_h(Y_T)$ for the function defined below. Define
 \begin{equation}
  g(y)=\positive{k-y},\qquad
  g_h(y)=\E[g(Y_{T+h})\mid Y_T=y],\qquad
@@ -213,7 +287,7 @@ Suppose the original endpoint is $T$, the extended endpoint is $T+h$, and betwee
 \end{equation}
 Conditional Jensen gives $q_h(y)\geq0$. Under the lognormal transition, $g_h$ follows the corresponding analytical put integral. The endpoint condition is stronger than calendar nesting: it provides a tractable terminal replacement and dominance of earlier exercise within the added interval.
 
-Let $A=\{\tau_\pi=T\}\in\F_T$. Change only the final instruction: if $A$ occurs, wait until $T+h$; otherwise retain the original stopping time. Denote this adjusted policy by $\widetilde\pi$.
+Let the compulsory final right of the original policy be $e_J=(T,\mathrm{after})$, so $Y_J=Y_T$ and $\F_J=\F_T$. Let $A=\{\tau_\pi=e_J\}\in\F_J$. Change only the final instruction: if $A$ occurs, wait until $T+h$; otherwise retain the original stopping right. Denote this adjusted policy by $\widetilde\pi$.
 
 \begin{proposition}[Expected gain from the final instruction]
 The adjusted rule is feasible on the expanded calendar and
@@ -229,7 +303,17 @@ The decision to wait is made using the $\F_T$-measurable event $A$, so the rule 
 
 The realised later payoff can still be smaller. Equation~\eqref{eq:terminal-gain} establishes an expected improvement under the maintained model, not a pathwise profit or executable market opportunity.
 
-For the expanded problem, a common upper payoff isolates this gain as in \eqref{eq:common-upper}. The residual discounted loss satisfies
+The implemented primary comparison integrates the extra diffusion before constructing the gap. Conditional Jensen and optional sampling imply that any exercise in the added interval is dominated in conditional expected reward by waiting to $T+h$. The expanded optimum therefore equals the original-clock stopping optimum with terminal reward replaced by $g_h(Y_T)$. Write
+\begin{align}
+ H_j^{(h)}&=
+ \begin{cases}H_j,&j<J,\\g_h(Y_T),&j=J,\end{cases}\notag\\
+ U_h^c(M)&=\max_{1\leq j\leq J}\{H_j^{(h)}-M_j\},\notag\\
+ L_{\widetilde\pi}^c(M)&=L_\pi(M)+\ind_Aq_h(Y_T).
+ \label{eq:integrated-terminal}
+\end{align}
+Here $c$ denotes conditional integration. Optional sampling on the original clock gives $\E[L_{\widetilde\pi}^c]=V_{\widetilde\pi}$, and the dual argument for the modified terminal reward gives $\E[U_h^c]\geq V_h^*$. Using $U_h^c$ for both instructions makes their gap difference exactly $\ind_Aq_h(Y_T)$ on each retained original path. The separate direct diagnostic simulates the later reward and computes its upper payoff on the expanded clock. Its pathwise gaps and sampling variance need not equal those of the integrated comparison. This distinction explains why the primary comparison isolates the expected policy gain without requiring the additional realised diffusion.
+
+The residual discounted loss satisfies
 \begin{equation}
  V_h^*-V_{\widetilde\pi}
  =(V_0^*-V_\pi)+(V_h^*-V_0^*)-\E[\ind_Aq_h(Y_T)].
@@ -260,10 +344,10 @@ A conditional interval does not integrate over the uncertainty of policy trainin
 
 \subsection{Coverage for a prescribed financial family}
 
-For $m=|\Theta|$, compute a per-scenario limit at the maximal calendar using error allocation $\alpha/m$:
+For $m_\Theta=|\Theta|$, compute a per-scenario limit at the maximal calendar using error allocation $\alpha/m_\Theta$:
 \begin{equation}
  B_\theta=\overline X_\theta+
- t_{1-\alpha/m,n_\theta-1}\frac{s_\theta}{\sqrt{n_\theta}}.
+ t_{1-\alpha/m_\Theta,n_\theta-1}\frac{s_\theta}{\sqrt{n_\theta}}.
 \label{eq:family}
 \end{equation}
 If each marginal limit has its stated coverage, the union bound and \eqref{eq:maximal} imply an event of probability at least $1-\alpha$ on which every prescribed scenario and smaller calendar is covered. With approximate marginal calibration, the joint statement inherits that approximation. Independence across scenarios is unnecessary for the union bound.
@@ -355,14 +439,14 @@ Let $\mathcal P$ contain all preceding evidence used to choose positive integer 
 \end{equation}
 I obtain this decomposition by conditioning first on the fitted pair and then averaging over independent pairs. Its purpose is to distinguish variation between fitted policies from the Monte Carlo error remaining after those policies are fixed. Additional paths within a pair reduce only the second component.
 
-For an illustrative deterministic cost $C=c_0+m(c_{\rm tr}+c_{\rm ev}n)$, the unconstrained continuous relaxation gives
+For an illustrative deterministic CPU budget $B_{\rm cpu}=c_0+m(c_{\rm tr}+c_{\rm ev}n)$, the unconstrained continuous relaxation gives
 \begin{equation}
  n^*=\sqrt{\frac{\mathcal V_{\rm ev}c_{\rm tr}}
                        {\mathcal V_{\rm tr}c_{\rm ev}}},\qquad
- m^*=\frac{C-c_0}{c_{\rm tr}+c_{\rm ev}n^*},
+ m^*=\frac{B_{\rm cpu}-c_0}{c_{\rm tr}+c_{\rm ev}n^*},
  \label{eq:training-continuous}
 \end{equation}
-when both variance components and both marginal costs are positive and $C>c_0$. Substituting the budget constraint into \eqref{eq:training-allocation} leaves the terms $\mathcal V_{\rm tr}c_{\rm ev}n+\mathcal V_{\rm ev}c_{\rm tr}/n$ as the only terms depending on $n$; differentiation yields \eqref{eq:training-continuous}. Zero components, integer counts and minimum sample sizes require boundary comparisons instead. Actual allocation requires estimated components and measured costs, with their uncertainty retained. This calculation supplies neither a verified CPU limit nor evidence that a particular allocation is best.
+when both variance components and both marginal costs are positive and $B_{\rm cpu}>c_0$. Substituting the budget constraint into \eqref{eq:training-allocation} leaves the terms $\mathcal V_{\rm tr}c_{\rm ev}n+\mathcal V_{\rm ev}c_{\rm tr}/n$ as the only terms depending on $n$; differentiation yields \eqref{eq:training-continuous}. Zero components, integer counts and minimum sample sizes require boundary comparisons instead. Actual allocation requires estimated components and measured costs, with their uncertainty retained. This calculation supplies neither a verified CPU limit nor evidence that a particular allocation is best.
 
 The counts may depend on earlier evidence while remaining fixed for the new experiment. Stopping the new experiment when its own accumulated cost crosses a threshold is a different sampling rule. Stochastic costs are part of the efficiency problem studied by \citet{glynn1992}; Appendix~\ref{app:training-allocation} gives a finite example in which an outcome-dependent cost rule biases the resulting sample mean. I retain incomplete workloads as incomplete rather than applying \eqref{eq:training-allocation} to a selectively completed subset.
 
@@ -406,7 +490,7 @@ Table~\ref{tab:measurement} compares the slope martingale with coarse and fine a
 \end{table}
 % End result-table:measurement
 
-The terminal experiment adds ninety minutes to the original endpoint, with no intervening cash event and a constant settlement threshold. Earlier decisions are retained and a surviving policy waits until the later endpoint. Under the assumptions of the terminal-adjustment proposition, conditional convexity gives a non-negative expected gain even though individual realised payoffs can decrease. Table~\ref{tab:terminal-adjustment} compares both instructions under the same expanded opportunity set and common upper payoff. The common term cancels, so the paired expected-gap reduction identifies a policy-value gain. These expanded-calendar gaps must not be confused with the original-calendar gaps in Table~\ref{tab:measurement}.
+The terminal experiment adds ninety minutes to the original endpoint, with no intervening cash event and a constant settlement threshold. Earlier decisions are retained and a surviving policy waits until the later endpoint. Under the assumptions of the terminal-adjustment proposition, conditional convexity gives a non-negative expected gain even though individual realised payoffs can decrease. Table~\ref{tab:terminal-adjustment} uses the integrated original-clock comparison in \eqref{eq:integrated-terminal}, which represents the same expanded opportunity set under endpoint dominance. Its common upper term cancels, so the paired expected-gap reduction identifies a policy-value gain. These integrated gaps differ from both the direct later-payoff diagnostic and the original-calendar gaps in Table~\ref{tab:measurement}.
 
 % Begin result-table:terminal_adjustment
 \begin{table}[htbp]
@@ -653,6 +737,8 @@ Additional historical quotes with documented sampling conventions could support 
 
 \section{Conclusions and data availability}
 
+The completed study connects loss assessment, policy comparison and computational allocation in one funded cash-event stopping model. Each comparison retains an explicit financial problem, exercise instruction or sampling target so that its resulting change can be interpreted.
+
 The first comparison separates measurement from action. Analytically centred approximate values substantially reduce estimated dual gaps for unchanged policies. A common upper payoff then isolates the expected gain from a feasible terminal adjustment. Finite-sample retraining can still worsen individual fitted rules, so a favourable terminal argument cannot justify every earlier regression decision. The relevant object is the policy's reward under the stated exercise opportunities.
 
 The second comparison concerns the precision of a training-procedure contrast. Conditional total variance identifies the variation between fitted pairs and the evaluation noise remaining within each pair. Reallocating computation towards independent pairs reduces the retained variance estimates. The prespecified follow-up supports that conclusion under its asymptotic contrast procedure, while influential fourth moments limit finite-sample confidence. More precise estimation of a fixed training comparison is distinct from improving each policy or establishing population-optimal allocation.
@@ -763,15 +849,15 @@ For one fresh path, write $\F_j$ for its information through exercise right $j$ 
 \[
  \mathcal G_j=\mathcal P\vee\sigma(D)\vee\F_j.
 \]
-The fitted policy is a bounded $\mathcal G_j$-stopping time because its parameters are initially available and its exercise predicates use no future path state. The training pair and preceding record are independent of the complete fresh path. Consequently, for each retained integrable function $v_j$,
+The fitted policy is a bounded $\mathcal G_j$-stopping time because its parameters are initially available and its exercise predicates use no future path state. The training pair and preceding record are independent of the complete fresh path. Consequently, for the retained integrable value function $v_{\kappa(j)}$ at exercise right $j$,
 \begin{equation}
- \E_{\mathbb P}[v_j(Y_j)\mid\mathcal G_{j-1}]
- =\E_{\lambda}[v_j(Y_j)\mid\F_{j-1}].
+ \E_{\mathbb P}[v_{\kappa(j)}(Y_j)\mid\mathcal G_{j-1}]
+ =\E_{\lambda}[v_{\kappa(j)}(Y_j)\mid\F_{j-1}].
  \label{eq:training-enlargement}
 \end{equation}
-Thus the centred increments in \eqref{eq:centred} remain martingale increments in the information actually used by the learned rule. Integrability at the finitely many rights permits bounded-time optional sampling, conditionally on $\mathcal P$ and $D$. It gives $\E[M_{\tau_{\pi_a(D)}}\mid\mathcal P,D]=0$ for $a=0,1$ and hence the expression for $\delta(D)$ below \eqref{eq:training-gain}. I use this argument to justify the training-averaged policy comparison, applying the approximate-value construction of \citet{haugh2004} to the regression policies of \citet{longstaff2001}.
+The same initial-enlargement argument applies to $\mathcal H_k$ at every propagation node in \eqref{eq:centred}; restricting its martingale to the exercise rights then preserves the required conditional property. Integrability at the finitely many rights permits bounded-time optional sampling, conditionally on $\mathcal P$ and $D$. It gives $\E[M_{\tau_{\pi_a(D)}}\mid\mathcal P,D]=0$ for $a=0,1$ and hence the expression for $\delta(D)$ below \eqref{eq:training-gain}. I use this argument to justify the training-averaged policy comparison, applying the approximate-value construction of \citet{haugh2004} to the regression policies of \citet{longstaff2001}.
 
-Equation~\eqref{eq:training-enlargement} fixes the functions $v_j$. If the martingale functions are also trained, their inputs must be included in the initial training information and their conditional expectations must integrate the realised functions. Integrating an average function in their place need not centre the realised increment. Additional joint integrability is then required. The initial enlargement cannot simply be omitted because the parameters were fitted before evaluation.
+Equation~\eqref{eq:training-enlargement} fixes the functions $v_k$. If the martingale functions are also trained, their inputs must be included in the initial training information and their conditional expectations must integrate the realised functions. Integrating an average function in their place need not centre the realised increment. Additional joint integrability is then required. The initial enlargement cannot simply be omitted because the parameters were fitted before evaluation.
 
 \subsection{Variance, estimation and the scope of conditioning}
 
@@ -853,8 +939,10 @@ Following \citet{fieller1954} and \citet{vonluxburg2009}, I invert the contrast 
  (\widehat e_0-w\widehat d_0)^2
  \leq z^2\{\widehat\Sigma_{ee}-2w\widehat\Sigma_{de}
                          +w^2\widehat\Sigma_{dd}\}.
- \label{eq:allocation-fieller}
+\label{eq:allocation-fieller}
 \end{equation}
+The implemented ratio routine defaults to the fixed cutoff $z=13/4$. Under an asymptotic standard-normal contrast, a pointwise error target $\alpha$ would instead specify $z=\Phi^{-1}(1-\alpha/2)$; the retained cutoff has corresponding normal tail mass $2\{1-\Phi(13/4)\}$. This ratio acceptance set is separate from the twelve-contrast calibration reported in Table~\ref{tab:prospective-contrasts}. Its cutoff alone supplies no simultaneous coverage claim across additional ratios or data-dependent comparisons.
+
 The complete quadratic acceptance set is calculated on the real line before intersection with $[0,1]$. Unbounded or disconnected sets are retained. The justification requires independent complete pairs, finite fourth moments, consistent covariance estimation and positive population variance of the true contrast. It is asymptotic as the number of pairs grows; positive empirical covariance rank is insufficient. Exact quadratic arithmetic does not certify normal approximation, finite-sample coverage or the original summary rounding errors. A weak denominator can produce a broad or disconnected unrestricted set even when the point ratio appears precise. Intersecting with the model domain restricts possible component shares; it does not supply additional observations or rescue an inaccurate normal approximation. These are applications of established ratio inference, without a claim of theoretical priority.
 
 \subsection{An endpoint comparison for the allocation rule}

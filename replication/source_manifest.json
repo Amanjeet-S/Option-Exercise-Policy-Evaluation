@@ -67,8 +67,8 @@
     {
       "path": "paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
       "category": "public_reproduction",
-      "bytes": 374749,
-      "sha256": "ea9dab37ca0088a8360665bec14326d74a1eb7aebfc3e1397e6f557cf36c8967"
+      "bytes": 416226,
+      "sha256": "fa62f8ea4dff57054dfd46fd823e27f014083d6d21f174b13f5dc19c5b565ba1"
     },
     {
       "path": "paper/README.md",
@@ -85,8 +85,8 @@
     {
       "path": "paper/cpu_timings.md",
       "category": "research_document",
-      "bytes": 9701,
-      "sha256": "2f4355d2f289e088f6501995f12e9ed33ae84fe17721f86c7cc6eeadc57e700d"
+      "bytes": 9695,
+      "sha256": "db9d04ff2d5ef2cd5d347274c9424ecbb40589a81f46e6d9a930b71a064838d6"
     },
     {
       "path": "paper/data_admission.json",
@@ -103,8 +103,8 @@
     {
       "path": "paper/main.tex",
       "category": "public_reproduction",
-      "bytes": 85893,
-      "sha256": "0e87e6b05bafb4e1ecbe9dbd3db855adb36b0a2ce9fbf7422ca09058e822f15f"
+      "bytes": 96256,
+      "sha256": "f67a4b9b8b3c7270cbc9408a1b9bd532ef1b4b74b0af84fd9f5b730a2c593be6"
     },
     {
       "path": "paper/numerical_results.json",
@@ -115,8 +115,8 @@
     {
       "path": "paper/numerical_results.md",
       "category": "public_reproduction",
-      "bytes": 30351,
-      "sha256": "0fb3a21ba20bf66a0fa77cf2f8a6e264cdec41b8846508dced6eed6aa0ddd5a4"
+      "bytes": 30542,
+      "sha256": "75824347dd9c8a8251084e214a1e6bd2d60184b0b99ed87bfd064efc904ed878"
     },
     {
       "path": "paper/verification/allocation_probability.py",
@@ -1153,8 +1153,8 @@
     {
       "path": "src/qf_research/optimal_stopping/funded_cash.py",
       "category": "numerical_library",
-      "bytes": 12705,
-      "sha256": "0629bec919e507753bca53fdc540c4c2e374951339c22cd044d6f0f85fa2cc6c"
+      "bytes": 12699,
+      "sha256": "325a692a87c4b49cc2438ae7ece611a9884cc9ff04f800ef42798be711b42567"
     },
     {
       "path": "src/qf_research/optimal_stopping/funded_dual.py",
