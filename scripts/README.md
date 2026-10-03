@@ -12,7 +12,6 @@ The [replication guide](../replication/README.md) maps the financial and computa
 | `python replication/verify_sources.py` | Check listed file sizes and hashes against the published inventory |
 | `python scripts/check_licensed_reproduction.py --archive-root /path/to/authorised-archive --output data/private/reproduction/licensed_readiness` | Check the required historical evidence locally without copying observations or running financial workloads |
 | `python scripts/check_repository.py` | Check tracked Markdown targets and retained public-source hashes |
-| `python scripts/execute_notebooks.py` | Execute all project notebooks in fresh kernels in the published checkout |
 | `python scripts/execute_release_notebooks.py` | Execute the two reader notebooks for the stopping study |
 | `python paper/verification/numerical_results.py` | Check released Markdown summaries and selected arithmetic |
 | `python paper/verification/paper_results.py` | Check the LaTeX result tables against those summaries |

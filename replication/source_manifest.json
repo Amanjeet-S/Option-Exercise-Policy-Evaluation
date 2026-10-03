@@ -13,8 +13,8 @@
     {
       "path": "README.md",
       "category": "research_document",
-      "bytes": 4807,
-      "sha256": "fd0b072a2b08c5e11c64ac3cef09bb1a072f39692f7e79dff902e6cbbdbf46c5"
+      "bytes": 5097,
+      "sha256": "47239a6b25926e103d50ca31339a2cbf2d3bdc0f3aa47015737a93aa2f37070a"
     },
     {
       "path": "completion.json",
@@ -567,12 +567,6 @@
       "category": "historical_entry_point",
       "bytes": 13448,
       "sha256": "7921541ae5479bbabd4405b0b4ba3cee4ab93f4edf7864037b7ad83f595ecb1a"
-    },
-    {
-      "path": "scripts/execute_notebooks.py",
-      "category": "public_reproduction",
-      "bytes": 1001,
-      "sha256": "1cafc166cac50d349734fdea64fe0b8983204c45c87ba9e1793a5bff7e468392"
     },
     {
       "path": "scripts/execute_release_notebooks.py",

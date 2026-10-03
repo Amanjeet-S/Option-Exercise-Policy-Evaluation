@@ -18,7 +18,13 @@ Historical CPU forecasts fail to transfer. Immediate local calibration reduces m
 
 The principal document is the [research paper (PDF)](paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf), with [self-contained LaTeX source](paper/main.tex). The [paper guide](paper/README.md) links the nine-table numerical supplement, computational timing ledger, literature comparison and final observation assessment.
 
-The [reproduction instructions](docs/reproducing_paper.md) provide one command for public analytical checks, released-summary arithmetic and stipulated numerical examples. The [baseline notebook](notebooks/numerical_validation.ipynb) checks pricing kernels; the [research notebook](notebooks/conditional_research_replication.ipynb) explains the funded model, exact finite-law probability calculations and summary audit. Python implements simulation, regression, inference and experiment orchestration. A checked C++ propagation kernel and a separate python-flint environment provide optional computational and outward-rounded arithmetic checks.
+The [reproduction instructions](docs/reproducing_paper.md) describe installation for the public analytical checks, released-summary arithmetic and stipulated numerical examples. After installing that environment, run:
+
+```sh
+python scripts/reproduce_paper.py --output data/private/reproduction/reviewer_run
+```
+
+The [baseline notebook](notebooks/numerical_validation.ipynb) checks pricing kernels; the [research notebook](notebooks/conditional_research_replication.ipynb) explains the funded model, exact finite-law probability calculations and summary audit. The Python [implementation](src/qf_research) and [experiment entry points](scripts/README.md) cover simulation, regression, inference and workload measurement, with numerical checks in [tests](tests). A checked C++ propagation kernel and a separate python-flint environment provide optional computational and outward-rounded arithmetic checks.
 
 The [replication guide](replication/README.md) documents the implementation and new authorised experiments. Exact historical financial replay requires the original input, design, source and evidence archive specified in the [licensed-input guide](replication/licensed_reproduction.md). The [historical replay record](replication/historical_replay.md) covers eight completed registered designs: seven reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with omitted financial estimates unavailable for comparison. Original acquisition and calibration were not rerun.
 
@@ -26,4 +32,4 @@ The [replication guide](replication/README.md) documents the implementation and 
 
 I publish reviewed derived findings, original code and writing. Raw provider exports and observation-level subscription inputs remain private. Public summary checks verify presentation and selected arithmetic; stipulated examples do not reconstruct the financial tables. The [observation assessment](paper/data_admission.md) records why wider timing tolerances still do not establish market validation.
 
-The [publication policy](docs/publication_policy.md) and [licensing scope](LICENSING.md) distinguish released original software under MIT, research writing under CC BY 4.0 and excluded third-party inputs. Established methods are attributed in the paper and [literature comparison](paper/contribution_review.md). The contribution is the controlled project-specific argument and evidence, without a claim of a new general pricing theorem.
+The [publication policy](docs/publication_policy.md) and [licensing scope](LICENSING.md) distinguish released original software under MIT, research writing under CC BY 4.0 and excluded third-party inputs. Established methods are attributed in the paper, [source register](SOURCES.md) and [literature comparison](paper/contribution_review.md). The contribution is the controlled project-specific argument and evidence, without a claim of a new general pricing theorem.

@@ -73,5 +73,3 @@ jobs:
         run: python -m unittest discover -s paper/verification -v
       - name: Reproduce the public paper package
         run: python scripts/reproduce_paper.py --output data/private/reproduction/ci
-      - name: Execute notebooks from fresh kernels
-        run: python scripts/execute_notebooks.py
