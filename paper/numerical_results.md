@@ -240,12 +240,12 @@ The computational findings consequently remain conditional. Funding, distributio
 
 ## 10. Public evidence and reproducibility
 
-The [released summaries](numerical_results.json) contain derived research outputs, including the displayed gains, intervals and CPU comparisons. Raw subscription observations, quote midpoints and spreads, exact financial inputs and reconstructable input supplements remain private under the [publication policy](../../../docs/publication_policy.md). Rounding controls presentation; it is not used to disguise restricted observations. Publication permission for derived findings does not make the underlying subscription data redistributable.
+The [released summaries](numerical_results.json) contain derived research outputs, including the displayed gains, intervals and CPU comparisons. Raw subscription observations, quote midpoints and spreads, exact financial inputs and reconstructable input supplements remain private under the [publication policy](../docs/publication_policy.md). Rounding controls presentation; it is not used to disguise restricted observations. Publication permission for derived findings does not make the underlying subscription data redistributable.
 
 From the repository root, the following standard-library command verifies the nine table renderings, case coverage, declared summary fields and selected arithmetic identities:
 
 ```bash
-python3 projects/01_optimal_stopping/paper/verification/numerical_results.py
+python3 paper/verification/numerical_results.py
 ```
 
 This check does not rerun simulations or independently verify the summaries against restricted observations. The [replication package](../replication/README.md) supplies the relevant implementation, historical entry points and a public mathematical example. Exact replay of the original financial experiments additionally requires their licensed input archive and source versions. The consolidated paper includes these derived findings; observation-level inputs and original evidence records remain private.

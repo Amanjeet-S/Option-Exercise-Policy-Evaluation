@@ -32,7 +32,7 @@ SOURCES = ('scripts/study_training_allocation.py',
     'tests/test_allocation_workload.py', 'tests/test_training_allocation.py',
     'tests/test_training_allocation_study.py', 'tests/test_training_allocation_audit.py',
     'scripts/review_training_inference.py',
-    'projects/01_optimal_stopping/reports/training_allocation.md')
+    'reports/training_allocation.md')
 
 
 def seed(cfg, *key):

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def calendar():
-    path = ROOT / "projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json"
+    path = ROOT / "configs/us_event_calendar_2026-09-16.json"
     return EventCalendar.from_config(json.loads(path.read_text()))
 
 

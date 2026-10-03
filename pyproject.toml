@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "qf-research"
 version = "0.1.0"
-description = "Reproducible research in quantitative finance and empirical economics"
+description = "Research implementation for option exercise-policy evaluation"
 authors = [{name = "Amanjeet Singh"}]
 readme = "README.md"
 requires-python = ">=3.11"
@@ -25,7 +25,7 @@ notebooks = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Amanjeet-S/Quantitative-Finance"
+Repository = "https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation"
 
 [project.scripts]
 qf-benchmark = "qf_research.optimal_stopping.experiments:main"

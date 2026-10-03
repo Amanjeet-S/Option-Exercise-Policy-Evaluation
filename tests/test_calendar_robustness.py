@@ -69,7 +69,7 @@ def test_calendar_coverage_must_match_declared_order(order):
 
 def test_five_minute_rights_preserve_dates_nesting_and_post_event_phase():
     root=Path(__file__).resolve().parents[1]
-    cal=EventCalendar.from_config(json.loads((root/'projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json').read_text()))
+    cal=EventCalendar.from_config(json.loads((root/'configs/us_event_calendar_2026-09-16.json').read_text()))
     obs=datetime(2026,9,17,15,40,6,tzinfo=NEW_YORK);expiry=date(2026,9,21)
     # Flat numerical funding fixture on attributed source calendar dates.
     baseline=tuple(FundedExercise(act365f(obs,t),.99,'after') for t in cal.research_decisions(obs,expiry))

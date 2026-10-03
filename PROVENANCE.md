@@ -1,36 +1,9 @@
-# Source and provenance record
+# Sources and provenance
 
-This repository distinguishes established methods from its implementation and experiments. Citations should appear close to the relevant method or claim, with a fuller source register for each project.
+I distinguish established mathematics, original implementation, stipulated analytical examples and model-conditional numerical findings. The [source register](SOURCES.md), [paper bibliography](paper/main.tex) and [literature comparison](paper/contribution_review.md) attribute the methods and delimit the contribution.
 
-## Current release
+The [Treasury snapshot](data/public/treasury/README.md) preserves the original feed, retrieval metadata, units and checksums. Its par yields are not a verified pricing discount curve. The attributed event calendar records its source and historical scope. Subscription observations, model-input bundles and detailed acquisition records remain private.
 
-| Material | Origin | Attribution record |
-| --- | --- | --- |
-| Option-pricing models and numerical methods | Established research literature | [Project 1 sources](projects/01_optimal_stopping/SOURCES.md) |
-| Probability results and derivations | Standard mathematical results, explained for this implementation | [Project 1 theory](projects/01_optimal_stopping/theory.md) |
-| Financial algorithms, validation fixtures and experiment runner | Prepared for this repository | Source files, tests and benchmark configuration |
-| Numerical linear algebra, random generation and plotting primitives | Installed third-party libraries | Project source register, dependency lock and run manifest |
-| Numerical validation fixtures | Analytically specified inputs and model simulation, with no claim to be market observations | Configuration and manifest in the validation results directory |
-| Observed interest-rate data | Official US Treasury published par yields | Original XML, parsed observations, source URL and retrieval metadata in data/public/treasury/ |
-| German production and consumer-price indices | Official Eurostat JSON downloads | [Unchanged source snapshot and manifest](data/public/germany_monetary_policy/2026-09-15/manifest.json) |
-| ECB monetary-policy and information-shock estimates | Jarociński's update of the published Jarociński and Karadi method | [Project 3 source register](projects/03_germany_monetary_policy/SOURCES.md), unchanged CSV files and CC BY 4.0 attribution |
-| Data-coverage audit and explanatory notebooks | Prepared for this repository | Repository scripts and project notebooks; no policy-effect estimates |
-| Baseline mathematical figures and tables | Stipulated fixture and numerical benchmark | Public configuration, implementation and retained validation records |
-| Financial research tables | Derived summaries of the retained conditional simulations | [Numerical supplement](projects/01_optimal_stopping/paper/numerical_results.md); exact simulation replay requires private licensed inputs |
-| CPU forecasts and expenditure | Original processor measurements from eighteen workloads | [Timing ledger and reconstruction](projects/01_optimal_stopping/paper/cpu_timings.md) |
+The [source inventory](replication/source_manifest.json) checks the reviewed current implementation. The [historical replay record](replication/historical_replay.md) concerns retained experiments and original archive versions. Relocated current files do not acquire the identities of the original sources by updating that inventory. Public examples do not establish market validity.
 
-No external code file, paper table or figure is incorporated into the implementation. Treasury and Eurostat observations and the author-supplied ECB shock estimates are retained with their provenance and reuse information. See [third-party notices](THIRD_PARTY_NOTICES.md). Capital IQ data have not yet been acquired. A Cboe demonstration archive and its file specification are retained privately for a format audit, with source URLs and hashes. This demonstration material is not used as recent empirical evidence. Method names and citations identify the prior work on which the algorithms depend.
-
-The [public reproduction command](docs/reproducing_paper.md) executes mathematical examples, checks the released financial summaries and reconstructs the CPU comparison. It does not read, copy or export a licensed-input archive. Source and input hashes record what was checked; they do not authenticate an experiment or establish a general theorem.
-
-## Rules for additions
-
-- Write explanations from an understood mathematical argument and cite the source of the underlying result.
-- Identify quotations as quotations, with a precise source. Changing a few words is not a substitute for attribution.
-- Record the origin, licence and modifications of any reused code before adding it.
-- Record the origin, transformations and redistribution conditions of any external dataset.
-- Generate project figures from documented code, or label and attribute any permitted external figure.
-- Describe replication studies as replications and reserve novelty claims for findings supported by the actual investigation.
-- Keep numerical assumptions, unsuccessful experiments and material limitations visible.
-
-This record documents the material used and the attribution practice. It is not an automated similarity certificate.
+The [publication policy](docs/publication_policy.md) and [third-party notices](THIRD_PARTY_NOTICES.md) govern disclosure and attribution. Established results and independently written derivations are identified in the paper; I make no claim of theoretical priority.

@@ -6,21 +6,21 @@ I provide the numerical kernels, experiment entry points and evidence checks use
 
 I distinguish three operations. A summary audit checks the arithmetic and presentation of released findings. A numerical replay recomputes a retained experiment using its original inputs, random streams and source versions. A fresh experiment uses a new specification or new streams. CPU timings are new observations on the executing machine even when the financial calculation is an exact replay.
 
-The [completion record](../completion.md) closes this conditional study and the unsuccessful market-validation attempt. No additional acquisition is pending. The final [observation-coverage supplement](../paper/data_admission.md) reconstructs the declared timing sensitivities without changing the original admission decisions. Public reproduction checks its released aggregate arithmetic; the original private evidence is required to reconstruct those counts from observation-level predicates.
+The [completion record](../README.md) closes this conditional study and the unsuccessful market-validation attempt. No additional acquisition is pending. The final [observation-coverage supplement](../paper/data_admission.md) reconstructs the declared timing sensitivities without changing the original admission decisions. Public reproduction checks its released aggregate arithmetic; the original private evidence is required to reconstruct those counts from observation-level predicates.
 
 ## 2. Installation and the public example
 
-The [reader's reproduction instructions](../../../docs/reproducing_paper.md) provide a single command for the public paper checks, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.
+The [reader's reproduction instructions](../docs/reproducing_paper.md) provide a single command for the public paper checks, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.
 
 For the numerical fixture alone, create an environment and install the package from the repository root. Python 3.11 or later is required; continuous integration checks Python 3.11 and 3.13.
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python projects/01_optimal_stopping/replication/verify_sources.py
+.venv/bin/python replication/verify_sources.py
 .venv/bin/python -m pip install -r requirements.lock
 .venv/bin/python -m pip install --no-deps -e .
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
-  .venv/bin/python projects/01_optimal_stopping/replication/run.py \
+  .venv/bin/python replication/run.py \
   --output data/private/replication/fixture_run.json
 ```
 
@@ -30,7 +30,7 @@ The result contains paired policy-gain estimates, non-negative pathwise dual gap
 
 The numerical checksum excludes timing, environment and provenance metadata. Exact equality is meaningful under the same numerical implementation and environment; different library versions or linear-algebra backends can change floating-point results. Timings and any allocation computed from them can change on repeated execution. The pair cost counts a full training and evaluation workload for each evaluation size. The actual runner shares its trained policies across sizes, so summing those pair charges would not measure its total process time. Terminal diagnostics are outside that cost comparison.
 
-The [executed notebook](../notebooks/27_conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [source manifest](source_manifest.json) identifies the reviewed files, their byte counts and SHA-256 hashes. The [standalone verifier](verify_sources.py) checks every declared file with the Python standard library, before scientific dependencies are needed. It rejects malformed entries, duplicate or escaping paths, symbolic links and altered or missing files. This checks consistency with the supplied inventory; it does not authenticate that inventory, prove its completeness or verify a financial input.
+The [executed notebook](../notebooks/conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [source manifest](source_manifest.json) identifies the reviewed files, their byte counts and SHA-256 hashes. The [standalone verifier](verify_sources.py) checks every declared file with the Python standard library, before scientific dependencies are needed. It rejects malformed entries, duplicate or escaping paths, symbolic links and altered or missing files. This checks consistency with the supplied inventory; it does not authenticate that inventory, prove its completeness or verify a financial input.
 
 The experiment runner checks the inventory and the origins of loaded project modules before numerical work and again before returning a result. Each result records the canonical input-specification digest, manifest digest and checked module origins separately from the numerical checksum. The module check prevents an unnoticed import from another installed copy of the project. These checks do not certify third-party binaries, hardware or the interpreter's in-memory state. Use a fresh kernel or interpreter for a reproducible run. An intentional source change requires its own reviewed inventory; the runner does not silently rewrite recorded hashes.
 
@@ -41,11 +41,11 @@ The [input schema](input.schema.json) describes the structural interface. The ex
 For a new study, copy the public specification into `data/private`, change its classification to `authorised_model`, and supply the financial model, contract, decision calendar and fixed simulation design from documented sources. The fixture classification is reserved for the exact published example. Preserve the source observations and their provenance separately, including the observation date, information available at the valuation cutoff, curve construction, settlement conventions and dividend treatment. Neither a licence assertion nor a successful structural check establishes empirical identification.
 
 ```sh
-.venv/bin/python projects/01_optimal_stopping/replication/run.py \
+.venv/bin/python replication/run.py \
   --config data/private/my_study/specification.json \
   --validate-only --output data/private/my_study/input_check.json
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
-  .venv/bin/python projects/01_optimal_stopping/replication/run.py \
+  .venv/bin/python replication/run.py \
   --config data/private/my_study/specification.json \
   --output data/private/my_study/fresh_experiment.json
 ```
@@ -94,7 +94,7 @@ These operations do not rerun all 3,978 primary allocation pairs or the 7,956 la
 
 The public example and most research calculations use NumPy and SciPy. Plotting uses Matplotlib. The C++ propagation comparison needs a C++17 compiler and is optional; the Python path remains available. The original C++ code is released under the repository's MIT licence.
 
-The outward-rounded enclosure scripts use the separate [arithmetic dependency lock](../../../requirements-certification.lock), which pins `python-flint==0.9.0`, the version used for the retained certification work. They exchange explicit JSON artifacts with the simulation environment. Installing that package is unnecessary for the public example. The [installation instructions](../../../docs/reproducing_paper.md#5-interval-arithmetic) reproduce the dedicated continuous-integration checks locally. A certified enclosure only covers the quantities and mathematical assumptions encoded in its input and audit; it is not a certificate for market-data validity or the complete modelling chain.
+The outward-rounded enclosure scripts use the separate [arithmetic dependency lock](../requirements-certification.lock), which pins `python-flint==0.9.0`, the version used for the retained certification work. They exchange explicit JSON artifacts with the simulation environment. Installing that package is unnecessary for the public example. The [installation instructions](../docs/reproducing_paper.md#5-interval-arithmetic) reproduce the dedicated continuous-integration checks locally. A certified enclosure only covers the quantities and mathematical assumptions encoded in its input and audit; it is not a certificate for market-data validity or the complete modelling chain.
 
 From that separate arithmetic environment, the following commands check finite-innovation replay and the global residual enclosure on exact mathematical fixtures.
 
@@ -112,7 +112,7 @@ Historical acquisition helpers require a separately configured, entitled LSEG en
 .venv/bin/python -m pytest tests/test_replication_runner.py \
   tests/test_funded_policy.py tests/test_value_martingale.py \
   tests/test_terminal_repair.py tests/test_training_allocation.py
-.venv/bin/python projects/01_optimal_stopping/paper/verification/numerical_results.py
+.venv/bin/python paper/verification/numerical_results.py
 ```
 
 The first command checks the model implementation and example's input and output contracts. The second checks the released summaries without requiring restricted observations. Successful execution of either command does not establish market validation. In the final research scope, unavailable historical quote ordering and incomplete funding evidence delimit the empirical claims; they do not supply missing observations or become assumed inputs.

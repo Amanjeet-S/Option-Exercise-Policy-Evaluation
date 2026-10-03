@@ -2,7 +2,7 @@
 
 The regression method is due to Longstaff and Schwartz (2001). This implementation
 uses normalised monomials and SVD least squares, with explicit rank diagnostics.
-See projects/01_optimal_stopping/SOURCES.md for methodological attribution.
+See SOURCES.md for methodological attribution.
 """
 
 from dataclasses import dataclass

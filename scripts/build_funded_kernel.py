@@ -12,7 +12,7 @@ import subprocess
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "projects/01_optimal_stopping/cpp/funded_step.cpp"
+SOURCE = ROOT / "cpp/funded_step.cpp"
 
 
 def build(output, compiler=None):

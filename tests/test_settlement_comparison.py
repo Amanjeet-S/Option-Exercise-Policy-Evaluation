@@ -61,7 +61,7 @@ def test_reversed_node_paths_fail(curve):
 
 
 def problems(curve):
-    cal = EventCalendar.from_config(json.loads((ROOT / 'projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json').read_text()))
+    cal = EventCalendar.from_config(json.loads((ROOT / 'configs/us_event_calendar_2026-09-16.json').read_text()))
     h, s = date(2026,9,11), date(2026,9,14)
     args = (datetime(2026,9,10,15,40,tzinfo=NEW_YORK), date(2026,10,16), 100., 100., .2, 'call',
             (DatedDividend(date(2026,9,18),date(2026,10,30), 2., 'Mathematical fixture'),))

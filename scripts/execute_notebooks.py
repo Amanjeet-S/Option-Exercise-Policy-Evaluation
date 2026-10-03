@@ -13,7 +13,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write", action="store_true", help="Replace saved notebook outputs after successful execution")
     args = parser.parse_args()
-    paths = sorted((ROOT / "projects").glob("*/notebooks/*.ipynb"))
+    paths = sorted((ROOT / "notebooks").glob("*.ipynb"))
     if not paths:
         raise SystemExit("No project notebooks found")
     for path in paths:

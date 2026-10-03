@@ -16,8 +16,8 @@ import sys
 from types import ModuleType
 
 
-ROOT = Path(__file__).resolve().parents[3]
-MANIFEST = 'projects/01_optimal_stopping/replication/source_manifest.json'
+ROOT = Path(__file__).resolve().parents[1]
+MANIFEST = 'replication/source_manifest.json'
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 MANIFEST_FIELDS = {'schema_version', 'title', 'scope', 'dependency_scope',
                    'files', 'external_imports'}

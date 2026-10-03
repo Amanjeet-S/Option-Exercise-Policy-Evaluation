@@ -17,8 +17,8 @@ from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = (
-    'projects/01_optimal_stopping/notebooks/01_numerical_validation.ipynb',
-    'projects/01_optimal_stopping/notebooks/27_conditional_research_replication.ipynb',
+    'notebooks/numerical_validation.ipynb',
+    'notebooks/conditional_research_replication.ipynb',
 )
 
 

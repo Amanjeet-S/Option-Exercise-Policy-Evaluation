@@ -1,19 +1,13 @@
-# Third-party material and attribution
+# Third-party notices
 
-Project source registers identify the mathematical and empirical methods used. Citations acknowledge prior research and do not imply that this repository owns those methods or that its implementation is an official replication.
+## 1. Included source material
 
-## Included data
+The [official Treasury catalogue](https://catalog.data.gov/dataset/interest-rate-statistics-daily-treasury-yield-curve-rates), identifier `015-DO-020`, lists [CC0](https://creativecommons.org/publicdomain/zero/1.0/). The retained [snapshot metadata](data/public/treasury/2026-09-14/metadata.json) identifies the feed, units, retrieval and source hash. Parsed values are repository transformations. The historical event calendar retains its attributed source and date scope.
 
-- **US Treasury:** the saved public par-yield snapshot retains the official feed URL, retrieval time, units and original-source checksum. See the [Treasury record](data/public/treasury/2026-09-14/metadata.json).
-- **Eurostat:** the German production and HICP JSON files are retained unchanged. Source: Eurostat, accessed 15 September 2026. Reuse is subject to the [Eurostat copyright and reuse notice](https://ec.europa.eu/eurostat/help/copyright-notice), including source acknowledgement and any applicable exceptions.
-- **ECB shock estimates:** the two CSV files are retained unchanged from [Marek Jarociński's update repository](https://github.com/marekjarocinski/jkshocks_update_ecb). The data are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cite Jarociński, M. and Karadi, P. (2020), *American Economic Journal: Macroeconomics*, 12(2), 1–43, DOI 10.1257/mac.20180090. Attribution and exact file hashes are in the [snapshot manifest](data/public/germany_monetary_policy/2026-09-15/manifest.json).
+Research methods are cited in the [source register](SOURCES.md) and paper. Dependencies retain their own licences and are installed from the declared environment files; their source is not vendored. Privately retained provider demonstrations are not distributed.
 
-## Subscription data and derived findings
+## 2. Restricted observations and released findings
 
-Permission to publish research findings derived from the project's LSEG access was confirmed on 27 September 2026. Raw observations, cleaned subsets and reversibly transformed observations remain excluded. Original estimates, research comparisons and figures may be released after reviewing the complete output for source-data disclosure. This confirmation does not cover unrelated providers, copied papers or vendor documentation. See the [publication policy](docs/publication_policy.md).
+University guidance permits individual study and research with the subscription data and prohibits redistribution of observations. Subsequent confirmation permits reviewed derived research findings. Raw exports, cleaned observations, subsets and reversible transformations remain private. The [publication policy](docs/publication_policy.md) defines the boundary; code releases exclude credentials, saved observations and copied vendor material.
 
-## Software and publications
-
-Dependencies retain their own licences and are installed through the environment files; their source is not vendored. Research papers are linked to their academic or publisher sources. Restricted provider exports and privately retained demonstration material are excluded from Git.
-
-Released original software is licensed under [MIT](LICENSE), and released original research writing under [CC BY 4.0](LICENSES/CC-BY-4.0.txt), as specified in the [licensing scope](LICENSING.md). Third-party data permissions remain applicable independently. These grants do not cover private material or bypass disclosure review of research outputs.
+Released original software uses [MIT](LICENSE), and original research writing uses [CC BY 4.0](LICENSES/CC-BY-4.0.txt). These grants preserve independent third-party rights under [LICENSING.md](LICENSING.md).

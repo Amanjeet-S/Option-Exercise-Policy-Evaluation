@@ -2,7 +2,7 @@
 
 These bound exact model value changes with the state, volatility, funding and
 exercise rights fixed. They do not bound a numerical solver's error or provide
-forecast coverage. See projects/01_optimal_stopping/dividend_sensitivity.md.
+forecast coverage. See dividend_sensitivity.md.
 """
 
 from dataclasses import dataclass

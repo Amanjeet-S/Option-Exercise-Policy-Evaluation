@@ -29,7 +29,7 @@ from qf_research.optimal_stopping.contracts import Option
 from qf_research.optimal_stopping.funded_cash import FundedCashModel, DividendCap, FundedExercise
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT/'projects/01_optimal_stopping'
+PROJECT = ROOT/'.'
 LSEG = ROOT/'data/private/lseg/2026-09-16'
 ANNOUNCEMENTS = ROOT/'data/private/dividend_announcements/2026-09-17/audit_v1'
 CONFIG = PROJECT/'configs/october_calibration_2026-09-17.json'

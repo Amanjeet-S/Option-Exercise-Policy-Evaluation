@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / 'projects/01_optimal_stopping/configs/short_ois_2026-09-20.json'
+CONFIG = ROOT / 'configs/short_ois_2026-09-20.json'
 FIELDS = ['InstrumentCode', 'InstrumentTag', 'LegIndex', 'TradeDate', 'StartDate',
           'EndDate', 'Tenor', 'InterestType', 'InterestCalculationMethod',
           'InterestPaymentFrequency', 'InterestPaymentDelay',

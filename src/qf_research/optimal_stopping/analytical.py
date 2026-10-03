@@ -1,6 +1,6 @@
 """Black-Scholes-Merton benchmarks. Standard formulae, implemented for this project.
 
-See projects/01_optimal_stopping/SOURCES.md and theory.md for attribution.
+See SOURCES.md and theory.md for attribution.
 """
 
 from dataclasses import dataclass

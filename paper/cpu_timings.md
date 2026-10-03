@@ -110,11 +110,11 @@ Charging both calibration schemes reproduces the experiment as performed. It dif
 From the repository root, run:
 
 ```sh
-python3 projects/01_optimal_stopping/paper/verification/cpu_timings.py
+python3 paper/verification/cpu_timings.py
 ```
 
 The standard-library [verifier](verification/cpu_timings.py) reconstructs forecasts from setup costs and complete-pair totals, recomputes the prediction errors, classifications and expenditure, and checks agreement with the existing [released summaries](numerical_results.json) at their published precision. It also checks these five table renderings. Its [tests](verification/test_cpu_timings.py) reject changes in the timing arithmetic, omitted workloads and unexpected fields. No simulation, data download or optional numerical package is needed.
 
-The measurements originate in the repository's [fixed-workload study](../../../scripts/study_cpu_prediction.py), its [retained-evidence audit](../../../scripts/audit_cpu_prediction.py) and [report construction](../../../scripts/report_cpu_prediction.py). This supplement exposes their computational aggregation for independent inspection; it introduces no new estimator or research experiment. Private export records preserve the selected source files and their hashes. This public ledger cannot itself verify the chronology of withheld records or regenerate the original workload timings.
+The measurements originate in the repository's [fixed-workload study](../scripts/study_cpu_prediction.py), its [retained-evidence audit](../scripts/audit_cpu_prediction.py) and [report construction](../scripts/report_cpu_prediction.py). This supplement exposes their computational aggregation for independent inspection; it introduces no new estimator or research experiment. Private export records preserve the selected source files and their hashes. This public ledger cannot itself verify the chronology of withheld records or regenerate the original workload timings.
 
-A repeat on another machine produces new timing observations. The present arithmetic check establishes what the retained measurements imply, without proving stable future cost, probabilistic budget protection or financial validity. The [replication guide](../replication/README.md) separately explains execution of the mathematical example and the requirements for a financial replay. The [publication policy](../../../docs/publication_policy.md) continues to exclude restricted financial observations.
+A repeat on another machine produces new timing observations. The present arithmetic check establishes what the retained measurements imply, without proving stable future cost, probabilistic budget protection or financial validity. The [replication guide](../replication/README.md) separately explains execution of the mathematical example and the requirements for a financial replay. The [publication policy](../docs/publication_policy.md) continues to exclude restricted financial observations.

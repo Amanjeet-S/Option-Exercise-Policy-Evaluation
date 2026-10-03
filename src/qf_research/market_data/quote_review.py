@@ -1,7 +1,7 @@
 """Versioned, offline interpretation of the SPY feasibility pilot.
 
 This policy uses retained instrument metadata, not a universal interpretation of
-Reuters condition codes. Source: Project 1's lseg_field_review.md. It identifies
+Reuters condition codes. Source: Option Exercise-Policy Evaluation's lseg_field_review.md. It identifies
 price agreement without inventing an ordering or a unique size for tied events.
 """
 

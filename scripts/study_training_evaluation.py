@@ -36,7 +36,7 @@ SOURCES = ('scripts/study_training_evaluation.py', 'scripts/audit_training_evalu
            'src/qf_research/optimal_stopping/training_evaluation.py',
            'src/qf_research/optimal_stopping/cost_budget.py',
            'tests/test_training_evaluation.py',
-           'projects/01_optimal_stopping/reports/training_evaluation.md')
+           'reports/training_evaluation.md')
 
 
 def seed(config, role, case, repetition, index):

@@ -1,14 +1,13 @@
 cff-version: 1.2.0
-message: "Cite the repository revision used and the original sources listed for each project. Project-specific completion states are recorded in the project index."
-title: "Quantitative Finance: Theory, Computation and Model Validation"
+message: "Cite the repository revision used and the original sources identified in the paper and source register."
+title: "Option Exercise-Policy Evaluation"
 type: software
 authors:
   - family-names: Singh
     given-names: Amanjeet
-repository-code: "https://github.com/Amanjeet-S/Quantitative-Finance"
-url: "https://github.com/Amanjeet-S/Quantitative-Finance"
+repository-code: "https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation"
+url: "https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation"
 keywords:
   - quantitative finance
   - numerical analysis
-  - monetary economics
-  - econometrics
+date-released: "2026-10-03"

@@ -4,9 +4,11 @@
 
 I distinguish reconstruction of retained results, numerical replay and a new experiment. Reconstruction checks saved observations and recalculates their summaries. Numerical replay repeats the financial calculations with the original model inputs, random streams, registered counts and numerical implementation. A new experiment changes at least one of those ingredients. Repeating a processor measurement always produces a new timing observation, even when the financial calculation repeats exactly.
 
-The [public reproduction route](../../../docs/reproducing_paper.md) needs no licensed archive. It executes mathematical examples, checks the released financial summaries and reconstructs the CPU comparison from published workload measurements. The instructions below concern the separate route for a reader with lawful access to the original inputs and retained evidence. A data subscription alone is insufficient: it does not supply the original acquisition vintage, model construction, frozen policies, registrations or source versions.
+The [public reproduction route](../docs/reproducing_paper.md) needs no licensed archive. It executes mathematical examples, checks the released financial summaries and reconstructs the CPU comparison from published workload measurements. The instructions below concern the separate route for a reader with lawful access to the original inputs and retained evidence. A data subscription alone is insufficient: it does not supply the original acquisition vintage, model construction, frozen policies, registrations or source versions.
 
-This guide specifies the numerical and evidential requirements of the existing implementation. It does not grant access to an archive or permission to redistribute its contents. No complete financial rerun is claimed merely because these instructions, or the public checks, are available. The [publication policy](../../../docs/publication_policy.md) continues to exclude restricted observations from the public repository.
+This guide specifies the numerical and evidential requirements of the existing implementation. It does not grant access to an archive or permission to redistribute its contents. No complete financial rerun is claimed merely because these instructions, or the public checks, are available. The [publication policy](../docs/publication_policy.md) continues to exclude restricted observations from the public repository.
+
+The current repository places `paper/`, `replication/` and the implementation at its root. Historical source and configuration references retain their original archive namespace, including `projects/01_optimal_stopping/`. Exact financial replay runs the preserved original implementations in that original layout. The current archive checker uses `--archive-root` to inspect it; relocation does not replace its registered source bytes.
 
 ## 2. Required input roles
 
@@ -33,22 +35,22 @@ Table numbers refer to the [research paper](../paper/Exercise_Policy_Loss_under_
 
 | Paper table | Experiment and retained quantities | Reconstruction or verification |
 | --- | --- | --- |
-| 1. Expected gaps | [study_value_martingale.py](../../../scripts/study_value_martingale.py); `summary.json`, `variants[].methods`, for baseline, coarse and fine assessment of unchanged policies | [audit_value_martingale.py](../../../scripts/audit_value_martingale.py) checks coverage, deterministic value constructions and retained estimates |
-| 2. Terminal adjustment | [study_terminal_repair.py](../../../scripts/study_terminal_repair.py); the 5,400-second scenario in `summary.json`, using `mean_gap_quote.original`, `mean_gap_quote.repaired` and `mean_integrated_gain` | [audit_terminal_repair.py](../../../scripts/audit_terminal_repair.py) checks the retained policy scenarios and accounting identities |
-| 3. Repeated-training gains | [study_training_evaluation.py](../../../scripts/study_training_evaluation.py); primary fine-approximation estimates with the larger evaluation sample | [analyse_training_evaluation.py](../../../scripts/analyse_training_evaluation.py) builds `tables.json`; the evaluation share divides estimated evaluation variance by the squared across-pair standard error |
-| 4. Allocation comparison | [study_training_allocation.py](../../../scripts/study_training_allocation.py), pilot and main stages; registered counts, pilot variance predictions and main estimates | [report_training_allocation.py](../../../scripts/report_training_allocation.py) derives the within-case ratios in `values.json` |
+| 1. Expected gaps | [study_value_martingale.py](../scripts/study_value_martingale.py); `summary.json`, `variants[].methods`, for baseline, coarse and fine assessment of unchanged policies | [audit_value_martingale.py](../scripts/audit_value_martingale.py) checks coverage, deterministic value constructions and retained estimates |
+| 2. Terminal adjustment | [study_terminal_repair.py](../scripts/study_terminal_repair.py); the 5,400-second scenario in `summary.json`, using `mean_gap_quote.original`, `mean_gap_quote.repaired` and `mean_integrated_gain` | [audit_terminal_repair.py](../scripts/audit_terminal_repair.py) checks the retained policy scenarios and accounting identities |
+| 3. Repeated-training gains | [study_training_evaluation.py](../scripts/study_training_evaluation.py); primary fine-approximation estimates with the larger evaluation sample | [analyse_training_evaluation.py](../scripts/analyse_training_evaluation.py) builds `tables.json`; the evaluation share divides estimated evaluation variance by the squared across-pair standard error |
+| 4. Allocation comparison | [study_training_allocation.py](../scripts/study_training_allocation.py), pilot and main stages; registered counts, pilot variance predictions and main estimates | [report_training_allocation.py](../scripts/report_training_allocation.py) derives the within-case ratios in `values.json` |
 | 5. Allocation gains | The same independent main allocation records | The report derives each arm's mean gain and pointwise Student interval |
-| 6. Allocation costs | Original pilot and main setup, training and evaluation measurements | [reproduce_training_allocation.py](../../../scripts/reproduce_training_allocation.py) reconstructs component charges; [build_training_allocation_paper_assets.py](../../../scripts/build_training_allocation_paper_assets.py) derives the table from the verified report and timing review |
-| 7. Prospective allocation | [study_prospective_allocation.py](../../../scripts/study_prospective_allocation.py); all nine registered arms, their pair records and `comparisons.json` | [verify_prospective_allocation.py](../../../scripts/verify_prospective_allocation.py) reconstructs the arm statistics; [report_prospective_allocation.py](../../../scripts/report_prospective_allocation.py) prepares the report |
+| 6. Allocation costs | Original pilot and main setup, training and evaluation measurements | [reproduce_training_allocation.py](../scripts/reproduce_training_allocation.py) reconstructs component charges; [build_training_allocation_paper_assets.py](../scripts/build_training_allocation_paper_assets.py) derives the table from the verified report and timing review |
+| 7. Prospective allocation | [study_prospective_allocation.py](../scripts/study_prospective_allocation.py); all nine registered arms, their pair records and `comparisons.json` | [verify_prospective_allocation.py](../scripts/verify_prospective_allocation.py) reconstructs the arm statistics; [report_prospective_allocation.py](../scripts/report_prospective_allocation.py) prepares the report |
 | 8. Registered contrasts | The same prospective arm records and registered contrast family | Mean and estimator-variance difference intervals use the recorded common critical value; ratios remain descriptive |
-| 9. CPU forecasts | [study_cpu_prediction.py](../../../scripts/study_cpu_prediction.py); eighteen complete workloads and both calibration schemes | [audit_cpu_prediction.py](../../../scripts/audit_cpu_prediction.py) checks the original records; the public [CPU verifier](../paper/verification/cpu_timings.py) independently reconstructs the released timing ledger |
+| 9. CPU forecasts | [study_cpu_prediction.py](../scripts/study_cpu_prediction.py); eighteen complete workloads and both calibration schemes | [audit_cpu_prediction.py](../scripts/audit_cpu_prediction.py) checks the original records; the public [CPU verifier](../paper/verification/cpu_timings.py) independently reconstructs the released timing ledger |
 
 The paper also makes quantitative statements outside the nine tables. Their additional records belong to a full-paper reproduction target. The current document contains no external figures.
 
 | Additional finding | Required retained evidence and computation |
 | --- | --- |
-| Terminal-target retraining intervals | `terminal_training/2026-09-20/run_v1/manifest.json`; [study_terminal_training.py](../../../scripts/study_terminal_training.py) and its retained summary. This is a separate experiment from the terminal adjustment in Table 2 |
-| Negative pair gains and delete-one sensitivity | `training_evaluation/2026-09-26/analysis_v1/manifest.json` and `policy_paper/2026-09-27/inference_review_v1/manifest.json`; [review_training_inference.py](../../../scripts/review_training_inference.py) recomputes the deletion diagnostics and checks the retained paper inputs |
+| Terminal-target retraining intervals | `terminal_training/2026-09-20/run_v1/manifest.json`; [study_terminal_training.py](../scripts/study_terminal_training.py) and its retained summary. This is a separate experiment from the terminal adjustment in Table 2 |
+| Negative pair gains and delete-one sensitivity | `training_evaluation/2026-09-26/analysis_v1/manifest.json` and `policy_paper/2026-09-27/inference_review_v1/manifest.json`; [review_training_inference.py](../scripts/review_training_inference.py) recomputes the deletion diagnostics and checks the retained paper inputs |
 | Case definitions, exercise-right counts and original training coupling | Original calendar and fitted-policy tasks, configurations and manifests reached through the Table 1 evidence chain |
 | Allocation pilot expense and component timing interpretation | Original pilot and main manifests plus `training_allocation/2026-09-27/timing_review_v1/manifest.json`; component selection must retain the observation supplying the median complete-pair cost |
 | Rationale and uncertainty set for the prospective allocation | Original cost-sensitivity, variance-sensitivity and component-ratio records bound by the prospective registration, including `component_ratio/2026-09-28/run_v1/manifest.json` |
@@ -63,7 +65,7 @@ Use a separate local checkout for the historical reproduction. Keep the current 
 
 First identify the intended original run and its registration or configuration. Check the complete manifest closure before creating a new numerical output directory: each referenced file must exist at the expected relative path, its bytes must match the recorded hash, and the required source version must be available. Verify the run's case coverage, registered counts and completion status. An archive inventory is necessary but does not establish the financial validity of those inputs.
 
-The [requirements record](licensed_requirements.json) identifies eleven original root manifests covering the table studies, the repeated-training registration and the additional quantitative claims described above. The registration requires an explicit entry because the completed training-evaluation run records its digest outside the path-to-hash maps. From the published checkout, run the standard-library [readiness checker](../../../scripts/check_licensed_reproduction.py) against a separately held, authorised archive checkout:
+The [requirements record](licensed_requirements.json) identifies eleven original root manifests covering the table studies, the repeated-training registration and the additional quantitative claims described above. The registration requires an explicit entry because the completed training-evaluation run records its digest outside the path-to-hash maps. From the published checkout, run the standard-library [readiness checker](../scripts/check_licensed_reproduction.py) against a separately held, authorised archive checkout:
 
 ```sh
 python scripts/check_licensed_reproduction.py \
@@ -156,7 +158,7 @@ python scripts/audit_cpu_prediction.py \
 Its public arithmetic reconstruction remains available without that archive:
 
 ```sh
-python projects/01_optimal_stopping/paper/verification/cpu_timings.py
+python paper/verification/cpu_timings.py
 ```
 
 ## 7. Timing, provenance and reporting
@@ -169,7 +171,7 @@ A completed reproduction record should identify the supplied archive and source 
 
 ## 8. Comparing a completed replay
 
-The standard-library [comparison tool](../../../scripts/compare_licensed_replay.py) checks the complete manifested record of a fresh study against its historical counterpart. Place both study directories beneath the published checkout's `data/private` directory, including any isolated archive checkout. The comparison destination must also be private and unused. For the value-martingale study:
+The standard-library [comparison tool](../scripts/compare_licensed_replay.py) checks the complete manifested record of a fresh study against its historical counterpart. Place both study directories beneath the published checkout's `data/private` directory, including any isolated archive checkout. The comparison destination must also be private and unused. For the value-martingale study:
 
 ```sh
 python scripts/compare_licensed_replay.py \
@@ -187,7 +189,7 @@ The [historical replay record](historical_replay.md) distinguishes completed num
 
 ## 9. Final assessment of retained market observations
 
-The [completed study](../completion.md) retains the unsuccessful primary admission decision. The [observation-coverage supplement](../paper/data_admission.md) reports descriptive intersections of the previously specified quote and funding tolerances. It contains no newly calibrated price, market-performance estimate or provider observation.
+The [completed study](../README.md) retains the unsuccessful primary admission decision. The [observation-coverage supplement](../paper/data_admission.md) reports descriptive intersections of the previously specified quote and funding tolerances. It contains no newly calibrated price, market-performance estimate or provider observation.
 
 A reader with lawful access to the original archive can reconstruct those aggregate counts from its adapter audit, configuration, cases and registration:
 

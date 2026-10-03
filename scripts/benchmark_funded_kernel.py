@@ -27,7 +27,7 @@ from qf_research.optimal_stopping.funded_cash import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "projects/01_optimal_stopping/configs/cpp_propagation_validation.json"
+CONFIG = ROOT / "configs/cpp_propagation_validation.json"
 METHODS = ("original", "prepared_scipy", "prepared_cpp")
 
 
@@ -95,7 +95,7 @@ def run(output, build_dir):
     if any(os.environ.get(k) != "1" for k in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS")):
         raise ValueError("Set OPENBLAS_NUM_THREADS=1 and OMP_NUM_THREADS=1 before starting Python")
     sources = [Path(__file__), ROOT/"scripts/build_funded_kernel.py",
-               ROOT/"projects/01_optimal_stopping/cpp/funded_step.cpp",
+               ROOT/"cpp/funded_step.cpp",
                ROOT/"src/qf_research/computational/funded_kernel.py",
                ROOT/"tests/test_funded_kernel.py", CONFIG,
                *sorted((ROOT/"src/qf_research/optimal_stopping").glob("*.py"))]

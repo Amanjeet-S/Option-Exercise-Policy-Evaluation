@@ -7,284 +7,230 @@
     {
       "path": "CITATION.cff",
       "category": "research_document",
-      "bytes": 556,
-      "sha256": "5d18ad583b9b82c754da95e42d096e3fdaae9ef2826741b666a3b5b413021248"
+      "bytes": 491,
+      "sha256": "ca4c3f94c8c180ab1ab8d8719d345078dc06c042f2ad744db87841263cfc0431"
     },
     {
       "path": "README.md",
       "category": "research_document",
-      "bytes": 5579,
-      "sha256": "9f234d21a902c35571ea48ef7a5a28542e19b256c9d077e0a537a8e09e42e194"
+      "bytes": 4807,
+      "sha256": "fd0b072a2b08c5e11c64ac3cef09bb1a072f39692f7e79dff902e6cbbdbf46c5"
     },
     {
-      "path": "docs/reproducing_paper.md",
-      "category": "public_reproduction",
-      "bytes": 8652,
-      "sha256": "d93679a6817c7c25731eacecf9ae8b1adc5ca6285d19c07cd2fa29ebe8ec0730"
-    },
-    {
-      "path": "docs/roadmap.md",
+      "path": "completion.json",
       "category": "research_document",
-      "bytes": 2234,
-      "sha256": "2a10c9a1cd363d58ba1068d15e4193cd01045c33de2f4e9c1db39e1c2397bbc4"
+      "bytes": 1153,
+      "sha256": "e54fc7d4ba96291fc54f135b0ff07ac1c837152c5505e8738c6912882691d972"
     },
     {
-      "path": "projects/01_optimal_stopping/README.md",
-      "category": "research_document",
-      "bytes": 6115,
-      "sha256": "baa650f24cc0a73bdfa271c8bcaef19db6857c1eec2a5708cb077b5ad3dc2b79"
-    },
-    {
-      "path": "projects/01_optimal_stopping/completion.json",
-      "category": "research_document",
-      "bytes": 1157,
-      "sha256": "351de1ccd85fb5c6dde1fe438e4ed8083b14669cccbfb2fe6833ccd3e707c344"
-    },
-    {
-      "path": "projects/01_optimal_stopping/completion.md",
-      "category": "research_document",
-      "bytes": 3425,
-      "sha256": "c2841af4e1dbf0c3e8b1f0d490a519eb77b730eaff92941e697ffd366e6ed0f8"
-    },
-    {
-      "path": "projects/01_optimal_stopping/configs/benchmark.json",
+      "path": "configs/benchmark.json",
       "category": "public_reproduction",
       "bytes": 835,
       "sha256": "6aaaf827d9f52a622b9deff64275979cb43046af7c98634e42853e4a86f31e0a"
     },
     {
-      "path": "projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json",
+      "path": "configs/us_event_calendar_2026-09-16.json",
       "category": "attributed_historical_calendar",
-      "sha256": "33f39d14b7ea3b78d8f2f67e327ee17c13a987527e8852e7dbc7e3fa48347513",
-      "bytes": 4879
+      "bytes": 4879,
+      "sha256": "33f39d14b7ea3b78d8f2f67e327ee17c13a987527e8852e7dbc7e3fa48347513"
     },
     {
-      "path": "projects/01_optimal_stopping/cpp/funded_step.cpp",
-      "sha256": "c3a13a46d499edac09439620208d5d5b4c45b60789af1b635b60f3a68b8924f5",
+      "path": "cpp/funded_step.cpp",
       "category": "cpp_kernel",
-      "bytes": 2612
+      "bytes": 2612,
+      "sha256": "c3a13a46d499edac09439620208d5d5b4c45b60789af1b635b60f3a68b8924f5"
     },
     {
-      "path": "projects/01_optimal_stopping/cpp/test_funded_step.cpp",
-      "sha256": "31d4d4c078e8af44499006bc13c57a66d0498f9fda40a730334b15848c70bf4d",
+      "path": "cpp/test_funded_step.cpp",
       "category": "cpp_kernel",
-      "bytes": 1358
+      "bytes": 1358,
+      "sha256": "31d4d4c078e8af44499006bc13c57a66d0498f9fda40a730334b15848c70bf4d"
     },
     {
-      "path": "projects/01_optimal_stopping/data_plan.md",
-      "category": "research_document",
-      "bytes": 5363,
-      "sha256": "cdebbf4dc7e3f8a10f12f2c8c4a7e24b5a23f021c3a487e7bc4d47060b4d6858"
-    },
-    {
-      "path": "projects/01_optimal_stopping/notebooks/01_numerical_validation.ipynb",
+      "path": "docs/reproducing_paper.md",
       "category": "public_reproduction",
-      "bytes": 67424,
-      "sha256": "ba6a1805f7929d211d27e6615c33afdf3838f62818dfb3848784ff3fc34b2d26"
+      "bytes": 8121,
+      "sha256": "57fe64f17bc9a5b4417263a7d89f26ce0b86d0eea2f758dd6142b138013d5f93"
     },
     {
-      "path": "projects/01_optimal_stopping/notebooks/27_conditional_research_replication.ipynb",
+      "path": "notebooks/conditional_research_replication.ipynb",
       "category": "public_reproduction",
-      "bytes": 32893,
-      "sha256": "f75754562436f016670db8f4205cd20c56c703ecaa296d77cf984c26c4e36ecf"
+      "bytes": 32866,
+      "sha256": "0272d56c17d89ece04c1fb67d4b700d0361b7b851ccea4b67ed8eee3b89a3162"
     },
     {
-      "path": "projects/01_optimal_stopping/option_quote_pilot_request.md",
-      "category": "research_document",
-      "bytes": 4745,
-      "sha256": "aaebce0d20ad0f498ab4a3807c4fd39e1fcb18473d855bdbcff14e086ecbb124"
-    },
-    {
-      "path": "projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
+      "path": "notebooks/numerical_validation.ipynb",
       "category": "public_reproduction",
-      "bytes": 375030,
-      "sha256": "0d4fc6e0b78baab3de2e5e40ffdb26d8cd6062e8765396211a16c0ec15d239ae"
+      "bytes": 67391,
+      "sha256": "89da558240ff18ef31a310ca9177ec96248d6d1dd63f037fa7c10bd50a24deaf"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/README.md",
+      "path": "paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
+      "category": "public_reproduction",
+      "bytes": 374749,
+      "sha256": "ea9dab37ca0088a8360665bec14326d74a1eb7aebfc3e1397e6f557cf36c8967"
+    },
+    {
+      "path": "paper/README.md",
       "category": "research_document",
-      "bytes": 4334,
-      "sha256": "795215005af3b7158b63c38b3e226505f5e5843ef2f009b12e846113e742623b"
+      "bytes": 2675,
+      "sha256": "449b4300d20f5d80aa463967dabb46b608ea8226bebcc2c41ed233215578f022"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/cpu_timings.json",
+      "path": "paper/cpu_timings.json",
       "category": "computational_measurement",
       "bytes": 14392,
       "sha256": "79a6eaa4d58979b7e0180a29dfac2a7f6e883deb6506beb33cb8d81d19b28115"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/cpu_timings.md",
+      "path": "paper/cpu_timings.md",
       "category": "research_document",
-      "bytes": 9754,
-      "sha256": "e4a05dfb0aaf92ce84a628f118abf3e18cf28ae4dc4da3ade63b3e1889bafa41"
+      "bytes": 9701,
+      "sha256": "2f4355d2f289e088f6501995f12e9ed33ae84fe17721f86c7cc6eeadc57e700d"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/data_admission.json",
+      "path": "paper/data_admission.json",
       "category": "public_reproduction",
       "bytes": 13701,
       "sha256": "7c810d465d9e72495f5fd37809f3edff962249621adae38f4c8972b168f69770"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/data_admission.md",
+      "path": "paper/data_admission.md",
       "category": "research_document",
-      "bytes": 6628,
-      "sha256": "8f3e083cecd125c23319e368ec4a67e778865af10e12a7c9e41f6a0129beca44"
+      "bytes": 6289,
+      "sha256": "7cfb3bafff64d5803ee148f0c55c04c52a1ce5b428b10c8f9900fa0f478f2ef0"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/main.tex",
+      "path": "paper/main.tex",
       "category": "public_reproduction",
-      "bytes": 85905,
-      "sha256": "047a404f8c03e4d0e9437f1241acd8a2bb4eaf7dd5b4210b9917ee2eeca6a1a5"
+      "bytes": 85893,
+      "sha256": "0e87e6b05bafb4e1ecbe9dbd3db855adb36b0a2ce9fbf7422ca09058e822f15f"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/numerical_results.json",
+      "path": "paper/numerical_results.json",
       "category": "public_reproduction",
       "bytes": 18028,
       "sha256": "fd9693b52f0146555ef381b8feafba8cd1d47144d4dfad6f86e438023cc1523d"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/numerical_results.md",
+      "path": "paper/numerical_results.md",
       "category": "public_reproduction",
-      "bytes": 30386,
-      "sha256": "1ac8f5f74f7ad0d19d9c0124155356af51c6fbe094196bd14af1d677d5c8fc62"
+      "bytes": 30351,
+      "sha256": "0fb3a21ba20bf66a0fa77cf2f8a6e264cdec41b8846508dced6eed6aa0ddd5a4"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/allocation_probability.py",
+      "path": "paper/verification/allocation_probability.py",
       "category": "public_reproduction",
       "bytes": 9408,
       "sha256": "ad846a04d684f3b3749889d5c6037313a0c399046cbd103fcb5e4c4aa2d98f5c"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/conditional_drift.py",
+      "path": "paper/verification/conditional_drift.py",
       "category": "public_reproduction",
       "bytes": 8613,
       "sha256": "51c02c22ca6f89bbc2d4e0d983e351db39a5410e6f924584db2c3f0164172f5f"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/cpu_timings.py",
+      "path": "paper/verification/cpu_timings.py",
       "category": "verification",
       "bytes": 15713,
       "sha256": "2791084bd78fac6a6419e69360a3c9d7befa1e0c58701d9df6e50a8c24a94b82"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/numerical_results.py",
+      "path": "paper/verification/numerical_results.py",
       "category": "public_reproduction",
       "bytes": 18705,
       "sha256": "1dae4dfe15690cff691daa2b404982888096c99e19fdd0337f5c32a5e03d3fcd"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/paper_results.py",
+      "path": "paper/verification/paper_results.py",
       "category": "public_reproduction",
       "bytes": 8819,
       "sha256": "cd18da91409e446fd2889937984a69846f7a3e6f044611b16698e0438b9da933"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/test_allocation_probability.py",
+      "path": "paper/verification/test_allocation_probability.py",
       "category": "public_reproduction",
       "bytes": 5991,
       "sha256": "a673d432a26d63cf4a534c43d29694aea8cb6c6c8fdaa5e36992c62c6c107f4f"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/test_conditional_drift.py",
+      "path": "paper/verification/test_conditional_drift.py",
       "category": "public_reproduction",
       "bytes": 3121,
       "sha256": "effc6b62067162c9beb33a12f132b5f4142cdb7265a9389e8abe403d23c22846"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/test_cpu_timings.py",
+      "path": "paper/verification/test_cpu_timings.py",
       "category": "test_fixture",
       "bytes": 6640,
       "sha256": "de82122f59e9df0e3b971c4686daebb3ca4f681358ada0b939ae4cd10c5421b9"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/test_numerical_results.py",
+      "path": "paper/verification/test_numerical_results.py",
       "category": "public_reproduction",
       "bytes": 4903,
       "sha256": "642c58210affdca6efa3e9eac41db278a998f9eb8b200ff7c814a147019477f5"
     },
     {
-      "path": "projects/01_optimal_stopping/paper/verification/test_paper_results.py",
+      "path": "paper/verification/test_paper_results.py",
       "category": "public_reproduction",
       "bytes": 1753,
       "sha256": "5bb52acef806bbc86947183b33df35d1b4e334d98cb53ed040ef8a9ca32e08ea"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/README.md",
+      "path": "replication/README.md",
       "category": "replication_interface",
-      "bytes": 15373,
-      "sha256": "d792a1edf891bd3348d1e95b03f51f0b506740d73c238394c55d672570a54c0e"
+      "bytes": 15203,
+      "sha256": "6fa3accfde85aad3f71436e486aeb6c1afbee50fc36bf0081cb565dbd8d1035b"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/configs/stipulated_fixture.json",
-      "sha256": "c1af22cbd62d31636c86cb40828589836aecba5a5efe167ffb76ca5303fbaf2c",
+      "path": "replication/configs/stipulated_fixture.json",
       "category": "replication_interface",
-      "bytes": 1187
+      "bytes": 1187,
+      "sha256": "c1af22cbd62d31636c86cb40828589836aecba5a5efe167ffb76ca5303fbaf2c"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/historical_replay.json",
+      "path": "replication/historical_replay.json",
       "category": "source_input_validation",
       "bytes": 9994,
       "sha256": "3b63581d2e17c8f1c0eee39be7792bf0e91593e037704111b86e3f6d47f89a05"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/historical_replay.md",
+      "path": "replication/historical_replay.md",
       "category": "research_document",
       "bytes": 6644,
       "sha256": "72cfcb9f69175e79f452af752de0b0305f5ba6795e6000e5d0df38ba4ccfa53d"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/input.schema.json",
-      "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226",
+      "path": "replication/input.schema.json",
       "category": "replication_interface",
-      "bytes": 4920
+      "bytes": 4920,
+      "sha256": "6878c9838f88603882cfa81ddf63aaeabbcca89167a0d9c2cfc3ecdf6f540226"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/licensed_reproduction.md",
+      "path": "replication/licensed_reproduction.md",
       "category": "research_document",
-      "bytes": 24702,
-      "sha256": "b29daf01de3c42e71abca5a72d61be52dc42b4b9de161916390e64ee5d787b0d"
+      "bytes": 24980,
+      "sha256": "f09e1ba83b025222760f2d7050a773d7e828b6952f4311ebee04f125d369d1d9"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/licensed_requirements.json",
+      "path": "replication/licensed_requirements.json",
       "category": "archive_requirements",
       "bytes": 16222,
       "sha256": "f1c12bdf7aad57a48c05d6b42784078d92672c96d01578b4646bcb1412d91b95"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/run.py",
-      "sha256": "ae57ac4c1e62c803653d11503d2a384f2f9ff9d5b617ed157ef368bea6fe5d05",
+      "path": "replication/run.py",
       "category": "replication_interface",
-      "bytes": 15711
+      "bytes": 15707,
+      "sha256": "4e9a9cd70ed2dab28cb09c091b12bea81db8fc83eff41c74ea16e1d40f382bc6"
     },
     {
-      "path": "projects/01_optimal_stopping/replication/verify_sources.py",
+      "path": "replication/verify_sources.py",
       "category": "replication_interface",
-      "sha256": "955e676c8a4d9b28792d03d958adf1ac911afc6b0f8157d8ff1b7102a1fb761c",
-      "bytes": 9309
-    },
-    {
-      "path": "projects/01_optimal_stopping/research_design.md",
-      "category": "research_document",
-      "bytes": 5376,
-      "sha256": "58c37c7a92b2751b6df976cc3bd14501cad532a0c91f5cc7c72eb51f03fb114e"
-    },
-    {
-      "path": "projects/01_optimal_stopping/results/baseline/grid_convergence.csv",
-      "category": "public_reproduction",
-      "bytes": 1730,
-      "sha256": "ba4d83c163b1dfaa351c56af90aa6666752309de039820241eef6203f1441ed1"
-    },
-    {
-      "path": "projects/01_optimal_stopping/results/baseline/manifest.json",
-      "category": "public_reproduction",
-      "bytes": 2303,
-      "sha256": "ff525ac4c0ea2c20f1c8676469b8c9a2db771d38484e2d53f4d891e7f31cc508"
-    },
-    {
-      "path": "projects/README.md",
-      "category": "research_document",
-      "bytes": 1318,
-      "sha256": "46dd3f435907402d6abb4d08c07a989b9ffd327e9da6b239a979fc1834edf3c2"
+      "bytes": 9280,
+      "sha256": "fe5f3ff1cc3e74205dda21e1772d9b6c1930df5a459b741a65c1244cc252afe3"
     },
     {
       "path": "requirements-certification.lock",
@@ -295,296 +241,302 @@
     {
       "path": "requirements-notebooks.lock",
       "category": "environment_definition",
-      "sha256": "73a2b511539ba0fbecd33a6654330e5311e783a9460fd9559302df1545027d15",
-      "bytes": 947
+      "bytes": 947,
+      "sha256": "73a2b511539ba0fbecd33a6654330e5311e783a9460fd9559302df1545027d15"
     },
     {
       "path": "requirements.lock",
       "category": "environment_definition",
-      "sha256": "6cdc623e7afa659cad3f0599ec929b365eb465ef5496392276d93eb9d084b927",
-      "bytes": 333
+      "bytes": 333,
+      "sha256": "6cdc623e7afa659cad3f0599ec929b365eb465ef5496392276d93eb9d084b927"
+    },
+    {
+      "path": "results/baseline/grid_convergence.csv",
+      "category": "public_reproduction",
+      "bytes": 1730,
+      "sha256": "ba4d83c163b1dfaa351c56af90aa6666752309de039820241eef6203f1441ed1"
+    },
+    {
+      "path": "results/baseline/manifest.json",
+      "category": "public_reproduction",
+      "bytes": 2303,
+      "sha256": "ff525ac4c0ea2c20f1c8676469b8c9a2db771d38484e2d53f4d891e7f31cc508"
     },
     {
       "path": "scripts/acquire_prospective_sample.py",
-      "sha256": "0d5b48b0afcdf4ed25233a61cf4d4c38ac6c80fd21ae68035d8e35bccf4cb531",
       "category": "historical_entry_point",
-      "bytes": 5592
+      "bytes": 5592,
+      "sha256": "0d5b48b0afcdf4ed25233a61cf4d4c38ac6c80fd21ae68035d8e35bccf4cb531"
     },
     {
       "path": "scripts/acquire_prospective_schedules.py",
-      "sha256": "7e9539cc2824ea1731508e65eaed7da35819740564c87f70639ad8a153072a29",
       "category": "historical_entry_point",
-      "bytes": 2253
+      "bytes": 2253,
+      "sha256": "7e9539cc2824ea1731508e65eaed7da35819740564c87f70639ad8a153072a29"
     },
     {
       "path": "scripts/acquire_short_ois_conventions.py",
-      "sha256": "34be6eeba6d0c102979dca3ec0486bdf3b8c42500985e46b1c09300f7da52b52",
       "category": "historical_entry_point",
-      "bytes": 3708
+      "bytes": 3679,
+      "sha256": "23a29612be1a1ce6163d133f4e2bf3b74e638d7ad82818261c4104b3e724f35b"
     },
     {
       "path": "scripts/adapt_prospective_sample.py",
-      "sha256": "e45e5b82e9afdb1ba551112d43f68965423b8424a44e58a690cf02b929fb259d",
       "category": "historical_entry_point",
-      "bytes": 11519
+      "bytes": 11519,
+      "sha256": "e45e5b82e9afdb1ba551112d43f68965423b8424a44e58a690cf02b929fb259d"
     },
     {
       "path": "scripts/analyse_allocation_cost_sensitivity.py",
-      "sha256": "0cca3062e500e50c2b3feb319944d57abf037c2d3a5a2a5289a787322709c336",
       "category": "historical_entry_point",
-      "bytes": 11828
+      "bytes": 11828,
+      "sha256": "0cca3062e500e50c2b3feb319944d57abf037c2d3a5a2a5289a787322709c336"
     },
     {
       "path": "scripts/analyse_allocation_variance_sensitivity.py",
-      "sha256": "a041d9f7029583e7c2bdf7466c3be20ddfcfb3ef4f56cebde060070dd6e724d1",
       "category": "historical_entry_point",
-      "bytes": 11315
+      "bytes": 11315,
+      "sha256": "a041d9f7029583e7c2bdf7466c3be20ddfcfb3ef4f56cebde060070dd6e724d1"
     },
     {
       "path": "scripts/analyse_component_confidence.py",
-      "sha256": "55563e0277a7b1580bd933740b6c6db77eee0f78d5f96b67a0ffed360bbd69d8",
       "category": "historical_entry_point",
-      "bytes": 10310
+      "bytes": 10310,
+      "sha256": "55563e0277a7b1580bd933740b6c6db77eee0f78d5f96b67a0ffed360bbd69d8"
     },
     {
       "path": "scripts/analyse_component_ratio.py",
-      "sha256": "ad557fbf387ef709a9a53f85226dd5b564fce72d31412b0e9f8a9138939b4a6d",
       "category": "historical_entry_point",
-      "bytes": 14905
+      "bytes": 14905,
+      "sha256": "ad557fbf387ef709a9a53f85226dd5b564fce72d31412b0e9f8a9138939b4a6d"
     },
     {
       "path": "scripts/analyse_local_cpu_transfer.py",
-      "sha256": "30790249b2c58d914947353b09507e0251f38d73d7add0d6cb7850cb6968022d",
       "category": "historical_entry_point",
-      "bytes": 7017
+      "bytes": 7017,
+      "sha256": "30790249b2c58d914947353b09507e0251f38d73d7add0d6cb7850cb6968022d"
     },
     {
       "path": "scripts/analyse_training_evaluation.py",
-      "sha256": "f335fe0302e4c37df83fb4e60b10ed0a4b63f2d84e68f98561b12cb088a04ad2",
       "category": "historical_entry_point",
-      "bytes": 9018
-    },
-    {
-      "path": "scripts/assemble_research_paper.py",
-      "sha256": "d13fc0582513ed3f1f589baeca02e2e053192730d22075cf5f120d5a25345462",
-      "category": "historical_entry_point",
-      "bytes": 4962
+      "bytes": 9018,
+      "sha256": "f335fe0302e4c37df83fb4e60b10ed0a4b63f2d84e68f98561b12cb088a04ad2"
     },
     {
       "path": "scripts/audit_allocation_cost_sensitivity.py",
-      "sha256": "30f17aa54828b055d6fa3228b3e22159f43588793cc315ba9513630974488244",
       "category": "historical_entry_point",
-      "bytes": 23623
+      "bytes": 23623,
+      "sha256": "30f17aa54828b055d6fa3228b3e22159f43588793cc315ba9513630974488244"
     },
     {
       "path": "scripts/audit_allocation_variance_sensitivity.py",
-      "sha256": "4fb6e47c463074b45a3d7140b934d2d2711816906794dbcf59639b9c18e1f31d",
       "category": "historical_entry_point",
-      "bytes": 22806
+      "bytes": 22806,
+      "sha256": "4fb6e47c463074b45a3d7140b934d2d2711816906794dbcf59639b9c18e1f31d"
     },
     {
       "path": "scripts/audit_cboe_snapshot.py",
-      "sha256": "3570e0422c950ab37da24dfc64a21269e6bb7e19a20a873a50445b7755f33dcd",
       "category": "market_data_format_audit",
-      "bytes": 4078
+      "bytes": 4078,
+      "sha256": "3570e0422c950ab37da24dfc64a21269e6bb7e19a20a873a50445b7755f33dcd"
     },
     {
       "path": "scripts/audit_certified_residual.py",
-      "sha256": "562d9bd51681c9494babb32aa6a3e90a12049fd61be2138f378a1b261339c063",
       "category": "historical_entry_point",
-      "bytes": 23818
+      "bytes": 23818,
+      "sha256": "562d9bd51681c9494babb32aa6a3e90a12049fd61be2138f378a1b261339c063"
     },
     {
       "path": "scripts/audit_component_confidence.py",
-      "sha256": "240c3e4a542caafcef9133f8b2e79ae9b92af723ff9fff5950cb788499f43fb8",
       "category": "historical_entry_point",
-      "bytes": 19768
+      "bytes": 19768,
+      "sha256": "240c3e4a542caafcef9133f8b2e79ae9b92af723ff9fff5950cb788499f43fb8"
     },
     {
       "path": "scripts/audit_component_ratio.py",
-      "sha256": "b4493993a6338e9b03206100d6772557b1365e626c9365ad87f46a5b257859f3",
       "category": "historical_entry_point",
-      "bytes": 31393
+      "bytes": 31393,
+      "sha256": "b4493993a6338e9b03206100d6772557b1365e626c9365ad87f46a5b257859f3"
     },
     {
       "path": "scripts/audit_cost_budget.py",
-      "sha256": "797e165073f0fd487cd646a7301d76779d5cbfbd26049b6d4b0d103fbadcc53c",
       "category": "historical_entry_point",
-      "bytes": 13396
+      "bytes": 13396,
+      "sha256": "797e165073f0fd487cd646a7301d76779d5cbfbd26049b6d4b0d103fbadcc53c"
     },
     {
       "path": "scripts/audit_cpu_prediction.py",
-      "sha256": "9f8f5aa38427f4c4af5999b14464f797ae756e91e54a2afb3b760a92d52da74e",
       "category": "historical_entry_point",
-      "bytes": 14997
+      "bytes": 14997,
+      "sha256": "9f8f5aa38427f4c4af5999b14464f797ae756e91e54a2afb3b760a92d52da74e"
     },
     {
       "path": "scripts/audit_expiry_extension.py",
-      "sha256": "27e3fc30ca30761fe8003bbe8aead487f29074969eb1f1611b265e9e9665c68a",
       "category": "historical_entry_point",
-      "bytes": 8437
+      "bytes": 8437,
+      "sha256": "27e3fc30ca30761fe8003bbe8aead487f29074969eb1f1611b265e9e9665c68a"
     },
     {
       "path": "scripts/audit_fitted_policy_gain.py",
-      "sha256": "9acb23a96a61e8f865d278d49e9a4e8a8c3887e2c8ae9919f831d257742a2ea0",
       "category": "historical_entry_point",
-      "bytes": 6866
+      "bytes": 6866,
+      "sha256": "9acb23a96a61e8f865d278d49e9a4e8a8c3887e2c8ae9919f831d257742a2ea0"
     },
     {
       "path": "scripts/audit_gain_replay.py",
-      "sha256": "c889ab4cabe3f21c25b78f39ddfcbeab73b352c18279130e9ce0b988f53b3f7a",
       "category": "historical_entry_point",
-      "bytes": 13419
+      "bytes": 13419,
+      "sha256": "c889ab4cabe3f21c25b78f39ddfcbeab73b352c18279130e9ce0b988f53b3f7a"
     },
     {
       "path": "scripts/audit_joint_input_expiry.py",
-      "sha256": "6d2c8f7b4edbdd2eb04be870ef96b68e8a90a96699692c62022678fa652aa7d7",
       "category": "historical_entry_point",
-      "bytes": 14716
+      "bytes": 14716,
+      "sha256": "6d2c8f7b4edbdd2eb04be870ef96b68e8a90a96699692c62022678fa652aa7d7"
     },
     {
       "path": "scripts/audit_local_cpu_records.py",
-      "sha256": "924b8a03f3696cb02361ca51f590ca720646af6114a6a41096e4d4baec134a70",
       "category": "historical_entry_point",
-      "bytes": 21108
+      "bytes": 21108,
+      "sha256": "924b8a03f3696cb02361ca51f590ca720646af6114a6a41096e4d4baec134a70"
     },
     {
       "path": "scripts/audit_local_cpu_transfer.py",
-      "sha256": "409e87ffbf1a4b19fd9e91a69acaf7af53887fbc032c5ad287dcd023135fab5d",
       "category": "historical_entry_point",
-      "bytes": 12808
+      "bytes": 12808,
+      "sha256": "409e87ffbf1a4b19fd9e91a69acaf7af53887fbc032c5ad287dcd023135fab5d"
     },
     {
       "path": "scripts/audit_policy_input_sensitivity.py",
-      "sha256": "8c9e8713669c4a1eca79715322a1dff01cdee491ec6f5224fe0b499842d0c7ab",
       "category": "historical_entry_point",
-      "bytes": 12150
+      "bytes": 12150,
+      "sha256": "8c9e8713669c4a1eca79715322a1dff01cdee491ec6f5224fe0b499842d0c7ab"
     },
     {
       "path": "scripts/audit_prospective_allocation.py",
-      "sha256": "24297903d73987e6cc4ae4537772b8241b234db709585138da088f67ac6586aa",
       "category": "historical_entry_point",
-      "bytes": 36079
+      "bytes": 36079,
+      "sha256": "24297903d73987e6cc4ae4537772b8241b234db709585138da088f67ac6586aa"
     },
     {
       "path": "scripts/audit_terminal_repair.py",
-      "sha256": "119eda08ab1c8511935978362983f15ad546e041b5dba48fa68fae2d16c91ef7",
       "category": "historical_entry_point",
-      "bytes": 8125
+      "bytes": 8125,
+      "sha256": "119eda08ab1c8511935978362983f15ad546e041b5dba48fa68fae2d16c91ef7"
     },
     {
       "path": "scripts/audit_terminal_training.py",
-      "sha256": "e1b4671ec595f326618179b477030030bfacff9620d3945e909d916bcfbed5ee",
       "category": "historical_entry_point",
-      "bytes": 6941
+      "bytes": 6941,
+      "sha256": "e1b4671ec595f326618179b477030030bfacff9620d3945e909d916bcfbed5ee"
     },
     {
       "path": "scripts/audit_training_allocation.py",
-      "sha256": "f0b82a3ed119ffb261e0de99b557caadccc624f915737c606254e66c77124a00",
       "category": "historical_entry_point",
-      "bytes": 12130
+      "bytes": 12130,
+      "sha256": "f0b82a3ed119ffb261e0de99b557caadccc624f915737c606254e66c77124a00"
     },
     {
       "path": "scripts/audit_training_allocation_main.py",
-      "sha256": "7d14dfe65092102b620538fc1a72fa965d8f7afb8d3e445a7bb9cc05cea775a3",
       "category": "historical_entry_point",
-      "bytes": 22864
+      "bytes": 22864,
+      "sha256": "7d14dfe65092102b620538fc1a72fa965d8f7afb8d3e445a7bb9cc05cea775a3"
     },
     {
       "path": "scripts/audit_training_evaluation.py",
-      "sha256": "4fc9d7ddc74719a4e2fbd124101863f1dcd8ece2035e2f0a58d895149848974c",
       "category": "historical_entry_point",
-      "bytes": 7560
+      "bytes": 7560,
+      "sha256": "4fc9d7ddc74719a4e2fbd124101863f1dcd8ece2035e2f0a58d895149848974c"
     },
     {
       "path": "scripts/audit_value_martingale.py",
-      "sha256": "02b0a6b9bcd901c22b5f010cedd2edcd5eecfe9b06e07c0e7d89b32df32fedca",
       "category": "historical_entry_point",
-      "bytes": 5044
+      "bytes": 5044,
+      "sha256": "02b0a6b9bcd901c22b5f010cedd2edcd5eecfe9b06e07c0e7d89b32df32fedca"
     },
     {
       "path": "scripts/benchmark_funded_kernel.py",
-      "sha256": "29cbde91f18b20665339843f62c36108f963f43e65c9a6e605e60ff45ef7761e",
       "category": "historical_entry_point",
-      "bytes": 10526
+      "bytes": 10468,
+      "sha256": "c5e1e7596e377c84ceab25d7b4dc1f2284e48e8e69cd0bc6e134af0c97f5d784"
     },
     {
       "path": "scripts/build_funded_kernel.py",
-      "sha256": "0bd6541b73c2f8553b5962b32a5183cf9cc036f6d6c0d930d62834e472fb5108",
       "category": "historical_entry_point",
-      "bytes": 2355
+      "bytes": 2326,
+      "sha256": "2d9c7f803dec1a1a0ed45993e0a0a4a02e93bec6a2b6ba62f9c4e7fcdbb586c0"
     },
     {
       "path": "scripts/build_training_allocation_paper_assets.py",
-      "sha256": "f1bb03bbf8db39480899343db5131ab41e8c1eff99df299fe634bc2e8d454504",
       "category": "historical_entry_point",
-      "bytes": 20428
+      "bytes": 20428,
+      "sha256": "f1bb03bbf8db39480899343db5131ab41e8c1eff99df299fe634bc2e8d454504"
     },
     {
       "path": "scripts/build_valuation_inputs.py",
-      "sha256": "934df97c26e5e7a372fbe79c535c9a24f68fac46c7caf8ee9848f77c4b70d713",
       "category": "historical_entry_point",
-      "bytes": 12552
+      "bytes": 12552,
+      "sha256": "934df97c26e5e7a372fbe79c535c9a24f68fac46c7caf8ee9848f77c4b70d713"
     },
     {
       "path": "scripts/calibrate_policy_sensitivity.py",
-      "sha256": "519eb5489854be0b7fd86d1a886ebe66989315c8014ed2bf573332e11c89b097",
       "category": "historical_entry_point",
-      "bytes": 8227
+      "bytes": 8227,
+      "sha256": "519eb5489854be0b7fd86d1a886ebe66989315c8014ed2bf573332e11c89b097"
     },
     {
       "path": "scripts/certify_component_radii.py",
-      "sha256": "53a56b3ce7c4402ea5fe7baeecbbefe2563af752498de66ecd0d33c9b78faf8e",
       "category": "historical_entry_point",
-      "bytes": 2284
+      "bytes": 2284,
+      "sha256": "53a56b3ce7c4402ea5fe7baeecbbefe2563af752498de66ecd0d33c9b78faf8e"
     },
     {
       "path": "scripts/certify_component_ratio.py",
-      "sha256": "190b87d74b15471436514f81aaf2918a9ddf405ae8327d27e8e2fbeff860af20",
       "category": "historical_entry_point",
-      "bytes": 6915
+      "bytes": 6915,
+      "sha256": "190b87d74b15471436514f81aaf2918a9ddf405ae8327d27e8e2fbeff860af20"
     },
     {
       "path": "scripts/certify_gain_replay.py",
-      "sha256": "377927a66dfea48c8f98b8fb48e5a15f6787919bfc377fbca1ed3913b33eba12",
       "category": "historical_entry_point",
-      "bytes": 18297
+      "bytes": 18297,
+      "sha256": "377927a66dfea48c8f98b8fb48e5a15f6787919bfc377fbca1ed3913b33eba12"
     },
     {
       "path": "scripts/certify_residual_envelope.py",
-      "sha256": "450a40fe9dd073110520b401a3ef518316bcf5736c9ef17c45049a74b127da6e",
       "category": "historical_entry_point",
-      "bytes": 21762
+      "bytes": 21762,
+      "sha256": "450a40fe9dd073110520b401a3ef518316bcf5736c9ef17c45049a74b127da6e"
     },
     {
       "path": "scripts/certify_residual_primitives.py",
-      "sha256": "a6ed3f98123fb9094f54f81ab8e6fe3e5e929f6f8f9b7e396ccd1b0d77cc0d53",
       "category": "historical_entry_point",
-      "bytes": 12904
+      "bytes": 12904,
+      "sha256": "a6ed3f98123fb9094f54f81ab8e6fe3e5e929f6f8f9b7e396ccd1b0d77cc0d53"
     },
     {
       "path": "scripts/check_allocation_inference.py",
-      "sha256": "134dbdc5b89b1a26aa76058f3fa0737521e0cace451d9d19fac1f834320b0e2c",
       "category": "historical_entry_point",
-      "bytes": 23460
+      "bytes": 23460,
+      "sha256": "134dbdc5b89b1a26aa76058f3fa0737521e0cace451d9d19fac1f834320b0e2c"
     },
     {
       "path": "scripts/check_licensed_reproduction.py",
       "category": "verification",
-      "bytes": 11377,
-      "sha256": "091a20f8a6874c75261b4c494258436c16e95c727e341df93e61a60745de14c5"
+      "bytes": 11319,
+      "sha256": "55b5ee043bdcb559d610afeab5b96df94fb4747e29fc761ff2fcaef575e94d2f"
     },
     {
       "path": "scripts/check_residual_inference.py",
-      "sha256": "abc76fdb7003d5f350b3c23107080dda6c37597587b2eeb5c76a5780551abc05",
       "category": "historical_entry_point",
-      "bytes": 16149
+      "bytes": 16149,
+      "sha256": "abc76fdb7003d5f350b3c23107080dda6c37597587b2eeb5c76a5780551abc05"
     },
     {
       "path": "scripts/check_training_evaluation_contrasts.py",
-      "sha256": "203ec0605c5291d7f2f0d4e69cd7609b910cc2f8e24af9d9853c930e69315c7a",
       "category": "historical_entry_point",
-      "bytes": 3297
+      "bytes": 3297,
+      "sha256": "203ec0605c5291d7f2f0d4e69cd7609b910cc2f8e24af9d9853c930e69315c7a"
     },
     {
       "path": "scripts/compare_licensed_replay.py",
@@ -594,297 +546,297 @@
     },
     {
       "path": "scripts/construct_joint_funding_witnesses.py",
-      "sha256": "9fb03e00370af66abfae90c67fd0493728f30ec7c62b1625adc3b869f4fb6787",
       "category": "historical_entry_point",
-      "bytes": 10950
+      "bytes": 10950,
+      "sha256": "9fb03e00370af66abfae90c67fd0493728f30ec7c62b1625adc3b869f4fb6787"
     },
     {
       "path": "scripts/cover_joint_cash_funding.py",
-      "sha256": "af264b67a9f40b5a374e200dd81c771036130bd8e192928a6bdb245a42730c67",
       "category": "historical_entry_point",
-      "bytes": 17188
+      "bytes": 17188,
+      "sha256": "af264b67a9f40b5a374e200dd81c771036130bd8e192928a6bdb245a42730c67"
     },
     {
       "path": "scripts/diagnose_fitted_calendars.py",
-      "sha256": "7ac6faece2a98089d23616ec6df2d77f7bddd154fea83c20300d97015ea9e665",
       "category": "historical_entry_point",
-      "bytes": 11371
+      "bytes": 11371,
+      "sha256": "7ac6faece2a98089d23616ec6df2d77f7bddd154fea83c20300d97015ea9e665"
     },
     {
       "path": "scripts/diagnose_paired_volatility.py",
-      "sha256": "7921541ae5479bbabd4405b0b4ba3cee4ab93f4edf7864037b7ad83f595ecb1a",
       "category": "historical_entry_point",
-      "bytes": 13448
+      "bytes": 13448,
+      "sha256": "7921541ae5479bbabd4405b0b4ba3cee4ab93f4edf7864037b7ad83f595ecb1a"
     },
     {
       "path": "scripts/execute_notebooks.py",
       "category": "public_reproduction",
-      "bytes": 1012,
-      "sha256": "4b68cbed57f8e927b614b6002f2e6a01ff4100dafca591b5f8565ade2283ff6e"
+      "bytes": 1001,
+      "sha256": "1cafc166cac50d349734fdea64fe0b8983204c45c87ba9e1793a5bff7e468392"
     },
     {
       "path": "scripts/execute_release_notebooks.py",
       "category": "public_reproduction",
-      "bytes": 2935,
-      "sha256": "beac801d57c1a3ac37587bc7675a80e16cd5aafc77ddbe0443f0ac45e2690122"
+      "bytes": 2871,
+      "sha256": "c98c9ae60ff5c21560f9a16bf1976838cdb80c3fa27f289ecd60c0f20d780b2f"
     },
     {
       "path": "scripts/export_gain_replay.py",
-      "sha256": "3e6436512827b1293a81a86a67a1057aecb48f8458b2030ba9102e79f893cdaf",
       "category": "historical_entry_point",
-      "bytes": 17977
+      "bytes": 17977,
+      "sha256": "3e6436512827b1293a81a86a67a1057aecb48f8458b2030ba9102e79f893cdaf"
     },
     {
       "path": "scripts/export_residual_certificate.py",
-      "sha256": "c12cf3c8aac21a8d40caf3457d44a0d38ae9188a234fc710819138f3ecba2a40",
       "category": "historical_entry_point",
-      "bytes": 16079
+      "bytes": 16079,
+      "sha256": "c12cf3c8aac21a8d40caf3457d44a0d38ae9188a234fc710819138f3ecba2a40"
     },
     {
       "path": "scripts/lseg_option_pilot.py",
-      "sha256": "aad33e7d5b63850297fcca28b7b53415114eefa30ca948e78d0a54565d0df909",
       "category": "historical_entry_point",
-      "bytes": 13544
+      "bytes": 13544,
+      "sha256": "aad33e7d5b63850297fcca28b7b53415114eefa30ca948e78d0a54565d0df909"
     },
     {
       "path": "scripts/plot_allocation_cost_sensitivity.py",
-      "sha256": "b65d6f81c22a86023af5da1c003554c4dfaec74eee0e05584989ab4c3a5af2ba",
       "category": "historical_entry_point",
-      "bytes": 9293
+      "bytes": 9293,
+      "sha256": "b65d6f81c22a86023af5da1c003554c4dfaec74eee0e05584989ab4c3a5af2ba"
     },
     {
       "path": "scripts/plot_allocation_variance_sensitivity.py",
-      "sha256": "494606b5aad273e774260415caa9434fd9557e6f99fa40f09d3f14ed96860363",
       "category": "historical_entry_point",
-      "bytes": 4919
+      "bytes": 4919,
+      "sha256": "494606b5aad273e774260415caa9434fd9557e6f99fa40f09d3f14ed96860363"
     },
     {
       "path": "scripts/plot_component_confidence.py",
-      "sha256": "bdaabe375654b9b27708042e155160d389cd8ffcae109e92ef577b0c8bfec581",
       "category": "historical_entry_point",
-      "bytes": 4668
+      "bytes": 4668,
+      "sha256": "bdaabe375654b9b27708042e155160d389cd8ffcae109e92ef577b0c8bfec581"
     },
     {
       "path": "scripts/plot_component_ratio.py",
-      "sha256": "483eccae7fa00b7ee79374f3c58be7120370955c0050e4e03ab584b4eeb712c6",
       "category": "historical_entry_point",
-      "bytes": 16251
+      "bytes": 16251,
+      "sha256": "483eccae7fa00b7ee79374f3c58be7120370955c0050e4e03ab584b4eeb712c6"
     },
     {
       "path": "scripts/plot_cost_budget.py",
-      "sha256": "e426678e3fdc959006e602c9ce28a1c039c70e3f50196a58326075777cd4bc8f",
       "category": "historical_entry_point",
-      "bytes": 4787
+      "bytes": 4787,
+      "sha256": "e426678e3fdc959006e602c9ce28a1c039c70e3f50196a58326075777cd4bc8f"
     },
     {
       "path": "scripts/plot_expiry_extension.py",
-      "sha256": "90c3f6d0fcd7096ff7ff68c217eb88704f8c4585e3e4f65e0637ad0b3f4caa3d",
       "category": "historical_entry_point",
-      "bytes": 4296
+      "bytes": 4296,
+      "sha256": "90c3f6d0fcd7096ff7ff68c217eb88704f8c4585e3e4f65e0637ad0b3f4caa3d"
     },
     {
       "path": "scripts/plot_fitted_policy_gain.py",
-      "sha256": "8536e88bece9e4f13669d0feed9acb6c665ee20af76bc7f0ca8e051413ce681b",
       "category": "historical_entry_point",
-      "bytes": 4257
+      "bytes": 4257,
+      "sha256": "8536e88bece9e4f13669d0feed9acb6c665ee20af76bc7f0ca8e051413ce681b"
     },
     {
       "path": "scripts/plot_joint_input_expiry.py",
-      "sha256": "eacead3dc607a2fd8304118543bbff76247898d818a8602891ddee94e5fa44b1",
       "category": "historical_entry_point",
-      "bytes": 5313
+      "bytes": 5313,
+      "sha256": "eacead3dc607a2fd8304118543bbff76247898d818a8602891ddee94e5fa44b1"
     },
     {
       "path": "scripts/plot_local_cpu_transfer.py",
-      "sha256": "33bbcd398f17f7270457d5742ea828f4a41f3f3d291620767fc1c44a2fa9b1aa",
       "category": "historical_entry_point",
-      "bytes": 3102
+      "bytes": 3102,
+      "sha256": "33bbcd398f17f7270457d5742ea828f4a41f3f3d291620767fc1c44a2fa9b1aa"
     },
     {
       "path": "scripts/plot_policy_input_sensitivity.py",
-      "sha256": "ccf3f4ea1169a70c08f91652dd801bbde4450acf8bc0b53b68635e676419ca51",
       "category": "historical_entry_point",
-      "bytes": 5690
+      "bytes": 5690,
+      "sha256": "ccf3f4ea1169a70c08f91652dd801bbde4450acf8bc0b53b68635e676419ca51"
     },
     {
       "path": "scripts/plot_terminal_repair.py",
-      "sha256": "f45de3ed5fc0b8e615b704c93013849e69596a9e7992e6eac757f8898c325e21",
       "category": "historical_entry_point",
-      "bytes": 4512
+      "bytes": 4512,
+      "sha256": "f45de3ed5fc0b8e615b704c93013849e69596a9e7992e6eac757f8898c325e21"
     },
     {
       "path": "scripts/plot_terminal_training.py",
-      "sha256": "149cdb550aa891434ad0ff8e56b278c528894eb121ecac4c7963b257346e4dec",
       "category": "historical_entry_point",
-      "bytes": 3703
+      "bytes": 3703,
+      "sha256": "149cdb550aa891434ad0ff8e56b278c528894eb121ecac4c7963b257346e4dec"
     },
     {
       "path": "scripts/plot_value_martingale.py",
-      "sha256": "f237a82b1ea580aed023862c94a3f478c85007e06877e178350ebb4ca083cdbf",
       "category": "historical_entry_point",
-      "bytes": 4425
+      "bytes": 4425,
+      "sha256": "f237a82b1ea580aed023862c94a3f478c85007e06877e178350ebb4ca083cdbf"
     },
     {
       "path": "scripts/refine_funded_calendar.py",
-      "sha256": "0b2f72ee76d6dd7e65a78481467e104bae949d93532678f87e0a0e37add43332",
       "category": "historical_entry_point",
-      "bytes": 5224
+      "bytes": 5224,
+      "sha256": "0b2f72ee76d6dd7e65a78481467e104bae949d93532678f87e0a0e37add43332"
     },
     {
       "path": "scripts/replay_prospective_allocation.py",
-      "sha256": "1948cf01d299e894da26372f18f59c955f57f30c4f08223b2a1e74e48a55672d",
       "category": "historical_entry_point",
-      "bytes": 3534
+      "bytes": 3534,
+      "sha256": "1948cf01d299e894da26372f18f59c955f57f30c4f08223b2a1e74e48a55672d"
     },
     {
       "path": "scripts/report_cpu_prediction.py",
-      "sha256": "f22a6e24f6b4a767182617522121b18fa22010d0b29c9e16a6c2a3bb9f1cd954",
       "category": "historical_entry_point",
-      "bytes": 6266
+      "bytes": 6266,
+      "sha256": "f22a6e24f6b4a767182617522121b18fa22010d0b29c9e16a6c2a3bb9f1cd954"
     },
     {
       "path": "scripts/report_prospective_allocation.py",
-      "sha256": "3657cafd6a1aa5b6a71b1b661dee5c064ffbbecce49891d6bc282ebdb89355b9",
       "category": "historical_entry_point",
-      "bytes": 24795
+      "bytes": 24795,
+      "sha256": "3657cafd6a1aa5b6a71b1b661dee5c064ffbbecce49891d6bc282ebdb89355b9"
     },
     {
       "path": "scripts/report_training_allocation.py",
-      "sha256": "7d3e406f6cf701ba6fa6666a7ef59747a91183b7a19425be9817afd79d7081f3",
       "category": "historical_entry_point",
-      "bytes": 28443
+      "bytes": 28414,
+      "sha256": "0f2a5ba3b46f8e81d0e62c29fb211dd25dbfcace4ae9eaa559d291ae300abda8"
     },
     {
       "path": "scripts/reprice_settlement_funding.py",
-      "sha256": "23b6a8a178f7494e3a2cb9fe3fdf06b923cae0c22e1eeb8078044935f887a640",
       "category": "historical_entry_point",
-      "bytes": 19996
+      "bytes": 19996,
+      "sha256": "23b6a8a178f7494e3a2cb9fe3fdf06b923cae0c22e1eeb8078044935f887a640"
     },
     {
       "path": "scripts/reproduce_paper.py",
       "category": "public_reproduction",
-      "bytes": 10492,
-      "sha256": "53bafbec75da3d0fa0b2060ad9712506eadc73aff1052470389ef8e9cd74d955"
+      "bytes": 10371,
+      "sha256": "a251ae1c8636c18cccd7fbd6feef1c10d3a7d888381aaf51d5ea28c7ee08745a"
     },
     {
       "path": "scripts/reproduce_training_allocation.py",
-      "sha256": "5db87c9eef89860490f4991f505a3d6755bbf98b046d14f04c48abf79d4c582e",
       "category": "historical_entry_point",
-      "bytes": 9436
+      "bytes": 9436,
+      "sha256": "5db87c9eef89860490f4991f505a3d6755bbf98b046d14f04c48abf79d4c582e"
     },
     {
       "path": "scripts/reproduce_training_evaluation.py",
-      "sha256": "45ff4b4236d0080a2b2724c3aed3e117b46213c7c574ef338882954dac50d741",
       "category": "historical_entry_point",
-      "bytes": 2814
+      "bytes": 2814,
+      "sha256": "45ff4b4236d0080a2b2724c3aed3e117b46213c7c574ef338882954dac50d741"
     },
     {
       "path": "scripts/review_lseg_pilot.py",
-      "sha256": "ff5e7de6e81c515dde5235f6b24bce9f4377dee50b5a13edef82f418d3daf483",
       "category": "historical_entry_point",
-      "bytes": 9904
+      "bytes": 9904,
+      "sha256": "ff5e7de6e81c515dde5235f6b24bce9f4377dee50b5a13edef82f418d3daf483"
     },
     {
       "path": "scripts/review_training_inference.py",
-      "sha256": "ec72f9a39def224d511a88897c08875f591fb50f2bcc678d10ed8aae56f26358",
       "category": "historical_entry_point",
-      "bytes": 7254
+      "bytes": 7254,
+      "sha256": "ec72f9a39def224d511a88897c08875f591fb50f2bcc678d10ed8aae56f26358"
     },
     {
       "path": "scripts/run_conditional_calibration.py",
-      "sha256": "e787d685b20e99f269f7a541cbff5ef5dd8b50243826077a4640062a8b4b44af",
       "category": "historical_entry_point",
-      "bytes": 15232
+      "bytes": 15205,
+      "sha256": "55347e4359f8c40856fc147d99215135f2de88657749fa470594330277e8bd1c"
     },
     {
       "path": "scripts/study_cost_budget.py",
-      "sha256": "1cebdae6a5e113a3ac026587707db82d23fe6dcf629352cc37d913038ad68e92",
       "category": "historical_entry_point",
-      "bytes": 14470
+      "bytes": 14470,
+      "sha256": "1cebdae6a5e113a3ac026587707db82d23fe6dcf629352cc37d913038ad68e92"
     },
     {
       "path": "scripts/study_cpu_budget_transfer.py",
-      "sha256": "d6db9ea55df0e71847c1618cba70ec997a53a99bafc5c0bde30d33e60bd260e0",
       "category": "historical_entry_point",
-      "bytes": 16352
+      "bytes": 16352,
+      "sha256": "d6db9ea55df0e71847c1618cba70ec997a53a99bafc5c0bde30d33e60bd260e0"
     },
     {
       "path": "scripts/study_cpu_prediction.py",
-      "sha256": "eed666ced23ca2ecb527f4ccab1068923b0abc9e11e2e834928d667e5c8cd0ed",
       "category": "historical_entry_point",
-      "bytes": 19617
+      "bytes": 19617,
+      "sha256": "eed666ced23ca2ecb527f4ccab1068923b0abc9e11e2e834928d667e5c8cd0ed"
     },
     {
       "path": "scripts/study_expiry_extension.py",
-      "sha256": "d3d07dd176ec663da0ae49551e5fa3a662cffd0307d5ee51234cd8819d7d522a",
       "category": "historical_entry_point",
-      "bytes": 15403
+      "bytes": 15403,
+      "sha256": "d3d07dd176ec663da0ae49551e5fa3a662cffd0307d5ee51234cd8819d7d522a"
     },
     {
       "path": "scripts/study_fitted_policy_gain.py",
-      "sha256": "35c805a486427b87d71fefa5b6940fe7b9e8478e1501f1495b07869af3576f48",
       "category": "historical_entry_point",
-      "bytes": 13630
+      "bytes": 13630,
+      "sha256": "35c805a486427b87d71fefa5b6940fe7b9e8478e1501f1495b07869af3576f48"
     },
     {
       "path": "scripts/study_joint_input_expiry.py",
-      "sha256": "ec84ddd304e136c8168bb26f97f451b540e4dc235373fef0862da34ed70e53a0",
       "category": "historical_entry_point",
-      "bytes": 18765
+      "bytes": 18765,
+      "sha256": "ec84ddd304e136c8168bb26f97f451b540e4dc235373fef0862da34ed70e53a0"
     },
     {
       "path": "scripts/study_local_cpu_transfer.py",
-      "sha256": "0a4ec52530f7fdac7c765a0e665220364d323398e7aec5bad66da24f75c67e90",
       "category": "historical_entry_point",
-      "bytes": 17377
+      "bytes": 17377,
+      "sha256": "0a4ec52530f7fdac7c765a0e665220364d323398e7aec5bad66da24f75c67e90"
     },
     {
       "path": "scripts/study_policy_input_sensitivity.py",
-      "sha256": "6d2223417fda0c9fdc8651c7d591ff883f91d7da54b98cc1456cb57de932c5b5",
       "category": "historical_entry_point",
-      "bytes": 13887
+      "bytes": 13887,
+      "sha256": "6d2223417fda0c9fdc8651c7d591ff883f91d7da54b98cc1456cb57de932c5b5"
     },
     {
       "path": "scripts/study_prospective_allocation.py",
-      "sha256": "8ffe3f845e30cbb83772ef29771db4bb2fc5f3aefe662742ff8ce3be6e99fde0",
       "category": "historical_entry_point",
-      "bytes": 19479
+      "bytes": 19479,
+      "sha256": "8ffe3f845e30cbb83772ef29771db4bb2fc5f3aefe662742ff8ce3be6e99fde0"
     },
     {
       "path": "scripts/study_terminal_repair.py",
-      "sha256": "f4e085cb669255ff2ea23d3be8edcc8fb49cda5e76f5e0032e788ea95c0a9a9d",
       "category": "historical_entry_point",
-      "bytes": 12654
+      "bytes": 12654,
+      "sha256": "f4e085cb669255ff2ea23d3be8edcc8fb49cda5e76f5e0032e788ea95c0a9a9d"
     },
     {
       "path": "scripts/study_terminal_training.py",
-      "sha256": "913f0ebb310194403afb626b559e7d358bf7830a7af8d81ff883c678ee743eef",
       "category": "historical_entry_point",
-      "bytes": 13552
+      "bytes": 13552,
+      "sha256": "913f0ebb310194403afb626b559e7d358bf7830a7af8d81ff883c678ee743eef"
     },
     {
       "path": "scripts/study_training_allocation.py",
-      "sha256": "a4a785d434ada2057e331ddfc88cef626a819bdb1a4a3ef2f47b1e87d40c2abe",
       "category": "historical_entry_point",
-      "bytes": 21549
+      "bytes": 21520,
+      "sha256": "2a295767e217a9f063078a9061cd939ae9186a9a85ab79bf4b1392b5ed800d8b"
     },
     {
       "path": "scripts/study_training_evaluation.py",
-      "sha256": "53d71952273e9d02792f65c4ed54a1e1778cb47b5aa221ba11666bc0a9b784d7",
       "category": "historical_entry_point",
-      "bytes": 16847
+      "bytes": 16818,
+      "sha256": "f9ac33a70c73431f85e3568f70d6add02f440462d6ce18741a57f8f6fe7b95b0"
     },
     {
       "path": "scripts/study_value_martingale.py",
-      "sha256": "7ec62e61fd8dcc3bf735eec392816b2f13569d365a56820d332ed8b153d9746f",
       "category": "historical_entry_point",
-      "bytes": 10971
+      "bytes": 10971,
+      "sha256": "7ec62e61fd8dcc3bf735eec392816b2f13569d365a56820d332ed8b153d9746f"
     },
     {
       "path": "scripts/summarise_conditional_calibration.py",
-      "sha256": "b6995a7ce10671cc34c30a3bf09ede226be344c3ea324285cdb4e2a74783996b",
       "category": "historical_entry_point",
-      "bytes": 6325
+      "bytes": 6325,
+      "sha256": "b6995a7ce10671cc34c30a3bf09ede226be344c3ea324285cdb4e2a74783996b"
     },
     {
       "path": "scripts/summarise_market_admission.py",
@@ -895,476 +847,476 @@
     {
       "path": "scripts/test_certified_residual.py",
       "category": "certification_fixture_tests",
-      "sha256": "858c4da51ed5dd85f6e2339b7dc1305412260452456eb3832d505ea4560147d2",
-      "bytes": 24282
+      "bytes": 24282,
+      "sha256": "858c4da51ed5dd85f6e2339b7dc1305412260452456eb3832d505ea4560147d2"
     },
     {
       "path": "scripts/validate_funded_cash.py",
-      "sha256": "18ff52acbbacdf2eadb9198fd6b60ce9f6eb6b106a2583c21dc3957551e3614f",
       "category": "historical_entry_point",
-      "bytes": 11105
+      "bytes": 11105,
+      "sha256": "18ff52acbbacdf2eadb9198fd6b60ce9f6eb6b106a2583c21dc3957551e3614f"
     },
     {
       "path": "scripts/validate_funded_dual.py",
-      "sha256": "174e466305030695c287a46715271744676e2b133072945236744b36d20f1dd7",
       "category": "historical_entry_point",
-      "bytes": 7681
+      "bytes": 7681,
+      "sha256": "174e466305030695c287a46715271744676e2b133072945236744b36d20f1dd7"
     },
     {
       "path": "scripts/validate_funded_policy.py",
-      "sha256": "439137de884a3b3b4d84b90f4bf49f236de38220e83f986ce34c6e8f5c74f6f5",
       "category": "historical_entry_point",
-      "bytes": 13306
+      "bytes": 13306,
+      "sha256": "439137de884a3b3b4d84b90f4bf49f236de38220e83f986ce34c6e8f5c74f6f5"
     },
     {
       "path": "scripts/verify_prospective_allocation.py",
-      "sha256": "af4a5b012bd850c018ba28127f7bb6cf895975697ec2c2311ac577b96d66abef",
       "category": "historical_entry_point",
-      "bytes": 1256
+      "bytes": 1256,
+      "sha256": "af4a5b012bd850c018ba28127f7bb6cf895975697ec2c2311ac577b96d66abef"
     },
     {
       "path": "src/qf_research/__init__.py",
-      "sha256": "09fc3828391073426d6ed131ed6d63254c4441ce2949a021e99817bbd36dc196",
       "category": "source_input_validation",
-      "bytes": 101
+      "bytes": 101,
+      "sha256": "09fc3828391073426d6ed131ed6d63254c4441ce2949a021e99817bbd36dc196"
     },
     {
       "path": "src/qf_research/computational/__init__.py",
-      "sha256": "c14132a9999370cf59b25aaca8b3eced06adedac321ed9991bb93d9e0a69597a",
       "category": "computational_library",
-      "bytes": 80
+      "bytes": 80,
+      "sha256": "c14132a9999370cf59b25aaca8b3eced06adedac321ed9991bb93d9e0a69597a"
     },
     {
       "path": "src/qf_research/computational/funded_kernel.py",
-      "sha256": "4fd76e58fc902cd6c60488f579a86b7ffebe6f742f0d80ba845be217d47f646e",
       "category": "computational_library",
-      "bytes": 6886
+      "bytes": 6886,
+      "sha256": "4fd76e58fc902cd6c60488f579a86b7ffebe6f742f0d80ba845be217d47f646e"
     },
     {
       "path": "src/qf_research/market_data/__init__.py",
-      "sha256": "89538179ed6799fca6b8162e63c4da0d230b38debff35b93b5d47cdc963ea500",
       "category": "source_input_validation",
-      "bytes": 75
+      "bytes": 75,
+      "sha256": "89538179ed6799fca6b8162e63c4da0d230b38debff35b93b5d47cdc963ea500"
     },
     {
       "path": "src/qf_research/market_data/calendar_robustness.py",
-      "sha256": "f2314de6ce1ea63c8cbba5fef68089cbbb78e3084ae7981fd85be71d0d71c966",
       "category": "source_input_validation",
-      "bytes": 2895
+      "bytes": 2895,
+      "sha256": "f2314de6ce1ea63c8cbba5fef68089cbbb78e3084ae7981fd85be71d0d71c966"
     },
     {
       "path": "src/qf_research/market_data/cboe_snapshot.py",
-      "sha256": "b2260c8d3a9c74adb06be44395d00d74a5c624b4036edd6da433ce3bb2542cbb",
       "category": "market_data_format_audit",
-      "bytes": 14573
+      "bytes": 14573,
+      "sha256": "b2260c8d3a9c74adb06be44395d00d74a5c624b4036edd6da433ce3bb2542cbb"
     },
     {
       "path": "src/qf_research/market_data/conditional_calibration.py",
-      "sha256": "743c7537fe36fc694f4832440808f735ef60e4cbfcd82023fd5d61b6643f599d",
       "category": "source_input_validation",
-      "bytes": 9474
+      "bytes": 9474,
+      "sha256": "743c7537fe36fc694f4832440808f735ef60e4cbfcd82023fd5d61b6643f599d"
     },
     {
       "path": "src/qf_research/market_data/dense_quotes.py",
-      "sha256": "43c02f11f8af4c43acf7bf2b8d804943035015df533be2e60a90cca08aa3db2f",
       "category": "source_input_validation",
-      "bytes": 8112
+      "bytes": 8112,
+      "sha256": "43c02f11f8af4c43acf7bf2b8d804943035015df533be2e60a90cca08aa3db2f"
     },
     {
       "path": "src/qf_research/market_data/distribution_announcements.py",
-      "sha256": "21290567b07d108af17e1fbadd0bad492c437a19d889569bf99cb6c39b637afd",
       "category": "source_input_validation",
-      "bytes": 10914
+      "bytes": 10914,
+      "sha256": "21290567b07d108af17e1fbadd0bad492c437a19d889569bf99cb6c39b637afd"
     },
     {
       "path": "src/qf_research/market_data/distribution_history.py",
-      "sha256": "338e1a3177f27bc13b04163995a2f3d932eace4c0e26ac7a9f0bf844384f5dc0",
       "category": "source_input_validation",
-      "bytes": 12117
+      "bytes": 12117,
+      "sha256": "338e1a3177f27bc13b04163995a2f3d932eace4c0e26ac7a9f0bf844384f5dc0"
     },
     {
       "path": "src/qf_research/market_data/dividend_feasibility.py",
-      "sha256": "ff0b7fb6f601ea60bcfeb4f80cd473c77b111ee157f2b0341b5ab95fe0fa4378",
       "category": "source_input_validation",
-      "bytes": 3672
+      "bytes": 3672,
+      "sha256": "ff0b7fb6f601ea60bcfeb4f80cd473c77b111ee157f2b0341b5ab95fe0fa4378"
     },
     {
       "path": "src/qf_research/market_data/dividends.py",
-      "sha256": "b1dc8495b08931836941438514a7f5e3ecc71006019c521e80ef4f63d864956e",
       "category": "source_input_validation",
-      "bytes": 11681
+      "bytes": 11681,
+      "sha256": "b1dc8495b08931836941438514a7f5e3ecc71006019c521e80ef4f63d864956e"
     },
     {
       "path": "src/qf_research/market_data/event_calendar.py",
-      "sha256": "da0ed9111424b7d79b59d997cd7db7890a59dc32df7ded9bbdf1c2a1dca2a724",
       "category": "source_input_validation",
-      "bytes": 6244
+      "bytes": 6244,
+      "sha256": "da0ed9111424b7d79b59d997cd7db7890a59dc32df7ded9bbdf1c2a1dca2a724"
     },
     {
       "path": "src/qf_research/market_data/exercise_calendar_sensitivity.py",
-      "sha256": "fe488e33888ce1c6e1fdad969dccc60faf3f0e09ff20bcdf257f14449ac3d24d",
       "category": "source_input_validation",
-      "bytes": 4630
+      "bytes": 4630,
+      "sha256": "fe488e33888ce1c6e1fdad969dccc60faf3f0e09ff20bcdf257f14449ac3d24d"
     },
     {
       "path": "src/qf_research/market_data/front_funding.py",
-      "sha256": "1376cda7ea27eecdfe6605457ac42aaae94c0d7313848a4c5604c5f323705d84",
       "category": "source_input_validation",
-      "bytes": 3283
+      "bytes": 3283,
+      "sha256": "1376cda7ea27eecdfe6605457ac42aaae94c0d7313848a4c5604c5f323705d84"
     },
     {
       "path": "src/qf_research/market_data/funded_inputs.py",
-      "sha256": "f0140717b2f066f515c96ca3385677a6be1441c67dd36a92edc3deab3454baf1",
       "category": "source_input_validation",
-      "bytes": 5255
+      "bytes": 5255,
+      "sha256": "f0140717b2f066f515c96ca3385677a6be1441c67dd36a92edc3deab3454baf1"
     },
     {
       "path": "src/qf_research/market_data/funding_sensitivity.py",
-      "sha256": "b531b6e8b5916ab8d8c5ab29ca0d39bee427d60299bcad9e266216b40ee64cd9",
       "category": "source_input_validation",
-      "bytes": 5407
+      "bytes": 5407,
+      "sha256": "b531b6e8b5916ab8d8c5ab29ca0d39bee427d60299bcad9e266216b40ee64cd9"
     },
     {
       "path": "src/qf_research/market_data/joint_cash_funding.py",
-      "sha256": "de0e1d4fe62ec20c388e73c56ba1c897e498350a0833b2b0011922424c916f40",
       "category": "source_input_validation",
-      "bytes": 5467
+      "bytes": 5467,
+      "sha256": "de0e1d4fe62ec20c388e73c56ba1c897e498350a0833b2b0011922424c916f40"
     },
     {
       "path": "src/qf_research/market_data/occ_series.py",
-      "sha256": "367bb178c2e4cb3907dc0443075926fef1daea5b723a985541513b5557d42046",
       "category": "source_input_validation",
-      "bytes": 2243
+      "bytes": 2243,
+      "sha256": "367bb178c2e4cb3907dc0443075926fef1daea5b723a985541513b5557d42046"
     },
     {
       "path": "src/qf_research/market_data/option_quotes.py",
-      "sha256": "9cc5b28b6ec059881cf69562d8896c1e492f2369930864a7fc3bd46aac467264",
       "category": "source_input_validation",
-      "bytes": 7983
+      "bytes": 7983,
+      "sha256": "9cc5b28b6ec059881cf69562d8896c1e492f2369930864a7fc3bd46aac467264"
     },
     {
       "path": "src/qf_research/market_data/paired_volatility.py",
-      "sha256": "e8b12020f9466d7520612137748f4fba259d8e9f1c2fef81d0d9dabf0b22af9a",
       "category": "source_input_validation",
-      "bytes": 5828
+      "bytes": 5828,
+      "sha256": "e8b12020f9466d7520612137748f4fba259d8e9f1c2fef81d0d9dabf0b22af9a"
     },
     {
       "path": "src/qf_research/market_data/prospective_inputs.py",
-      "sha256": "9ef05bf722fb2d838203f2ca20a30442098d0d9a02ec8c47c60c650d45598ffb",
       "category": "source_input_validation",
-      "bytes": 11340
+      "bytes": 11340,
+      "sha256": "9ef05bf722fb2d838203f2ca20a30442098d0d9a02ec8c47c60c650d45598ffb"
     },
     {
       "path": "src/qf_research/market_data/prospective_sample.py",
-      "sha256": "66d6f9c9780eec428b0c750b9706865d8a46ebfbab7b7904ab72ffd867d45bec",
       "category": "source_input_validation",
-      "bytes": 6376
+      "bytes": 6376,
+      "sha256": "66d6f9c9780eec428b0c750b9706865d8a46ebfbab7b7904ab72ffd867d45bec"
     },
     {
       "path": "src/qf_research/market_data/quote_review.py",
-      "sha256": "b596513f6ef42a8939ccdf1050eee496e0770358ecebc96f66783779a59ee886",
       "category": "source_input_validation",
-      "bytes": 9195
+      "bytes": 9219,
+      "sha256": "43412ae2beaf8533becb82f7c08d1dbec07fdb1afe3bf14763fbcbc1b180be78"
     },
     {
       "path": "src/qf_research/market_data/settlement_comparison.py",
-      "sha256": "d6a5bddee088690defbe2638f9ebd124445ceb0a234a4c798a804c50c2e826e9",
       "category": "source_input_validation",
-      "bytes": 6712
+      "bytes": 6712,
+      "sha256": "d6a5bddee088690defbe2638f9ebd124445ceb0a234a4c798a804c50c2e826e9"
     },
     {
       "path": "src/qf_research/market_data/settlement_funding.py",
-      "sha256": "d2dcce02280258edd0a78bf3827f70803b7d59bfb908b3cc62e28928b85e2b3b",
       "category": "source_input_validation",
-      "bytes": 5624
+      "bytes": 5624,
+      "sha256": "d2dcce02280258edd0a78bf3827f70803b7d59bfb908b3cc62e28928b85e2b3b"
     },
     {
       "path": "src/qf_research/market_data/short_ois.py",
-      "sha256": "1f9331ae7458b785ff76854a488136cf18f0d7cb7cdbdd343af874aad99b27ea",
       "category": "source_input_validation",
-      "bytes": 9336
+      "bytes": 9336,
+      "sha256": "1f9331ae7458b785ff76854a488136cf18f0d7cb7cdbdd343af874aad99b27ea"
     },
     {
       "path": "src/qf_research/market_data/treasury.py",
       "category": "source_input_validation",
-      "sha256": "e5a0f3200007e084ee7d4138a4428e5c56f0db9df9fd6ffc3f6dd2dc80183555",
-      "bytes": 5714
+      "bytes": 5714,
+      "sha256": "e5a0f3200007e084ee7d4138a4428e5c56f0db9df9fd6ffc3f6dd2dc80183555"
     },
     {
       "path": "src/qf_research/market_data/underlying_quote_interval.py",
-      "sha256": "3ff32fd0038b4193701d5e63ea00ce874b943cfa1936a919b639705b79db7634",
       "category": "source_input_validation",
-      "bytes": 2143
+      "bytes": 2143,
+      "sha256": "3ff32fd0038b4193701d5e63ea00ce874b943cfa1936a919b639705b79db7634"
     },
     {
       "path": "src/qf_research/market_data/valuation_inputs.py",
-      "sha256": "50121da135c42fc52061076e65eeb85afed04746d37637186d53230ca8334f77",
       "category": "source_input_validation",
-      "bytes": 8474
+      "bytes": 8474,
+      "sha256": "50121da135c42fc52061076e65eeb85afed04746d37637186d53230ca8334f77"
     },
     {
       "path": "src/qf_research/optimal_stopping/__init__.py",
-      "sha256": "0701ce6a5bf0e0e2eaeb08404c0f37ceebefc263db0da745a092943fd3fc803b",
       "category": "numerical_library",
-      "bytes": 828
+      "bytes": 828,
+      "sha256": "0701ce6a5bf0e0e2eaeb08404c0f37ceebefc263db0da745a092943fd3fc803b"
     },
     {
       "path": "src/qf_research/optimal_stopping/allocation_sensitivity.py",
-      "sha256": "f185ce86e5a7275829c22dfd02d078d8acf4791eae032854d38da95d08383f06",
       "category": "numerical_library",
-      "bytes": 6738
+      "bytes": 6738,
+      "sha256": "f185ce86e5a7275829c22dfd02d078d8acf4791eae032854d38da95d08383f06"
     },
     {
       "path": "src/qf_research/optimal_stopping/allocation_variance_sensitivity.py",
-      "sha256": "df97ed9abcfc484aae3330e33c26846bae6725d123acf317d7a532853d7458a1",
       "category": "numerical_library",
-      "bytes": 6243
+      "bytes": 6243,
+      "sha256": "df97ed9abcfc484aae3330e33c26846bae6725d123acf317d7a532853d7458a1"
     },
     {
       "path": "src/qf_research/optimal_stopping/allocation_workload.py",
-      "sha256": "654fbda8f5e3d14d07dc639bef715e3938df12a6c7bae2d8859777c14b73f089",
       "category": "numerical_library",
-      "bytes": 8616
+      "bytes": 8616,
+      "sha256": "654fbda8f5e3d14d07dc639bef715e3938df12a6c7bae2d8859777c14b73f089"
     },
     {
       "path": "src/qf_research/optimal_stopping/analytical.py",
-      "sha256": "22bc2b408e3c48744f446a13e13c1b7e81fa56f647e4e174f8bcecc123f70867",
       "category": "numerical_library",
-      "bytes": 2247
+      "bytes": 2218,
+      "sha256": "5fd072b2234e1d82ee0832225a8f83766845cc39b49f3162ba368e87ac67c198"
     },
     {
       "path": "src/qf_research/optimal_stopping/cash_dividends.py",
-      "sha256": "97fa48f19938aea8903953de12284875939ee480aec7c0f892ed37c7f4fa9b51",
       "category": "numerical_library",
-      "bytes": 15183
+      "bytes": 15183,
+      "sha256": "97fa48f19938aea8903953de12284875939ee480aec7c0f892ed37c7f4fa9b51"
     },
     {
       "path": "src/qf_research/optimal_stopping/component_confidence.py",
-      "sha256": "990e6e8859284c0fcbbe9571856e640fe138a4f0dae78f544ede8186f1932e22",
       "category": "numerical_library",
-      "bytes": 4160
+      "bytes": 4160,
+      "sha256": "990e6e8859284c0fcbbe9571856e640fe138a4f0dae78f544ede8186f1932e22"
     },
     {
       "path": "src/qf_research/optimal_stopping/component_ratio.py",
-      "sha256": "0c79769a57de5a58c1979c3d57bc849d2b7e209a8bd99a4d444663e8fe299a16",
       "category": "numerical_library",
-      "bytes": 8403
+      "bytes": 8403,
+      "sha256": "0c79769a57de5a58c1979c3d57bc849d2b7e209a8bd99a4d444663e8fe299a16"
     },
     {
       "path": "src/qf_research/optimal_stopping/contracts.py",
-      "sha256": "f00a256b820edc3371b0f315d676a00e1ef28fd9c144ccc88fd21cf21b22cf6a",
       "category": "numerical_library",
-      "bytes": 3178
+      "bytes": 3178,
+      "sha256": "f00a256b820edc3371b0f315d676a00e1ef28fd9c144ccc88fd21cf21b22cf6a"
     },
     {
       "path": "src/qf_research/optimal_stopping/cost_budget.py",
-      "sha256": "e83d3ff8c2e259a48c501febbf3db7419f9e5b49981002256f427f3a6246f64a",
       "category": "numerical_library",
-      "bytes": 3446
+      "bytes": 3446,
+      "sha256": "e83d3ff8c2e259a48c501febbf3db7419f9e5b49981002256f427f3a6246f64a"
     },
     {
       "path": "src/qf_research/optimal_stopping/dividend_sensitivity.py",
-      "sha256": "3e613036d403c90e1c6c622e2e9f295540b05a37e0f82a1f55b6ad841e42a377",
       "category": "numerical_library",
-      "bytes": 4328
+      "bytes": 4299,
+      "sha256": "e14cd65ab78dff9fe670db3c728b46a6474767daec1110ccee3338fde97696d7"
     },
     {
       "path": "src/qf_research/optimal_stopping/escrowed_dividends.py",
-      "sha256": "eab26b8a833dc55ccbd689034e245d465b81f0a10e702b43da015e6b9eb7be66",
       "category": "numerical_library",
-      "bytes": 12834
+      "bytes": 12834,
+      "sha256": "eab26b8a833dc55ccbd689034e245d465b81f0a10e702b43da015e6b9eb7be66"
     },
     {
       "path": "src/qf_research/optimal_stopping/exercise_dominance.py",
-      "sha256": "ad666f8d72aec3538ab667bf52a541a8fe72798842ae5bc715a6a630efeeca67",
       "category": "numerical_library",
-      "bytes": 3614
+      "bytes": 3614,
+      "sha256": "ad666f8d72aec3538ab667bf52a541a8fe72798842ae5bc715a6a630efeeca67"
     },
     {
       "path": "src/qf_research/optimal_stopping/exercise_redundancy.py",
-      "sha256": "f9b67e74ba208c6854bb874be5a05776c5055a03c9da0f96b1795698ccfc62b3",
       "category": "numerical_library",
-      "bytes": 1946
+      "bytes": 1946,
+      "sha256": "f9b67e74ba208c6854bb874be5a05776c5055a03c9da0f96b1795698ccfc62b3"
     },
     {
       "path": "src/qf_research/optimal_stopping/experiments.py",
-      "sha256": "748e8260b7409635b6c40b9cfef964b1a41cf3d85eeef5f619b2589d6d8a3630",
       "category": "numerical_library",
-      "bytes": 21331
+      "bytes": 21297,
+      "sha256": "07a36cb82a511a2aaaaeca619711aa73a1b70b9f4ee15abc251a9c486720b013"
     },
     {
       "path": "src/qf_research/optimal_stopping/expiry_extension.py",
-      "sha256": "3eb88ae2cfe876c1c1e5b7e97318ee8bbd7a28b0c9bf3793f83f5a62b448ab21",
       "category": "numerical_library",
-      "bytes": 7506
+      "bytes": 7506,
+      "sha256": "3eb88ae2cfe876c1c1e5b7e97318ee8bbd7a28b0c9bf3793f83f5a62b448ab21"
     },
     {
       "path": "src/qf_research/optimal_stopping/finite_difference.py",
-      "sha256": "ddcd4bc9637de3777315485f567100b0526aa601b08fe7cf42c7e8d7072be1d3",
       "category": "numerical_library",
-      "bytes": 5464
+      "bytes": 5464,
+      "sha256": "ddcd4bc9637de3777315485f567100b0526aa601b08fe7cf42c7e8d7072be1d3"
     },
     {
       "path": "src/qf_research/optimal_stopping/funded_cash.py",
-      "sha256": "0629bec919e507753bca53fdc540c4c2e374951339c22cd044d6f0f85fa2cc6c",
       "category": "numerical_library",
-      "bytes": 12705
+      "bytes": 12705,
+      "sha256": "0629bec919e507753bca53fdc540c4c2e374951339c22cd044d6f0f85fa2cc6c"
     },
     {
       "path": "src/qf_research/optimal_stopping/funded_dual.py",
-      "sha256": "2ec4398f49baef3461d86eceef64881cb28e21e64298fc95a6f60b55d0a17f8d",
       "category": "numerical_library",
-      "bytes": 5877
+      "bytes": 5877,
+      "sha256": "2ec4398f49baef3461d86eceef64881cb28e21e64298fc95a6f60b55d0a17f8d"
     },
     {
       "path": "src/qf_research/optimal_stopping/funded_policy.py",
-      "sha256": "ee051cbd7795b75456f4d8da5841e49672e8eb1f034d0cce78d71327b4abe92b",
       "category": "numerical_library",
-      "bytes": 14985
+      "bytes": 14985,
+      "sha256": "ee051cbd7795b75456f4d8da5841e49672e8eb1f034d0cce78d71327b4abe92b"
     },
     {
       "path": "src/qf_research/optimal_stopping/joint_input_expiry.py",
-      "sha256": "4f4277224dd69649578622b34e59c7aee403f22269675c909077059a756b3330",
       "category": "numerical_library",
-      "bytes": 2474
+      "bytes": 2474,
+      "sha256": "4f4277224dd69649578622b34e59c7aee403f22269675c909077059a756b3330"
     },
     {
       "path": "src/qf_research/optimal_stopping/least_squares.py",
-      "sha256": "1dbd9214b3ab547495dd8b32f69cdcffda8170cce72e0ed965b1a191f8231d5e",
       "category": "numerical_library",
-      "bytes": 5673
+      "bytes": 5644,
+      "sha256": "4373cbdadb00cd829cfc384eecdea867894576065ed4fb5c2e54f37e12e95be1"
     },
     {
       "path": "src/qf_research/optimal_stopping/policy_gain.py",
-      "sha256": "2df4357a3751af7433c0876ff490a8cd447f1020fec440cfa7da120c7ab19554",
       "category": "numerical_library",
-      "bytes": 3161
+      "bytes": 3161,
+      "sha256": "2df4357a3751af7433c0876ff490a8cd447f1020fec440cfa7da120c7ab19554"
     },
     {
       "path": "src/qf_research/optimal_stopping/policy_transfer.py",
-      "sha256": "ee04aaf77b9672fa2da3068a63021435a563ee8f7248ecc436a8b71dea0da6cb",
       "category": "numerical_library",
-      "bytes": 5201
+      "bytes": 5201,
+      "sha256": "ee04aaf77b9672fa2da3068a63021435a563ee8f7248ecc436a8b71dea0da6cb"
     },
     {
       "path": "src/qf_research/optimal_stopping/prospective_allocation.py",
-      "sha256": "85bd03a16f3adb754d01b50b76c2630b72bc7aa0c6d377336e6736ac069b0b33",
       "category": "numerical_library",
-      "bytes": 5858
+      "bytes": 5858,
+      "sha256": "85bd03a16f3adb754d01b50b76c2630b72bc7aa0c6d377336e6736ac069b0b33"
     },
     {
       "path": "src/qf_research/optimal_stopping/prospective_evaluation.py",
-      "sha256": "25076e3b0667060338811e8bab3813c0d534568c7362d86e1c8d440ee9402476",
       "category": "numerical_library",
-      "bytes": 10972
+      "bytes": 10972,
+      "sha256": "25076e3b0667060338811e8bab3813c0d534568c7362d86e1c8d440ee9402476"
     },
     {
       "path": "src/qf_research/optimal_stopping/residual_envelope.py",
-      "sha256": "021d76f353043080c8fb4723f30185cc801f0ff72361de2d464d3a1eb55b1878",
       "category": "numerical_library",
-      "bytes": 10346
+      "bytes": 10346,
+      "sha256": "021d76f353043080c8fb4723f30185cc801f0ff72361de2d464d3a1eb55b1878"
     },
     {
       "path": "src/qf_research/optimal_stopping/sequential_inference.py",
-      "sha256": "62e9d9d6ef8c9bcf88c757266f5c0aee2da85adeef5ba9a7274daa527365c678",
       "category": "numerical_library",
-      "bytes": 9489
+      "bytes": 9489,
+      "sha256": "62e9d9d6ef8c9bcf88c757266f5c0aee2da85adeef5ba9a7274daa527365c678"
     },
     {
       "path": "src/qf_research/optimal_stopping/settlement.py",
-      "sha256": "3c0a05a6267304ba0ca1001424e4f764942d1985fb4c855baf529fd049a46352",
       "category": "numerical_library",
-      "bytes": 3674
+      "bytes": 3674,
+      "sha256": "3c0a05a6267304ba0ca1001424e4f764942d1985fb4c855baf529fd049a46352"
     },
     {
       "path": "src/qf_research/optimal_stopping/simulation.py",
-      "sha256": "1161dfc31c51d79b26afb37a4d8e7b39c14153b7853d184c49c508616c7dc17a",
       "category": "numerical_library",
-      "bytes": 3554
+      "bytes": 3554,
+      "sha256": "1161dfc31c51d79b26afb37a4d8e7b39c14153b7853d184c49c508616c7dc17a"
     },
     {
       "path": "src/qf_research/optimal_stopping/terminal_repair.py",
-      "sha256": "0960eba519f43edac411f18aa73ad9f43bd3a18518ddbc6318e9a0709abc6a9d",
       "category": "numerical_library",
-      "bytes": 4987
+      "bytes": 4987,
+      "sha256": "0960eba519f43edac411f18aa73ad9f43bd3a18518ddbc6318e9a0709abc6a9d"
     },
     {
       "path": "src/qf_research/optimal_stopping/terminal_training.py",
-      "sha256": "e028c3646b439964b5c7bdc008ee0de95a6782ee0e995639cfabdb825fc2a031",
       "category": "numerical_library",
-      "bytes": 3022
+      "bytes": 3022,
+      "sha256": "e028c3646b439964b5c7bdc008ee0de95a6782ee0e995639cfabdb825fc2a031"
     },
     {
       "path": "src/qf_research/optimal_stopping/training_allocation.py",
-      "sha256": "abac42a67f16e70b9fdc8252065d9625cd6b4984ead72c0f2e800b1fb678491d",
       "category": "numerical_library",
-      "bytes": 8144
+      "bytes": 8144,
+      "sha256": "abac42a67f16e70b9fdc8252065d9625cd6b4984ead72c0f2e800b1fb678491d"
     },
     {
       "path": "src/qf_research/optimal_stopping/training_evaluation.py",
-      "sha256": "ebb80c4bf32137c9e69c5560194f9d967f3437b4fdbfc82b0d956291b47bb62f",
       "category": "numerical_library",
-      "bytes": 3512
+      "bytes": 3512,
+      "sha256": "ebb80c4bf32137c9e69c5560194f9d967f3437b4fdbfc82b0d956291b47bb62f"
     },
     {
       "path": "src/qf_research/optimal_stopping/tree.py",
-      "sha256": "d066fd36e4df8ad0fb8ff694212c72ea4e9c451c92e1b2c546cf617744879d6f",
       "category": "numerical_library",
-      "bytes": 2359
+      "bytes": 2359,
+      "sha256": "d066fd36e4df8ad0fb8ff694212c72ea4e9c451c92e1b2c546cf617744879d6f"
     },
     {
       "path": "src/qf_research/optimal_stopping/value_martingale.py",
-      "sha256": "8187d00c2113b3c732457cb5430d4ff73dfc2e1260d18f8a2b2e82f5efb006e2",
       "category": "numerical_library",
-      "bytes": 11315
+      "bytes": 11315,
+      "sha256": "8187d00c2113b3c732457cb5430d4ff73dfc2e1260d18f8a2b2e82f5efb006e2"
     },
     {
       "path": "tests/test_allocation_sensitivity.py",
-      "sha256": "3efb8e33f8868216158ad94d33090c5d18d3ac1aeb2a1ac5830c1af5a36da98e",
       "category": "test_fixture",
-      "bytes": 15551
+      "bytes": 15551,
+      "sha256": "3efb8e33f8868216158ad94d33090c5d18d3ac1aeb2a1ac5830c1af5a36da98e"
     },
     {
       "path": "tests/test_allocation_variance_sensitivity.py",
-      "sha256": "1087632dbddebe8f5b57ad52d156d93d7b69aaa3cff0169aff3d90ab6b1ec9bd",
       "category": "test_fixture",
-      "bytes": 14727
+      "bytes": 14727,
+      "sha256": "1087632dbddebe8f5b57ad52d156d93d7b69aaa3cff0169aff3d90ab6b1ec9bd"
     },
     {
       "path": "tests/test_allocation_workload.py",
-      "sha256": "d3de589d6f173fd96913f7d244fb04aae026ca8fc4c99dfacd1421f1fd354062",
       "category": "test_fixture",
-      "bytes": 7520
+      "bytes": 7520,
+      "sha256": "d3de589d6f173fd96913f7d244fb04aae026ca8fc4c99dfacd1421f1fd354062"
     },
     {
       "path": "tests/test_audit_certified_residual.py",
-      "sha256": "feac6f29a2d21453a087d55ea04d9c53dd4188b6784668783e8b07a95d84ae5f",
       "category": "test_fixture",
-      "bytes": 4673
+      "bytes": 4673,
+      "sha256": "feac6f29a2d21453a087d55ea04d9c53dd4188b6784668783e8b07a95d84ae5f"
     },
     {
       "path": "tests/test_calendar_robustness.py",
-      "sha256": "383fdf427421dc21bc36c49ae841d2d8c0515e23c78661169e4329e8c5350296",
       "category": "test_fixture",
-      "bytes": 4033
+      "bytes": 4004,
+      "sha256": "4ec7efda6f4f098c0d82632c1a37ea1658267a0dc6f928e42cc0438c69bcf94c"
     },
     {
       "path": "tests/test_cash_dividends.py",
-      "sha256": "e8af60aad0e1aca789830912bded4c5bd7882d5babb06d30ed5ae44c3be8e4b2",
       "category": "test_fixture",
-      "bytes": 7859
+      "bytes": 7859,
+      "sha256": "e8af60aad0e1aca789830912bded4c5bd7882d5babb06d30ed5ae44c3be8e4b2"
     },
     {
       "path": "tests/test_cboe_snapshot.py",
-      "sha256": "c3e7603b4b6c2ffda5640ffa04715b0989a9b5e53ca6455e6205525da995cfa5",
       "category": "test",
-      "bytes": 11770
+      "bytes": 11770,
+      "sha256": "c3e7603b4b6c2ffda5640ffa04715b0989a9b5e53ca6455e6205525da995cfa5"
     },
     {
       "path": "tests/test_certify_gain_replay.py",
-      "sha256": "d53d10f03c93664a8b462655f5bcc3d456ce262c35e7b4a6b68e0836654b1f82",
       "category": "test_fixture",
-      "bytes": 15919
+      "bytes": 15919,
+      "sha256": "d53d10f03c93664a8b462655f5bcc3d456ce262c35e7b4a6b68e0836654b1f82"
     },
     {
       "path": "tests/test_compare_licensed_replay.py",
@@ -1374,177 +1326,177 @@
     },
     {
       "path": "tests/test_component_confidence.py",
-      "sha256": "5ce14e2312c1351f4a1aef787e135b75512764b344a3cbcdfc0e02ba11efcdf3",
       "category": "test_fixture",
-      "bytes": 16141
+      "bytes": 16141,
+      "sha256": "5ce14e2312c1351f4a1aef787e135b75512764b344a3cbcdfc0e02ba11efcdf3"
     },
     {
       "path": "tests/test_component_ratio.py",
-      "sha256": "f250fc2017480f0ac4e8cda3f1af191fe0af82b4cc9559b2a6a9e0e8e5ad0ec6",
       "category": "test_fixture",
-      "bytes": 20241
+      "bytes": 20241,
+      "sha256": "f250fc2017480f0ac4e8cda3f1af191fe0af82b4cc9559b2a6a9e0e8e5ad0ec6"
     },
     {
       "path": "tests/test_component_ratio_audit.py",
-      "sha256": "8c4c3a60a4f190dbdea47417cac86d43527fc88bcf0968bb29b9d8dfe31d4d85",
       "category": "test_fixture",
-      "bytes": 3268
+      "bytes": 3268,
+      "sha256": "8c4c3a60a4f190dbdea47417cac86d43527fc88bcf0968bb29b9d8dfe31d4d85"
     },
     {
       "path": "tests/test_conditional_calibration.py",
-      "sha256": "96be4f5815778329686d166ce8a522ea70e4b2f6bf36854fc93dbe7113ff47b7",
       "category": "test_fixture",
-      "bytes": 6578
+      "bytes": 6578,
+      "sha256": "96be4f5815778329686d166ce8a522ea70e4b2f6bf36854fc93dbe7113ff47b7"
     },
     {
       "path": "tests/test_cost_budget.py",
-      "sha256": "eb3f414e318479aac79a7028f3801471e80c841e7a03effb257b6d1e15ba6769",
       "category": "test_fixture",
-      "bytes": 5177
+      "bytes": 5177,
+      "sha256": "eb3f414e318479aac79a7028f3801471e80c841e7a03effb257b6d1e15ba6769"
     },
     {
       "path": "tests/test_cpu_prediction.py",
-      "sha256": "9f276c8f25f599d17bd04290a1855cd86dd144df79912d1e42f4a35c5ee19d32",
       "category": "test_fixture",
-      "bytes": 6567
+      "bytes": 6567,
+      "sha256": "9f276c8f25f599d17bd04290a1855cd86dd144df79912d1e42f4a35c5ee19d32"
     },
     {
       "path": "tests/test_cpu_prediction_audit.py",
-      "sha256": "295e534cd6f1094607b7d53e6bbd674264500db543b9750fab4c47c7ee0fb8ee",
       "category": "test_fixture",
-      "bytes": 1575
+      "bytes": 1575,
+      "sha256": "295e534cd6f1094607b7d53e6bbd674264500db543b9750fab4c47c7ee0fb8ee"
     },
     {
       "path": "tests/test_dense_quotes.py",
-      "sha256": "27f8a33cbef36f67f8c8ea61964fb1285b98fa162c01ad790066453bea44444e",
       "category": "test_fixture",
-      "bytes": 5047
+      "bytes": 5047,
+      "sha256": "27f8a33cbef36f67f8c8ea61964fb1285b98fa162c01ad790066453bea44444e"
     },
     {
       "path": "tests/test_distribution_announcements.py",
-      "sha256": "12da8923087638e8ef7b096fba56f0a36a8114b8bce6d70e441db31c5895dd60",
       "category": "test_fixture",
-      "bytes": 8423
+      "bytes": 8423,
+      "sha256": "12da8923087638e8ef7b096fba56f0a36a8114b8bce6d70e441db31c5895dd60"
     },
     {
       "path": "tests/test_distribution_history.py",
-      "sha256": "27759180a849c69befee45c47ab7d97ba3185201274af0da9984384f61d90c3e",
       "category": "test_fixture",
-      "bytes": 7592
+      "bytes": 7592,
+      "sha256": "27759180a849c69befee45c47ab7d97ba3185201274af0da9984384f61d90c3e"
     },
     {
       "path": "tests/test_dividend_feasibility.py",
-      "sha256": "e20a17f0102df1ba2d2009ab7d3452470172a9bbedc4192e21430407f262f447",
       "category": "test_fixture",
-      "bytes": 4450
+      "bytes": 4450,
+      "sha256": "e20a17f0102df1ba2d2009ab7d3452470172a9bbedc4192e21430407f262f447"
     },
     {
       "path": "tests/test_dividend_sensitivity.py",
-      "sha256": "148f93bbc99b4413742423eed423603ed0df2537201e96d51fb8641686f9caf9",
       "category": "test_fixture",
-      "bytes": 8815
+      "bytes": 8815,
+      "sha256": "148f93bbc99b4413742423eed423603ed0df2537201e96d51fb8641686f9caf9"
     },
     {
       "path": "tests/test_escrowed_dividends.py",
-      "sha256": "6b7cfe0c3d29a67c894da761563a5e0501fc3e8aad545b3726ebb0311e1d7598",
       "category": "test_fixture",
-      "bytes": 8744
+      "bytes": 8744,
+      "sha256": "6b7cfe0c3d29a67c894da761563a5e0501fc3e8aad545b3726ebb0311e1d7598"
     },
     {
       "path": "tests/test_event_calendar.py",
-      "sha256": "b131541831be81cf4059e6c52d7980c38041e2e99ab768a161e41ff10c070259",
       "category": "test_fixture",
-      "bytes": 5313
+      "bytes": 5284,
+      "sha256": "f0bf53ace8837ea8b21dfccf1ee81fcb2565d01d60cb7a41958437e48e5dd54e"
     },
     {
       "path": "tests/test_exercise_calendar_sensitivity.py",
-      "sha256": "47f8a44db1f700375bb9320e1d9ed41513e9313835952822f9fa4f035f95a88b",
       "category": "test_fixture",
-      "bytes": 6688
+      "bytes": 6659,
+      "sha256": "17cb8ffe9af1bc344ef4c558b8d813ee230de48887a04d1fdaf3096d73fbd385"
     },
     {
       "path": "tests/test_exercise_dominance.py",
-      "sha256": "464173b377e311364f68329ff2da5168627bc0519adea5ccb7359c885b1baa0e",
       "category": "test_fixture",
-      "bytes": 5257
+      "bytes": 5257,
+      "sha256": "464173b377e311364f68329ff2da5168627bc0519adea5ccb7359c885b1baa0e"
     },
     {
       "path": "tests/test_exercise_redundancy.py",
-      "sha256": "3ea334c6f53d59eeeae8f380b22528bc01f4077dce107016f6cb815ec5934558",
       "category": "test_fixture",
-      "bytes": 2652
+      "bytes": 2652,
+      "sha256": "3ea334c6f53d59eeeae8f380b22528bc01f4077dce107016f6cb815ec5934558"
     },
     {
       "path": "tests/test_expiry_extension.py",
-      "sha256": "87bf05f1d51ae63572589b591f610142b491dbd83143eb376584d2cdf1a47fd6",
       "category": "test_fixture",
-      "bytes": 5887
+      "bytes": 5887,
+      "sha256": "87bf05f1d51ae63572589b591f610142b491dbd83143eb376584d2cdf1a47fd6"
     },
     {
       "path": "tests/test_export_gain_replay.py",
-      "sha256": "5596b2311a651a8484b6b5cdebeae27e2e133791133bd317f755a1dc64b89378",
       "category": "test_fixture",
-      "bytes": 2643
+      "bytes": 2643,
+      "sha256": "5596b2311a651a8484b6b5cdebeae27e2e133791133bd317f755a1dc64b89378"
     },
     {
       "path": "tests/test_export_residual_certificate.py",
-      "sha256": "0619828190572917704d0f706a645a96086b41e709538ed6da7512fefde9d449",
       "category": "test_fixture",
-      "bytes": 3807
+      "bytes": 3807,
+      "sha256": "0619828190572917704d0f706a645a96086b41e709538ed6da7512fefde9d449"
     },
     {
       "path": "tests/test_front_funding.py",
-      "sha256": "d14253dd412e4512310fcb201a059dd9106df939f49223908973100bd0821140",
       "category": "test_fixture",
-      "bytes": 2294
+      "bytes": 2294,
+      "sha256": "d14253dd412e4512310fcb201a059dd9106df939f49223908973100bd0821140"
     },
     {
       "path": "tests/test_funded_cash.py",
-      "sha256": "d22adf251fe81a879e52316e460fa8c65d99418df9ca0cec03c2b4a1b21b0ca3",
       "category": "test_fixture",
-      "bytes": 9679
+      "bytes": 9679,
+      "sha256": "d22adf251fe81a879e52316e460fa8c65d99418df9ca0cec03c2b4a1b21b0ca3"
     },
     {
       "path": "tests/test_funded_dual.py",
-      "sha256": "454406fd140d3c9be5ff0cb0a3c7d92ba026bae6628d0530ae3cc1aae97d819f",
       "category": "test_fixture",
-      "bytes": 6280
+      "bytes": 6280,
+      "sha256": "454406fd140d3c9be5ff0cb0a3c7d92ba026bae6628d0530ae3cc1aae97d819f"
     },
     {
       "path": "tests/test_funded_inputs.py",
-      "sha256": "a256b92d0994e866bc6dce532ee23ce1fb57e969c8f42e25e572daae418e5f90",
       "category": "test_fixture",
-      "bytes": 5327
+      "bytes": 5298,
+      "sha256": "2215de81da71dda6d3f10997a8e75575af997a734bfcf9de0b3be3d7646292f8"
     },
     {
       "path": "tests/test_funded_kernel.py",
-      "sha256": "1237bd99c8f885702d37e984794057858665ada69c231e9bf54a6b8d6630999b",
       "category": "test_fixture",
-      "bytes": 6099
+      "bytes": 6099,
+      "sha256": "1237bd99c8f885702d37e984794057858665ada69c231e9bf54a6b8d6630999b"
     },
     {
       "path": "tests/test_funded_policy.py",
-      "sha256": "d29b9f1259dee79d1e8f03f4018ae47643704ed885ab50f57dbea6e9413e0dcb",
       "category": "test_fixture",
-      "bytes": 9801
+      "bytes": 9801,
+      "sha256": "d29b9f1259dee79d1e8f03f4018ae47643704ed885ab50f57dbea6e9413e0dcb"
     },
     {
       "path": "tests/test_funding_sensitivity.py",
-      "sha256": "44f22f0844a23fd8cc54e4c8a175c4a2b8be61987e106ac62bc4cc24e500e1b9",
       "category": "test_fixture",
-      "bytes": 5636
+      "bytes": 5636,
+      "sha256": "44f22f0844a23fd8cc54e4c8a175c4a2b8be61987e106ac62bc4cc24e500e1b9"
     },
     {
       "path": "tests/test_joint_cash_funding.py",
-      "sha256": "49bafd13bb978bbbf55c6ad12e4d50389993def5c9e62810713bd080665d5887",
       "category": "test_fixture",
-      "bytes": 6841
+      "bytes": 6841,
+      "sha256": "49bafd13bb978bbbf55c6ad12e4d50389993def5c9e62810713bd080665d5887"
     },
     {
       "path": "tests/test_joint_input_expiry.py",
-      "sha256": "f4988b9112b1393db81910babad122bf07a8d3d17944eae5193254fb833ecfda",
       "category": "test_fixture",
-      "bytes": 6180
+      "bytes": 6180,
+      "sha256": "f4988b9112b1393db81910babad122bf07a8d3d17944eae5193254fb833ecfda"
     },
     {
       "path": "tests/test_licensed_reproduction.py",
@@ -1554,9 +1506,9 @@
     },
     {
       "path": "tests/test_local_cpu_transfer.py",
-      "sha256": "e12691ddcba55204f8d1a7a897185178c6a2e7a2b9524fc8b05a84bd13dbd684",
       "category": "test_fixture",
-      "bytes": 9265
+      "bytes": 9265,
+      "sha256": "e12691ddcba55204f8d1a7a897185178c6a2e7a2b9524fc8b05a84bd13dbd684"
     },
     {
       "path": "tests/test_market_admission_summary.py",
@@ -1566,9 +1518,9 @@
     },
     {
       "path": "tests/test_occ_series.py",
-      "sha256": "7fed80e8f4bf99f153e09ece25bd848252b265073394f04e673b34e50f3214bd",
       "category": "test_fixture",
-      "bytes": 1332
+      "bytes": 1332,
+      "sha256": "7fed80e8f4bf99f153e09ece25bd848252b265073394f04e673b34e50f3214bd"
     },
     {
       "path": "tests/test_optimal_stopping.py",
@@ -1578,69 +1530,69 @@
     },
     {
       "path": "tests/test_option_quotes.py",
-      "sha256": "ff16d87f8bf70d984eb6e99fdb84c71842f9381c62f5c3a7650a13fb616eef5f",
       "category": "test_fixture",
-      "bytes": 5086
+      "bytes": 5086,
+      "sha256": "ff16d87f8bf70d984eb6e99fdb84c71842f9381c62f5c3a7650a13fb616eef5f"
     },
     {
       "path": "tests/test_paired_volatility.py",
-      "sha256": "b6708e3e9369a16c29f30072114acd55ac9341043b69ec31e1de86d24b293656",
       "category": "test_fixture",
-      "bytes": 8862
+      "bytes": 8862,
+      "sha256": "b6708e3e9369a16c29f30072114acd55ac9341043b69ec31e1de86d24b293656"
     },
     {
       "path": "tests/test_policy_gain.py",
-      "sha256": "50318f3844a676070f8531d8334b40873f05866cd278ccc98a33ae9b0b53d6df",
       "category": "test_fixture",
-      "bytes": 5417
+      "bytes": 5417,
+      "sha256": "50318f3844a676070f8531d8334b40873f05866cd278ccc98a33ae9b0b53d6df"
     },
     {
       "path": "tests/test_policy_transfer.py",
-      "sha256": "9dd17a14216df349406862324bb5bfe96892c0fad8419ed99162fa27cce24ce6",
       "category": "test_fixture",
-      "bytes": 5652
+      "bytes": 5652,
+      "sha256": "9dd17a14216df349406862324bb5bfe96892c0fad8419ed99162fa27cce24ce6"
     },
     {
       "path": "tests/test_prospective_allocation.py",
-      "sha256": "7861a33ae6353315fa6d3e50dbe581edac0ae7c5bbf34431bdea05702a435893",
       "category": "test_fixture",
-      "bytes": 17385
+      "bytes": 17385,
+      "sha256": "7861a33ae6353315fa6d3e50dbe581edac0ae7c5bbf34431bdea05702a435893"
     },
     {
       "path": "tests/test_prospective_allocation_audit.py",
-      "sha256": "35602cbcb7bba28ca24a9a4cf588fb48ff159ea15d49ec565bfcac7fb14e15bf",
       "category": "test_fixture",
-      "bytes": 5249
+      "bytes": 5249,
+      "sha256": "35602cbcb7bba28ca24a9a4cf588fb48ff159ea15d49ec565bfcac7fb14e15bf"
     },
     {
       "path": "tests/test_prospective_inputs.py",
-      "sha256": "0f1ceeaf98b7fbdbe5345ef500084eae4d009aa324ba82d923e1fbc3971e66a7",
       "category": "test_fixture",
-      "bytes": 16441
+      "bytes": 16441,
+      "sha256": "0f1ceeaf98b7fbdbe5345ef500084eae4d009aa324ba82d923e1fbc3971e66a7"
     },
     {
       "path": "tests/test_prospective_sample.py",
-      "sha256": "70c23a1f4881081452c2acd1a761801c68c05626f223cb171c4072c6568f993a",
       "category": "test_fixture",
-      "bytes": 4287
+      "bytes": 4287,
+      "sha256": "70c23a1f4881081452c2acd1a761801c68c05626f223cb171c4072c6568f993a"
     },
     {
       "path": "tests/test_quote_review.py",
-      "sha256": "10323ceedddc4ef0ef0935351613ab39c6849cdd80920f05c8d4b4064547cd76",
       "category": "test_fixture",
-      "bytes": 6105
+      "bytes": 6105,
+      "sha256": "10323ceedddc4ef0ef0935351613ab39c6849cdd80920f05c8d4b4064547cd76"
     },
     {
       "path": "tests/test_replication_runner.py",
-      "sha256": "5e63798001b76111d2ee0e9bae14a98d5095dbdbfd0a7291c1553eda3d01f5ea",
       "category": "test_fixture",
-      "bytes": 7746
+      "bytes": 7572,
+      "sha256": "4ae2292f070817314ab13cf6cd283b65e6811f22f6d618a7337d01fb7ee4c636"
     },
     {
       "path": "tests/test_replication_sources.py",
       "category": "test_fixture",
-      "sha256": "a2a4dc967853b14dd84ad0020bdb22a4afeaa916f18a183b1c0c8c976a4e81d0",
-      "bytes": 7407
+      "bytes": 7378,
+      "sha256": "a6e85312382b36a1372880c2684d576be758a369ff1ff957f3758060da48216a"
     },
     {
       "path": "tests/test_reproduce_paper.py",
@@ -1650,105 +1602,105 @@
     },
     {
       "path": "tests/test_residual_envelope.py",
-      "sha256": "06e4f94e5eb8c2c556bc5c5be30a38bbeedb95f3c01a0758b9fc254378bc2332",
       "category": "test_fixture",
-      "bytes": 7178
+      "bytes": 7178,
+      "sha256": "06e4f94e5eb8c2c556bc5c5be30a38bbeedb95f3c01a0758b9fc254378bc2332"
     },
     {
       "path": "tests/test_sequential_inference.py",
-      "sha256": "cad4654dbb2cfcb2a7bdd1d06fad57d2fcc7003b02c539dfcae667a250c00a68",
       "category": "test_fixture",
-      "bytes": 5882
+      "bytes": 5882,
+      "sha256": "cad4654dbb2cfcb2a7bdd1d06fad57d2fcc7003b02c539dfcae667a250c00a68"
     },
     {
       "path": "tests/test_settlement.py",
-      "sha256": "1d454e4b91326b1252ab079c54c7f01eaa7b2460b6f62c54cc8fd6fbcdae1361",
       "category": "test_fixture",
-      "bytes": 3875
+      "bytes": 3875,
+      "sha256": "1d454e4b91326b1252ab079c54c7f01eaa7b2460b6f62c54cc8fd6fbcdae1361"
     },
     {
       "path": "tests/test_settlement_comparison.py",
-      "sha256": "27e35812ad51a4a33426a5805be8290d5117b6edd77e94f9802366d6ca86d7e3",
       "category": "test_fixture",
-      "bytes": 6687
+      "bytes": 6658,
+      "sha256": "274d63bbb5c91833d1e761bcb8a06a822de2ca43341ff3a05d3bbfcf7b6df24c"
     },
     {
       "path": "tests/test_settlement_funding.py",
-      "sha256": "e2ace42dbe83346be16819a410194acb9cc37a2e2200cde8f2c432770df11b5c",
       "category": "test_fixture",
-      "bytes": 6906
+      "bytes": 6877,
+      "sha256": "ed4910c7cd608505036a5fe9f7a44dcaf273ccb80d44b76e2e0155cbaaec5b51"
     },
     {
       "path": "tests/test_short_ois.py",
-      "sha256": "3fd65da7cee4c7d5feb3186a0b7704328d85870e829871b70591e6e40235a2c1",
       "category": "test_fixture",
-      "bytes": 6462
+      "bytes": 6462,
+      "sha256": "3fd65da7cee4c7d5feb3186a0b7704328d85870e829871b70591e6e40235a2c1"
     },
     {
       "path": "tests/test_terminal_repair.py",
-      "sha256": "02fa0d674f31213bfbde000e1745fac4fc6532e62580a680b60ef474e71adba3",
       "category": "test_fixture",
-      "bytes": 6115
+      "bytes": 6115,
+      "sha256": "02fa0d674f31213bfbde000e1745fac4fc6532e62580a680b60ef474e71adba3"
     },
     {
       "path": "tests/test_terminal_training.py",
-      "sha256": "bc91c451458f884a70a53fbd340d29bf34539f8a4e68f3e7f62ef56c30e1fb6b",
       "category": "test_fixture",
-      "bytes": 4495
+      "bytes": 4495,
+      "sha256": "bc91c451458f884a70a53fbd340d29bf34539f8a4e68f3e7f62ef56c30e1fb6b"
     },
     {
       "path": "tests/test_training_allocation.py",
-      "sha256": "3fac2e3d1a26681b99d08726bcba9872b7e90292102d4e596879bbeeaa707604",
       "category": "test_fixture",
-      "bytes": 7959
+      "bytes": 7959,
+      "sha256": "3fac2e3d1a26681b99d08726bcba9872b7e90292102d4e596879bbeeaa707604"
     },
     {
       "path": "tests/test_training_allocation_audit.py",
-      "sha256": "ef4ef256a9d6a9e1279733b8c0f7f0f75dfb011a2bb6387ffe0e1416a0159ea6",
       "category": "test_fixture",
-      "bytes": 3214
+      "bytes": 3214,
+      "sha256": "ef4ef256a9d6a9e1279733b8c0f7f0f75dfb011a2bb6387ffe0e1416a0159ea6"
     },
     {
       "path": "tests/test_training_allocation_main_audit.py",
-      "sha256": "71070dd6ea8beeeea58e65b3af70ca2d8b2c53b8b3a80cd9e431561f1a5da556",
       "category": "test_fixture",
-      "bytes": 6258
+      "bytes": 6258,
+      "sha256": "71070dd6ea8beeeea58e65b3af70ca2d8b2c53b8b3a80cd9e431561f1a5da556"
     },
     {
       "path": "tests/test_training_allocation_paper_assets.py",
-      "sha256": "33ee566bdfdc11eeffc2c4488ec575fea5fd9c38767d573eee86c559b15b3f72",
       "category": "test_fixture",
-      "bytes": 7218
+      "bytes": 7218,
+      "sha256": "33ee566bdfdc11eeffc2c4488ec575fea5fd9c38767d573eee86c559b15b3f72"
     },
     {
       "path": "tests/test_training_allocation_reproduction.py",
-      "sha256": "01e5737bcfad58aedf1e807c6eb595281728c1d19a20e80883154b7030edaf4c",
       "category": "test_fixture",
-      "bytes": 9629
+      "bytes": 9629,
+      "sha256": "01e5737bcfad58aedf1e807c6eb595281728c1d19a20e80883154b7030edaf4c"
     },
     {
       "path": "tests/test_training_allocation_study.py",
-      "sha256": "d486a31e8eaabcd8153cc1e2f00ef54fde97d64822c505d72e0ebb879e346420",
       "category": "test_fixture",
-      "bytes": 4980
+      "bytes": 4980,
+      "sha256": "d486a31e8eaabcd8153cc1e2f00ef54fde97d64822c505d72e0ebb879e346420"
     },
     {
       "path": "tests/test_training_evaluation.py",
-      "sha256": "9b1f3d2181d90b80f9aa6b678a152577320225ba39ee5322b3bd61047fbc37f2",
       "category": "test_fixture",
-      "bytes": 5219
+      "bytes": 5219,
+      "sha256": "9b1f3d2181d90b80f9aa6b678a152577320225ba39ee5322b3bd61047fbc37f2"
     },
     {
       "path": "tests/test_training_evaluation_reproduction.py",
-      "sha256": "41ba9a0cdf5994fa6ea003b10587009b39046911e39470a2656f5612264b579a",
       "category": "test_fixture",
-      "bytes": 1141
+      "bytes": 1141,
+      "sha256": "41ba9a0cdf5994fa6ea003b10587009b39046911e39470a2656f5612264b579a"
     },
     {
       "path": "tests/test_training_inference_review.py",
-      "sha256": "90d30f75591e5acd6d63975b9012ed8970d4e3317b066ba727cffb3bbe73b036",
       "category": "test_fixture",
-      "bytes": 2421
+      "bytes": 2421,
+      "sha256": "90d30f75591e5acd6d63975b9012ed8970d4e3317b066ba727cffb3bbe73b036"
     },
     {
       "path": "tests/test_treasury.py",
@@ -1758,296 +1710,22 @@
     },
     {
       "path": "tests/test_underlying_quote_interval.py",
-      "sha256": "8ea6fb4f8535bb20bba72e1e44ad135bfc9b840e2ec0fb5c7b34ea5a84743823",
       "category": "test_fixture",
-      "bytes": 4423
+      "bytes": 4423,
+      "sha256": "8ea6fb4f8535bb20bba72e1e44ad135bfc9b840e2ec0fb5c7b34ea5a84743823"
     },
     {
       "path": "tests/test_valuation_inputs.py",
-      "sha256": "ccb87ddd0ec4e1e5293643c9ed0c0da883c9ef5a866586b7f5292ed865eaf710",
       "category": "test_fixture",
-      "bytes": 7586
+      "bytes": 7586,
+      "sha256": "ccb87ddd0ec4e1e5293643c9ed0c0da883c9ef5a866586b7f5292ed865eaf710"
     },
     {
       "path": "tests/test_value_martingale.py",
-      "sha256": "53de15e1b74797b60be697353a7a1f89055976e814cb9bc803cb345ff0f927d3",
       "category": "test_fixture",
-      "bytes": 7664
+      "bytes": 7664,
+      "sha256": "53de15e1b74797b60be697353a7a1f89055976e814cb9bc803cb345ff0f927d3"
     }
   ],
-  "external_imports": {
-    "flint": [
-      "scripts/audit_component_confidence.py",
-      "scripts/audit_gain_replay.py",
-      "scripts/certify_component_radii.py",
-      "scripts/certify_component_ratio.py",
-      "scripts/certify_gain_replay.py",
-      "scripts/certify_residual_envelope.py",
-      "scripts/certify_residual_primitives.py",
-      "scripts/test_certified_residual.py",
-      "tests/test_certify_gain_replay.py"
-    ],
-    "lseg": [
-      "scripts/acquire_prospective_sample.py",
-      "scripts/acquire_prospective_schedules.py",
-      "scripts/acquire_short_ois_conventions.py",
-      "scripts/build_valuation_inputs.py",
-      "scripts/lseg_option_pilot.py",
-      "scripts/review_lseg_pilot.py"
-    ],
-    "matplotlib": [
-      "scripts/analyse_local_cpu_transfer.py",
-      "scripts/analyse_training_evaluation.py",
-      "scripts/build_training_allocation_paper_assets.py",
-      "scripts/plot_allocation_cost_sensitivity.py",
-      "scripts/plot_allocation_variance_sensitivity.py",
-      "scripts/plot_component_confidence.py",
-      "scripts/plot_component_ratio.py",
-      "scripts/plot_cost_budget.py",
-      "scripts/plot_expiry_extension.py",
-      "scripts/plot_fitted_policy_gain.py",
-      "scripts/plot_joint_input_expiry.py",
-      "scripts/plot_local_cpu_transfer.py",
-      "scripts/plot_policy_input_sensitivity.py",
-      "scripts/plot_terminal_repair.py",
-      "scripts/plot_terminal_training.py",
-      "scripts/plot_value_martingale.py",
-      "scripts/report_cpu_prediction.py",
-      "scripts/report_prospective_allocation.py",
-      "scripts/report_training_allocation.py",
-      "scripts/validate_funded_cash.py",
-      "scripts/validate_funded_dual.py",
-      "scripts/validate_funded_policy.py",
-      "src/qf_research/optimal_stopping/experiments.py"
-    ],
-    "numpy": [
-      "projects/01_optimal_stopping/replication/run.py",
-      "scripts/analyse_training_evaluation.py",
-      "scripts/audit_cost_budget.py",
-      "scripts/audit_cpu_prediction.py",
-      "scripts/audit_expiry_extension.py",
-      "scripts/audit_fitted_policy_gain.py",
-      "scripts/audit_joint_input_expiry.py",
-      "scripts/audit_local_cpu_records.py",
-      "scripts/audit_local_cpu_transfer.py",
-      "scripts/audit_policy_input_sensitivity.py",
-      "scripts/audit_prospective_allocation.py",
-      "scripts/audit_terminal_repair.py",
-      "scripts/audit_training_allocation.py",
-      "scripts/audit_training_allocation_main.py",
-      "scripts/audit_training_evaluation.py",
-      "scripts/audit_value_martingale.py",
-      "scripts/benchmark_funded_kernel.py",
-      "scripts/check_allocation_inference.py",
-      "scripts/check_residual_inference.py",
-      "scripts/diagnose_paired_volatility.py",
-      "scripts/export_gain_replay.py",
-      "scripts/export_residual_certificate.py",
-      "scripts/plot_allocation_cost_sensitivity.py",
-      "scripts/plot_allocation_variance_sensitivity.py",
-      "scripts/plot_component_confidence.py",
-      "scripts/plot_cost_budget.py",
-      "scripts/plot_expiry_extension.py",
-      "scripts/plot_fitted_policy_gain.py",
-      "scripts/plot_joint_input_expiry.py",
-      "scripts/plot_policy_input_sensitivity.py",
-      "scripts/plot_terminal_repair.py",
-      "scripts/plot_terminal_training.py",
-      "scripts/plot_value_martingale.py",
-      "scripts/refine_funded_calendar.py",
-      "scripts/reprice_settlement_funding.py",
-      "scripts/run_conditional_calibration.py",
-      "scripts/study_cost_budget.py",
-      "scripts/study_cpu_budget_transfer.py",
-      "scripts/study_cpu_prediction.py",
-      "scripts/study_expiry_extension.py",
-      "scripts/study_fitted_policy_gain.py",
-      "scripts/study_joint_input_expiry.py",
-      "scripts/study_local_cpu_transfer.py",
-      "scripts/study_policy_input_sensitivity.py",
-      "scripts/study_prospective_allocation.py",
-      "scripts/study_terminal_repair.py",
-      "scripts/study_terminal_training.py",
-      "scripts/study_training_allocation.py",
-      "scripts/study_training_evaluation.py",
-      "scripts/study_value_martingale.py",
-      "scripts/summarise_conditional_calibration.py",
-      "scripts/validate_funded_cash.py",
-      "scripts/validate_funded_dual.py",
-      "scripts/validate_funded_policy.py",
-      "src/qf_research/computational/funded_kernel.py",
-      "src/qf_research/market_data/conditional_calibration.py",
-      "src/qf_research/market_data/exercise_calendar_sensitivity.py",
-      "src/qf_research/optimal_stopping/allocation_workload.py",
-      "src/qf_research/optimal_stopping/analytical.py",
-      "src/qf_research/optimal_stopping/cash_dividends.py",
-      "src/qf_research/optimal_stopping/contracts.py",
-      "src/qf_research/optimal_stopping/escrowed_dividends.py",
-      "src/qf_research/optimal_stopping/experiments.py",
-      "src/qf_research/optimal_stopping/expiry_extension.py",
-      "src/qf_research/optimal_stopping/finite_difference.py",
-      "src/qf_research/optimal_stopping/funded_cash.py",
-      "src/qf_research/optimal_stopping/funded_dual.py",
-      "src/qf_research/optimal_stopping/funded_policy.py",
-      "src/qf_research/optimal_stopping/joint_input_expiry.py",
-      "src/qf_research/optimal_stopping/least_squares.py",
-      "src/qf_research/optimal_stopping/policy_gain.py",
-      "src/qf_research/optimal_stopping/policy_transfer.py",
-      "src/qf_research/optimal_stopping/prospective_evaluation.py",
-      "src/qf_research/optimal_stopping/residual_envelope.py",
-      "src/qf_research/optimal_stopping/sequential_inference.py",
-      "src/qf_research/optimal_stopping/simulation.py",
-      "src/qf_research/optimal_stopping/terminal_repair.py",
-      "src/qf_research/optimal_stopping/terminal_training.py",
-      "src/qf_research/optimal_stopping/training_evaluation.py",
-      "src/qf_research/optimal_stopping/tree.py",
-      "src/qf_research/optimal_stopping/value_martingale.py",
-      "tests/test_allocation_workload.py",
-      "tests/test_cash_dividends.py",
-      "tests/test_cost_budget.py",
-      "tests/test_cpu_prediction.py",
-      "tests/test_escrowed_dividends.py",
-      "tests/test_expiry_extension.py",
-      "tests/test_export_gain_replay.py",
-      "tests/test_funded_cash.py",
-      "tests/test_funded_dual.py",
-      "tests/test_funded_kernel.py",
-      "tests/test_funded_policy.py",
-      "tests/test_joint_input_expiry.py",
-      "tests/test_policy_gain.py",
-      "tests/test_policy_transfer.py",
-      "tests/test_residual_envelope.py",
-      "tests/test_sequential_inference.py",
-      "tests/test_terminal_repair.py",
-      "tests/test_terminal_training.py",
-      "tests/test_training_allocation_study.py",
-      "tests/test_training_evaluation.py",
-      "tests/test_value_martingale.py"
-    ],
-    "psutil": [
-      "scripts/study_cpu_budget_transfer.py"
-    ],
-    "pytest": [
-      "tests/test_allocation_sensitivity.py",
-      "tests/test_allocation_variance_sensitivity.py",
-      "tests/test_allocation_workload.py",
-      "tests/test_calendar_robustness.py",
-      "tests/test_cash_dividends.py",
-      "tests/test_compare_licensed_replay.py",
-      "tests/test_component_confidence.py",
-      "tests/test_component_ratio.py",
-      "tests/test_component_ratio_audit.py",
-      "tests/test_conditional_calibration.py",
-      "tests/test_cost_budget.py",
-      "tests/test_cpu_prediction.py",
-      "tests/test_cpu_prediction_audit.py",
-      "tests/test_dense_quotes.py",
-      "tests/test_distribution_announcements.py",
-      "tests/test_distribution_history.py",
-      "tests/test_dividend_feasibility.py",
-      "tests/test_dividend_sensitivity.py",
-      "tests/test_escrowed_dividends.py",
-      "tests/test_event_calendar.py",
-      "tests/test_exercise_calendar_sensitivity.py",
-      "tests/test_exercise_dominance.py",
-      "tests/test_exercise_redundancy.py",
-      "tests/test_expiry_extension.py",
-      "tests/test_export_gain_replay.py",
-      "tests/test_export_residual_certificate.py",
-      "tests/test_front_funding.py",
-      "tests/test_funded_cash.py",
-      "tests/test_funded_dual.py",
-      "tests/test_funded_inputs.py",
-      "tests/test_funded_kernel.py",
-      "tests/test_funded_policy.py",
-      "tests/test_funding_sensitivity.py",
-      "tests/test_joint_cash_funding.py",
-      "tests/test_joint_input_expiry.py",
-      "tests/test_local_cpu_transfer.py",
-      "tests/test_occ_series.py",
-      "tests/test_option_quotes.py",
-      "tests/test_paired_volatility.py",
-      "tests/test_policy_gain.py",
-      "tests/test_policy_transfer.py",
-      "tests/test_prospective_allocation.py",
-      "tests/test_prospective_allocation_audit.py",
-      "tests/test_prospective_inputs.py",
-      "tests/test_prospective_sample.py",
-      "tests/test_quote_review.py",
-      "tests/test_replication_runner.py",
-      "tests/test_residual_envelope.py",
-      "tests/test_sequential_inference.py",
-      "tests/test_settlement.py",
-      "tests/test_settlement_comparison.py",
-      "tests/test_settlement_funding.py",
-      "tests/test_short_ois.py",
-      "tests/test_terminal_repair.py",
-      "tests/test_terminal_training.py",
-      "tests/test_training_allocation.py",
-      "tests/test_training_allocation_audit.py",
-      "tests/test_training_allocation_main_audit.py",
-      "tests/test_training_allocation_paper_assets.py",
-      "tests/test_training_allocation_reproduction.py",
-      "tests/test_training_allocation_study.py",
-      "tests/test_training_evaluation.py",
-      "tests/test_training_evaluation_reproduction.py",
-      "tests/test_training_inference_review.py",
-      "tests/test_underlying_quote_interval.py",
-      "tests/test_valuation_inputs.py",
-      "tests/test_value_martingale.py"
-    ],
-    "scipy": [
-      "projects/01_optimal_stopping/replication/run.py",
-      "scripts/audit_cost_budget.py",
-      "scripts/audit_fitted_policy_gain.py",
-      "scripts/audit_joint_input_expiry.py",
-      "scripts/audit_prospective_allocation.py",
-      "scripts/audit_training_allocation_main.py",
-      "scripts/audit_training_evaluation.py",
-      "scripts/benchmark_funded_kernel.py",
-      "scripts/check_residual_inference.py",
-      "scripts/construct_joint_funding_witnesses.py",
-      "scripts/diagnose_paired_volatility.py",
-      "scripts/export_gain_replay.py",
-      "scripts/export_residual_certificate.py",
-      "scripts/refine_funded_calendar.py",
-      "scripts/reprice_settlement_funding.py",
-      "scripts/review_training_inference.py",
-      "scripts/study_cost_budget.py",
-      "scripts/study_cpu_budget_transfer.py",
-      "scripts/study_fitted_policy_gain.py",
-      "scripts/study_joint_input_expiry.py",
-      "scripts/study_training_allocation.py",
-      "scripts/study_training_evaluation.py",
-      "scripts/study_value_martingale.py",
-      "scripts/validate_funded_cash.py",
-      "scripts/validate_funded_dual.py",
-      "scripts/validate_funded_policy.py",
-      "src/qf_research/computational/funded_kernel.py",
-      "src/qf_research/market_data/conditional_calibration.py",
-      "src/qf_research/market_data/prospective_inputs.py",
-      "src/qf_research/optimal_stopping/analytical.py",
-      "src/qf_research/optimal_stopping/cash_dividends.py",
-      "src/qf_research/optimal_stopping/cost_budget.py",
-      "src/qf_research/optimal_stopping/escrowed_dividends.py",
-      "src/qf_research/optimal_stopping/expiry_extension.py",
-      "src/qf_research/optimal_stopping/finite_difference.py",
-      "src/qf_research/optimal_stopping/funded_cash.py",
-      "src/qf_research/optimal_stopping/policy_transfer.py",
-      "src/qf_research/optimal_stopping/sequential_inference.py",
-      "src/qf_research/optimal_stopping/simulation.py",
-      "src/qf_research/optimal_stopping/value_martingale.py",
-      "tests/test_cost_budget.py",
-      "tests/test_policy_transfer.py",
-      "tests/test_residual_envelope.py",
-      "tests/test_terminal_repair.py",
-      "tests/test_training_allocation.py",
-      "tests/test_training_evaluation.py",
-      "tests/test_training_inference_review.py",
-      "tests/test_value_martingale.py"
-    ],
-    "threadpoolctl": [
-      "scripts/study_cpu_budget_transfer.py"
-    ]
-  }
+  "external_imports": {}
 }

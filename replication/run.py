@@ -20,7 +20,7 @@ from statistics import median
 from types import SimpleNamespace
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+ROOT = HERE.parent
 FIXTURE = HERE/'configs/stipulated_fixture.json'
 _verifier_spec = importlib.util.spec_from_file_location(
     '_replication_source_verifier', HERE/'verify_sources.py')

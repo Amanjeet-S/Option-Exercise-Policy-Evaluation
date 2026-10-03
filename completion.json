@@ -12,7 +12,7 @@
   "independent_market_validation_established": false,
   "original_primary_admission_rule_changed": false,
   "restricted_observations_published": false,
-  "completion_record": "completion.md",
+  "completion_record": "README.md",
   "paper": "paper/README.md",
   "historical_replay_record": "replication/historical_replay.json",
   "data_admission_supplement": "paper/data_admission.md",

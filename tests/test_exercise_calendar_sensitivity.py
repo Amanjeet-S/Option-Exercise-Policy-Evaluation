@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def fixture(day=date(2026, 9, 17), expiry=date(2026, 9, 21), kind='put', dividends=()):
-    calendar = EventCalendar.from_config(json.loads((ROOT/'projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json').read_text()))
+    calendar = EventCalendar.from_config(json.loads((ROOT/'configs/us_event_calendar_2026-09-16.json').read_text()))
     observation = datetime(day.year, day.month, day.day, 12, 45, tzinfo=NEW_YORK)
     curve = DiscountCurve(day, (day, date(2027, 9, 17)), (1., .95))
     problem = build_dated_problem(calendar, curve, observation, expiry, 100., 100., .2, kind,

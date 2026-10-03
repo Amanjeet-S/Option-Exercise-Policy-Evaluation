@@ -34,14 +34,9 @@ def main() -> None:
     metadata = json.loads((treasury / "metadata.json").read_text())
     if hashlib.sha256((treasury / "source.xml").read_bytes()).hexdigest() != metadata["raw_sha256"]:
         failures.append("Treasury source checksum differs from the saved record")
-    snapshot = ROOT / "data/public/germany_monetary_policy/2026-09-15"
-    manifest = json.loads((snapshot / "manifest.json").read_text())
-    for entry in manifest["sources"]:
-        if hashlib.sha256((snapshot / entry["file"]).read_bytes()).hexdigest() != entry["sha256"]:
-            failures.append(f"Germany source checksum differs: {entry['file']}")
     if failures:
         raise SystemExit("\n".join(failures))
-    print(f"Verified {links_checked} local Markdown targets and six retained source hashes.")
+    print(f"Verified {links_checked} local Markdown targets and the retained Treasury source hash.")
 
 
 if __name__ == "__main__":

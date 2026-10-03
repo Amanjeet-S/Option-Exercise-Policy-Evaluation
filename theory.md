@@ -20,7 +20,7 @@ $$
 +\sigma(W_t^Q-W_s^Q).
 $$
 
-Independent normal increments therefore give exact transitions at every selected date. Refining the simulation calendar changes exercise opportunities without introducing an Euler error in the stock process. The implementation is [simulation.py](../../src/qf_research/optimal_stopping/simulation.py).
+Independent normal increments therefore give exact transitions at every selected date. Refining the simulation calendar changes exercise opportunities without introducing an Euler error in the stock process. The implementation is [simulation.py](src/qf_research/optimal_stopping/simulation.py).
 
 For every finite real $p$,
 

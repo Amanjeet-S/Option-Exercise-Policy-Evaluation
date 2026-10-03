@@ -144,7 +144,7 @@ def markdown(values, main, audit, output):
     main_link = Path(os.path.relpath(main/'manifest.json', output)).as_posix()
     audit_link = Path(os.path.relpath(audit/'verification.json', output)).as_posix()
     methods_link = Path(os.path.relpath(
-        ROOT/'projects/01_optimal_stopping/reports/training_allocation.md', output)).as_posix()
+        ROOT/'reports/training_allocation.md', output)).as_posix()
     mismatches = budget['below_lower_limit']+budget['above_upper_limit']
     calibration_statement = (
         f"The pilot timing calibration did not meet its registered tolerance for {mismatches} "

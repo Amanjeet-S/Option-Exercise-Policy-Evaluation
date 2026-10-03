@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def inputs():
-    config = json.loads((ROOT / "projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json").read_text())
+    config = json.loads((ROOT / "configs/us_event_calendar_2026-09-16.json").read_text())
     calendar = EventCalendar.from_config(config)
     curve = DiscountCurve(date(2026, 9, 9), (date(2026, 9, 9), date(2027, 9, 9)), (1., math.exp(-.05)))
     observation = datetime(2026, 9, 9, 15, 45, tzinfo=NEW_YORK)

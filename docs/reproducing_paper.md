@@ -2,7 +2,7 @@
 
 ## 1. What can be checked publicly
 
-The [paper](../projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) reports a conditional computational investigation. I provide one command for the public checks, numerical example and explanatory notebooks. It requires no provider account, licensed input archive or paid data. It does not read, copy or export restricted raw financial data.
+The [paper](../paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) reports a conditional computational investigation. I provide one command for the public checks, numerical example and explanatory notebooks. It requires no provider account, licensed input archive or paid data. It does not read, copy or export restricted raw financial data.
 
 | Material | Public reproduction | Interpretation |
 | --- | --- | --- |
@@ -11,20 +11,20 @@ The [paper](../projects/01_optimal_stopping/paper/Exercise_Policy_Loss_under_Com
 | Tables 1 to 8 | Check released summaries, selected arithmetic and agreement with the LaTeX tables | Does not regenerate the original financial simulations |
 | Table 9 and CPU accounting | Reconstruct forecasts, errors, affordability and expenditure from eighteen released workload records | Uses retained timings and historical forecast inputs; does not rerun the original workloads or pilot |
 | Observation coverage supplement | Recalculate totals and timing intersections from released daily counts | Checks aggregate arithmetic only; reconstruction from private observation records requires the original authorised archive |
-| Original financial experiments | Implementation and input requirements are documented in the [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) | Exact replay requires lawful access to the original input, design, source and evidence archive; a provider subscription alone is insufficient |
+| Original financial experiments | Implementation and input requirements are documented in the [licensed-input guide](../replication/licensed_reproduction.md) | Exact replay requires lawful access to the original input, design, source and evidence archive; a provider subscription alone is insufficient |
 
-The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../projects/01_optimal_stopping/replication/historical_replay.md) documents all eight completed registered replays. Seven reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with financial estimates unavailable for comparison. Original acquisition and calibration were not rerun. The independent market-validation attempt is closed without a performance estimate. The [completion record](../projects/01_optimal_stopping/completion.md) defines the completed scope and its empirical limitation; no further acquisition or data purchase is pending.
+The public fixture is not a replacement dataset for the financial tables. Its stipulated inputs and simulated outputs are labelled accordingly. The separate [historical replay record](../replication/historical_replay.md) documents all eight completed registered replays. Seven reproduce retained financial outputs exactly; the CPU replay matches saved workload identities, with financial estimates unavailable for comparison. Original acquisition and calibration were not rerun. The independent market-validation attempt is closed without a performance estimate. The [completion record](../README.md) defines the completed scope and its empirical limitation; no further acquisition or data purchase is pending.
 
 ## 2. Install once
 
 Use a local checkout and Python 3.11 or 3.13, the versions checked in continuous integration. From a terminal:
 
 ```sh
-git clone https://github.com/Amanjeet-S/Quantitative-Finance.git
-cd Quantitative-Finance
+git clone https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation.git
+cd Option-Exercise-Policy-Evaluation
 python3 -m venv .venv
 source .venv/bin/activate
-python projects/01_optimal_stopping/replication/verify_sources.py
+python replication/verify_sources.py
 python -m pip install -r requirements.lock -r requirements-notebooks.lock
 python -m pip install --no-deps -e .
 ```
@@ -52,17 +52,17 @@ The command accepts no financial-input configuration and reads no private resear
 Readers who only need the analytical examples and released table checks can run the following without scientific packages, a C++ compiler or LaTeX:
 
 ```sh
-python projects/01_optimal_stopping/replication/verify_sources.py
-python -m unittest discover -s projects/01_optimal_stopping/paper/verification -v
-python projects/01_optimal_stopping/paper/verification/numerical_results.py
-python projects/01_optimal_stopping/paper/verification/paper_results.py
-python projects/01_optimal_stopping/paper/verification/cpu_timings.py
-python scripts/summarise_market_admission.py --check-summary projects/01_optimal_stopping/paper/data_admission.json
+python replication/verify_sources.py
+python -m unittest discover -s paper/verification -v
+python paper/verification/numerical_results.py
+python paper/verification/paper_results.py
+python paper/verification/cpu_timings.py
+python scripts/summarise_market_admission.py --check-summary paper/data_admission.json
 ```
 
-The [observation-coverage supplement](../projects/01_optimal_stopping/paper/data_admission.md) preserves the original empty primary sample and reports the previously specified timing sensitivities. Its public checker uses aggregate counts only. It does not open the private archive, verify the underlying observations or establish market validity.
+The [observation-coverage supplement](../paper/data_admission.md) preserves the original empty primary sample and reports the previously specified timing sensitivities. Its public checker uses aggregate counts only. It does not open the private archive, verify the underlying observations or establish market validity.
 
-The PDF is already included. To rebuild it, compile the self-contained [main.tex](../projects/01_optimal_stopping/paper/main.tex) using pdfLaTeX, or use `make` in its directory with a TeX distribution and `latexmk`. The [paper guide](../projects/01_optimal_stopping/paper/README.md) describes this optional build. Neither PDF compilation nor the separate python-flint certification environment is required for the default public reproduction.
+The PDF is already included. To rebuild it, compile the self-contained [main.tex](../paper/main.tex) using pdfLaTeX, or use `make` in its directory with a TeX distribution and `latexmk`. The [paper guide](../paper/README.md) describes this optional build. Neither PDF compilation nor the separate python-flint certification environment is required for the default public reproduction.
 
 ## 5. Interval arithmetic
 
@@ -72,7 +72,7 @@ The outward-rounded arithmetic checks use a separate environment with `python-fl
 python3 -m venv .venv-certification
 source .venv-certification/bin/activate
 python -m pip install -r requirements-certification.lock
-python projects/01_optimal_stopping/replication/verify_sources.py
+python replication/verify_sources.py
 mkdir -p data/private
 python -m unittest discover -s tests -p test_certify_gain_replay.py -v
 python scripts/test_certified_residual.py
@@ -84,4 +84,4 @@ The first suite contains thirty finite-innovation replay checks; the second cont
 
 ## 6. Further verification
 
-The [development guide](development.md) covers the complete repository test suite, optional C++ checks, public-source audits and Germany data notebook. The [detailed replication guide](../projects/01_optimal_stopping/replication/README.md) maps the numerical implementation. The [licensed-input guide](../projects/01_optimal_stopping/replication/licensed_reproduction.md) traces the paper's tables and additional quantitative findings to their original designs, specifies the required archive and distinguishes complete runs from representative replays. Those historical scripts do not distribute their original inputs.
+The [development guide](development.md) covers the full test suite and optional C++ checks. The [detailed replication guide](../replication/README.md) maps the numerical implementation. The [licensed-input guide](../replication/licensed_reproduction.md) traces the paper's tables and additional quantitative findings to their original designs, specifies the required archive and distinguishes complete runs from representative replays. Those historical scripts do not distribute their original inputs.

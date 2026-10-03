@@ -13,7 +13,7 @@ import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = ROOT/'projects/01_optimal_stopping/replication/verify_sources.py'
+PATH = ROOT/'replication/verify_sources.py'
 spec = importlib.util.spec_from_file_location('source_consistency_checks', PATH)
 verifier = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(verifier)

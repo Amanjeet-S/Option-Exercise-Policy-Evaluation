@@ -21,12 +21,12 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = 'projects/01_optimal_stopping'
-PAPER = PROJECT + '/paper'
+PROJECT = '.'
+PAPER = 'paper'
 VERIFICATION = PAPER + '/verification'
 NOTEBOOKS = (
-    PROJECT + '/notebooks/01_numerical_validation.ipynb',
-    PROJECT + '/notebooks/27_conditional_research_replication.ipynb',
+    'notebooks/numerical_validation.ipynb',
+    'notebooks/conditional_research_replication.ipynb',
 )
 ANALYTICAL_TESTS = ('test_allocation_probability', 'test_conditional_drift',
                     'test_cpu_timings', 'test_numerical_results', 'test_paper_results')
@@ -37,9 +37,9 @@ PUBLIC_INPUTS = (*NOTEBOOKS,
     PAPER + '/main.tex', PAPER + '/numerical_results.json', PAPER + '/numerical_results.md',
     PAPER + '/cpu_timings.json', PAPER + '/cpu_timings.md',
     PAPER + '/data_admission.json', 'scripts/summarise_market_admission.py',
-    PROJECT + '/replication/configs/stipulated_fixture.json',
-    PROJECT + '/configs/benchmark.json', PROJECT + '/results/baseline/manifest.json',
-    PROJECT + '/results/baseline/grid_convergence.csv')
+    'replication/configs/stipulated_fixture.json',
+    'configs/benchmark.json', 'results/baseline/manifest.json',
+    'results/baseline/grid_convergence.csv')
 THREAD_VARIABLES = ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS',
                     'MKL_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS')
 NOTEBOOK_WORKER = """
@@ -164,7 +164,7 @@ def reproduce(output, *, full_tests=False):
              PAPER + '/data_admission.json'], output, record['steps'])
         step('analytical_tests', ['-m', 'unittest', '-v', *ANALYTICAL_TESTS],
              output, record['steps'], cwd=ROOT/VERIFICATION)
-        step('mathematical_fixture', [PROJECT + '/replication/run.py',
+        step('mathematical_fixture', ['replication/run.py',
              '--output', str(output/'fixture.json')], output, record['steps'])
         fixture = json.loads((output/'fixture.json').read_text())
         if (fixture['classification'] != 'stipulated_mathematical_fixture'

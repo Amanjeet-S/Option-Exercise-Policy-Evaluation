@@ -2,40 +2,29 @@
 
 Amanjeet Singh
 
-30 September 2026
+3 October 2026
 
-## 1. Paper and scope
+## 1. Paper and supporting evidence
 
-The [compiled paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) and [self-contained LaTeX source](main.tex) present the mathematical framework and completed conditional computational study. The paper contains nine result tables on loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. The [project is completed](../completion.md), with independent market validity retained as a limitation. The unsuccessful original observation-admission exercise is reported explicitly.
+The [compiled paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) and [self-contained LaTeX source](main.tex) present the completed conditional computational study. Its nine tables concern loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. The [project scope](../README.md#1-research-question-and-completion) retains independent market validity as a limitation.
 
-`main.tex` contains the full text and bibliography and compiles in a single-document editor. The `sections/` files preserve the preceding modular methods source; they are not inputs to the current document. [references.bib](references.bib) retains citation metadata. The compiled research paper is `Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf`.
+The [numerical supplement](numerical_results.md) and [derived summaries](numerical_results.json) reproduce the paper's tables. The [CPU supplement](cpu_timings.md) contains the eighteen workload records used to reconstruct Table 9, including calibration costs and the budget overrun. The [literature comparison](contribution_review.md) distinguishes established theory from the project-specific contribution. The [observation assessment](data_admission.md) and [aggregate results](data_admission.json) preserve the unsuccessful original admission outcome. [references.bib](references.bib) retains citation metadata; the complete bibliography is also embedded in `main.tex`.
 
-The [numerical supplement](numerical_results.md) presents the same nine tables in Markdown. Their [derived summaries](numerical_results.json) are released research findings, not observation-level financial inputs. The [CPU measurement supplement](cpu_timings.md) releases the eighteen workload records needed to reconstruct Table 9, including calibration charges and the budget overrun. The [literature comparison](contribution_review.md) distinguishes the research contribution from established theory. The final [observation-admission supplement](data_admission.md) and [aggregate results](data_admission.json) assess the retained sample under the registered primary and descriptive timing rules without changing the paper's market-validation conclusion.
+## 2. Build and analytical checks
 
-## 2. Build
-
-The open `main.tex` compiles directly in the document editor. A command-line build needs a TeX distribution with `latexmk` and pdfLaTeX:
+From the repository root, a command-line build requires a TeX distribution with `latexmk` and pdfLaTeX:
 
 ```sh
-cd projects/01_optimal_stopping/paper
-make
+make -C paper
+make -C paper verify
 ```
 
-The source uses Computer Modern, 11-point text, A4 pages and 25 mm margins. Its embedded bibliography uses the existing author-year format and requires no external bibliography file during compilation. On Overleaf, upload `main.tex` and select pdfLaTeX. `make clean` removes auxiliary files while retaining the PDF.
+Alternatively, compile `main.tex` directly in a single-document editor or upload it to Overleaf with pdfLaTeX. No external section or bibliography files are required. `make -C paper clean` removes auxiliary files while retaining the PDF.
 
-## 3. Analytical and table checks
+The standard-library verification checks exact finite probability examples, conditional drift, repeated-training variance identities, table transcription and retained CPU arithmetic. These checks do not prove the general measure-theoretic statements, rerun financial experiments or establish statistical coverage.
 
-```sh
-cd projects/01_optimal_stopping/paper
-make verify
-```
+## 3. Numerical reproduction and access
 
-These standard-library checks enumerate finite probability laws using exact rational arithmetic, verify the conditional-drift example and repeated-training variance identities, and check the nine Markdown and LaTeX tables against the released summaries. The CPU checker separately reconstructs forecasts, errors and expenditure from the workload ledger. The table renderer fails if a marked table differs from its source summary. It changes only those blocks when explicitly invoked with `--write`.
+The [public reproduction instructions](../docs/reproducing_paper.md) execute the checks, stipulated numerical fixture and notebooks. The [replication guide](../replication/README.md) documents the kernels and historical experiment entry points. Exact financial replay requires the original licensed input and evidence archive; public reproduction reads no such archive and exports no raw financial data.
 
-The finite examples are stipulated mathematical constructions, not market observations. They check implementations of the arguments without proving the general measure-theoretic statements or establishing theoretical novelty. The summary checks verify presentation and selected arithmetic identities; they do not rerun the financial experiments or validate statistical coverage.
-
-## 4. Numerical replication and access
-
-The [reproduction instructions](../../../docs/reproducing_paper.md) provide a single command for the public checks, fixture and notebooks. The [replication guide](../replication/README.md) identifies the numerical kernels, input schema and original experiment entry points. The [research notebook](../notebooks/27_conditional_research_replication.ipynb) explains these computations alongside the released findings. Exact replay of the retained financial experiments requires their original licensed input archive. A fresh authorised specification defines a new conditional experiment. The public reproduction command does not read that archive or export raw financial data.
-
-Derived findings are published under the confirmed permission. Raw provider exports and observation-level subscription inputs remain private under the [publication policy](../../../docs/publication_policy.md). The [licensing scope](../../../LICENSING.md) distinguishes original software and writing from third-party data.
+Derived findings are published under confirmed permission. Raw provider inputs remain private under the [publication policy](../docs/publication_policy.md), with original software and writing covered by the [licensing scope](../LICENSING.md).

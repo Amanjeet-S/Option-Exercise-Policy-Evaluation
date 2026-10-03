@@ -12,7 +12,7 @@ import sys
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-PATH = ROOT/'projects/01_optimal_stopping/replication/run.py'
+PATH = ROOT/'replication/run.py'
 spec = importlib.util.spec_from_file_location('replication_runner', PATH)
 runner = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runner)
@@ -29,7 +29,7 @@ def test_fixture_numerics_are_reproducible_and_common_upper_cancels():
     provenance = first['provenance']
     assert provenance['input_specification_sha256'] == hashlib.sha256(
         json.dumps(fixture(), sort_keys=True, separators=(',', ':')).encode()).hexdigest()
-    manifest = ROOT/'projects/01_optimal_stopping/replication/source_manifest.json'
+    manifest = ROOT/'replication/source_manifest.json'
     assert provenance['source_manifest_sha256'] == hashlib.sha256(manifest.read_bytes()).hexdigest()
     assert provenance['verified_source_files'] == len(json.loads(manifest.read_text())['files'])
     assert provenance['project_module_origins']['qf_research'] == 'src/qf_research/__init__.py'
@@ -107,7 +107,7 @@ def test_cli_rejects_unreviewed_public_output(tmp_path):
 def copy_checkout(tmp_path):
     """Copy only public manifest entries, without observations or prior outputs."""
     checkout = tmp_path/'checkout'
-    manifest = Path('projects/01_optimal_stopping/replication/source_manifest.json')
+    manifest = Path('replication/source_manifest.json')
     entries = json.loads((ROOT/manifest).read_text())['files']
     for relative in [manifest, *(Path(row['path']) for row in entries)]:
         destination = checkout/relative
@@ -128,7 +128,7 @@ def test_validate_only_records_verified_sources_and_input_without_simulation(tmp
     completed = copied_command(checkout, """
 import importlib.util, sys
 from pathlib import Path
-p = Path('projects/01_optimal_stopping/replication/run.py')
+p = Path('replication/run.py')
 s = importlib.util.spec_from_file_location('isolated_runner', p)
 r = importlib.util.module_from_spec(s); s.loader.exec_module(r)
 def expensive(_):
@@ -142,7 +142,7 @@ r.main()
     assert record['valid'] is True
     assert 'numerics' not in record
     assert record['provenance']['source_manifest_sha256'] == hashlib.sha256(
-        (checkout/'projects/01_optimal_stopping/replication/source_manifest.json').read_bytes()).hexdigest()
+        (checkout/'replication/source_manifest.json').read_bytes()).hexdigest()
     assert record['provenance']['input_specification_sha256'] == runner.canonical_digest(fixture())
 
 
@@ -152,7 +152,7 @@ def test_failed_execution_provenance_leaves_no_output(tmp_path, damage):
     completed = copied_command(checkout, """
 import importlib.util, sys, types
 from pathlib import Path
-p = Path('projects/01_optimal_stopping/replication/run.py')
+p = Path('replication/run.py')
 s = importlib.util.spec_from_file_location('isolated_runner', p)
 r = importlib.util.module_from_spec(s); s.loader.exec_module(r)
 damage = DAMAGE

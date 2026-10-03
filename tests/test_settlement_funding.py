@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def case(kind='call', scale=.93, *, observation_day=date(2026, 9, 10), cash=3.):
     calendar = EventCalendar.from_config(json.loads((ROOT /
-        'projects/01_optimal_stopping/configs/us_event_calendar_2026-09-16.json').read_text()))
+        'configs/us_event_calendar_2026-09-16.json').read_text()))
     observation = datetime.combine(observation_day, datetime.min.time(), NEW_YORK).replace(hour=15, minute=45)
     h = calendar.settlement_after(observation_day).day
     s = calendar.settlement_after(observation_day, lag=2).day

@@ -1,4 +1,4 @@
-"""Reproduce Project 1's synthetic benchmark tables, figures and findings.
+"""Reproduce Option Exercise-Policy Evaluation's synthetic benchmark tables, figures and findings.
 
 Run from the repository root. All design choices come from the saved JSON config.
 Timing covers individual computations, excludes plotting and includes no claims
@@ -270,8 +270,8 @@ def _write_findings(output, c, grids, domains, policies, mc, calendars, economic
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=Path("projects/01_optimal_stopping/configs/benchmark.json"))
-    parser.add_argument("--output", type=Path, default=Path("projects/01_optimal_stopping/results/baseline"))
+    parser.add_argument("--config", type=Path, default=Path("configs/benchmark.json"))
+    parser.add_argument("--output", type=Path, default=Path("results/baseline"))
     args = parser.parse_args()
     run(args.config, args.output)
 

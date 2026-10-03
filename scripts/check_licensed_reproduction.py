@@ -18,9 +18,9 @@ import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIREMENTS = ROOT/'projects/01_optimal_stopping/replication/licensed_requirements.json'
+REQUIREMENTS = ROOT/'replication/licensed_requirements.json'
 _spec = importlib.util.spec_from_file_location('licensed_source_paths',
-    ROOT/'projects/01_optimal_stopping/replication/verify_sources.py')
+    ROOT/'replication/verify_sources.py')
 _helpers = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_helpers)
 relative_path, checked_file, read_json_bytes = (
