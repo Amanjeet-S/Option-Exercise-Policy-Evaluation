@@ -33,7 +33,7 @@ The public [input schema](input.schema.json) describes a fresh single-model calc
 
 ## 3. Table lineage
 
-Table numbers refer to the [research paper](../paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf). The final public presentation is checked by [paper_results.py](../paper/verification/paper_results.py) against [numerical_results.json](../paper/numerical_results.json). That presentation check does not perform the earlier computations listed here.
+Table numbers refer to the [research paper](https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation/blob/v1.0.0/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf). The final public presentation is checked by [paper_results.py](../paper/verification/paper_results.py) against [numerical_results.json](../paper/numerical_results.json). That presentation check does not perform the earlier computations listed here.
 
 | Paper table | Experiment and retained quantities | Reconstruction or verification |
 | --- | --- | --- |

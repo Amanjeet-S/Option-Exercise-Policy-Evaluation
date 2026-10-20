@@ -30,7 +30,7 @@
     "Measure-theoretic conditional expectation and L2 projection, finite-calendar optional sampling, Brownian change of measure, diffusion moments, self-financing pricing, regression conditioning and finite-difference stability are derived in dedicated appendices. The pricing notebook executes exact finite identities, same-calendar Python/C++ tree comparisons, PDE refinement, analytical sensitivities and independently evaluated regression policies.",
     "The abstract and monetary conclusions distinguish computed threshold crossings from conditional continuous-model guarantees. Notebook execution records capture the actual kernel and native comparison outcome; source changes detected during execution prevent saved-output replacement. Current and historical reproduction instructions are separated.",
     "A separate current source inventory and reader-check workflow bind the manuscript, aggregate results, numerical fixtures and executed notebook copies. Their checks preserve historical source identities and reject incomplete, altered or mismatched verification records. Later exploratory extensions remain outside the current paper scope.",
-    "Final manuscript review, author metadata and 30-page PDF layout checks completed locally. The current build preserves the historical PDF; source and delivered PDF hashes are recorded separately from the source inventory."
+    "Final manuscript review, author metadata and 30-page PDF layout checks completed. Source and delivered PDF hashes are recorded separately from the source inventory. The earlier paper remains available in the v1.0.0 archive."
   ],
   "revision_evidence_guide": "paper/contribution_review.md",
   "further_research_extensions": [
@@ -68,5 +68,10 @@
     "layout_review": "All pages rendered and reviewed; no unresolved TeX overflow, reference or citation warnings.",
     "title": "Assessing Bermudan Exercise Policies: Numerical Error and Confidence Coverage"
   },
-  "release": "v2.0.1"
+  "release": "v2.0.2",
+  "historical_paper": {
+    "archive_ref": "v1.0.0",
+    "url": "https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation/blob/v1.0.0/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf",
+    "included_in_current_tree": false
+  }
 }

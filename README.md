@@ -16,7 +16,7 @@ The historical study tightened estimated dual gaps without changing exercise dec
 
 ## 3. Paper and reproduction
 
-The [final paper](paper/Assessing_Bermudan_Exercise_Policies.pdf) and its self-contained [LaTeX source](paper/main.tex) report the completed study. The [paper guide](paper/README.md) identifies the separate historical paper and its evidence. The [completion record](completion.json) retains the current source and PDF hashes.
+The [final paper](paper/Assessing_Bermudan_Exercise_Policies.pdf) and its self-contained [LaTeX source](paper/main.tex) report the completed study. The [paper guide](paper/README.md) describes supporting material and identifies the archived earlier study. The [completion record](completion.json) retains the current source and PDF hashes.
 
 The [pricing notebook](notebooks/pricing_and_stopping.ipynb) connects exact conditional expectation and stopping calculations to diffusion pricing, Greeks, tree/PDE refinement, native C++ rollback and independently evaluated regression policies. The paper gives the corresponding measure-theoretic and numerical derivations in its appendices.
 

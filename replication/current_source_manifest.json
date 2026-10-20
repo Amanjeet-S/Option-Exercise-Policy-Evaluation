@@ -43,26 +43,26 @@
     {
       "path": "README.md",
       "category": "reader_documentation",
-      "sha256": "15601aa1062c8843c1ee5fc2a2ef0ae97502181491feced6582b06a080f281d9",
-      "bytes": 5170
+      "sha256": "9d7e829769866f9f524af46acae233904e6dca99d14bc16675b18d243dd1dd90",
+      "bytes": 5184
     },
     {
       "path": "SOURCES.md",
       "category": "reader_documentation",
-      "sha256": "2d23ade2dcc9252c2ac240a83620286311910b62c8938ada596374df2f60901f",
-      "bytes": 17177
+      "sha256": "6bf94697bbfd15ceeb4821067883af8be698b72aad4fb46bb53f20733215d0c3",
+      "bytes": 17249
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "category": "reader_documentation",
-      "sha256": "82392f4d997a820745e85a7f7d127ae7d67542039c8a4a6dcd48179b2d33cea4",
-      "bytes": 2591
+      "sha256": "813ebb41b5f2b663b2ca057d3276e6dd08a74587de6bb6b0311117894c73f34e",
+      "bytes": 2707
     },
     {
       "path": "completion.json",
       "category": "reader_documentation",
-      "sha256": "461ad6cf49171642b65a77868bb65fef36600185cbbf5a458eab9f6448c384f8",
-      "bytes": 8544
+      "sha256": "f71a232540e2119aa1d3d049b792b0b67d761ad3be6c89fd0426e1889b3e84d5",
+      "bytes": 8810
     },
     {
       "path": "cpp/README.md",
@@ -85,8 +85,8 @@
     {
       "path": "docs/development.md",
       "category": "reader_documentation",
-      "sha256": "94541b2b58c77be03d310ba6fa014b9dfed64e47829b9e22beebb02cdcb9ae3d",
-      "bytes": 3923
+      "sha256": "a91ff3145c3d630461b090d3f69e839efbde3ba5a2b625719c7a1fa160eec491",
+      "bytes": 4038
     },
     {
       "path": "docs/publication_policy.md",
@@ -97,8 +97,8 @@
     {
       "path": "docs/reproducing_paper.md",
       "category": "reader_documentation",
-      "sha256": "0844a890ce58fc70c0f33b4b6cf6dcd1d53d377afd627fbb1dfda18669ca4687",
-      "bytes": 45666
+      "sha256": "36ddb9315a9a7c8da4749a55b0c510596131b329f9d324da0766a91a95f40288",
+      "bytes": 45877
     },
     {
       "path": "notebooks/README.md",
@@ -109,8 +109,8 @@
     {
       "path": "notebooks/conditional_research_replication.ipynb",
       "category": "notebook",
-      "sha256": "0efeafbc1dbeed46c3e684417137301439a6c1c5d8915a617de5e4a5056173da",
-      "bytes": 33692
+      "sha256": "922abd6b0eefdfa71930f9775a39f7166cb50e9d3c3e36840a1f91db299e809b",
+      "bytes": 33858
     },
     {
       "path": "notebooks/numerical_validation.ipynb",
@@ -133,8 +133,8 @@
     {
       "path": "paper/README.md",
       "category": "reader_documentation",
-      "sha256": "d40d31bef60b0a6653bbc764604360dad13db9a53ee9315600df0c0b6d63f6d1",
-      "bytes": 3448
+      "sha256": "f8b36f93b361bd132620679277876f8ccc8f46f1558df3f16ecf4c892d4ac5cc",
+      "bytes": 3167
     },
     {
       "path": "paper/contribution_review.md",

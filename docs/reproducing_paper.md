@@ -2,7 +2,7 @@
 
 ## 1. What can be checked publicly
 
-The [final paper](../paper/Assessing_Bermudan_Exercise_Policies.pdf), its [source](../paper/main.tex) and [aggregate results](../paper/revision_results.json) concern public mathematical benchmarks, repeated-sampling coverage and verified conditional integration. The [historical PDF](../paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) remains separate. Sections 2 and 3 describe the historical release in a separate `v1.0.0` checkout. Sections 4 to 6 distinguish its lightweight checks from the current PDF build and optional arithmetic environment. Sections 7 to 15 describe the current public-model experiments. The historical source manifest belongs to `v1.0.0`; the separate current inventory covers the reader package below. Each new study instead records its own scoped source and evidence identities.
+The [final paper](../paper/Assessing_Bermudan_Exercise_Policies.pdf), its [source](../paper/main.tex) and [aggregate results](../paper/revision_results.json) concern public mathematical benchmarks, repeated-sampling coverage and verified conditional integration. The [historical PDF](https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation/blob/v1.0.0/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) is available in the `v1.0.0` archive. Sections 2 and 3 describe the historical release in a separate `v1.0.0` checkout. Sections 4 to 6 distinguish its lightweight checks from the current PDF build and optional arithmetic environment. Sections 7 to 15 describe the current public-model experiments. The historical source manifest belongs to `v1.0.0`; the separate current inventory covers the reader package below. Each new study instead records its own scoped source and evidence identities.
 
 For the current reader package, install the research and notebook requirements in the current checkout's environment and run:
 
@@ -16,7 +16,7 @@ The output directory must be new. The command checks the separate `replication/c
 
 The later two-asset monetary, Gaussian-compression and bounded-correction investigations remain exploratory extensions outside this paper and its reader package. Their full records stay local; a preparation script alone is not a complete assessment reproduction.
 
-The historical [paper](../paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) reports the earlier conditional computational investigation. Its separate reproduction command checks the historical summaries, numerical example and two explanatory notebooks. It requires no provider account, licensed input archive or paid data. It does not read, copy or export restricted raw financial data.
+The historical [paper](https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation/blob/v1.0.0/paper/Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) reports the earlier conditional computational investigation. Its separate reproduction command checks the historical summaries, numerical example and two explanatory notebooks. It requires no provider account, licensed input archive or paid data. It does not read, copy or export restricted raw financial data.
 
 | Material | Public reproduction | Interpretation |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ python scripts/summarise_market_admission.py --check-summary paper/data_admissio
 
 The [observation-coverage supplement](../paper/data_admission.md) preserves the original empty primary sample and reports the previously specified timing sensitivities. Its public checker uses aggregate counts only. It does not open the private archive, verify the underlying observations or establish market validity.
 
-Return to the current checkout before building its PDF. The [current PDF](../paper/Assessing_Bermudan_Exercise_Policies.pdf) is compiled from the self-contained [main.tex](../paper/main.tex). Run `make -C paper` with a TeX distribution and `latexmk`, or compile the source in the document editor. The default build preserves the separately named historical PDF. The [completion record](../completion.json) retains the delivered PDF and source hashes; PDF byte identity can change with compiler versions and build dates. PDF compilation is optional for the reader checks, and its output is outside the source inventory. The separate python-flint environment is also optional for the default reader command.
+Return to the current checkout before building its PDF. The [current PDF](../paper/Assessing_Bermudan_Exercise_Policies.pdf) is compiled from the self-contained [main.tex](../paper/main.tex). Run `make -C paper` with a TeX distribution and `latexmk`, or compile the source in the document editor. The current tree includes only the final research-paper PDF; the earlier paper remains in the historical tag. The [completion record](../completion.json) retains the delivered PDF and source hashes; PDF byte identity can change with compiler versions and build dates. PDF compilation is optional for the reader checks, and its output is outside the source inventory. The separate python-flint environment is also optional for the default reader command.
 
 ## 5. Interval arithmetic
 

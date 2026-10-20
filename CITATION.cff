@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Cite the repository revision used and the original sources identified in the paper and source register."
 title: "Option Exercise-Policy Evaluation"
 type: software
-version: "2.0.1"
+version: "2.0.2"
 authors:
   - family-names: Singh
     given-names: Amanjeet
