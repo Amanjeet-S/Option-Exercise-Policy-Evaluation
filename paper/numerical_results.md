@@ -7,9 +7,11 @@ Keywords: optimal stopping; American options; martingale duality; Monte Carlo; t
 
 ## 1. Question and scope
 
-I investigate how approximate exercise decisions lose value, how tightly that loss can be assessed, and how computational effort should be divided between fitting policies and evaluating them. This supplement reports selected numerical findings in Markdown alongside the [complete conditional research paper](README.md). The distinction between a better decision and a better assessment is central. A narrower upper bound can result from reducing dual slack while leaving the exercise policy unchanged. Increasing the number of independently fitted policies instead improves information about a training procedure's average performance.
+I investigate how approximate exercise decisions lose value, how tightly that loss can be assessed, and how computational effort should be divided between fitting policies and evaluating them. This supplement reports selected numerical findings in Markdown alongside the [complete conditional research paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf). The distinction between a better decision and a better assessment is central. A narrower upper bound can result from reducing dual slack while leaving the exercise policy unchanged. Increasing the number of independently fitted policies instead improves information about a training procedure's average performance.
 
 The calculations condition on thirteen related development specifications for one expiry, using observations from a short intraday window on 10 September 2026. These cases are neither independent trading days nor a representative market sample. Each specification uses a one-state diffusion, deterministic funding and a capped discrete cash event. The original calendar contains 27 daily exercise rights. Calibration and historical information restrictions remain relevant even when simulation uncertainty is small. The findings concern the maintained models and their fitted rules; they do not measure losses realised by option holders.
+
+Source: LSEG Workspace, accessed through the University of St Andrews subscription; my calculations. The observation window is 10 September 2026. Retrieval dates are established by the acquisition records and are not inferred from that window. The displayed quantities are selected conditional research findings rather than a redistributed observation dataset. Their release and reuse remain subject to the source assessment in the [publication policy](../docs/publication_policy.md) and [licensing scope](../LICENSING.md).
 
 The original design crosses 5,000 and 20,000 training paths with polynomial degrees two and four. Four repetitions per case give 52 policies per configuration and 208 policies in total. The smaller training sample is a prefix of the larger sample in this original design. Fresh outer simulations assess the frozen policies. A later training-procedure experiment and its allocation follow-up use new, independently generated training pairs. I retain these distinctions when interpreting the tables.
 
@@ -42,7 +44,7 @@ The fine value construction reduces the mean gap by 91.42 to 95.23 per cent rela
 
 The terminal experiment adds ninety minutes to the original endpoint, assumes no intervening cash event and preserves the settlement threshold and volatility dynamics. A surviving policy waits until the later endpoint; all earlier instructions remain fixed. Under these assumptions, conditional convexity gives a non-negative expected gain from this adjustment. Individual realised payoffs can nevertheless decrease. The paper derives the conditional payoff and states why the no-cash and constant-threshold assumptions are needed.
 
-Table 2 compares both instructions using the same upper payoff for the expanded problem. The common term cancels pathwise. The reduction in expected gap therefore identifies the policy-value gain under the model, unlike the martingale comparison in Table 1. Each entry again averages 52 original policies. The unadjusted gaps refer to the expanded opportunity set and must not be confused with the original-calendar gaps in Table 1.
+Table 2 integrates the extra diffusion and replaces the original terminal reward by its conditional later value. Endpoint dominance makes this original-clock stopping problem equivalent in optimal value to the expanded calendar. Both instructions use its common upper payoff, which cancels pathwise, so the expected-gap reduction identifies the policy-value gain under the model. The separate direct calculation uses simulated later payoffs and can have different pathwise gaps and sampling variance. Each entry again averages 52 original policies. These integrated gaps must not be confused with the original-calendar gaps in Table 1.
 
 <!-- table:terminal_adjustment -->
 
@@ -85,10 +87,10 @@ Table 3 reports mean gains, approximate pointwise 95 per cent Student intervals 
 
 Every estimated mean is positive, but the intervals for cases 2, 9 and 10 contain zero. Eight of the 104 individual pair gains are negative. Omitting repetitions one at a time leaves every reduced-sample mean positive, while the positive-interval conclusions for cases 1 and 12 depend on the omission. I retain the primary estimates and use this diagnostic to qualify the small-sample interpretation.
 
-Let $D$ denote a newly generated training pair, $\Delta(D)$ its conditional mean gain and $\sigma_D^2$ the conditional variance of a martingale-adjusted pathwise gain. Define $A=\operatorname{Var}\{\Delta(D)\}$ and $B=\mathbb E[\sigma_D^2]$. For $R$ independent pairs, each evaluated on $N$ conditionally independent paths,
+Let $D$ denote a newly generated training pair, $\Delta(D)$ its conditional mean gain and $\sigma_D^2$ the conditional variance of a martingale-adjusted pathwise gain. Define $A=\mathrm{Var}\{\Delta(D)\}$ and $B=\mathbb E[\sigma_D^2]$. For $R$ independent pairs, each evaluated on $N$ conditionally independent paths,
 
 $$
-\operatorname{Var}(\widehat\mu)=\frac{A}{R}+\frac{B}{RN}.
+\mathrm{Var}(\widehat\mu)=\frac{A}{R}+\frac{B}{RN}.
 $$
 
 Conditional averaging and the law of total variance give this identity. I use it because additional evaluation paths reduce only the second component, whereas additional independent pairs reduce both. The estimated evaluation shares of 0.014 to 0.284 per cent motivate a different allocation of computation. They are estimates from eight repetitions, not known population variance components.
@@ -151,7 +153,7 @@ Every one of the 26 main arms falls below the registered budget tolerance. Actua
 
 ![Allocation comparison: pilot and main variance ratios, relative CPU expenditure and actual expenditure against the pilot budget.](figures/allocation.png)
 
-Figure 1. The top panel compares predicted and estimated variance ratios; the middle panel compares actual CPU charges; the bottom panel retains each arm's expenditure relative to its pilot reference budget and the tolerance band. Points are descriptive and have no ratio confidence intervals. The failed budget predictions remain visible where the two arms happen to have similar realised costs.
+Figure 1. The top panel compares predicted and estimated variance ratios; the middle panel compares actual CPU charges; the bottom panel retains each arm's expenditure relative to its pilot reference budget and the tolerance band. Points are descriptive and have no ratio confidence intervals. The failed budget predictions remain visible where the two arms happen to have similar realised costs. Source for the financial specifications: LSEG Workspace through the University of St Andrews subscription, using the 10 September 2026 observation window; ratios and CPU measurements are my calculations. The caption must accompany the image when it is distributed separately.
 
 Table 6 decomposes aggregate CPU charges in seconds. Predictions retain the training and evaluation components of the pilot observation supplying the median total pair cost. Summing separate component medians would generally change the prediction. Small discrepancies in totals reflect displayed rounding.
 
@@ -216,7 +218,7 @@ For each complete arm, I define absolute relative error as $|C-\widehat C|/\wide
 
 <!-- table:cpu_prediction -->
 
-| Forecast | Within ten per cent | Within upper allowance | Mean absolute relative error (per cent) | Actual / forecast range |
+| Forecast | Within ten per cent | Within upper allowance | Mean absolute relative error (per cent) | Actual/forecast range |
 | --- | --- | --- | --- | --- |
 | Historical | 1/18 | 18/18 | 29.065 | [0.5154, 1.0782] |
 | Pass-start calibration | 16/18 | 16/18 | 3.669 | [0.9237, 1.2081] |

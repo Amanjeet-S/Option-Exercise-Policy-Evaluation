@@ -1,30 +1,27 @@
 # Research notebooks
 
-## 1. Reading and execution sequence
+## 1. Current pricing computation
 
-I use two notebooks to connect the numerical foundations to the completed conditional study. Each runs from a fresh kernel after the repository and notebook requirements have been installed. Neither needs subscription access.
+I connect the mathematical argument to executable pricing in [pricing and stopping](pricing_and_stopping.ipynb). The notebook constructs conditional expectation with exact rational arithmetic, checks a finite stopping identity, derives diffusion transitions, checks Greeks and compares tree and PDE refinements on the same exercise calendar. Independent training and evaluation expose regression rank, conditioning, sampling uncertainty and a European control that increases variance in the retained example. A native C++17 rollback supplies a separate implementation of the same tree when a compiler is available.
 
-1. [Baseline numerical validation](numerical_validation.ipynb) recomputes the continuous-yield analytical reference and inspects the retained tree and PDE refinement tables. It distinguishes a new analytical calculation from inspection of a saved experiment.
-2. [Conditional research replication](conditional_research_replication.ipynb) executes funded exercise-policy fitting, analytically centred martingale assessment and a terminal adjustment on a stipulated mathematical configuration. It enumerates training and evaluation probability laws exactly, checks the allocation calculation, inspects the released financial summaries and reconstructs the CPU findings from eighteen published workload measurements.
+The example uses stipulated mathematical inputs and generated paths. It requires no provider account or restricted observations. It demonstrates the stated calculations; it does not reproduce the paper's fitted policies or certify a diffusion price. The [paper](../paper/main.tex) gives the general arguments and the larger experiments.
 
-The [public reproduction command](../docs/reproducing_paper.md) runs both notebooks alongside the paper checks and preserves executed copies. The [replication interface](../replication/README.md) documents the financial input contract and the executable calculation. Numerical methods remain in reusable Python modules; the notebook supplies the mathematical explanation and interpretation.
+After installing the research and notebook requirements in the [reproduction guide](../docs/reproducing_paper.md), execute from a fresh kernel with:
 
-## 2. Reproduce the released notebooks
+```sh
+python scripts/execute_release_notebooks.py --foundations
+```
 
-From the repository root, use the existing research environment or install the frozen requirements described in [development](../docs/development.md). Then run:
+The command checks the computation without overwriting saved outputs. The [current reader command](../scripts/reproduce_current_study.py) additionally verifies the inventory and numerical fixtures and retains an executed notebook copy in a new private output directory. Add `--write` to retain a successful execution. The notebook checks the expected identities of its numerical sources. A changed source requires review and a new execution record. The optional [native verification](../scripts/verify_bermudan_tree.py) covers further deterministic and invalid-input cases.
 
-```bash
+## 2. Historical notebooks
+
+[Baseline numerical validation](numerical_validation.ipynb) combines an analytical calculation with inspection of retained refinement tables. [Conditional research replication](conditional_research_replication.ipynb) executes a funded mathematical fixture, exact finite-law examples and reconstruction of released summaries and CPU findings. Neither notebook regenerates the original licensed financial experiments.
+
+The historical selection remains explicit:
+
+```sh
 python scripts/execute_release_notebooks.py
 ```
 
-The command selects these two notebooks explicitly and executes each in a fresh kernel. It does not overwrite saved outputs. Add `--write` to retain outputs after both notebooks succeed. 
-
-The default financial configuration is a stipulated mathematical example. Its numerical outputs are not market observations, calibrated parameters or a reproduction of the paper's retained research tables. The released-summary cells check aggregate presentation and arithmetic, without accessing the restricted observations behind those summaries. Fresh processor timings are measured internally by the replication calculation but are not substituted for the published timing experiment.
-
-## 3. Interpretation and scope
-
-The notebooks support the study of expected exercise-policy loss, training uncertainty and computational allocation under explicit financial assumptions. The analytical limiting case and exact finite laws test stated identities. Their finite checks do not replace the general arguments in the [paper](../paper/main.tex).
-
-The conditional empirical computations reported in the [numerical supplement](../paper/numerical_results.md) have a separate evidential status. Repeating those exact experiments requires their authorised inputs and retained design records. Independent historical market validation was not completed, and the incomplete funding construction was excluded. Its missing constituents are not filled with fabricated observations.
-
-Earlier investigative notebooks are retained locally as research records. They are outside this deliberately selected reader route and are not dependencies of either released notebook. Successful execution alone does not determine publication eligibility; release decisions concern the reviewed source and output content.
+This default runs only those two notebooks. The historical `v1.0.0` reproduction route and its source inventory remain separate from the current revision. Exact financial replay requires lawful access to the retained inputs and design records described in the [licensed-input guide](../replication/licensed_reproduction.md). No raw observations are exported by these notebook commands.

@@ -6,7 +6,7 @@ Amanjeet Singh
 
 ## 1. Measurement and scope
 
-I release the computational measurements underlying the CPU comparison in Table 9 of the [paper](main.tex). The [timing ledger](cpu_timings.json) contains eighteen complete workloads measured on 28 September 2026. Each workload has a fixed number of independent training pairs, with 5,000 and 20,000 training paths per pair, polynomial degree four and a prescribed evaluation count. The three case labels identify the same conditional specifications as the [numerical supplement](numerical_results.md). They do not identify independent market samples.
+I release the computational measurements underlying the CPU comparison in Table 9 of the [historical paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf). The [timing ledger](cpu_timings.json) contains eighteen complete workloads measured on 28 September 2026. Each workload has a fixed number of independent training pairs, with 5,000 and 20,000 training paths per pair, polynomial degree four and a prescribed evaluation count. The three case labels identify the same conditional specifications as the [numerical supplement](numerical_results.md). They do not identify independent market samples.
 
 The two passes execute the nine workloads in opposite orders within one operating session. Counts were fixed before validation. There are 7,956 validation pairs, two sets of sixteen calibration pairs for each workload, and four warm-up pairs. The ledger contains computational durations and work counts only. Financial inputs, subscription observations, fitted policies and simulated payoffs are excluded.
 
@@ -22,12 +22,12 @@ The forecast predicts a fresh validation workload. The separate charge $K_i^k$ i
 
 I compute the equally weighted mean absolute relative error as
 
-$$\operatorname{MARE}_k=\frac{100}{18}\sum_{i=1}^{18}\frac{|C_i-\widehat C_i^k|}{\widehat C_i^k}.$$
+$$\mathrm{MARE}_k=\frac{100}{18}\sum_{i=1}^{18}\frac{|C_i-\widehat C_i^k|}{\widehat C_i^k}.$$
 
 The denominator is forecast cost. The tolerance requires $0.9\leq C_i/\widehat C_i^k\leq1.1$. The upper allowance is $1.1\widehat C_i^k$. Neither rule is a statistical prediction interval. All comparisons below use exact ledger values before display rounding.
 
 <!-- cpu:prediction -->
-| Forecast | Within ten per cent | Within upper allowance | Mean absolute relative error (per cent) | Actual / forecast range |
+| Forecast | Within ten per cent | Within upper allowance | Mean absolute relative error (per cent) | Actual/forecast range |
 | --- | --- | --- | --- | --- |
 | Historical | 1/18 | 18/18 | 29.065 | [0.5154, 1.0782] |
 | Pass-start calibration | 16/18 | 16/18 | 3.669 | [0.9237, 1.2081] |
@@ -51,7 +51,7 @@ The historical allowances contain all observed costs but admit no workload at th
 The ledger retains every workload. The table identifies the overrun without concealing the other execution outcomes. CPU, budget and budget excess are measured in seconds; evaluation paths are per independently trained pair.
 
 <!-- cpu:workloads -->
-| Pass | Position | Case | Evaluation paths | Training pairs | Actual CPU | Budget | Actual / immediate forecast | Budget excess |
+| Pass | Position | Case | Evaluation paths | Training pairs | Actual CPU | Budget | Actual/immediate forecast | Budget excess |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 1 | 6 | 128 | 674 | 37.251 | 54.298 | 0.9782 | 0.000 |
 | 1 | 2 | 5 | 4096 | 91 | 30.190 | 57.886 | 1.0161 | 0.000 |

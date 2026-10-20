@@ -58,7 +58,7 @@ def render(data):
     )
     labels = {'historical': 'Historical', 'pass_start': 'Pass-start calibration', 'immediate': 'Immediate calibration'}
     tables['cpu_prediction'] = table(
-        ['Forecast', 'Within ten per cent', 'Within upper allowance', 'Mean absolute relative error (per cent)', 'Actual / forecast range'],
+        ['Forecast', 'Within ten per cent', 'Within upper allowance', 'Mean absolute relative error (per cent)', 'Actual/forecast range'],
         [[labels[r['predictor']], f"{r['within_tolerance']}/18", f"{r['within_allowance']}/18", f"{r['mean_absolute_relative_error_percent']:.3f}", f"[{r['actual_to_forecast_min']:.4f}, {r['actual_to_forecast_max']:.4f}]"] for r in data['cpu_prediction']],
     )
     return tables

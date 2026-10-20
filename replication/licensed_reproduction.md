@@ -8,6 +8,8 @@ The [public reproduction route](../docs/reproducing_paper.md) needs no licensed 
 
 This guide specifies the numerical and evidential requirements of the existing implementation. It does not grant access to an archive or permission to redistribute its contents. No complete financial rerun is claimed merely because these instructions, or the public checks, are available. The [publication policy](../docs/publication_policy.md) continues to exclude restricted observations from the public repository.
 
+Lawful possession must include permission to retain and use the inputs for the current research purpose. I do not supply or share the subscription archive, including with another licence holder. The university guidance requires deletion of underlying stored data when its project is completed, including relevant copies. If required source inputs are deleted, these commands remain a record of the original requirements but cannot perform an exact replay without independently and lawfully obtained matching inputs. A later acquisition or substituted vintage defines a new experiment. Historical hashes and publication-status fields remain unchanged; deletion is recorded separately. The retention review must distinguish restricted source copies from original model-only simulations and permitted findings.
+
 The current repository places `paper/`, `replication/` and the implementation at its root. Historical source and configuration references retain their original archive namespace, including `projects/01_optimal_stopping/`. Exact financial replay runs the preserved original implementations in that original layout. The current archive checker uses `--archive-root` to inspect it; relocation does not replace its registered source bytes.
 
 ## 2. Required input roles

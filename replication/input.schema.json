@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Conditional stopping experiment input",
-  "description": "Structural schema. run.py additionally checks the published fixture identity, chronological ordering, strictly increasing sample counts, terminal coverage, event phases and absence of cash events in the terminal extension.",
+  "description": "Structural schema. run.py additionally checks the published fixture identity, chronological ordering, strictly increasing sample counts, terminal coverage, event phases and absence of cash events in the terminal extension. All model times are elapsed from valuation in one consistent time unit; volatility is expressed per square root of that unit. The published fixture uses abstract year fractions; the dated adapter uses ACT/365F years computed from elapsed UTC seconds. CPU and elapsed execution costs are seconds.",
   "type": "object",
   "properties": {
     "schema_version": {
@@ -26,7 +26,8 @@
         },
         "volatility": {
           "type": "number",
-          "minimum": 0
+          "minimum": 0,
+          "description": "Diffusion coefficient per square root of the model time unit."
         },
         "initial_share_factor": {
           "type": "number",
@@ -43,7 +44,8 @@
             "properties": {
               "ex_time": {
                 "type": "number",
-                "exclusiveMinimum": 0
+                "exclusiveMinimum": 0,
+                "description": "Elapsed model time since valuation, on the same clock as exercise rights."
               },
               "discounted_cash": {
                 "type": "number",
@@ -76,7 +78,8 @@
         },
         "maturity": {
           "type": "number",
-          "exclusiveMinimum": 0
+          "exclusiveMinimum": 0,
+          "description": "Elapsed model time since valuation."
         },
         "kind": {
           "const": "put"
@@ -97,7 +100,8 @@
         "properties": {
           "time": {
             "type": "number",
-            "minimum": 0
+            "minimum": 0,
+            "description": "Elapsed model time since valuation; the phase specifies event ordering at a shared time."
           },
           "settlement_factor": {
             "type": "number",
@@ -183,7 +187,8 @@
         },
         "terminal_extension": {
           "type": "number",
-          "exclusiveMinimum": 0
+          "exclusiveMinimum": 0,
+          "description": "Additional duration in the same model time unit."
         }
       },
       "required": [

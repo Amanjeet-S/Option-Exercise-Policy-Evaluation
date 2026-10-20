@@ -1,22 +1,28 @@
-# C++ propagation kernel
+# C++ pricing components
 
-## 1. Numerical scope
+## 1. Native Bermudan tree
 
-I implement the driftless propagation step in [funded_step.cpp](funded_step.cpp), with a readable Python/SciPy reference in [funded_cash.py](../src/qf_research/optimal_stopping/funded_cash.py). The kernel is one numerical component of the funded stopping model. It does not fit exercise policies, ingest financial observations or establish an empirical pricing model.
+I implement the established Cox–Ross–Rubinstein recursion in [bermudan_tree.cpp](bermudan_tree.cpp). The C++17 executable prices calls and puts with constant rate, dividend yield and volatility on uniformly spaced positive exercise rights. A single vector supports backward induction with linear storage and quadratic work. Zero volatility uses deterministic discounted rewards on the same calendar.
 
-The [cross-language checks](../tests/test_funded_kernel.py) compare operator construction and propagated values, including limiting cases and invalid inputs. The standalone [C++ checks](test_funded_step.cpp) cover the native interface. Numerical agreement establishes parity within the tested cases, not a certified global error bound.
+The interface checks financial inputs, calendar divisibility, the risk-neutral probability and arithmetic range. It accepts at most 8,192 steps and rejects unresolved or subnormal intermediate values; the resource limit does not guarantee representable arithmetic for every parameter choice. Time zero is excluded from exercise. Returned prices are finite-tree values, with discretisation and rounding error.
 
-## 2. Build and verification
-
-The build interface supports macOS and Linux with a C++17 compiler. From the repository root:
+The [pricing notebook](../notebooks/pricing_and_stopping.ipynb) builds the source temporarily and compares three same-calendar values with Python. The [verification driver](../scripts/verify_bermudan_tree.py) also uses independent decimal tree and deterministic references, European analytical checks, homogeneity, calendar ordering and invalid-input cases. From the repository root, with a C++17 compiler available:
 
 ```sh
-python scripts/build_funded_kernel.py --output data/private/cpp_build/local
+python scripts/verify_bermudan_tree.py --output data/private/cpp_build/bermudan_check_01
+```
+
+The output directory must be new. The default compiler is `clang++`; `--compiler g++` selects an alternative. Compiler details, source identities, comparisons and failures are retained locally. No installation is attempted and no pricing-speed claim is made.
+
+## 2. Funded propagation kernel
+
+[funded_step.cpp](funded_step.cpp) implements the historical funded model's driftless propagation step, with [funded_cash.py](../src/qf_research/optimal_stopping/funded_cash.py) as its Python/SciPy reference. It is a separate component, rather than the tree used by the current pricing notebook.
+
+The [cross-language checks](../tests/test_funded_kernel.py) compare operators and propagated values, including limiting cases and invalid inputs. The [standalone checks](test_funded_step.cpp) cover the native interface. Build and verify with:
+
+```sh
+python scripts/build_funded_kernel.py --output data/private/cpp_build/funded_check_01
 python -m pytest tests/test_funded_kernel.py
 ```
 
-Use a new output directory for each retained build. The build record includes the compiler, flags, source and library hashes, platform and compilation time. Fast-math transformations and floating-point contraction are disabled in the declared build.
-
-## 3. Computational interpretation
-
-The [benchmark entry point](../scripts/benchmark_funded_kernel.py) compares the kernels and records preparation, propagation and memory measurements on stipulated mathematical fixtures. Measurements are specific to the recorded machine and workload. A faster stepping kernel does not by itself imply a faster complete policy experiment. The [replication guide](../replication/README.md) explains the complete computational study and its separate CPU forecasting question.
+Build records include compiler flags, source and library hashes, platform and compilation time. Fast-math and floating-point contraction are disabled. The [benchmark entry point](../scripts/benchmark_funded_kernel.py) measures this kernel on mathematical fixtures. Kernel parity and measured stepping speed do not establish global accuracy or complete experiment cost.

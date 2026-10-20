@@ -236,7 +236,7 @@ def table(headers, rows):
 def render(result):
     tables = {}
     tables["prediction"] = table(
-        ["Forecast", "Within ten per cent", "Within upper allowance", "Mean absolute relative error (per cent)", "Actual / forecast range"],
+        ["Forecast", "Within ten per cent", "Within upper allowance", "Mean absolute relative error (per cent)", "Actual/forecast range"],
         [[LABELS[r["predictor"]], f'{r["within_tolerance"]}/18', f'{r["within_allowance"]}/18',
           number(r["mean_absolute_relative_error_percent"], 3),
           f'[{number(r["actual_to_forecast_min"], 4)}, {number(r["actual_to_forecast_max"], 4)}]']
@@ -247,7 +247,7 @@ def render(result):
           ("forecast_affordable", "falsely_forecast_affordable", "allowance_affordable", "falsely_allowance_affordable")]
          for r in result["predictors"]])
     tables["workloads"] = table(
-        ["Pass", "Position", "Case", "Evaluation paths", "Training pairs", "Actual CPU", "Budget", "Actual / immediate forecast", "Budget excess"],
+        ["Pass", "Position", "Case", "Evaluation paths", "Training pairs", "Actual CPU", "Budget", "Actual/immediate forecast", "Budget excess"],
         [[r["pass_id"] + 1, r["position"] + 1, r["case"], r["evaluation_paths"], r["training_pairs"],
           number(r["actual_cpu"], 3), number(r["budget_cpu"], 3),
           number(r["comparisons"]["immediate"]["ratio"], 4), number(r["budget_excess_cpu"], 3)]

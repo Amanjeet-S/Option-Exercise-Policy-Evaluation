@@ -1,30 +1,29 @@
-# Exercise-policy loss under computational and financial constraints
+# Assessing Bermudan exercise policies
 
 Amanjeet Singh
 
-3 October 2026
+20 October 2026
 
-## 1. Paper and supporting evidence
+## 1. Current manuscript
 
-The [compiled paper](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) and [self-contained LaTeX source](main.tex) present the completed conditional computational study. Its nine tables concern loss assessment, terminal-policy adjustment, repeated-training precision and CPU prediction. The [project scope](../README.md#1-research-question-and-completion) retains independent market validity as a limitation.
+The [final paper](Assessing_Bermudan_Exercise_Policies.pdf) is compiled from the self-contained [LaTeX source](main.tex). It studies policy shortfall, martingale slack, sampling coverage and verified conditional integration using numerical references and public multiasset mathematical benchmarks. Its figures and bibliography are embedded, so compilation requires no external section files. The foundations appendices derive conditional expectation, optional sampling, measure change, the pricing PDE, regression projection and finite-difference stability. The [pricing notebook](../notebooks/pricing_and_stopping.ipynb) makes the core calculations executable.
 
-The [numerical supplement](numerical_results.md) and [derived summaries](numerical_results.json) reproduce the paper's tables. The [CPU supplement](cpu_timings.md) contains the eighteen workload records used to reconstruct Table 9, including calibration costs and the budget overrun. The [literature comparison](contribution_review.md) distinguishes established theory from the project-specific contribution. The [observation assessment](data_admission.md) and [aggregate results](data_admission.json) preserve the unsuccessful original admission outcome. [references.bib](references.bib) retains citation metadata; the complete bibliography is also embedded in `main.tex`.
+The completed monetary experiments distinguish the cost of reaching a financial tolerance from the cost of an individual numerical query. All eight computed European-assessor limits lie below one unit after the documented exposure correction; a simultaneous continuous-model guarantee additionally requires the stated sampling and ideal-observation enclosure premises. The [contribution review](contribution_review.md) records subsequent research and the limits of each comparison.
 
-## 2. Build and analytical checks
+The paper is dated 20 October 2026. The PDF, source and reproduction package accompany this revision. [Aggregate results](revision_results.json) and [figure sources](figures) support the manuscript. Its six figures are embedded in the LaTeX source; external figure files are not required to build it.
 
-From the repository root, a command-line build requires a TeX distribution with `latexmk` and pdfLaTeX:
+## 2. Historical paper
+
+The [historical PDF](Exercise_Policy_Loss_under_Computational_and_Financial_Constraints.pdf) retains the September study. Its [tables](historical_results.tex), [numerical summaries](numerical_results.json), [timing evidence](cpu_timings.md) and [market-admission assessment](data_admission.md) retain the original findings, including the empty admissible market sample.
+
+## 3. Reproduction and publication
+
+The [reproduction guide](../docs/reproducing_paper.md) gives one current reader-check command and separates its component calculations from full experiment regeneration and licensed historical replay. Later two-asset monetary and bounded-correction development findings remain outside this paper. Run the current aggregate and transcription check with:
 
 ```sh
-make -C paper
-make -C paper verify
+python paper/verification/revision_results.py
 ```
 
-Alternatively, compile `main.tex` directly in a single-document editor or upload it to Overleaf with pdfLaTeX. No external section or bibliography files are required. `make -C paper clean` removes auxiliary files while retaining the PDF.
+Build the current PDF with `make -C paper`; this preserves the historical PDF. `make -C paper verify` runs the combined historical and current paper checks. A separate python-flint environment supports outward numerical verification. The separate current inventory binds the reviewed reader sources. Source and PDF hashes are recorded in the [completion record](../completion.json).
 
-The standard-library verification checks exact finite probability examples, conditional drift, repeated-training variance identities, table transcription and retained CPU arithmetic. These checks do not prove the general measure-theoretic statements, rerun financial experiments or establish statistical coverage.
-
-## 3. Numerical reproduction and access
-
-The [public reproduction instructions](../docs/reproducing_paper.md) execute the checks, stipulated numerical fixture and notebooks. The [replication guide](../replication/README.md) documents the kernels and historical experiment entry points. Exact financial replay requires the original licensed input and evidence archive; public reproduction reads no such archive and exports no raw financial data.
-
-Derived findings are published under confirmed permission. Raw provider inputs remain private under the [publication policy](../docs/publication_policy.md), with original software and writing covered by the [licensing scope](../LICENSING.md).
+Current numerical figures use stipulated mathematical models and generated paths. Historical LSEG-derived findings require attribution and review under the [publication policy](../docs/publication_policy.md); captions must accompany separately circulated figures. Raw observations and restricted input bundles remain private. I preserve the historical PDF unchanged. Its source acknowledgement for this distribution is: 'Source: LSEG Workspace, accessed through the University of St Andrews subscription; my calculations.' This notice must accompany that historical PDF if it is circulated separately. The same review covers the tables, JSON and notebook summaries together.

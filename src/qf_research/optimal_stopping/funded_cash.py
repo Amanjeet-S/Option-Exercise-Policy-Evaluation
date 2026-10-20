@@ -3,7 +3,7 @@
 Y is the discounted economic ownership value. A trade quote Q with cash factor
 f is Q = Y/f, conditional on identical economic entitlement. Between dividend
 events dY = sigma Y dW. At an event, min(Y, cap) becomes a receivable. Exercise
-has discounted reward (sign * (Y - K*f_exercise))^+. See funded_cash_model.md.
+has discounted reward (sign * (Y - K*f_exercise))^+. See paper/main.tex.
 
 This is a frictionless benchmark, not certification of listed-contract terms.
 """

@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,booktabs}
+\usepackage[british]{babel}
+\usepackage[hidelinks,pdfauthor={Amanjeet Singh},pdftitle={Historical computational results}]{hyperref}
+\title{Historical computational results}
+\author{Amanjeet Singh}
+\date{30 September 2026}
+\begin{document}
+\maketitle
+These tables retain the original conditional study. I treat them as historical evidence rather than results of the current public-model revision.\footnote{Source: LSEG Workspace, accessed through the University of St Andrews; model calculations and numerical summaries are my own.}
+
+% Begin result-table:measurement
+\begin{table}[htbp]
+\centering\small
+\caption{Expected-gap estimates for unchanged exercise policies}\label{tab:measurement}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+\shortstack{Training\\paths} & Degree & Slope & Coarse value & Fine value & \shortstack{Reduction\\(per cent)} \\
+\midrule
+5,000 & 2 & 0.652833 & 0.051285 & 0.051125 & 92.17 \\
+5,000 & 4 & 0.703839 & 0.060522 & 0.060364 & 91.42 \\
+20,000 & 2 & 0.624587 & 0.037099 & 0.036941 & 94.09 \\
+20,000 & 4 & 0.506690 & 0.024304 & 0.024150 & 95.23 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each entry averages 52 policies. Gaps are USD per share in premium-quote units and contain both policy loss and dual slack. Reduction compares the fine value construction with the slope construction.\end{minipage}
+\end{table}
+% End result-table:measurement
+
+% Begin result-table:terminal_adjustment
+\begin{table}[htbp]
+\centering\small
+\caption{Terminal adjustment under a common upper payoff}\label{tab:terminal-adjustment}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+\shortstack{Training\\paths} & Degree & Unadjusted gap & Adjusted gap & Policy gain \\
+\midrule
+5,000 & 2 & 0.06111782 & 0.05009106 & 0.01102676 \\
+5,000 & 4 & 0.07063052 & 0.06023823 & 0.01039229 \\
+20,000 & 2 & 0.04703011 & 0.03593234 & 0.01109777 \\
+20,000 & 4 & 0.03441110 & 0.02377610 & 0.01063500 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Means across 52 original policies per configuration, in premium-quote units. Both instructions are assessed on the expanded calendar. The common upper term cancels in their paired difference.\end{minipage}
+\end{table}
+% End result-table:terminal_adjustment
+
+% Begin result-table:training_evaluation
+\begin{table}[htbp]
+\centering\small
+\caption{Mean gains across independent training pairs}\label{tab:training-evaluation}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Case & Mean gain & Pointwise interval & \shortstack{Evaluation share\\(per cent)} \\
+\midrule
+0 & 0.03203 & $[0.00922,0.05484]$ & 0.071 \\
+1 & 0.02721 & $[0.00193,0.05249]$ & 0.046 \\
+2 & 0.02941 & $[-0.00635,0.06517]$ & 0.029 \\
+3 & 0.04352 & $[0.01747,0.06958]$ & 0.077 \\
+4 & 0.03362 & $[0.01262,0.05462]$ & 0.123 \\
+5 & 0.03872 & $[0.02509,0.05236]$ & 0.284 \\
+6 & 0.03173 & $[0.01776,0.04570]$ & 0.152 \\
+7 & 0.03283 & $[0.01873,0.04694]$ & 0.179 \\
+8 & 0.02892 & $[0.01123,0.04661]$ & 0.144 \\
+9 & 0.01419 & $[-0.00237,0.03076]$ & 0.107 \\
+10 & 0.05397 & $[-0.00186,0.10980]$ & 0.014 \\
+11 & 0.03105 & $[0.02017,0.04194]$ & 0.267 \\
+12 & 0.03255 & $[0.00226,0.06285]$ & 0.056 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Eight pairs per case; 80,000 common evaluation paths per pair. Intervals use a pointwise 95 per cent Student approximation across pair means. Finite-sample coverage is unverified; the thirteen intervals are not simultaneous.\end{minipage}
+\end{table}
+% End result-table:training_evaluation
+
+% Begin result-table:allocation_comparison
+\begin{table}[htbp]
+\centering\small
+\caption{Independent allocation comparison}\label{tab:allocation-comparison}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Case & Pairs & Paths & \shortstack{Pilot\\variance} & \shortstack{Main\\variance} & CPU & \shortstack{Variance\\times CPU} \\
+\midrule
+0 & 306 & 256 & 0.237 & 0.204 & 0.962 & 0.197 \\
+1 & 352 & 256 & 0.230 & 0.311 & 1.078 & 0.336 \\
+2 & 327 & 256 & 0.238 & 0.268 & 1.041 & 0.279 \\
+3 & 332 & 256 & 0.224 & 0.179 & 1.026 & 0.184 \\
+4 & 318 & 256 & 0.272 & 0.311 & 0.970 & 0.302 \\
+5 & 318 & 256 & 0.262 & 0.331 & 1.042 & 0.345 \\
+6 & 338 & 256 & 0.253 & 0.486 & 0.998 & 0.485 \\
+7 & 335 & 256 & 0.220 & 0.157 & 0.991 & 0.155 \\
+8 & 333 & 256 & 0.246 & 0.266 & 1.001 & 0.266 \\
+9 & 320 & 256 & 0.261 & 0.277 & 1.011 & 0.280 \\
+10 & 279 & 256 & 0.255 & 0.356 & 0.924 & 0.329 \\
+11 & 253 & 256 & 0.327 & 0.507 & 0.659 & 0.334 \\
+12 & 387 & 128 & 0.238 & 0.247 & 0.930 & 0.230 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Counts describe the selected allocation. Ratios are selected relative to the independent reference, which uses 64 pairs and 4,096 paths. Variance refers to the estimated variance of the mean gain. Ratios are descriptive and have no ratio confidence intervals.\end{minipage}
+\end{table}
+% End result-table:allocation_comparison
+
+% Begin result-table:allocation_gains
+\begin{table}[htbp]
+\centering\small
+\caption{Training-procedure gains under the two allocations}\label{tab:allocation-gains}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Case & Reference mean & Reference interval & Selected mean & Selected interval \\
+\midrule
+0 & 0.03407 & $[0.02661,0.04153]$ & 0.02988 & $[0.02656,0.03319]$ \\
+1 & 0.02515 & $[0.01936,0.03094]$ & 0.03296 & $[0.02978,0.03614]$ \\
+2 & 0.03214 & $[0.02590,0.03838]$ & 0.03354 & $[0.03035,0.03672]$ \\
+3 & 0.03219 & $[0.02472,0.03966]$ & 0.02970 & $[0.02658,0.03281]$ \\
+4 & 0.03112 & $[0.02517,0.03707]$ & 0.03028 & $[0.02701,0.03355]$ \\
+5 & 0.02989 & $[0.02381,0.03598]$ & 0.03136 & $[0.02791,0.03481]$ \\
+6 & 0.02916 & $[0.02361,0.03472]$ & 0.03502 & $[0.03121,0.03883]$ \\
+7 & 0.03858 & $[0.02998,0.04718]$ & 0.03161 & $[0.02826,0.03497]$ \\
+8 & 0.02732 & $[0.02058,0.03406]$ & 0.03141 & $[0.02799,0.03483]$ \\
+9 & 0.03380 & $[0.02761,0.04000]$ & 0.03278 & $[0.02957,0.03600]$ \\
+10 & 0.03578 & $[0.02878,0.04279]$ & 0.04138 & $[0.03726,0.04549]$ \\
+11 & 0.03114 & $[0.02531,0.03698]$ & 0.03381 & $[0.02972,0.03791]$ \\
+12 & 0.03329 & $[0.02667,0.03991]$ & 0.03304 & $[0.02980,0.03628]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Premium-quote units. Intervals use a pointwise 95 per cent Student approximation over independent pair means. Positive intervals concern the fixed conditional specifications, not independent market confirmations.\end{minipage}
+\end{table}
+% End result-table:allocation_gains
+
+% Begin result-table:allocation_costs
+\begin{table}[htbp]
+\centering\small
+\caption{Predicted and actual allocation CPU expenditure}\label{tab:allocation-costs}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Component & \shortstack{Reference\\predicted} & \shortstack{Reference\\actual} & \shortstack{Selected\\predicted} & \shortstack{Selected\\actual} \\
+\midrule
+Setup & 2.333 & 1.104 & 2.333 & 1.060 \\
+Training & 75.569 & 34.814 & 366.801 & 166.359 \\
+Evaluation & 595.503 & 270.059 & 303.460 & 129.534 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Aggregate seconds. Component predictions retain the pilot observation supplying the median total pair cost. The separate pilot expense is excluded from this table and reported in the text.\end{minipage}
+\end{table}
+% End result-table:allocation_costs
+
+% Begin result-table:prospective_allocation
+\begin{table}[htbp]
+\centering\small
+\caption{Prespecified computational allocation follow-up}\label{tab:prospective-allocation}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Case & \shortstack{Pairs\\128} & \shortstack{Pairs\\256} & \shortstack{Pairs\\4,096} & \shortstack{Variance\\128} & \shortstack{Variance\\256} & \shortstack{CPU\\256} & \shortstack{Variance\\times CPU\\256} \\
+\midrule
+5 & 776 & 687 & 91 & 0.169888 & 0.167421 & 1.510736 & 0.252928 \\
+6 & 674 & 632 & 141 & 0.396693 & 0.340606 & 0.901768 & 0.307147 \\
+10 & 438 & 399 & 140 & 0.364378 & 0.330904 & 0.655844 & 0.217021 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Column suffixes give evaluation paths per pair. Ratios use the fresh within-case 4,096-path reference. The prespecified choice is 256 paths. Ratios and comparisons between 128 and 256 paths remain descriptive; realised costs differ.\end{minipage}
+\end{table}
+% End result-table:prospective_allocation
+
+% Begin result-table:prospective_contrasts
+\begin{table}[htbp]
+\centering\small
+\caption{Registered mean and estimator-variance difference intervals}\label{tab:prospective-contrasts}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Case & Paths & Mean difference & Variance difference \\
+\midrule
+5 & 128 & $[-0.009932236,0.01029046]$ & $[-1.091314\times10^{-5},-2.823286\times10^{-6}]$ \\
+5 & 256 & $[-0.009629916,0.01057145]$ & $[-1.093775\times10^{-5},-2.839513\times10^{-6}]$ \\
+6 & 128 & $[-0.005816441,0.009489616]$ & $[-3.959426\times10^{-6},-8.309205\times10^{-7}]$ \\
+6 & 256 & $[-0.005216458,0.009779123]$ & $[-4.164466\times10^{-6},-1.071226\times10^{-6}]$ \\
+10 & 128 & $[-0.01285611,0.009544336]$ & $[-1.018491\times10^{-5},-8.808303\times10^{-7}]$ \\
+10 & 256 & $[-0.01311862,0.009005322]$ & $[-1.041016\times10^{-5},-1.23835\times10^{-6}]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each contrast subtracts the independent 4,096-path reference. Mean differences use premium-quote units and variance differences their square. The common cutoff 13/4 supplies asymptotic family calibration for twelve contrasts; finite-sample coverage is unverified.\end{minipage}
+\end{table}
+% End result-table:prospective_contrasts
+
+% Begin result-table:cpu_prediction
+\begin{table}[htbp]
+\centering\small
+\caption{Historical and locally calibrated CPU forecasts}\label{tab:cpu-prediction}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+Forecast & \shortstack{Within\\ten per cent} & \shortstack{Within upper\\allowance} & \shortstack{Mean absolute error\\(per cent of forecast)} & \shortstack{Actual/forecast\\range} \\
+\midrule
+Historical & 1/18 & 18/18 & 29.065 & $[0.5154,1.0782]$ \\
+Pass start & 16/18 & 16/18 & 3.669 & $[0.9237,1.2081]$ \\
+Immediate & 17/18 & 17/18 & 2.841 & $[0.9576,1.2261]$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Each forecast is assessed on the same eighteen complete validation charges. The error denominator is the forecast; arms receive equal weight. The upper allowance is 1.1 times the forecast and has no statistical coverage guarantee.\end{minipage}
+\end{table}
+% End result-table:cpu_prediction
+\end{document}

@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "Cite the repository revision used and the original sources identified in the paper and source register."
 title: "Option Exercise-Policy Evaluation"
 type: software
+version: "2.0.0"
 authors:
   - family-names: Singh
     given-names: Amanjeet
@@ -10,4 +11,4 @@ url: "https://github.com/Amanjeet-S/Option-Exercise-Policy-Evaluation"
 keywords:
   - quantitative finance
   - numerical analysis
-date-released: "2026-10-03"
+date-released: "2026-10-20"

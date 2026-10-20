@@ -2,7 +2,7 @@
 
 Conditional integration isolates the expected benefit of waiting. A common
 martingale on the original clock yields comparable loss bounds before and
-after the change. See the terminal-repair methods note for the derivation.
+after the change. The derivation and its restrictions are in paper/main.tex.
 """
 
 from dataclasses import dataclass
@@ -40,8 +40,10 @@ def _dual(lower, upper, stopped, terminal):
 def evaluate_terminal_repair(policy, sample, extension):
     """Compare the original policy with waiting at its compulsory old endpoint.
 
-    The earlier policy is realised using only its original observation columns.
-    The primary gain conditions out the added diffusion. The independently
+    The earlier policy is realised using only its original exercise columns.
+    The sample contains genuine expanded exercise rights; propagation-only
+    observations have already been removed by the martingale constructor.
+    The primary gain conditions out the added diffusion. The separately
     retained direct payoff uses the simulated state at the new endpoint.
     """
     if policy.option.kind != 'put' or sample.paths.model != policy.model:
@@ -54,13 +56,20 @@ def evaluate_terminal_repair(policy, sample, extension):
             or sample.paths.maturity != last.time
             or last.settlement_factor != terminal.settlement_factor):
         raise ValueError('A matching extended terminal right is required')
+    original_rights = tuple(right for right in sample.paths.decisions
+                            if right.time <= policy.option.maturity)
+    if original_rights != policy.decisions:
+        raise ValueError('Unchanged original exercise rights are required through the old endpoint')
+    if any(right.settlement_factor != terminal.settlement_factor
+           for right in sample.paths.decisions if right.time > policy.option.maturity):
+        raise ValueError('Added exercise rights must retain the terminal settlement factor')
     paths = restrict_paths(sample.paths, policy.option, policy.decisions)
     realised = realise_policy(policy, paths)
     lookup = {right: j for j, right in enumerate(sample.paths.decisions)}
     columns = [lookup[right] for right in policy.decisions]
     martingale = sample.values
     if martingale.shape != sample.paths.states.shape or not np.all(np.isfinite(martingale)):
-        raise ValueError('Finite martingale values on the observation clock required')
+        raise ValueError('Finite martingale values on the expanded exercise clock required')
     original_martingale = martingale[:, columns]
     rewards = np.column_stack([policy.model.reward(policy.option, right, paths.states[:, j])
                                for j, right in enumerate(policy.decisions)])

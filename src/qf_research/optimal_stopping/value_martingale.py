@@ -187,13 +187,19 @@ def observation_rights(approximation):
 
 @dataclass(frozen=True)
 class ValueMartingale:
+    """Martingale at genuine exercise rights, with propagation-only columns omitted."""
+
     paths: FundedPaths
     values: np.ndarray
     approximation_fingerprint: str
 
 
 def value_martingale(approximation, observations):
-    """Centred increments at diffusion endpoints; zero increments at cash jumps."""
+    """Centre at diffusion endpoints, then retain genuine exercise rights only.
+
+    Cash jumps have zero increments. Propagation-only observations contribute
+    to the construction but grant no exercise rights in the returned sample.
+    """
     _validate_paths(observations, approximation.option)
     if observations.model != approximation.model or observations.decisions != observation_rights(approximation):
         raise ValueError('Observation paths must match the value approximation')

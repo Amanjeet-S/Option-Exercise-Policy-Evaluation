@@ -1,6 +1,8 @@
-# Replication of the conditional stopping study
+# Replication of the historical funded stopping study
 
 ## 1. Scope
+
+This guide concerns the historical `v1.0.0` funded conditional study. For the current paper, use the [current reader checks](../docs/reproducing_paper.md#1-what-can-be-checked-publicly) and its separate inventory.
 
 I provide the numerical kernels, experiment entry points and evidence checks used to study exercise-policy loss, terminal adjustment and computational allocation. The published research summaries concern the retained conditional experiments. The short example below uses stipulated mathematical inputs and demonstrates the implementation. It does not reproduce those summaries or establish agreement with market prices.
 
@@ -10,9 +12,9 @@ The [completion record](../README.md) closes this conditional study and the unsu
 
 ## 2. Installation and the public example
 
-The [reader's reproduction instructions](../docs/reproducing_paper.md) provide a single command for the public paper checks, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.
+The [historical reproduction instructions](../docs/reproducing_paper.md#2-install-the-historical-release) give a separate `v1.0.0` checkout and the command for its summaries, numerical fixture and two notebooks. That route uses published inputs only and does not read or export restricted raw financial data. The [CPU measurement supplement](../paper/cpu_timings.md) reconstructs Table 9 from released computational timings; its historical forecast values are retained inputs, not newly fitted forecasts.
 
-For the numerical fixture alone, create an environment and install the package from the repository root. Python 3.11 or later is required; continuous integration checks Python 3.11 and 3.13.
+Run the following fixture commands only from that separate `v1.0.0` checkout, whose sources match the historical inventory. Create its environment and install the package from its repository root. Python 3.11 or later is required; the historical workflow selects Python 3.11 and 3.13.
 
 ```sh
 python3 -m venv .venv
@@ -30,7 +32,7 @@ The result contains paired policy-gain estimates, non-negative pathwise dual gap
 
 The numerical checksum excludes timing, environment and provenance metadata. Exact equality is meaningful under the same numerical implementation and environment; different library versions or linear-algebra backends can change floating-point results. Timings and any allocation computed from them can change on repeated execution. The pair cost counts a full training and evaluation workload for each evaluation size. The actual runner shares its trained policies across sizes, so summing those pair charges would not measure its total process time. Terminal diagnostics are outside that cost comparison.
 
-The [executed notebook](../notebooks/conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [source manifest](source_manifest.json) identifies the reviewed files, their byte counts and SHA-256 hashes. The [standalone verifier](verify_sources.py) checks every declared file with the Python standard library, before scientific dependencies are needed. It rejects malformed entries, duplicate or escaping paths, symbolic links and altered or missing files. This checks consistency with the supplied inventory; it does not authenticate that inventory, prove its completeness or verify a financial input.
+The [executed notebook](../notebooks/conditional_research_replication.ipynb) explains the public example alongside exact finite-law probability identities and the released-summary audit. The [historical source manifest](source_manifest.json) identifies that release's reviewed files, their byte counts and SHA-256 hashes. The [standalone verifier](verify_sources.py) checks every declared file with the Python standard library, before scientific dependencies are needed. It rejects malformed entries, duplicate or escaping paths, symbolic links and altered or missing files. This checks consistency with the supplied inventory; it does not authenticate that inventory, prove its completeness or verify a financial input.
 
 The experiment runner checks the inventory and the origins of loaded project modules before numerical work and again before returning a result. Each result records the canonical input-specification digest, manifest digest and checked module origins separately from the numerical checksum. The module check prevents an unnoticed import from another installed copy of the project. These checks do not certify third-party binaries, hardware or the interpreter's in-memory state. Use a fresh kernel or interpreter for a reproducible run. An intentional source change requires its own reviewed inventory; the runner does not silently rewrite recorded hashes.
 
@@ -38,7 +40,9 @@ The experiment runner checks the inventory and the origins of loaded project mod
 
 The [input schema](input.schema.json) describes the structural interface. The executable validator also checks chronological exercise order, increasing sample sizes, terminal coverage, cash-event phases, finite numerical parameters and compatibility of the terminal extension. The runner currently supports puts and requires the model's discounted ownership state, settlement factors and cash-event caps. It does not estimate these inputs or verify the funding construction behind them.
 
-For a new study, copy the public specification into `data/private`, change its classification to `authorised_model`, and supply the financial model, contract, decision calendar and fixed simulation design from documented sources. The fixture classification is reserved for the exact published example. Preserve the source observations and their provenance separately, including the observation date, information available at the valuation cutoff, curve construction, settlement conventions and dividend treatment. Neither a licence assertion nor a successful structural check establishes empirical identification.
+All model times are elapsed from valuation in one consistent unit, and volatility is expressed per square root of that unit. The public fixture uses abstract year fractions. The dated adapter uses ACT/365F years computed from elapsed UTC seconds, with annualised volatility. Exercise and cash-event times use this diffusion clock; payment-date discount factors retain their separately supplied funding conventions. A funding curve's contractual day-count basis need not equal the diffusion clock. CPU and elapsed execution costs are measured in seconds.
+
+For a new study, copy the public specification into `data/private`, change its classification to `authorised_model`, and supply the financial model, contract, decision calendar and fixed simulation design from documented sources. The fixture classification is reserved for the exact published example. Record source provenance separately, including the observation date, information available at the valuation cutoff, curve construction, settlement conventions and dividend treatment. Retain observations only for the authorised research purpose and period; the university guidance requires their completion-stage deletion. Original provenance records must also be reviewed for embedded observations before retention. Neither a licence assertion nor a successful structural check establishes empirical identification.
 
 ```sh
 .venv/bin/python replication/run.py \
@@ -73,6 +77,8 @@ The [licensed-input reproduction guide](licensed_reproduction.md) gives the tabl
 Module names without a directory in this table refer to `src/qf_research/optimal_stopping`. The source manifest includes dependency helpers, tests and the attributed historical session calendar in addition to these principal files. Earlier acquisition helpers are included where historical validation code depends on them. Their inclusion does not make acquisition necessary for the public mathematical example or establish permission to redistribute a response.
 
 The historical study scripts retain their original dated registration paths. Exact reproduction requires the corresponding original archive, including its input manifests, frozen policies, registrations, prior evidence and source versions. Access to Workspace alone does not supply that archive. No public substitute for a withheld curve, quote history or fitted model bundle is provided. Readers who already lawfully hold the complete matching archive should preserve all its relative paths in a separate reproduction checkout, including required historical configurations and evidence outside `data/private`. Restore the source versions bound by its hashes before invoking an audit or replay. The repository does not distribute that archive. A hash mismatch is a failure to satisfy the reproduction contract; the check must not be disabled or repaired by changing the archived hashes.
+
+The original subscription archive is not shared by this project, even with another licence holder. Exact replay is conditional on independently lawful possession and permitted retention. After required input deletion, I retain the original requirements and disclose missing dependencies rather than change hashes or replace the inputs. Independent public-model simulations are reviewed separately from source-dependent historical experiments.
 
 For example, with the original prospective-allocation archive present, the following commands audit its retained records and replay three specified financial rows. The replay deliberately excludes elapsed and CPU times from equality comparisons.
 

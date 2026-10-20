@@ -4,6 +4,8 @@
 
 I assess whether retained observations support the original market-pricing comparison. The registered sample contains fifteen contract-date groups over five sessions, 21–25 September 2026, each joining a call, a put and a common underlying snapshot. The primary screen requires quote ages and option–underlying timing differences within one second, with uniquely resolved quote states. Five-, fifteen- and sixty-second tolerances were specified as descriptive sensitivities and do not replace the primary rule.
 
+Source for this September admission analysis: LSEG Workspace, accessed through the University of St Andrews subscription; my calculations. I identify the observation period separately from the acquisition vintage. The Cboe demonstration discussed below is a different source and retains its own permissions.
+
 The [aggregate results](data_admission.json) reconstruct previously inspected adapter, configuration and case records. They are not a fresh confirmation sample. The screen uses [prospective_inputs.py](../src/qf_research/market_data/prospective_inputs.py) and [quote_review.py](../src/qf_research/market_data/quote_review.py). Observation-level records remain private.
 
 ## 2. Mechanical coverage

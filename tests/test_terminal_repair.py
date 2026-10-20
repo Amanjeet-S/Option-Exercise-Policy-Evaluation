@@ -103,10 +103,53 @@ def test_cash_in_added_interval_and_changed_model_rejected():
             replace(sample, paths=replace(sample.paths, model=changed_model)), .1)
 
 
+@pytest.mark.parametrize('time,settlement_factor,message', [
+    (.5, 2., 'Unchanged original exercise rights'),
+    (1.05, 2., 'retain the terminal settlement factor'),
+    (1.05, .9, 'retain the terminal settlement factor'),
+])
+def test_integrated_upper_rejects_rights_outside_its_endpoint_reduction(
+        time, settlement_factor, message):
+    policy, sample = setup(volatility=0., terminal_only=True)
+    extra = FundedExercise(time, settlement_factor)
+    rights = tuple(sorted((*sample.paths.decisions, extra), key=lambda right:right.time))
+    states = np.full((len(sample.paths.states), len(rights)), 100.)
+    changed = replace(sample, paths=replace(sample.paths, decisions=rights, states=states),
+                      values=np.zeros_like(states))
+    # A factor of two creates a reward of 100 at the omitted right,
+    # while the unchanged original and final rights have reward zero.
+    with pytest.raises(ValueError, match=message):
+        evaluate_terminal_repair(policy, changed, .1)
+
+
 def test_training_paths_cannot_be_reused_for_policy_evaluation():
     policy, sample = setup()
     with pytest.raises(ValueError, match='Training'):
         evaluate_terminal_repair(policy, replace(sample, paths=replace(sample.paths, stream_id=policy.training_stream_id)), .1)
+
+
+@pytest.mark.parametrize('event_phase', [None, 'before', 'after'])
+def test_cash_observations_do_not_grant_extra_exercise_rights(event_phase):
+    model = FundedCashModel(100., 0., 1., 1., (DividendCap(.4, 30.),))
+    option = Option(100., 1., 'put')
+    rights = (FundedExercise(.5, .9), FundedExercise(1., .8))
+    if event_phase is not None:
+        rights = (FundedExercise(.4, .85, event_phase),) + rights
+    policy = fit_policy(option, simulate_paths(model, option, rights, 20,
+                        np.random.default_rng(21)), 1)
+    contract, calendar = extended_calendar(model, option, rights, (.1,))
+    approximation = build_values(model, contract, calendar, core_steps=30)
+    observations = simulate_paths(model, contract, observation_rights(approximation),
+                                 40, np.random.default_rng(22))
+    assert len(observations.decisions) > len(calendar)
+    sample = value_martingale(approximation, observations)
+    assert sample.paths.decisions == calendar
+    assert sample.paths.states.shape[1] == len(calendar)
+    result = evaluate_terminal_repair(policy, sample, .1)
+    # The granted .5 right pays 20. An ungranted post-cash observation
+    # with its placeholder factor of one would incorrectly pay 30.
+    np.testing.assert_allclose(result.direct_repaired.upper_payoffs, 20., atol=1e-12)
+    np.testing.assert_allclose(result.integrated_gain, 0., atol=1e-12)
 
 
 def test_direct_and_integrated_gain_difference_is_centred_with_lower_variance():

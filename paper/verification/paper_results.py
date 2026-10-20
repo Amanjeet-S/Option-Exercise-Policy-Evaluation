@@ -1,4 +1,4 @@
-"""Check the standalone paper's tables against the released aggregate summary.
+"""Check the historical tables against their released aggregate summary.
 
 Use --write to update only marked table blocks. This checks their transcription,
 not the financial validity or statistical coverage of the retained experiments.
@@ -78,7 +78,7 @@ def render(data):
         'Each contrast subtracts the independent 4,096-path reference. Mean differences use premium-quote units and variance differences their square. The common cutoff 13/4 supplies asymptotic family calibration for twelve contrasts; finite-sample coverage is unverified.')
     labels = {'historical':'Historical','pass_start':'Pass start','immediate':'Immediate'}
     result['cpu_prediction'] = table('Historical and locally calibrated CPU forecasts', 'cpu-prediction',
-        ['Forecast', stack('Within','ten per cent'), stack('Within upper','allowance'), stack('Mean absolute error','(per cent of forecast)'), stack('Actual / forecast','range')],
+        ['Forecast', stack('Within','ten per cent'), stack('Within upper','allowance'), stack('Mean absolute error','(per cent of forecast)'), stack('Actual/forecast','range')],
         [[labels[r['predictor']], f"{r['within_tolerance']}/18", f"{r['within_allowance']}/18", f"{r['mean_absolute_relative_error_percent']:.3f}", f"$[{r['actual_to_forecast_min']:.4f},{r['actual_to_forecast_max']:.4f}]$"] for r in data['cpu_prediction']],
         'Each forecast is assessed on the same eighteen complete validation charges. The error denominator is the forecast; arms receive equal weight. The upper allowance is 1.1 times the forecast and has no statistical coverage guarantee.')
     return result
@@ -102,8 +102,8 @@ if __name__ == '__main__':
     parser.add_argument('--write', action='store_true')
     args = parser.parse_args()
     data = json.loads((PAPER/'numerical_results.json').read_text())
-    path = PAPER/'main.tex'
+    path = PAPER/'historical_results.tex'
     source = synchronise(path.read_text(), render(data), args.write)
     if args.write:
         path.write_text(source)
-    print('Verified all nine paper tables against the released summaries; no experiment rerun.')
+    print('Verified all nine historical tables against the released summaries; no experiment rerun.')

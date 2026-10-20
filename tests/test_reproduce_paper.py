@@ -120,3 +120,42 @@ def test_only_named_notebooks_execute_in_invoking_environment(tmp_path, monkeypa
         result = nbformat.read(output/Path(name).name, as_version=4)
         assert result.cells[0].execution_count == 1
         assert result.cells[0].outputs[0].text == 'Fresh declared calculation\n'
+
+
+def test_release_runner_ignores_foreign_default_kernel_and_python_path(tmp_path, monkeypatch):
+    nbformat = pytest.importorskip('nbformat')
+    pytest.importorskip('nbclient')
+    script = ROOT/'scripts/execute_release_notebooks.py'
+    spec = importlib.util.spec_from_file_location('released_notebook_execution', script)
+    release = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(release)
+    monkeypatch.setattr(release, 'ROOT', tmp_path)
+    monkeypatch.setattr(release, 'NOTEBOOKS', ('notebooks/declared.ipynb',))
+
+    kernel = tmp_path/'foreign_kernels/kernels/python3'
+    kernel.mkdir(parents=True)
+    (kernel/'kernel.json').write_text(json.dumps(dict(
+        argv=[sys.executable, '-c', 'raise RuntimeError("Foreign default kernel selected")',
+              '{connection_file}'], display_name='Foreign fixture', language='python')))
+    monkeypatch.setenv('JUPYTER_PATH', str(kernel.parent.parent))
+
+    package = tmp_path/'src/declared_release_package'
+    package.mkdir(parents=True)
+    (package/'__init__.py').write_text('ORIGIN = "local fixture"\n')
+    foreign = tmp_path/'foreign_imports/declared_release_package'
+    foreign.mkdir(parents=True)
+    (foreign/'__init__.py').write_text('raise AssertionError("Foreign package selected")\n')
+    monkeypatch.setenv('PYTHONPATH', str(foreign.parent))
+
+    notebook = tmp_path/release.NOTEBOOKS[0]
+    notebook.parent.mkdir()
+    code = ('import sys\nimport declared_release_package as fixture\n'
+            f'assert sys.executable == {sys.executable!r}\n'
+            'assert fixture.ORIGIN == "local fixture"\n'
+            'print("Fresh release calculation")')
+    nbformat.write(nbformat.v4.new_notebook(cells=[nbformat.v4.new_code_cell(code)]), notebook)
+    original = notebook.read_bytes()
+    records = release.execute()
+    assert records[0]['code_cells_executed'] == 1
+    assert records[0]['saved_outputs'] is False
+    assert notebook.read_bytes() == original

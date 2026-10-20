@@ -2,9 +2,10 @@
   "schema_version": 1,
   "project": "Option Exercise-Policy Evaluation",
   "author": "Amanjeet Singh",
-  "status": "completed",
-  "completed_on": "2026-09-30",
-  "scope": "Conditional computational study, research paper, numerical verification and retained-data admission assessment.",
+  "status": "complete",
+  "historical_study_completed_on": "2026-09-30",
+  "revision_started_on": "2026-10-04",
+  "scope": "Evaluation of Bermudan exercise policies using numerical pricing references, independent simulation, public multiasset benchmarks and verified conditional integration, with explicit mathematical derivations and reproducible implementations.",
   "pending_work": [],
   "additional_data_required_for_completed_scope": false,
   "purchased_data_used_for_closure": false,
@@ -17,9 +18,54 @@
   "historical_replay_record": "replication/historical_replay.json",
   "data_admission_supplement": "paper/data_admission.md",
   "limitations": [
-    "No primary observation passes the original market-admission screen.",
+    "No primary observation passes the historical market-admission screen.",
     "Descriptive relaxed-timing candidates do not resolve historical observation and funding conventions.",
     "Original acquisition and calibration were not rerun.",
-    "Original CPU financial estimates were not separately retained for exact comparison."
-  ]
+    "Original CPU financial estimates were not separately retained for exact comparison.",
+    "Current multivariate numerical certificates concern supplied binary-state calculations. The ideal continuous-path observation-enclosure and exact sampling premises required for the simultaneous policy interpretation remain unestablished."
+  ],
+  "completed_revision_work": [
+    "One-dimensional pricing and coverage diagnostics, including direct numerical references, exact finite-law controls, clipping-tail allowances and monetary decision comparisons.",
+    "Eight fitted five-asset comparisons of integration refinement, polynomial moments and exact-terminal hybrids. Computed European limits lie below one unit after the documented exposure correction; a simultaneous continuous-model guarantee remains conditional on the ideal-sampling and observation-enclosure premises; half-unit targets remain unresolved.",
+    "Measure-theoretic conditional expectation and L2 projection, finite-calendar optional sampling, Brownian change of measure, diffusion moments, self-financing pricing, regression conditioning and finite-difference stability are derived in dedicated appendices. The pricing notebook executes exact finite identities, same-calendar Python/C++ tree comparisons, PDE refinement, analytical sensitivities and independently evaluated regression policies.",
+    "The abstract and monetary conclusions distinguish computed threshold crossings from conditional continuous-model guarantees. Notebook execution records capture the actual kernel and native comparison outcome; source changes detected during execution prevent saved-output replacement. Current and historical reproduction instructions are separated.",
+    "A separate current source inventory and reader-check workflow bind the manuscript, aggregate results, numerical fixtures and executed notebook copies. Their checks preserve historical source identities and reject incomplete, altered or mismatched verification records. Later exploratory extensions remain outside the current paper scope.",
+    "Final manuscript review, author metadata and 30-page PDF layout checks completed locally. The current build preserves the historical PDF; source and delivered PDF hashes are recorded separately from the source inventory."
+  ],
+  "revision_evidence_guide": "paper/contribution_review.md",
+  "further_research_extensions": [
+    "Freeze a fresh independent monetary comparison using competitive assessors, the verified model-only clipping caps 480/575 and complete reference, fitting, reconstruction and evaluation charges. Reused-path development comparisons supply no new sampling inference.",
+    "Test predictable allocation with the independently checked conditional Hermite spectrum and explicit state-box certificates. Global residual energies and undamped terminal-variance bounds cannot substitute for those certificates.",
+    "Extend only a successful sparse or structured representation to correlated and heterogeneous five-asset models, with a gated ten-asset study. Complete high-degree dictionaries do not establish scalable execution.",
+    "Compare classical transforms, fixed product-polynomial and optimised moment controls at matched precision and enclosure width, preserving the published origin of the factorisation.",
+    "Replicate complete monetary decision costs across separately fitted labelled policies, including the stronger price-output control, preparation, tail verification, independent sampling and actual financial acceptance. Large production generation still requires at least one GiB of free local storage."
+  ],
+  "further_research_extensions_required_for_current_scope": false,
+  "local_development_findings": [
+    "One- and two-asset Hermite approximation, coefficient and spectral-error certificates. Complete benchmark charges and stronger Stulz–Plackett verification overturn the earlier favourable cost projection.",
+    "Independent two-asset monetary study: 98,304 assessments on 32,768 unique paths. Homogeneous computed limits fall below one unit; heterogeneous and half-unit targets remain unresolved. Direct assessment has the lowest measured assessment-worker CPU in both models.",
+    "Sixteen two-asset CRR meshes and separate forward-policy checks. Finest numerical shortfalls are about 0.065–0.068 and 0.098–0.104, with remaining mesh differences and no certified diffusion bracket.",
+    "Whole-value Gaussian-hinge fitting, exact gradient geometry and matched assessment of five martingales per model. Constrained unequal-volatility fits degrade; unconstrained fits give smaller observed development gaps.",
+    "Fourteen zero-strike references, with 14,382 nodes and 126 independently checked portfolios. Primary pricing brackets have widths about 0.165/0.149; the superharmonicity derivation and population numerical-error bounds are separately verified.",
+    "Three bounded strike-correction families, preserving targets, coefficients, global ranges and solver outcomes. Exact joint geometry substantially improves development fitting over the initial L1 constraint.",
+    "Six-arm matched development comparison: 1,536 observations, 30 exact paired comparisons and 36 strict controls. All 768 earlier primary records match. The joint fit improves the homogeneous observed mean, but whole-value hinges perform better under unequal volatilities; joint cold costs are higher in both models.",
+    "Source-bound clipping tails and complete reflected-stock bounds pass at 128/256 bits. A separately frozen search selects minimum sufficient-formula integer caps 480 and 575 at allowance 1/400; adjacent integers fail that formula. Independent range reconstruction, exact trace checks and eight 384-bit survival controls pass. No actual-tail minimum or policy acceptance is claimed."
+  ],
+  "local_development_scope": "Later two-asset monetary, Gaussian-compression, numerical-reference and bounded-correction investigations are exploratory extensions outside the current paper and reader reproduction package. Their complete records and adverse findings remain local. Promotion requires a separate public, source-bound assessment route.",
+  "current_reader_command": "python scripts/reproduce_current_study.py --output data/private/reproduction/current_review",
+  "current_workflow_publication_status": "GitHub Actions records verification outcomes for each published commit.",
+  "completed_on": "2026-10-20",
+  "publication_status": "Reviewed final paper, original code, explanatory notebook and reproduction package; restricted observations and private experiment records are excluded.",
+  "current_paper": {
+    "source": "paper/main.tex",
+    "pdf": "paper/Assessing_Bermudan_Exercise_Policies.pdf",
+    "date": "2026-10-20",
+    "author": "Amanjeet Singh",
+    "pages": 30,
+    "source_sha256": "0a529095f8669109b2980e33cd94c964419b158e3ef4c40742dd67bfe024558f",
+    "pdf_sha256": "595037504d0ee7e58eefc0c3b9cc6bf541f7177c8d081988ad0245cc56ea4563",
+    "compiler": "pdfTeX 1.40.24 (TeX Live 2022), managed by latexmk",
+    "layout_review": "All pages rendered and reviewed; no unresolved TeX overflow, reference or citation warnings."
+  },
+  "release": "v2.0.0"
 }

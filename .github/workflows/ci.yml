@@ -1,4 +1,4 @@
-name: Research checks
+name: Current research checks
 
 on:
   push:
@@ -10,29 +10,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: research-checks-${{ github.workflow }}-${{ github.ref }}
+  group: current-research-checks-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  interval-arithmetic:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
-        with:
-          python-version: '3.13'
-          cache: pip
-          cache-dependency-path: requirements-certification.lock
-      - name: Verify the published implementation inventory
-        run: python replication/verify_sources.py
-      - name: Install the separate interval-arithmetic environment
-        run: python -m pip install -r requirements-certification.lock
-      - name: Check finite-innovation replay and global residual enclosures
-        run: |
-          mkdir -p data/private
-          python -m unittest discover -s tests -p test_certify_gain_replay.py -v
-          python scripts/test_certified_residual.py
-  validate:
+  current-reader-package:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -42,7 +24,8 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
-      MPLBACKEND: Agg
+      VECLIB_MAXIMUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
@@ -52,24 +35,32 @@ jobs:
           cache-dependency-path: |
             requirements.lock
             requirements-notebooks.lock
-      - name: Verify the published implementation inventory
-        run: python replication/verify_sources.py
-      - name: Install frozen environment
+      - name: Verify the separate current inventory
+        run: python replication/verify_sources.py --manifest replication/current_source_manifest.json
+      - name: Install the declared current environment
         run: |
           python -m pip install -r requirements.lock -r requirements-notebooks.lock
           python -m pip install -e . --no-deps
-      - name: Require compiler for native numerical checks
-        run: c++ --version
-      - name: Test numerical and data-ingestion code
-        run: python -m pytest -q
-      - name: Check documentation and retained source files
-        run: python scripts/check_repository.py
-      - name: Check released numerical summary tables
+      - name: Require a native compiler
+        run: g++ --version
+      - name: Check the current reader package
+        run: python scripts/reproduce_current_study.py --output data/private/reproduction/ci_current --with-native --compiler g++
+
+  interval-arithmetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements-certification.lock
+      - name: Verify the separate current inventory
+        run: python replication/verify_sources.py --manifest replication/current_source_manifest.json
+      - name: Install the separate interval environment
+        run: python -m pip install -r requirements-certification.lock
+      - name: Check finite-innovation and global residual enclosures
         run: |
-          python paper/verification/numerical_results.py
-          python paper/verification/paper_results.py
-          python paper/verification/cpu_timings.py
-      - name: Check exact analytical fixtures
-        run: python -m unittest discover -s paper/verification -v
-      - name: Reproduce the public paper package
-        run: python scripts/reproduce_paper.py --output data/private/reproduction/ci
+          mkdir -p data/private
+          python -m unittest discover -s tests -p test_certify_gain_replay.py -v
+          python scripts/test_certified_residual.py

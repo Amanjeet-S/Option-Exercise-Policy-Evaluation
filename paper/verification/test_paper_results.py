@@ -9,7 +9,7 @@ from paper_results import PAPER, render, synchronise
 class PaperTables(unittest.TestCase):
     def setUp(self):
         self.tables = render(json.loads((PAPER / 'numerical_results.json').read_text()))
-        self.source = (PAPER / 'main.tex').read_text()
+        self.source = (PAPER / 'historical_results.tex').read_text()
 
     def test_paper_matches_released_summaries(self):
         self.assertEqual(synchronise(self.source, self.tables), self.source)
