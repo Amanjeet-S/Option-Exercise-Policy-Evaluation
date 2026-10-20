@@ -61,8 +61,8 @@
     {
       "path": "completion.json",
       "category": "reader_documentation",
-      "sha256": "e65cff17df32d30c001c1608ecebe9731a8a5b3b98ff0e9896cc794e874f7d71",
-      "bytes": 8450
+      "sha256": "461ad6cf49171642b65a77868bb65fef36600185cbbf5a458eab9f6448c384f8",
+      "bytes": 8544
     },
     {
       "path": "cpp/README.md",
@@ -85,8 +85,8 @@
     {
       "path": "docs/development.md",
       "category": "reader_documentation",
-      "sha256": "a67d3685b98d869dab24606822a639f62266c4464dd05e7dbc36d88bfb055f5a",
-      "bytes": 3850
+      "sha256": "94541b2b58c77be03d310ba6fa014b9dfed64e47829b9e22beebb02cdcb9ae3d",
+      "bytes": 3923
     },
     {
       "path": "docs/publication_policy.md",
@@ -133,7 +133,7 @@
     {
       "path": "paper/README.md",
       "category": "reader_documentation",
-      "sha256": "acc8bff85aeae630f0ce954abe596ea4143ce5e7ed9d422d3de137e1f76e7ad2",
+      "sha256": "d40d31bef60b0a6653bbc764604360dad13db9a53ee9315600df0c0b6d63f6d1",
       "bytes": 3448
     },
     {
@@ -151,7 +151,7 @@
     {
       "path": "paper/main.tex",
       "category": "paper_source",
-      "sha256": "0a529095f8669109b2980e33cd94c964419b158e3ef4c40742dd67bfe024558f",
+      "sha256": "56d67a39dd7993daab991d428cf239623e86941b42c5fa730f5dea16ff2c6fd5",
       "bytes": 174134
     },
     {

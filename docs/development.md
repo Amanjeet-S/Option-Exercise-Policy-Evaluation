@@ -26,7 +26,7 @@ The workflow selects the separate current inventory and reader command on Python
 
 I preserve the recorded author and commit dates of recovered project revisions. I have divided the largest bundled release into functional groups for review. Their shared date identifies the original release; the grouping does not establish when each underlying task was performed. I retain the original checkpoints in a private archive.
 
-I use the annotated tag `v1.0.0` to identify the completed, reviewed study snapshot. The completed public-model revision is identified by `v2.0.0`. Subsequent changes require their own commits and verification before another release.
+I use the annotated tag `v1.0.0` to identify the completed, reviewed study snapshot. The completed public-model revision is identified by `v2.0.0`; `v2.0.1` applies title capitalisation without changing its calculations. Subsequent changes require their own commits and verification before another release.
 
 ## 5. Current inventory maintenance
 

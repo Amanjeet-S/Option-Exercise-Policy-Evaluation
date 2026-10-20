@@ -62,10 +62,11 @@
     "date": "2026-10-20",
     "author": "Amanjeet Singh",
     "pages": 30,
-    "source_sha256": "0a529095f8669109b2980e33cd94c964419b158e3ef4c40742dd67bfe024558f",
-    "pdf_sha256": "595037504d0ee7e58eefc0c3b9cc6bf541f7177c8d081988ad0245cc56ea4563",
+    "source_sha256": "56d67a39dd7993daab991d428cf239623e86941b42c5fa730f5dea16ff2c6fd5",
+    "pdf_sha256": "c6cb80f12d0d99be1d8cec7ba6aa60a7434f21fe2e3750abd3b88cdb0af8a36c",
     "compiler": "pdfTeX 1.40.24 (TeX Live 2022), managed by latexmk",
-    "layout_review": "All pages rendered and reviewed; no unresolved TeX overflow, reference or citation warnings."
+    "layout_review": "All pages rendered and reviewed; no unresolved TeX overflow, reference or citation warnings.",
+    "title": "Assessing Bermudan Exercise Policies: Numerical Error and Confidence Coverage"
   },
-  "release": "v2.0.0"
+  "release": "v2.0.1"
 }

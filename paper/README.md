@@ -1,4 +1,4 @@
-# Assessing Bermudan exercise policies
+# Assessing Bermudan Exercise Policies
 
 Amanjeet Singh
 
